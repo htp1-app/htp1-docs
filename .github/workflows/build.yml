@@ -1,0 +1,30 @@
+name: Build
+
+on:
+  pull_request:
+  push:
+    branches: [main, master]
+
+# No secrets are used here on purpose: this workflow only proves the site builds,
+# so it is safe to run on pull requests from forks. Publishing happens elsewhere.
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+
+      - name: Install MkDocs
+        run: pip install --disable-pip-version-check -r requirements.txt
+
+      # --strict fails on broken links, missing images, and pages missing from
+      # the navigation.
+      - name: Build (strict)
+        run: mkdocs build --strict

@@ -1,0 +1,11 @@
+# HTP-1 documentation — https://docs.htp1.app
+#
+# Crawling is welcome, including by AI assistants. This manual exists so that
+# HTP-1 owners get accurate, current answers about their processor. An assistant
+# answering from this manual is better than one answering from documentation
+# written for firmware several years old.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://docs.htp1.app/sitemap.xml

@@ -1,0 +1,133 @@
+site_name: HTP-1 Documentation
+site_description: User and developer documentation for the Monolith HTP-1 home theater processor ecosystem
+site_url: https://docs.htp1.app
+repo_url: https://github.com/htp1-app/htp1-docs
+repo_name: htp1-app/htp1-docs
+edit_uri: edit/main/docs/
+copyright: Community documentation for the Monolith HTP-1
+
+theme:
+  name: material
+  logo: assets/logo.svg
+  favicon: assets/favicon.svg
+  icon:
+    repo: fontawesome/brands/github
+  font:
+    text: Inter
+    code: JetBrains Mono
+  # Light only for now — no scheme toggle.
+  palette:
+    scheme: htp1-light
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.indexes
+    - navigation.tracking
+    - navigation.top
+    - navigation.footer
+    - navigation.instant
+    - navigation.instant.progress
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.action.edit
+    - content.tooltips
+
+extra:
+  generator: false  # hide "Made with Material for MkDocs" (officially supported)
+
+extra_css:
+  - stylesheets/extra.css
+
+extra_javascript:
+  - javascripts/copy-link.js
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+      permalink_title: Copy link to this section
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+plugins:
+  - search
+  - glightbox
+  # Per-page link preview images. Needs the imaging dependencies, so it runs
+  # only where SOCIAL_CARDS is set (the deploy pipeline) — local and pull
+  # request builds skip it and stay fast.
+  - social:
+      enabled: !ENV [SOCIAL_CARDS, false]
+      cards_layout_options:
+        background_color: "#14161A"
+        color: "#FAFAF9"
+
+# Sections still being written are left out of the build entirely, so their stub
+# pages are not published or listed in the sitemap. The files stay in the
+# repository; remove a line here and uncomment its nav entry when it is ready.
+exclude_docs: |
+  getting-started/
+  apps/
+  self-hosting/
+  developers/
+  firmware/
+
+nav:
+  - Home: index.md
+  # - Getting Started:
+  #     - getting-started/index.md
+  - User Manual:
+      - user-guide/index.md
+      - Welcome: user-guide/welcome.md
+      - Safety and Regulatory: user-guide/safety.md
+      - Getting Started:
+          - Product Overview: user-guide/product-overview.md
+          - Basic Setup: user-guide/basic-setup.md
+          - Home Page: user-guide/home-page.md
+      - Sound and Calibration:
+          - Speaker Configuration: user-guide/speaker-configuration.md
+          - Speaker Setup: user-guide/speaker-setup.md
+          - Bass Management: user-guide/bass-management.md
+          - Calibration: user-guide/calibration.md
+          - Dirac Live: user-guide/dirac.md
+          - Channel Levels: user-guide/channel-levels.md
+          - Signal Generator: user-guide/signal-generator.md
+          - PEQ: user-guide/peq.md
+          - Seat Shaker: user-guide/seat-shaker.md
+          - Bass EQ: user-guide/bass-eq.md
+          - Tone Control: user-guide/tone-control.md
+          - Loudness: user-guide/loudness.md
+          - Upmix: user-guide/upmix.md
+      - Setup and System:
+          - Inputs: user-guide/inputs.md
+          - Network: user-guide/network.md
+          - ARC, eARC and CEC: user-guide/connectivity.md
+          - Video Features: user-guide/video.md
+          - Macros: user-guide/macros.md
+          - Personalize: user-guide/personalize.md
+          - Volume Setup: user-guide/volume-setup.md
+          - Peak Monitor: user-guide/peak-monitor.md
+          - Device Settings: user-guide/device-settings.md
+          - Backup and Restore: user-guide/configs.md
+      - Status and Reference:
+          - System Status: user-guide/system-status.md
+          - Updates and Support: user-guide/maintenance.md
+          - Integrations and Control: user-guide/integrations.md
+          - Reference: user-guide/reference.md
+  # - Apps:
+  #     - apps/index.md
+  # - Self-Hosting:
+  #     - self-hosting/index.md
+  # - Developers:
+  #     - developers/index.md
+  # - Firmware:
+  #     - firmware/index.md

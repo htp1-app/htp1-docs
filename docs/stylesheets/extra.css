@@ -1,0 +1,323 @@
+/* ==========================================================================
+   HTP-1 documentation — theme refinements on top of Material for MkDocs.
+   Charcoal + warm amber. Kept deliberately small: colour, type, and the few
+   elements this manual leans on most (screenshots, tables, admonitions).
+   ========================================================================== */
+
+/* --- Palette -------------------------------------------------------------- */
+
+:root {
+  --htp-ink: #14161a;
+  --htp-ink-soft: #1d2026;
+  --htp-amber: #e0a458;
+  --htp-amber-deep: #b8813a;
+  --htp-paper: #fafaf9;
+  --htp-rule: #e5e3df;
+
+  /* Icons used as CSS masks (Material Design Icons: link-variant, check). */
+  --htp-icon-link: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M10.59 13.41c.41.39.41 1.03 0 1.42-.39.39-1.03.39-1.42 0a5.003 5.003 0 0 1 0-7.07l3.54-3.54a5.003 5.003 0 0 1 7.07 0 5.003 5.003 0 0 1 0 7.07l-1.49 1.49c.01-.82-.12-1.64-.4-2.42l.47-.48a2.982 2.982 0 0 0 0-4.24 2.982 2.982 0 0 0-4.24 0l-3.53 3.53a2.982 2.982 0 0 0 0 4.24m2.82-4.24c.39-.39 1.03-.39 1.42 0a5.003 5.003 0 0 1 0 7.07l-3.54 3.54a5.003 5.003 0 0 1-7.07 0 5.003 5.003 0 0 1 0-7.07l1.49-1.49c-.01.82.12 1.64.4 2.43l-.47.47a2.982 2.982 0 0 0 0 4.24 2.982 2.982 0 0 0 4.24 0l3.53-3.53a2.982 2.982 0 0 0 0-4.24c-.41-.39-.41-1.03 0-1.42z'/%3E%3C/svg%3E");
+  --htp-icon-check: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z'/%3E%3C/svg%3E");
+}
+
+[data-md-color-scheme="htp1-light"] {
+  --md-primary-fg-color: var(--htp-ink);
+  --md-primary-fg-color--light: var(--htp-ink-soft);
+  --md-primary-fg-color--dark: #0d0f12;
+  --md-primary-bg-color: #ffffff;
+  --md-primary-bg-color--light: #ffffffb3;
+
+  --md-accent-fg-color: var(--htp-amber-deep);
+  --md-accent-fg-color--transparent: #b8813a1a;
+
+  --md-default-bg-color: var(--htp-paper);
+  --md-default-fg-color: #22252b;
+  --md-default-fg-color--light: #5b6068;
+  --md-default-fg-color--lighter: #8b9098;
+
+  --md-typeset-a-color: var(--htp-amber-deep);
+  --md-code-bg-color: #f2f1ee;
+  --md-footer-bg-color: var(--htp-ink);
+  --md-footer-bg-color--dark: #0d0f12;
+}
+
+/* Amber sits under the active tab and the search focus ring rather than being
+   sprayed across the header. */
+.md-tabs__link--active,
+.md-nav__link--active {
+  color: inherit;
+}
+.md-tabs__item--active .md-tabs__link {
+  box-shadow: inset 0 -2px 0 var(--htp-amber);
+}
+
+/* --- Typography ----------------------------------------------------------- */
+
+.md-typeset {
+  font-size: 0.78rem;
+  line-height: 1.68;
+}
+
+.md-typeset h1 {
+  font-weight: 650;
+  letter-spacing: -0.02em;
+  color: var(--md-default-fg-color);
+}
+
+.md-typeset h2 {
+  font-weight: 620;
+  letter-spacing: -0.012em;
+  margin-top: 2.2em;
+  padding-bottom: 0.28em;
+  border-bottom: 1px solid var(--htp-rule);
+}
+
+.md-typeset h3 {
+  font-weight: 600;
+  letter-spacing: -0.006em;
+  margin-top: 1.6em;
+}
+
+/* A slightly narrower measure reads better for long instructional prose.
+   Left-aligned rather than centred, so the text starts at the same place on
+   every page whether or not that page has a table of contents. */
+.md-content__inner {
+  max-width: 46rem;
+}
+
+/* --- Heading anchors ------------------------------------------------------ */
+
+/* Swap the pilcrow for a link icon, and show a tick once the URL is copied. */
+.md-typeset .headerlink {
+  font-size: 0; /* hides the ¶ glyph without removing the link text node */
+  vertical-align: middle;
+}
+
+/* Sized in rem, not em: the parent's font-size is 0 to hide the pilcrow, so an
+   em-based size would collapse to nothing. */
+.md-typeset .headerlink::after {
+  content: "";
+  display: inline-block;
+  width: 0.85rem;
+  height: 0.85rem;
+  background-color: currentColor;
+  -webkit-mask: var(--htp-icon-link) center / contain no-repeat;
+  mask: var(--htp-icon-link) center / contain no-repeat;
+}
+
+.md-typeset .headerlink--copied {
+  color: var(--htp-amber-deep);
+}
+
+.md-typeset .headerlink--copied::after {
+  -webkit-mask: var(--htp-icon-check) center / contain no-repeat;
+  mask: var(--htp-icon-check) center / contain no-repeat;
+}
+
+/* --- Screenshots ---------------------------------------------------------- */
+
+/* The manual is image-heavy; giving captures a frame separates interface from
+   page and stops light screenshots bleeding into the background.
+   The exclusions sit inside :where() so they add no specificity — otherwise
+   this rule outweighs the narrower exemptions below and frames everything. */
+.md-typeset img:where(:not(.twemoji)):where(:not(.md-logo img)) {
+  border: 1px solid var(--htp-rule);
+  border-radius: 8px;
+  box-shadow: 0 1px 2px rgba(20, 22, 26, 0.05), 0 6px 18px rgba(20, 22, 26, 0.06);
+}
+
+/* Logos and diagrams on the manual landing page are not screenshots. */
+.md-typeset .no-frame img,
+.md-typeset img[src*="logo-"] {
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* --- Manual landing hero -------------------------------------------------- */
+
+/* One white panel behind the product shot and the format logos. The panel is
+   rounded; the images inside it are not framed, since several of the logo files
+   already carry their own white background and a border would box them in. */
+.md-typeset .product-hero {
+  background: #ffffff;
+  border: 1px solid var(--htp-rule);
+  border-radius: 12px;
+  padding: 1.4rem 1.4rem 1rem;
+  margin: 0 0 2rem;
+  text-align: center;
+}
+
+.md-typeset .product-hero img {
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.md-typeset .product-hero .product-shot {
+  width: 100%;
+  max-width: 392px;
+  height: auto;
+}
+
+.md-typeset .product-hero .format-logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.75rem;
+  margin-top: 0.9rem;
+}
+
+.md-typeset .product-hero .format-logos img[alt="Dolby Atmos"] { height: 21px; width: auto; }
+.md-typeset .product-hero .format-logos img[alt="DTS:X"]       { height: 31px; width: auto; }
+.md-typeset .product-hero .format-logos img[alt="Auro-3D"]     { height: 28px; width: auto; }
+.md-typeset .product-hero .format-logos img[alt="Dirac"]       { height: 28px; width: auto; }
+
+/* --- Tables --------------------------------------------------------------- */
+
+/* Quieter than the default: hairline rules, roomier cells, no heavy header. */
+.md-typeset table:not([class]) {
+  border: 1px solid var(--htp-rule);
+  border-radius: 8px;
+  box-shadow: none;
+  font-size: 0.72rem;
+}
+
+.md-typeset table:not([class]) th {
+  background: transparent;
+  font-weight: 620;
+  letter-spacing: 0.01em;
+  border-bottom: 1px solid var(--htp-rule);
+}
+
+.md-typeset table:not([class]) td {
+  border-top: 1px solid var(--htp-rule);
+  padding: 0.62em 0.9em;
+}
+
+.md-typeset table:not([class]) tr:first-child td {
+  border-top: 0;
+}
+
+/* --- Admonitions ---------------------------------------------------------- */
+
+/* Flatter and less saturated than the stock treatment. */
+.md-typeset .admonition,
+.md-typeset details {
+  border: 1px solid var(--htp-rule);
+  border-left-width: 3px;
+  border-radius: 6px;
+  box-shadow: none;
+  font-size: 0.74rem;
+}
+
+.md-typeset .admonition-title,
+.md-typeset summary {
+  background: transparent !important;
+  font-weight: 620;
+}
+
+.md-typeset .admonition-title::before,
+.md-typeset summary::before {
+  background-color: currentColor;
+}
+
+.md-typeset .note { border-left-color: #5b7a99; }
+.md-typeset .tip  { border-left-color: #4d8b76; }
+.md-typeset .warning { border-left-color: var(--htp-amber-deep); }
+
+/* --- Grid cards ----------------------------------------------------------- */
+
+.md-typeset .grid.cards > ul > li {
+  position: relative;
+  border: 1px solid var(--htp-rule);
+  border-radius: 10px;
+  box-shadow: none;
+  transition: border-color 120ms, transform 120ms, box-shadow 120ms;
+}
+
+.md-typeset .grid.cards > ul > li:hover {
+  border-color: var(--htp-amber);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(20, 22, 26, 0.07);
+}
+
+.md-typeset .grid.cards > ul > li > hr {
+  margin: 0.6em 0 0.8em;
+  border-color: var(--htp-rule);
+}
+
+/* Home page: keep the cards on a single row on desktop, stacking on narrow
+   screens where three columns would be unreadable.
+   Note the grid lives on the .grid element itself — Material sets the inner
+   <ul> to display:contents, so targeting the list has no effect. minmax(0,1fr)
+   lets columns shrink to fit rather than overflowing the content area. */
+.md-typeset .grid.cards.home-cards {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.md-typeset .grid.cards.home-cards > ul > li > p {
+  font-size: 0.72rem;
+}
+
+@media screen and (max-width: 59.9375em) {
+  .md-typeset .grid.cards.home-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Make the whole card a click target. The card's final link is stretched over
+   the card, so the text of the link stays the accessible name while the entire
+   surface is clickable. Cards without a link are unaffected. */
+.md-typeset .grid.cards > ul > li > p:last-of-type > a:only-child::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+
+.md-typeset .grid.cards > ul > li:hover > p:last-of-type > a:only-child {
+  color: var(--htp-amber-deep);
+}
+
+/* Keep any other links in the card (there are none today, but a future card
+   may carry one) above the stretched overlay. */
+.md-typeset .grid.cards > ul > li a:not(:only-child) {
+  position: relative;
+  z-index: 1;
+}
+
+/* --- Header and footer ---------------------------------------------------- */
+
+.md-header {
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.md-header__title {
+  font-weight: 620;
+  letter-spacing: -0.01em;
+}
+
+/* --- Search --------------------------------------------------------------- */
+
+/* The stock placeholder is heavy for what is only a prompt. */
+.md-search__input {
+  font-size: 0.72rem;
+  font-weight: 300;
+}
+
+.md-search__input::placeholder {
+  font-size: 0.72rem;
+  font-weight: 300;
+  letter-spacing: 0.01em;
+  opacity: 0.62;
+}
+
+.md-search__icon svg {
+  width: 1.05rem;
+  height: 1.05rem;
+}
+
+.md-footer-meta {
+  font-size: 0.68rem;
+}
