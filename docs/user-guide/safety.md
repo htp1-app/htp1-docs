@@ -2,7 +2,7 @@
 
 ## Safety Warnings and Guidelines
 
-Please read this entire manual before using this device, paying extra attention to these safety warnings and guidelines. Please keep this manual in a safe place for future reference.
+Please read this entire manual before using this device, paying extra attention to these safety warnings and guidelines. This guide is maintained online and may be updated over time. Bookmark it to ensure you always have access to the latest version.
 
 !!! warning "Safety warnings"
     - This device is intended for indoor use only.
