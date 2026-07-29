@@ -70,13 +70,9 @@ PCM streams.
 
 | Mode | Description |
 | --- | --- |
-| Auto | Recommended. Dolby streams specify their own dynamic range parameters, and Auto follows them. The subwoofer is not attenuated. |
-| On | The Dolby and DTS decoders apply their full dynamic range compression. The subwoofer is attenuated. |
-| Off | Dynamic range compression is disabled, giving the greatest contrast between loud and soft sounds. The subwoofer is not attenuated. |
-
-!!! note
-    Night Mode resets to Off after a restart. It does not carry over from your last listening
-    session.
+| Auto | Recommended. Adjusts automatically based on metadata in the program stream — Dolby streams specify their own dynamic range parameters, and Auto follows them. The subwoofer is not attenuated. |
+| On | Enables the available Dolby or DTS features to compress the dynamic range, and reduces the subwoofer level by 6 dB, making low-volume listening more comfortable. |
+| Off | Disables all such processing, including **Dialnorm** — dialog normalization, which adjusts overall volume based on a value embedded in the audio stream. This gives the greatest contrast between loud and soft sounds. The subwoofer is not attenuated. |
 
 ## Dialog Enhance
 
@@ -85,3 +81,8 @@ information, Dialog Enhance uses it directly. Otherwise it simply raises the cen
 most dialog comes from the center speaker.
 
 **Dialog Enhance** ranges from 0 (as authored) to 6, using a slider.
+
+!!! warning
+    Applying large boosts can result in digital clipping. Check the
+    [Peak Monitor](peak-monitor.md) if you raise the reference level or dialog enhancement
+    substantially.

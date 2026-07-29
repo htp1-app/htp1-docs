@@ -25,6 +25,14 @@ The Video card only appears if it is turned on in Personalize. Program Format an
 Format can also show the sample rate, if you have turned on "Display Audio Sample Rate on
 Homepage" in Personalize.
 
+## Header Icons
+
+The **gear** icon in the upper left (or the hamburger menu icon on mobile) opens the settings
+sidebar. In the upper right, the **information** button is where you update the system — it leads to
+the software version and update controls described in [System Status](system-status.md) and
+[Updates and Support](maintenance.md). The **question mark** beside it opens the on-device help for
+the current page.
+
 ## Top-Left and Top-Right Labels
 
 In desktop mode, you can show a label in the top-left and top-right corners of the page —

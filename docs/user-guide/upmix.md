@@ -16,10 +16,10 @@ override a native Atmos or DTS-X stream.
 
 | Upmixer | Description |
 | --- | --- |
-| Direct | The input stream is presented without modification. Appropriate for a stereo source you want to hear through the front speakers only. Whether the subwoofer is engaged depends on the bass management settings on the Speakers page. |
-| Native | HTP-1 uses whichever upmixer is native to the decode format. Dolby signals are processed with Dolby Surround, DTS signals with DTS Neural:X, and Auro-3D encoded signals are decoded. PCM, Atmos and DTS-X signals pass through unchanged. |
-| Dolby Surround | Dolby's own upmixing algorithm, an evolution of the older Pro Logic algorithms. It uses cues in the signal to route sound to the speaker set, including extracting material common to left and right into the center channel. Works on any signal of 8 channels or fewer. |
-| DTS Neural:X | DTS's own upmixing algorithm, an evolution of the older Neo algorithms, following the same kind of rules as Dolby Surround. Works on any signal of 8 channels or fewer. |
+| Direct | No upmixing algorithm is applied — decoded audio is played directly, with the upmixer off. All other processing (channel levels, bass management, tone control, loudness, PEQ) still applies. Program material is presented at its original sample rate. Whether the subwoofer is engaged depends on the bass management settings on the Speakers page. |
+| Native | HTP-1 uses whichever upmixer is native to the decode format. Dolby signals are processed with Dolby Surround, DTS signals with DTS Neural:X, and Auro-3D encoded signals are decoded. PCM sources receive no upmixing, and Auro-Matic cannot be applied to 192 kHz content. |
+| Dolby Surround | Dolby's own upmixing algorithm, an evolution of the older Pro Logic algorithms. It uses cues in the signal to route sound to the speaker set, including extracting material common to left and right into the center channel. It works with any combination of available speakers, though some channels may stay silent depending on the source — a mono input produces sound only from the center channel. It does not generate wide channels. |
+| DTS Neural:X | DTS's own upmixing algorithm, an evolution of the older Neo algorithms, following the same kind of rules as Dolby Surround. Neural:X natively outputs up to 12 channels (7.1.4). |
 | Auro-3D | Auro Technologies' Auro-Matic algorithm, again extracting common left/right material to the center channel. When upper speakers are present the effect is called Auro 3D; without upper speakers it becomes Auro 2D. Auro-Matic is not applied to 192 kHz content. |
 | Mono | Mixes the input down to mono and applies the same mix to every speaker. |
 | Stereo | Mixes the input down to stereo and applies the left and right channels to all left and right speakers respectively, with a mono mix routed to the center. |
@@ -27,6 +27,15 @@ override a native Atmos or DTS-X stream.
 !!! note
     Dolby Atmos and DTS-X streams play in their native format and cannot be requested or replaced
     by another upmixer, except by Mono or Stereo.
+
+## Sample Rates and Direct Mode
+
+**Direct** is the only mode that presents program material at its original sample rate, which makes
+it the mode to use for high sample rate content at 96 kHz or 192 kHz. Every other upmixer runs the
+signal through a high quality sample rate converter that reduces the output to 48 kHz (or 44.1 kHz).
+
+Dirac Live filters also limit the sample rate to 48 kHz. If you want to take advantage of high
+sample rates, disable Dirac Live filtering as well as choosing Direct.
 
 ## Show on Homepage
 
@@ -53,14 +62,13 @@ Selecting Auro-3D reveals three additional controls:
 ## Wide Synth
 
 Most source material does not include dedicated wide-channel content, even though Dolby Atmos can
-carry objects placed there. Dolby Surround does not produce wide channels, the DTS-X decoder and
-Neural:X upmixer produce only 12 channels, and Auro-3D does not produce wide signals either.
+carry objects placed there. Dolby Surround does not produce wide channels, and Neural:X outputs
+12 channels (7.1.4), so DTS:X configurations can provide upper front and rear channels but no top
+middle channels.
 
-**Wide Synth**, at the bottom of the page, applies to any of the upmixers above. When it is on, the
-wide speakers receive a mix of the front and side signals plus any wide content already present. It
-also applies to the top middle channels: with six upper speakers and no existing top-middle
-content, they receive a mix of the upper front and rear channels. The synthesized mix is attenuated
-by 6 dB relative to the channels it is drawn from.
+**Wide Synth** generates signals for the wide channels and/or the top middle channels when speakers
+are present but the decoded audio contains no signal for those channels.
 
-!!! note
-    Wide Synth is disabled in Direct mode.
+The synthesized signals are derived using principles based on Michael Gerzon's research. Wide Synth
+creates new channel content from adjacent channels — for example, the left wide channel is
+synthesized from the left and left surround channels.

@@ -1,7 +1,8 @@
 # Channel Levels
 
-Channel Levels sets a per-channel trim, from −12 to +12 dB in 0.25 dB steps, applied before both
-Dirac Live processing and bass management.
+Channel Levels sets a per-channel trim, from −12 to +12 dB in 0.25 dB steps, applied upstream of
+tone controls, loudness processing, PEQ, bass management and Dirac Live filters — so it does not
+interfere with calibrations or other signal processing.
 
 ![Channel Levels page showing the per-channel trim table](images/ui-balance.png)
 

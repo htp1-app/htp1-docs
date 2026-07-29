@@ -65,14 +65,21 @@ relationship between the two.
 
 ### Max. Digital Headroom
 
-Digital headroom is the cushion that protects against clipping when processing — Dirac Live, PEQ,
-tone controls — adds gain to the signal. As you turn the volume up, the HTP-1 first raises the
-analog volume; once that's maxed out, it starts raising digital gain instead. Turned down far enough,
-the same thing happens in reverse: digital gain is pulled back before the analog stage takes over.
-The **Max. Digital Headroom** setting controls how much of that digital gain is held in reserve.
+The HTP-1 uses a two-stage volume control. As you turn the volume up, it first raises the volume in
+the analog domain; once that reaches its limit, further increases are applied digitally. Turned down
+far enough, the same thing happens in reverse: digital gain is pulled back before the analog stage
+takes over. **Max. Digital Headroom** determines how many decibels are reserved in the digital
+signal for that second stage.
 
-The default is 12 dB. If your system adds a lot of gain from Dirac Live or PEQ — bass boost is the
-usual cause — increase the headroom so that gain has somewhere to go without clipping.
+The default is 12 dB. If the [Peak Monitor](peak-monitor.md) shows channels clipping, **reduce**
+Max. Digital Headroom until no further peaks occur — a smaller reserve limits how much digital gain
+the second stage is allowed to apply.
+
+!!! tip
+    If you want to be certain the digital volume stage is never used at all, set **Max. Volume** to
+    the negative value of **Max. Digital Headroom**, minus 1 dB. (An additional 1 dB of headroom is
+    already applied internally.) With the default 12 dB headroom, that means a Max. Volume of
+    −13 dB.
 
 | Control | Range | Default |
 |---|---|---|
@@ -84,4 +91,4 @@ headroom available, and how much digital headroom is currently available at the 
 !!! tip
     The [Peak Monitor](peak-monitor.md) is the fastest way to find out how much headroom you actually
     need. Play your loudest material with peak monitoring on — if any channel is clipping or close to
-    it, increase Max. Digital Headroom or lower Max. Output Level.
+    it, reduce Max. Digital Headroom until the peaks stop, or lower Max. Output Level.

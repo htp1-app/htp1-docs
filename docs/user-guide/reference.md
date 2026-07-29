@@ -24,9 +24,11 @@
 | Dimensions | 17.1" x 5.7" x 12.0" |
 
 !!! note
-    The wired network interface prefers a 100BASE-T (100 Mbps) connection. On some gigabit
-    switches it can fail to obtain an address by DHCP when cold-booted. If your HTP-1 doesn't come
-    up on the network after a cold start, try limiting its switch port to 100 Mbit/s.
+    In earlier system software builds the wired interface could fail to obtain an address by DHCP
+    when cold-booted on a gigabit switch port. This has been resolved in the latest software. On
+    an older build, unplugging the Ethernet cable briefly and reconnecting it usually prompts the
+    router to assign an address, and limiting the switch port to 100 Mbit/s also works. See
+    [Updates and Support](maintenance.md).
 
 ## Signal Processing Flow
 

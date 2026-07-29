@@ -33,10 +33,25 @@ divider and its own icon.
 ## If a Channel Clips
 
 Clipping means the digital signal ran out of headroom and was cut off — you'll hear it as distortion
-on loud passages. If Peak Monitor shows a channel clipping or consistently sitting in the amber zone:
+on loud passages. Ideally no signal should clip, that is, peak above 0 dB. If Peak Monitor shows a
+channel clipping or consistently sitting in the amber zone:
 
-- Lower **Max. Output Level**, or
-- Raise **Max. Digital Headroom**
+- Reduce **Max. Digital Headroom** until no further peaks occur, or
+- Lower **Max. Output Level**
 
 Both controls are on [Volume Setup](volume-setup.md). Play your loudest material while watching the
 meters, and adjust until peaks land close to 0 dBFS without crossing it.
+
+## Output Paths and Volume Control
+
+The two output paths use different volume control, which changes how you check for clipping:
+
+- The **XLR outputs** use analog volume control up to a digital headroom limit. XLR clipping can be
+  checked at any volume.
+- The seat shaker signal on the **Mix Out RCA** uses digital volume control. Its level changes with
+  master volume, so clipping is only displayed accurately when the master volume is set to the
+  loudest level you plan to use.
+
+!!! warning "Hearing safety"
+    To protect your hearing and your speakers, mute all speakers on the
+    [Calibration](calibration.md) page before setting headroom for the seat shaker RCA outputs.
