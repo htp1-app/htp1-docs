@@ -7,6 +7,11 @@ The coefficients of the PEQ filters are computed using the so-called "Robert Bri
 !!! note
     There can be differences in the definitions of Q in various audio systems.
 
+!!! warning "PEQ settings are global"
+    PEQ settings are global and affect **all** calibration slots. Any adjustment you make to the PEQ
+    while one slot is selected automatically applies to every other slot as well. Unlike user delay
+    and user trim, PEQ is not stored per slot.
+
 ## Turning PEQ On and Off
 
 The **PEQ** page heading shows **Parametric Equalization on** or **off**, along with the current placement — for example "PEQ pre". Use the button to turn PEQ on or off.
@@ -53,6 +58,10 @@ Each band has the following controls:
 An inline slider panel (the gear icon on each row) gives you frequency, gain and Q sliders with step buttons, if you prefer dragging to typing numbers.
 
 Channels or bands with active, non-zero settings are marked with an asterisk.
+
+!!! warning
+    Applying large EQ boosts can cause digital clipping. Check the [Peak Monitor](peak-monitor.md)
+    after adding significant gain.
 
 ## Channel Groups and Linking
 

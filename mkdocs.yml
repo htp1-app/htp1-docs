@@ -88,6 +88,7 @@ nav:
   - User Manual:
       - user-guide/index.md
       - Welcome: user-guide/welcome.md
+      - The Nature of the Project: user-guide/project.md
       - Safety and Regulatory: user-guide/safety.md
       - Getting Started:
           - Product Overview: user-guide/product-overview.md

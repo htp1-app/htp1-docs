@@ -1,5 +1,18 @@
 # Basic Setup
 
+!!! note "Check your software version early"
+    The HTP-1's software is still actively developed, and updates are installed by owners rather
+    than pushed automatically. Units in the field run a wide range of builds, and a unit that has
+    been sitting in a box — or in a rack — may be several years behind. Much of what this manual
+    describes, and several fixes to problems you might otherwise spend an evening chasing, only
+    exist in recent software.
+
+    If you are setting up an HTP-1 for the first time, plan on updating it. You can do that once
+    the unit is on the network and you can reach its web interface — see
+    [Update the Firmware](#update-the-firmware) below and
+    [Updates and Support](maintenance.md). For background on why the software keeps moving, see
+    [The Nature of the Project](project.md).
+
 ## System Requirements
 
 1. AC power
@@ -18,7 +31,7 @@ The best way to become familiar with the HTP-1 is to simply start using it! Befo
 4. Using a Cat5e or Cat6 Ethernet cable (not included), plug one end into the ETHERNET jack on the rear panel, then plug the other end into your Wi-Fi® router or Ethernet switch.
 
     !!! note
-        The wired network interface prefers a 100BASE-T (100 Mbps) connection. It can fail to obtain an IP address by DHCP when cold-booted on a gigabit port. If the HTP-1 will not come up with an address after a cold boot, configure the switch or router port it is connected to for 100 Mbit/s.
+        In earlier system software builds the wired network interface could fail to obtain an IP address if connected to a gigabit Ethernet port. This problem has been resolved in the latest software. If your unit fails to get an IP address by DHCP when cold-booted, you have a few options. Often unplugging the Ethernet cable for a few seconds and then plugging it back in will result in your router assigning an address. You can also configure the switch or router port it is connected to for 100 Mbit/s. When you have updated to the latest software you will not have this problem.
 
 5. Using an HDMI Cable (not included), plug one end into the input on your HDMI® display, then plug the other end into HDMI OUTPUT 1 on the rear panel. A "Premium High Speed" HDMI cable is specified for UHD/4K operation.
 
@@ -59,7 +72,7 @@ The [Connectivity](connectivity.md) chapter gives further information on Wi-Fi, 
 3. Following the boot steps above, boot up the HTP-1 and connect to its web interface.
 4. Click the **gear** icon in the top-left corner of the Home page to open settings, then choose **Network** from the sidebar (setup group). There will be a short delay as the network system is prepared. You should see your wired Ethernet connection described under **Current Settings**.
 5. Scroll down to the **Wi-Fi** section. Turn Wi-Fi on, and confirm DHCP is enabled. Under **Manage Wi-Fi Networks** you should see your local Wi-Fi networks listed.
-6. Choose a network (an SSID). Enter the password — there is an option to show it as you type. Click **Connect**. After a brief delay, the connection appears under **Configuration for Wi-Fi Network "<SSID>"** and is described as connected. The front panel of the HTP-1 should display the Wi-Fi address in the lower-right corner.
+6. Choose a network (an SSID). Enter the password — there is an option to show it as you type. Click **Configure Network**. After a brief delay, the network appears in the list of configured networks and is described as connected. The front panel of the HTP-1 should display the Wi-Fi address in the lower-right corner. (The **Connect**, **Disconnect** and **Forget** buttons in the configured-network list are used afterward, to manage a network you have already set up.)
 7. You can now remove the wired Ethernet connection. If necessary you can move the HTP-1 to its final location and continue with the audio and video connections.
 
 ## Update the Firmware

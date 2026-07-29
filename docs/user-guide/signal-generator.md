@@ -6,8 +6,15 @@ The HTP-1 provides a set of signal generator functions that can be quite helpful
 
 First choose a signal type from the **Signal Select** list. Then choose a channel from the **Speaker Select** list — the list of channels matches the speakers you have enabled on the speakers page. Then turn the signal generator on using the on/off button at the top of the page.
 
-!!! warning
-    The signal generator needs the upmixer set to **Direct** to work correctly. If it isn't, a warning appears on this page with a **Direct** button that sets it for you.
+The signal generator emulates an external (off-board) generator. Once enabled it remains active until
+you explicitly turn it off — it keeps running when you navigate to other configuration pages, such as
+**Calibration** or **PEQ**, and when you switch inputs.
+
+!!! note
+    The generator's output is routed through the full processing chain: Dirac Live room correction,
+    tone controls, loudness compensation, bass management, PEQ filters, and other signal processing
+    all apply to it. Keep this in mind when using the generator to take measurements — what you
+    measure includes whatever processing is currently active.
 
 !!! note
     The subwoofers are a special case. Their behavior is different depending on whether the HTP-1 bass manager or the Dirac Live bass manager is engaged. When the HTP-1 bass manager is engaged (and Dirac Live is not), the bass manager is turned off and each subwoofer receives an independent signal. You cannot generate independent subwoofer signals when the Dirac Live bass manager is engaged: it applies the crossover to the main channels and generates all of the subwoofers you have enabled. Subwoofer 1 sends signal to all subwoofers in that case.

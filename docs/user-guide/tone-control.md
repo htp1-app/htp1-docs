@@ -21,4 +21,11 @@ The following plots show the sort of adjustment range these controls achieve.
 
 ![Measured frequency responses for treble tone control settings at various boost and cut levels](images/p66-2.jpg)
 
+The bass tone control is especially useful for compensating for the wide variations in low-frequency
+content that often exist between different recordings.
+
 If enabled under Personalize, Bass and Treble can also be adjusted directly from the Home page, without opening this settings page.
+
+!!! warning
+    Applying excessive boost can cause digital clipping. Check the
+    [Peak Monitor](peak-monitor.md) if you use a large amount of bass or treble boost.

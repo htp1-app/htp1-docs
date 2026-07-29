@@ -10,9 +10,12 @@ The **Current Settings** table shows the wired connection's IP Address, Gateway,
 Cable is Connected or Disconnected, and the interface's MAC Address.
 
 !!! note
-    The wired network interface prefers to be on a 100BASE-T network. It can fail to get an IP
-    address by DHCP when it is cold-booted on a gigabit network. If you see this, some owners
-    configure their network switch to limit that port to 100 Mbit/s.
+    In earlier system software builds the wired network interface could fail to obtain an IP
+    address if connected to a gigabit Ethernet port. This has been resolved in the latest
+    software. If your unit fails to get an address by DHCP when cold-booted, unplugging the
+    Ethernet cable for a few seconds and plugging it back in will often prompt your router to
+    assign one. You can also limit the switch or router port to 100 Mbit/s. Updating to the latest
+    software removes the problem — see [Updates and Support](maintenance.md).
 
 Below Current Settings, **Configuration for Wired Network** lets you choose **DHCP** or a manual
 address. DHCP is typically used to automatically assign an IP address; turn it off to enter a static

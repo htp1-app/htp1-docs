@@ -37,7 +37,13 @@ When the badge reads **HTP-1**, two controls appear:
 | **LPF for LFE Channel** | 40–200 Hz, in steps of 10 | Sets the cutoff frequency of the low-pass filter applied to the LFE channel. |
 | **Reinforce Bass** | On / off | Routes the subwoofer signal also to large speakers. |
 
-**Reinforce Bass** is useful if you have Large (full-range) main speakers and want them to also carry some of the redirected bass energy, rather than sending it to the subwoofer alone.
+**Reinforce Bass** redirects low-frequency content from speakers configured as **Small** to those set
+as **Large**, so full-range mains carry some of the redirected bass energy rather than sending it to
+the subwoofer alone.
+
+With Reinforce Bass on, the subwoofer receives a low-pass filtered mix of all channels. The low-pass
+cutoff is set to the **highest crossover frequency among the Small speakers**. If every speaker is
+configured as Large, a default of 80 Hz is used.
 
 ## Speaker Size and Crossover
 

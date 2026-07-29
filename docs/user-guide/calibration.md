@@ -53,11 +53,25 @@ Each active speaker gets a row. Columns:
 | Total Trim | Calibration trim plus user trim. |
 | Mute Speaker | Mutes the speaker. Only shown when **Show Advanced Settings** is on. |
 
+Trim adjusts output levels, while delay compensates for differences in speaker distance based on the
+speed of sound — roughly one foot per millisecond, or 0.34 m/ms. A properly completed Dirac Live
+calibration sets optimal delay and trim automatically, so user delay and user trim should normally
+remain at zero afterward.
+
 !!! warning
     User delay and user trim are locked when a Bass Control (BC) or Active Room Treatment (ART)
     filter is loaded. Editing them here would work against what the filter is doing. Use the
     [Channel Levels](channel-levels.md) page instead to make a small, permanent level change under
     a BC or ART calibration.
+
+!!! warning "User delay and trim are reset to zero on transfer"
+    Delays and trims are set to zero during a Dirac Live calibration. When you open a saved Dirac
+    Live project and transfer a filter into a slot, any user-defined delays and trims in that slot
+    are therefore reset to zero as well. If you have hand-tuned values you want to keep, note them
+    down before transferring a filter.
+
+User delay and trim settings are stored independently with each slot, so you can keep different
+adjustments for each calibration.
 
 A speaker whose calibration doesn't match the current speaker layout is highlighted, and a row can
 also turn red if it carries a leftover nonzero delay or trim from before a BC or ART filter was
