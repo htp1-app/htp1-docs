@@ -1,32 +1,38 @@
 # Seat Shaker
 
-A seat shaker is a tactile transducer bolted to a chair or a riser under the seating. It turns
-low-frequency signal into motion you feel rather than sound you hear. The HTP-1 can route a
-dedicated signal to a shaker from its own output, separate from the subwoofer feed, with its own
-filtering, delay, gain and PEQ.
+A seat shaker — also called a tactile transducer, ButtKicker, or bass shaker — is bolted to a chair
+or to a riser under the seating. It turns low-frequency signal into motion you feel rather than
+sound you hear. The HTP-1 generates a dedicated seat shaker signal with its own content selection,
+filtering, delay, gain, trim and PEQ, and routes it either to an XLR output or to the Mix Out.
 
 ![Seat Shaker page showing the output and content buttons, response chart, and PEQ table](images/ui-seat-shaker.png)
 
 ## Output
 
-Choose where the seat shaker signal comes from.
+Choose where the seat shaker signal is sent.
 
 | Option | What it does |
 | --- | --- |
-| Off | The seat shaker is disabled. All other controls on this page are locked. |
-| Sub Out *n* | The first unused subwoofer channel becomes the seat shaker channel. The number shown updates automatically to the next available subwoofer slot. |
-| Mix Out | Sends a single summed mix to the shaker. |
-| Mix Out Diff | Sends a difference version of the mix to the shaker instead of a summed one. |
+| Off | No seat shaker signal is generated. A standard stereo mixdown of the input signal is sent to the Mix Out. |
+| Sub Out *n* | The seat shaker signal is routed to one of the XLR outputs. The number shown is the next available subwoofer slot. |
+| Mix Out | The seat shaker signal is sent to the Mix Out. Both outputs carry the same signal. |
+| Mix Out Diff | The seat shaker signal is sent to the Mix Out. The left and right outputs carry the same signal with inverted polarity. |
 
 !!! note
-    The seat-shaker channel is highlighted on the Speaker Map on the Speakers page, and again in
-    the channel list on the Peak Monitor page, so you can always see which physical output it has
-    claimed.
+    When a **Sub Out** is selected, that output is highlighted in yellow on the Speaker Map on the
+    [Speakers](speaker-setup.md) page, so you can always see which physical output the seat shaker
+    has claimed.
+
+!!! note
+    While Output is set to **Off**, every other control on this page is locked. The page still
+    displays the settings it will use — the Content selection stays lit, for example — but nothing
+    can be changed until an output other than Off is chosen.
 
 ## Mute
 
-The **Mute** button silences the seat shaker output without changing the Output selection. It is
-only available once an output other than Off is chosen.
+**Mute** silences the seat shaker without changing the Output selection, so you can quickly compare
+how the system sounds with and without the seat shaker. It becomes available once an output other
+than Off is chosen.
 
 ## Content
 
@@ -34,9 +40,9 @@ Choose what the seat shaker plays.
 
 | Option | What it does |
 | --- | --- |
-| Downmix | The shaker plays a downmix of the full program content. |
-| LFE Only | The shaker plays only the LFE (subwoofer) channel. |
-| Auto | The HTP-1 chooses between downmix and LFE content automatically. |
+| Downmix | The seat shaker receives a downmix of all input channels, including the LFE channel. |
+| LFE Only | The seat shaker receives only the LFE channel. |
+| Auto | The seat shaker receives the LFE signal when it is present, and automatically reverts to an all-channel mixdown when the source material has no dedicated LFE channel. |
 
 ## Response Chart
 
@@ -62,12 +68,16 @@ Each band has the following controls:
 Click the gear icon at the right of a band's row to expand it into sliders with step buttons, for
 finer adjustment than the number fields allow.
 
+!!! warning
+    Large EQ boosts can cause digital clipping. Watch the level with **Peak Monitoring** after
+    adding gain to any band.
+
 ## Presets
 
-Six preset slots store a complete seat shaker setup: content, LPF, delay, LFE gain, trim, phase,
+Six preset slots store a complete seat shaker setup: content, LPF, delay, LFE gain, trim, polarity,
 band count, and all PEQ bands.
 
-- Click a preset number to load it.
+- Select **Preset 1**–**6** to recall a stored setup.
 - **Save** asks which of the six slots to save the current settings into.
 - **Clear** removes the saved data from the active preset and returns the page to defaults.
 
@@ -83,26 +93,47 @@ can make it buzz — out of the signal.
 ## Delay
 
 Adds up to 50 ms of delay to the seat shaker channel, in addition to any speaker distance
-compensation, so the tactile effect can be time-aligned with the rest of the system. The default is
+compensation, so the tactile effect is aligned in time with the rest of the system. The default is
 25 ms.
 
 ## LFE Gain
 
 Sets the gain applied to the LFE content feeding the shaker, from 0 to 12 dB in 0.5 dB steps. The
-default is 10 dB.
+default is 10 dB: LFE is typically recorded 10 dB lower than the main channels, so it is boosted by
+10 dB to match their level.
 
 ## Trim
 
-A final level trim for the seat shaker output, from −24 to +6 dB. The default is 0 dB.
+Adjusts the overall level of the seat shaker signal, from −24 to +6 dB. The default is 0 dB.
 
-## Other Controls
+## Loudness
 
-Two more two-state buttons on this page are worth knowing about:
+**Loudness Included / Excluded** chooses whether loudness compensation is applied to the seat shaker
+signal, boosting bass as volume decreases. It follows the settings configured on the
+[Loudness](loudness.md) page.
 
-- **Loudness Included / Excluded** — chooses whether loudness compensation (see
-  [Loudness](loudness.md)) is applied to the seat shaker signal.
-- **Polarity Normal / Inverted** — flips the polarity of the seat shaker signal, useful if the
-  transducer's motion feels out of phase with what is on screen.
+## Polarity
 
-**Peak Monitoring** turns on a live level meter for the seat shaker channel, with a peak-hold
-indicator and a **Clear Peak** button to reset it.
+**Polarity Normal / Inverted** inverts the polarity of the seat shaker signal — effectively the same
+as swapping the input wires on your seat shaker.
+
+## Peak Monitoring
+
+**Peak Monitoring** lets you watch the seat shaker signal level to prevent clipping. The indicator
+turns red when the signal exceeds 0 dBFS, showing that clipping is occurring. Lower the **Trim**
+setting to keep the signal below this threshold for optimal performance without distortion.
+
+## Setting Levels and Headroom
+
+The two output paths use different volume control, which changes how you check for clipping:
+
+- The **XLR outputs** use analog volume control up to a digital headroom limit. XLR clipping can be
+  checked at any volume.
+- The seat shaker signal on the **Mix Out RCA** uses digital volume control. Its level changes with
+  master volume, so clipping is only displayed accurately when the master volume is set to the
+  loudest level you plan to use.
+
+!!! warning "Hearing safety"
+    To protect your hearing and your speakers, mute all speakers on the
+    [Calibration](calibration.md) page before setting headroom for the seat shaker RCA outputs.
+    See also [Safety](safety.md).
