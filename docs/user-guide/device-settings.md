@@ -5,9 +5,6 @@ and display behavior, the clock, and the Danger Zone tools used for troubleshoot
 
 ![Device Settings page](images/ui-device-settings.png)
 
-Bass management now lives on [Speakers](bass-management.md), and lip-sync delay is a per-input
-control on [Inputs](inputs.md) — neither is on this page any more.
-
 ## Unit Name
 
 **Unit Name** is used for all other services the HTP-1 provides. Set it once. Spaces and capital
@@ -16,9 +13,7 @@ using Dirac Live, Roon, and Bluetooth.
 
 ## Web UI IP Address
 
-**Web UI IP address** tells this web browser which HTP-1 to connect to. Enter the unit's IP address
-or hostname and click **Save**. This is remembered on this device only — it doesn't change anything
-on the HTP-1 itself, and other browsers or devices need their own entry.
+**Web UI IP address** tells your web browser which HTP-1 to connect to. Enter the unit's IP address or hostname and click **Save**. This setting is stored only in the web browser you're using—it does not change any settings on the HTP-1 itself. Make sure the address is correct; otherwise, the Web UI will not be able to connect.
 
 ## Demo Mode
 
@@ -34,11 +29,9 @@ unit.
 
 **Fast Start** and **Video Passthrough** are two-state switches.
 
-With Fast Start off, the unit drops to a very low power state when off. CEC features such as
-automatic power-on won't work in that state, and the system takes longer to start back up. Fast
-Start keeps the unit ready to start quickly.
+With **Fast Start** off, the HTP-1 enters a very low-power standby mode. In this state, CEC features such as automatic power-on are unavailable (though trigger inputs still work), and the unit takes longer to start. With **Fast Start** on, the HTP-1 remains ready to power on much more quickly.
 
-Video Passthrough only works when Fast Start is on — it lets video pass through the HTP-1 while the
+**Video Passthrough** only works when Fast Start is on — it lets video pass through the HTP-1 while the
 unit itself is off.
 
 ## Display
@@ -63,6 +56,5 @@ The Danger Zone holds tools for troubleshooting and reset. Each asks you to conf
 | Factory Reset | Resets all settings to factory defaults and reboots the unit automatically. Network settings are left unchanged. |
 
 !!! warning
-    Factory Reset deletes your Dirac Live calibrations, not just your other settings. Export a
-    backup on [Configs](configs.md) before you use it if you want to keep your current setup or
-    calibrations.
+    Factory Reset also deletes your Dirac Live calibrations, not just your other settings. Export a
+    backup on [Configs](configs.md) before you use it if you want to keep your current setup.
