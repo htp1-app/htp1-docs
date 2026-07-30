@@ -61,7 +61,7 @@ Complete the basic setup first — be able to play sound through your speaker se
    restores normal control.
 7. Set the volumes for calibration. The volume control on the left side of the Dirac Live screen
    matches the one on the remote control — you can adjust it with the remote. The app sets the
-   volume initially to -35 dB.
+   volume initially to -34 dB.
 
     ![Dirac Live app volume calibration screen with the master volume control on the left](images/p51-1.jpg)
 
