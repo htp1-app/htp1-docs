@@ -2,9 +2,13 @@
 
 ## Speaker Configurations
 
-A speaker configuration (also called a listening mode) is described by three numbers and an optional letter. The first field is the number of speakers in the main listening level. These speakers would be arranged at the ear level of a seated listener. The second field describes the number of subwoofers. The third field describes the speakers above the listener. These are referred to as height speakers. For example, 5.1.4h indicates that there are 5 main level speakers (front left, front right, center, and left and right side surround) with 1 subwoofer, and 4 height (DTS-X) speakers. The 'h' indicates that the height speakers are mounted high on the wall, as opposed to on the ceiling. A 7.1.4h system would add two additional surround speakers at the back of the listening area. A 9.1.4h system would have two additional "wide" surround sound speakers. See the following sections for examples of various speaker configurations.
+A **speaker layout** is described by three numbers in the form **x.y.z**. The first number (**x**) indicates the number of ear-level speakers arranged around the listening position. The second number (**y**) indicates the number of subwoofers in the system. The third number (**z**) indicates the number of height speakers.
 
-It's common to describe speaker configurations with no upper speakers using only two fields. For example, 5.1 is the same as 5.1.0.
+For example, a **5.1.4** layout consists of five ear-level speakers (Front Left, Center, Front Right, Surround Left, and Surround Right), one subwoofer, and four height speakers. A **7.1.4** layout adds a pair of rear surround speakers, while a **9.1.4** layout also includes a pair of front wide speakers.
+
+When describing the playback system, the HTP-1 uses the second number to indicate the number of configured subwoofers. This differs from Dolby's conventional notation, where the **.1** refers to the single LFE (Low Frequency Effects) channel in the source audio. Dolby soundtracks, for example, contain a single LFE channel, which is processed by the bass management system together with low-frequency content redirected from the other speakers. Depending on the speaker layout and bass management settings, this bass may be reproduced by one or more subwoofers, the full-range speakers, or both. **When referring to the decoded input signal, however, the HTP-1 follows the standard Dolby notation, where the second number represents the number of LFE channels in the source.**
+
+Speaker layouts without subwoofers or height speakers are commonly written using fewer fields. For example, **5.0** is equivalent to **5.0.0**, and **5.1** is equivalent to **5.1.0**.
 
 The **Speakers** page (`/#/settings/speakers` in the sidebar) is a great reference for understanding various speaker layouts, and is where you enable speakers and set their size and crossover. See [Speaker Setup](speaker-setup.md) for the full walkthrough.
 
@@ -21,7 +25,7 @@ The badge reads **DIRAC LIVE** whenever the loaded Dirac Live filter is a Bass C
 Next to the badge is the **Dirac Live** button group, a three-state control: **Off**, **Bypass**, and **On**. When the active filter slot holds a Dirac Live Bass Control, Bass Management, or ART filter and Dirac Live is **On**, speaker size and crossover cannot be changed on the Speakers page — those settings live inside the Dirac Live app instead. Turn Dirac Live off or set it to Bypass to unlock size and crossover editing here.
 
 !!! note
-    Dirac Live filters come in four types: **RC** (Room Correction), **BM** (Bass Management), **BC** (Bass Control), and **ART** (Active Room Treatment). RC filters leave the HTP-1's own bass management and speaker controls editable. BM, BC, and ART filters take over bass management and lock the affected controls while Dirac Live is on.
+    Dirac Live filters come in four types: **RC** (Room Correction), **BM** (Bass Management), **BC** (Bass Control), and **ART** (Active Room Treatment). RC filters use the HTP-1's own bass management and therefore leave speaker controls editable. BM, BC, and ART filters take over bass management and lock the affected controls while Dirac Live is on.
 
 ### The Current Layout Readout and Dirac Filter Mismatch
 
@@ -34,7 +38,7 @@ Each Dirac Live filter slot is calibrated for a specific speaker layout. If the 
 Rows for the mismatched channels are highlighted in the layout table so you can see exactly which speakers have no correction applied. When you open **Edit Speaker Layout** to change speakers, the dialog also lists which layouts currently have a matching Dirac Live filter available, so you can tell in advance whether a change will leave you uncalibrated.
 
 !!! note
-    Most on-page guidance boxes, including this one, can be dismissed permanently. If you don't see the text described here, you (or a previous user) may have already dismissed it.
+    Most on-page guidance boxes, including this one, can be dismissed permanently. If you don't see the text described here, you (or a previous user) may have already dismissed it. Dismissed notices can be restored from the **Personalize** page.
 
 ## Speaker Location Diagrams
 
@@ -101,7 +105,9 @@ The HTP-1 can support up to 16 output channels: up to 9 main level channels, 6 u
 If you try to enable more speakers than the current allocation allows, the Speakers page disables the toggle and explains why with a tooltip, most commonly *"A maximum of 16 speakers is allowed."* Note that this limit is checked at 15 speakers, not 16, for any paired left/right group — a stereo pair can't be the thing that pushes you over the limit, so the toggle disables one speaker pair earlier than you might expect. Center channel and subwoofers are each checked at the full 16.
 
 !!! note
-    If you use a **seat shaker** (see [Bass Management](bass-management.md#seat-shaker)), it consumes one of the 16 output channels. It appears in the speaker layout table with a couch icon and no size/crossover controls, and is highlighted yellow — not green — on the Speaker Map. Count it against the 16-channel total when planning a large layout.
+    If you use a **seat shaker** (see [Bass Management](bass-management.md#seat-shaker)), it normally consumes one of the 16 available output channels. It appears in the speaker layout table with a couch icon and no size or crossover controls, and is highlighted yellow—not green—on the Speaker Map. Count it against the 16-channel total when planning a large layout.
+
+    Alternatively, the **Mix Out** RCA outputs can be configured as the seat shaker output. In this mode, the seat shaker does **not** consume one of the 16 XLR output channels, allowing all 16 XLR outputs to remain available for speakers.
 
 The speakers in the main and upper levels are restricted to the following configurations:
 
@@ -122,12 +128,12 @@ The upper level table on the Speakers page is named **Upper Speaker Outputs**, w
 - **L/R Top Front** and **L/R Front Height** are mutually exclusive — enabling one requires the other to be off.
 - **L/R Top Rear** and **L/R Rear Height** are mutually exclusive in the same way.
 - **L/R Top Middle** requires Center or L/R Rear Surround to already be enabled.
-- If L/R Top Front or L/R Front Height is enabled, then either L/R Surround must be enabled, or L/R Top Middle must be disabled.
+- If **L/R Top Front** or **L/R Front Height** is enabled, then either L/R Surround must be enabled, or L/R Top Middle must be disabled.
 - **L/R Rear Height** and **L/R Top Rear** each require L/R Top Front or L/R Front Height to already be enabled.
 
 The HTP-1 can support many different configurations of upper speakers. The upper speakers can be "high," which are mounted on the wall, or "top," which are on the ceiling firing down.
 
-Dolby® Enabled speakers are also supported. Dolby Enabled speakers have two independent drivers with two independent inputs. One of the drivers points up, so that sound will reflect off the ceiling and sound like a Top speaker. Dolby Enabled speakers are convenient in that they are integrated with typical front firing (Front or Surround) speakers. They work best when the ceiling is flat, reflective to sound and no greater than 10 feet in height. Only **top** speaker groups can be set to Dolby Enabled; high-mounted groups cannot.
+Dolby® Atmos Enabled speakers are also supported. Dolby Atmos Enabled speakers have two independent drivers with two independent inputs. One of the drivers points up, so that sound will reflect off the ceiling and sound like a Top speaker. Dolby Atmos Enabled speakers are convenient in that they are integrated with typical front firing (Front or Surround) speakers. They work best when the ceiling is flat, reflective to sound and no greater than 10 feet in height. Only **top** speaker groups can be set to Dolby Atmos Enabled; high-mounted groups cannot.
 
 Dolby content is typically authored with the upper level speakers in the ceiling. DTS® and Auro-3D® content is typically authored with the speakers High on the walls. The HTP-1 remaps the source material to match the user-defined speaker configuration. The following table explains the upper level speaker options:
 
@@ -142,7 +148,13 @@ Dolby content is typically authored with the upper level speakers in the ceiling
 | **6 High**: front and rear are high on the wall | The signal for the upper middle pair is actually the "top middle" for Dolby, so the pair is separated more widely than Dolby suggests. But this is best for Auro-3D®. See [Top Middle vs High Side](#top-middle-vs-high-side). |
 | **6 Mixed**: top middle plus front high, rear top or front top and rear high | Might be a good compromise with high fronts for Auro and top rears for Dolby. |
 
-The status display will differentiate between "top" and "high" by appending an "h" when the uppers are high. The modifiers "/" and "\" are used to indicate the mixed configurations. "Top" is higher than "high" so "/" implies top in the rear and high in front.
+The status display uses suffixes to indicate the type of height speaker layout:
+
+* **t** – Top Front, or Top Front and Top Rear speakers.
+* **b** – Top Front and Rear Height speakers.
+* **s** – Front Height and Top Rear speakers.
+
+These suffixes distinguish mixed height speaker layouts from standard top speaker layouts.
 
 The setup allows many choices so you can configure the decoders to drive the speakers that you have. But a few configurations are preferred:
 
