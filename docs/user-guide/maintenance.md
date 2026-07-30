@@ -17,7 +17,7 @@ you rely on a feature that could be affected.
 Click **Open History page** on the System Status page. This opens a separate page listing
 available software releases.
 
-Releases on the **master** branch are recommended for most users. **preview** releases are also
+Releases on the **master** branch are recommended for most users. **Preview**, **Beta** und **Release Candidate** releases are also
 listed; these are newer builds still being tested, and are meant for owners who want to help find
 problems before a release reaches master. Choose a release from the list to install it. You will
 be asked to confirm before the update starts.
@@ -95,5 +95,4 @@ link. This opens a form hosted on the unit at `http://<your-htp1-ip>/feedback`.
 ### On-Device Help
 
 Every page has a **Help** entry in the sidebar, and a "?" icon that jumps straight to the section
-for the page you're on. Help also links to the full User Guide, the User Guide Addendum, and the
-Front Panel Manual as PDFs, all served by the unit itself.
+for the page you're on.
