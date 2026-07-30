@@ -248,7 +248,8 @@ for a permanent trim adjustment under either filter type.
 
 Room Correction (RC) and Bass Management (BM) are included with the HTP-1. Bass Control (BC) and
 Active Room Treatment (ART) require separate licenses purchased from Dirac
-(<https://live.dirac.com/home-audio/>); if you already own a BC license it also works with ART.
+(<https://www.dirac.com/products/monoprice-htp-1-monolith>); if you already own a BC license it
+also works with ART.
 
 A more comprehensive overview of Dirac Live ART™ is available at
 <https://www.dirac.com/live/art-technology/>.
