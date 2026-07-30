@@ -10,7 +10,7 @@ move it in, and how its output level is matched to your amplifier.
 
 **Power On Volume** sets the master volume the HTP-1 comes up at when it turns on, from −100 to 0 dB.
 
-**Mix Out Power On Volume** does the same for the Mix Out (secondary) output, which has its own
+**Mix Out Power On Volume** does the same for the Mix Out (Zone 2) output, which has its own
 independent volume. Set it separately if you use Mix Out for a zone that should come up at a
 different level than the main output.
 
@@ -27,14 +27,9 @@ you've decided are sensible.
 
 ## Output Level
 
-The **Max. Output Level** sets the upper limit of the analog volume control, in Vrms. It is designed
-to help match the HTP-1's output to your amplifier's sensitivity — the input level, in volts, that
-drives your amplifier to full power.
+The **Max. Output Level** sets the maximum analog output level, in Vrms. It is designed to match the HTP-1's maximum output to your amplifier's input sensitivity—the input voltage required to drive the amplifier to full power.
 
-If the HTP-1's maximum output is higher than your amplifier needs, you lose fine control at the top
-of the volume range: most of your usable range is crammed into a few dB at the very end of the dial.
-Setting the Max. Output Level closer to what your amplifier actually requires spreads the volume
-control across its full range and makes the level easier to set precisely by ear.
+If the maximum output is set much higher than your amplifier requires, the upper end of the volume range becomes less usable because small volume changes produce relatively large changes in sound level. Setting the Max. Output Level closer to your amplifier's actual input sensitivity spreads the usable range more evenly, making volume adjustments easier and more precise.
 
 | Control | Range | Default button |
 |---|---|---|
@@ -53,27 +48,15 @@ Monitor controls described below.
 
 ### Zero Point
 
-By default, the master volume is shown in dB relative to full scale, so 0 dB is the loudest the
-system can go. **Zero Point** shifts what number is displayed for that same physical volume — some
-owners prefer the displayed number to reflect the headroom they've built into their system rather
-than dB full scale. It only changes what's shown on the front panel and in the UI; it does not
-change the actual output level.
+By default, the master volume is displayed using the HTP-1's standard volume scale. **Zero Point** applies an offset to that displayed value, allowing you to choose which listening level appears as 0 dB. This changes only the numbers shown on the front panel and in the web UI; it does not affect the actual output level or internal master volume.
 
-Zero Point ranges from −100 to +22 dB, with a **Default** button, and the advanced section shows
-both the current internal master volume and the current display volume so you can see the
-relationship between the two.
+Zero Point ranges from −100 to +22 dB and includes a **Default** button. The advanced section displays both the internal master volume and the displayed volume so you can see how the offset is applied.
 
-### Max. Digital Headroom
+**Max. Digital Headroom**: The HTP-1 uses a two-stage volume control. Volume is first increased in the analog domain. Once the configured maximum analog output level is reached, any further increase is applied digitally. **Max. Digital Headroom** determines how many decibels are reserved in the digital signal for this second stage.
 
-The HTP-1 uses a two-stage volume control. As you turn the volume up, it first raises the volume in
-the analog domain; once that reaches its limit, further increases are applied digitally. Turned down
-far enough, the same thing happens in reverse: digital gain is pulled back before the analog stage
-takes over. **Max. Digital Headroom** determines how many decibels are reserved in the digital
-signal for that second stage.
+If you want to ensure that the digital volume stage is never used, set **Max Volume** to the negative value of **Max Digital Headroom**, minus 1 dB (an additional 1 dB of headroom is already applied internally).
 
-The default is 12 dB. If the [Peak Monitor](peak-monitor.md) shows channels clipping, **reduce**
-Max. Digital Headroom until no further peaks occur — a smaller reserve limits how much digital gain
-the second stage is allowed to apply.
+Use the **Peak Monitor** to determine the smallest **Max. Digital Headroom** value that avoids clipping. Reducing the setting minimizes the amount of reserved headroom and therefore maximizes the available analog volume range.
 
 !!! tip
     If you want to be certain the digital volume stage is never used at all, set **Max. Volume** to
@@ -89,6 +72,4 @@ The page also shows two live readouts: the maximum volume that still leaves the 
 headroom available, and how much digital headroom is currently available at the present volume.
 
 !!! tip
-    The [Peak Monitor](peak-monitor.md) is the fastest way to find out how much headroom you actually
-    need. Play your loudest material with peak monitoring on — if any channel is clipping or close to
-    it, reduce Max. Digital Headroom until the peaks stop, or lower Max. Output Level.
+    The [Peak Monitor](peak-monitor.md) is the fastest way to determine the optimum **Max. Digital Headroom** setting. Play your loudest material with Peak Monitor enabled and reduce **Max. Digital Headroom** until no channels clip.
