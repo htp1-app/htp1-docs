@@ -22,7 +22,7 @@ Three switches control extra detail on the Home page:
 
 !!! note
     "Display Mix Out Volume on Homepage" is unavailable when the Seat Shaker is using the
-    Mix Out as its content source.
+    Mix Out.
 
 ## Shortcuts
 
@@ -37,7 +37,7 @@ Shutdown, Sleep, Restart, and Cancel.
 ## Homepage Modes
 
 Choose which buttons appear in the Home page's Modes row: Dirac Live, PEQ, Tone Control,
-Tone Control - Bass, Tone Control - Treble, Loudness, Dialog Enhance, Night, Wide Synth, and
+Tone Control - Bass, Tone Control - Treble, Loudness, Dialog Enhance, Night Mode, Wide Synth, and
 Input Delay (lip-sync).
 
 ## Homepage Dirac Live Slots
