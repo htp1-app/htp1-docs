@@ -1,7 +1,7 @@
 # Video Features
 
 The video system of the HTP-1 supports HDMI 2.0b and HDCP 2.3 on all ports.
-<!-- verify: HDMI/HDCP versions against current HDMI module firmware -->
+
 It is the job of the HDMI "repeater" inside the HTP-1 to pass video according to the rules of HDMI
 while extracting the audio for local decoding. It has two HDMI output ports that output the same
 content, so the current HDMI input's video is sent to both output ports. During normal operation,
