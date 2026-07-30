@@ -41,19 +41,13 @@ is off. When you turn it on, all five CEC options should start out enabled — l
 unless a specific device on your CEC network needs one of them disabled. For example, you might
 disable Allow Input changes if a source doesn't handle it well.
 
-Next, make sure CEC and ARC are turned on for your TV, if they aren't already. These settings may go
-by other names on your TV, such as "HDMI control" — there are too many variants to list them all. The
-ARC on/off setting is often found under the TV's Speaker or Audio settings; many TVs let you choose
-between TV Speakers and ARC/HDMI.
+Next, make sure CEC and ARC/eARC are enabled on your TV. On many TVs, CEC is marketed under a vendor-specific name rather than "CEC". Common examples include **Anynet+** (Samsung), **Simplink** (LG), **BRAVIA Sync** (Sony), **VIERA Link** (Panasonic), **EasyLink** (Philips), **Aquos Link** (Sharp), and **T-Link** (TCL). Other manufacturers simply call it **HDMI Control** or **HDMI-CEC**.
+
+Then, in the TV’s **Speaker** or **Audio Output** settings, select the option that sends audio to the HTP-1 instead of using the TV speakers. Depending on the TV, this option may be called **Receiver**, **Audio System**, **HDMI ARC**, or **eARC**.
 
 ### Alternate TV Input
 
-If your TV does not support ARC/eARC, or you need to connect an HTP-1 HDMI output to a TV input that
-doesn't support ARC/eARC, use **Alternate TV Input** (in the CEC Options table on the Inputs page) to
-tell the HTP-1 which of its own inputs carries TV audio instead. Associating one of these inputs with
-the TV lets the HTP-1 know where to pick up audio when it's told, over CEC, to do so. If you use an
-alternate TV input, be sure to run a cable from the TV's audio output to whichever HTP-1 input you
-select here.
+If ARC/eARC is unavailable, you can send the TV’s audio to another HTP-1 input instead. Connect the TV’s audio output to an HTP-1 input, then select that input as **Alternate TV Input** in the CEC Options table on the Inputs page. When the TV requests audio playback over CEC, the HTP-1 will use this input.
 
 ### TV Audio Priority
 
@@ -64,36 +58,10 @@ which of the three is actually in use is shown as **TV Sound Source** on the
 
 ### System Audio
 
-CEC has a feature called System Audio. When System Audio is on, the amplifier (the HTP-1) is asked to
-render audio for the system. When off, the TV is asked to render it instead. The HTP-1 always turns
-System Audio on when it first powers on, and tries to work out where it should pick up audio from: if
-there is an active source elsewhere in the system, it configures itself to pick up audio from that
-device; if it can't find one, it stays on the last input used.
+CEC includes a feature called **System Audio** that determines whether the TV or the HTP-1 plays the system's audio. When System Audio is on, the HTP-1 is the active audio device. When it is off, the TV uses its own speakers instead.
 
-Most TVs let you choose which device renders audio (such as TV Speakers or Amp/Receiver). When you
-deselect the HTP-1 as the audio renderer, the TV sends a command that turns System Audio off. The
-HTP-1 then stops rendering audio and configures the HDMI board to pass audio straight through from
-its inputs to its outputs, while the EDIDs it presents are updated with the TV's own audio
-capabilities so your sources hand it audio it can play.
+When the HTP-1 powers on with CEC enabled, it requests that System Audio be enabled and automatically selects the appropriate audio source. If no active source is found, it remains on the last input used.
 
-To get the HTP-1 rendering audio again, you have two options:
+Most TVs let you choose between **TV Speakers** and an external **Receiver** or **Audio System**. Selecting the TV speakers turns System Audio off, causing the TV to play audio through its own speakers. Selecting the external receiver turns System Audio back on and returns audio playback to the HTP-1.
 
-- Use the TV's speaker settings to select the amplifier again. The TV then sends a command turning
-  System Audio back on and tells the HTP-1 where to pick up audio from.
-- Select an audio-only source on the HTP-1, such as Coax, Optical, or USB. This also turns System
-  Audio back on.
-
-<!-- verify: whether the front panel or web UI shows any "TV Audio" indicator while System Audio is off -->
-
-## Troubleshooting Connections
-
-### Safari Browser
-
-Loading the Web GUI in Safari can fail. Workarounds:
-
-- Turn off content blockers (Safari > Settings > Websites > Content Blockers > Off) and iCloud
-  Private Relay (System Settings > iCloud > Private Relay > Off), then reload the Web GUI.
-- On the [Device Settings](device-settings.md) page, set the **Web UI IP address** field to a hostname (e.g.
-  `htp-1`) instead of an IP address, and save. The hostname may include only letters (a–z,
-  case-insensitive), numbers (0–9), and hyphens (-). Use this hostname in the address bar instead of
-  the numeric IP address.
+You can also re-enable System Audio by selecting an audio-only source on the HTP-1, such as **Coax**, **Optical**, or **USB**.
