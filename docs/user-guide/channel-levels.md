@@ -6,9 +6,9 @@ interfere with calibrations or other signal processing.
 
 ![Channel Levels page showing the per-channel trim table](images/ui-balance.png)
 
-Because this trim sits upstream of Dirac Live, it's the right place to make a small, permanent level
-change — for example, lifting the center channel a little for dialog. Adjusting it here works with
-the room correction rather than against it, unlike a change made after calibration.
+Because this trim sits upstream of Dirac Live, it's the right place to make level
+changes — for example, lifting the center channel a little for dialog. Adjusting it here works with
+the room correction rather than against it, unlike a speaker level change made after calibration.
 
 If you have a seat shaker channel, it is marked in the table.
 
