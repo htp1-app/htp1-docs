@@ -54,14 +54,12 @@ Zero Point ranges from −100 to +22 dB and includes a **Default** button. The a
 
 **Max. Digital Headroom**: The HTP-1 uses a two-stage volume control. Volume is first increased in the analog domain. Once the configured maximum analog output level is reached, any further increase is applied digitally. **Max. Digital Headroom** determines how many decibels are reserved in the digital signal for this second stage.
 
-If you want to ensure that the digital volume stage is never used, set **Max Volume** to the negative value of **Max Digital Headroom**, minus 1 dB (an additional 1 dB of headroom is already applied internally).
-
 Use the **Peak Monitor** to determine the smallest **Max. Digital Headroom** value that avoids clipping. Reducing the setting minimizes the amount of reserved headroom and therefore maximizes the available analog volume range.
 
 !!! tip
-    If you want to be certain the digital volume stage is never used at all, set **Max. Volume** to
-    the negative value of **Max. Digital Headroom**, minus 1 dB. (An additional 1 dB of headroom is
-    already applied internally.) With the default 12 dB headroom, that means a Max. Volume of
+    If you want to ensure the digital volume stage is never used at all, set **Max. Volume** to the
+    negative value of **Max. Digital Headroom**, minus 1 dB (an additional 1 dB of headroom is
+    already applied internally). With the default 12 dB headroom, that means a Max. Volume of
     −13 dB.
 
 | Control | Range | Default |

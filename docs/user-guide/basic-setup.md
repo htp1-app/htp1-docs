@@ -25,7 +25,7 @@
 
 The best way to become familiar with the HTP-1 is to simply start using it! Before delving into more advanced topics, we will connect one HDMI® source, an HDMI display, and a power amplifier in stereo 2.0.0 mode. Perform the following steps to connect these devices. The internal signal generator can also be used as a test source with no external source.
 
-1. Prepare a location for the HTP-1. Ensure that it is not in an enclosed cabinet, that it has at least 3" of space around and above the unit, and that it is in a well-ventilated area to ensure sufficient cooling airflow. The HTP-1 can operate entirely from a Wi-Fi link, but it is best to connect to a wired Ethernet first and use that connection to configure the Wi-Fi network. If your final location does not include a wired Ethernet cable, then see the note below on [Initial Wi-Fi Setup](#initial-Wi-Fi-setup).
+1. Prepare a location for the HTP-1. Ensure that it is not in an enclosed cabinet, that it has at least 3" of space around and above the unit, and that it is in a well-ventilated area to ensure sufficient cooling airflow. The HTP-1 can operate entirely from a Wi-Fi link, but it is best to connect to a wired Ethernet first and use that connection to configure the Wi-Fi network. If your final location does not include a wired Ethernet cable, then see the note below on [Initial Wi-Fi Setup](#initial-wi-fi-setup).
 2. Ensure that all equipment to be connected is powered off and unplugged from its power source.
 3. Connect the included Bluetooth®/Wi-Fi® Antenna to the antenna jack on the rear panel.
 4. Using a Cat5e or Cat6 Ethernet cable (not included), plug one end into the ETHERNET jack on the rear panel, then plug the other end into your Wi-Fi® router or Ethernet switch.
@@ -49,9 +49,9 @@ The best way to become familiar with the HTP-1 is to simply start using it! Befo
 13. For normal operation, use the Power/Standby Button on the front panel to turn the unit on or put it into standby mode, rather than using the Master Power Switch on the rear panel.
 
     !!! note
-        The HTP-1 supports two standby modes: **Slow Boot** (default) and **Fast Start**. In **Slow Boot** mode, the unit powers down           virtually all internal components, reducing standby power consumption to less than **0.5 W**. The front panel becomes                   operational in approximately **1 minute 40 seconds**, while additional initialization continues in the background and may take          up to **2 minutes 30 seconds** to complete.
+        The HTP-1 supports two standby modes: **Slow Boot** (default) and **Fast Start**. In **Slow Boot** mode, the unit powers down virtually all internal components, reducing standby power consumption to less than **0.5 W**. The front panel becomes operational in approximately **1 minute 40 seconds**, while additional initialization continues in the background and may take up to **2 minutes 30 seconds** to complete.
 
-        In **Fast Start** mode, most of the internal electronics remain powered, so the unit starts almost instantly. Only the front            panel is turned off while in standby, resulting in standby power consumption that is nearly as high as when the unit is fully           powered on.
+        In **Fast Start** mode, most of the internal electronics remain powered, so the unit starts almost instantly. Only the front panel is turned off while in standby, resulting in standby power consumption that is nearly as high as when the unit is fully powered on.
 
         You can enable **Fast Start** from the **Device Settings** page of the web interface.
 

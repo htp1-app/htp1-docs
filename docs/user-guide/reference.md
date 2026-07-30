@@ -19,7 +19,7 @@
 | Crossover | Variable 4th order Linkwitz-Riley |
 | Room Correction/Equalization | Dirac Live® (Room Correction and Bass Management, included with HTP-1 ownership); Dirac Live® Active Room Treatment and Bass Control are separately licensed upgrades — up to 6 filter slots |
 | Built-in Audio Correction | Bass and Treble tone controls, 16-band parametric equalizer with independent speaker control on each band, Channel Levels (per-channel trim), Bass EQ, Seat Shaker PEQ, Loudness compensation, Dialog Enhance, Night Mode |
-| Connectivity | Wired 100BASE-T Ethernet (see note below), Wi-Fi® |
+| Connectivity | Wired 100BASE-T Ethernet, Wi-Fi® |
 | Input Power | 100 ~ 240 VAC, 50/60 Hz |
 | Dimensions | 17.1" x 5.7" x 12.0" |
 

@@ -246,9 +246,9 @@ BC and ART both require phase alignment that a later delay or trim change would 
 lock out User Delay and User Trim on the Calibration page. Use [Channel Levels](channel-levels.md)
 for a permanent trim adjustment under either filter type.
 
-BC and RC licenses are included with the HTP-1. BC and ART 
-require additional licenses purchased from Dirac (<https://live.dirac.com/home-audio/>); if you
-already own a BC license it also works with ART.
+Room Correction (RC) and Bass Management (BM) are included with the HTP-1. Bass Control (BC) and
+Active Room Treatment (ART) require separate licenses purchased from Dirac
+(<https://live.dirac.com/home-audio/>); if you already own a BC license it also works with ART.
 
 A more comprehensive overview of Dirac Live ART™ is available at
 <https://www.dirac.com/live/art-technology/>.
