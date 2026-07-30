@@ -1,6 +1,6 @@
 # Bass EQ
 
-Many movie soundtracks are deliberately high-pass filtered during mastering, removing low bass that the mix originally had. Bass EQ (BEQ) restores that missing bass using pre-made filters drawn from a community-maintained catalogue of film and TV titles — the [BEQ Catalogue](https://beqcatalogue.readthedocs.io). Background on the technique is available in the AVS Forum thread [Bass EQ for Filtered Movies](https://www.avsforum.com/threads/bass-eq-for-filtered-movies.2995212/).
+Many enthusiasts believe some movie soundtracks are high-pass filtered during mastering, reducing low-frequency content that was originally present in the mix. Bass EQ (BEQ) attempts to restore that bass using pre-made filters from the community-maintained [BEQ Catalogue](https://beqcatalogue.readthedocs.io), which contains filters for many film and TV titles. Background on the technique is available in the AVS Forum thread [Bass EQ for Filtered Movies](https://www.avsforum.com/threads/bass-eq-for-filtered-movies.2995212/).
 
 !!! note
     Bass EQ is unavailable when PEQ is set to post-Dirac Live placement. An alert reads *"BEQ is locked because PEQ is set to post. Switch PEQ to pre to restore access."* See [PEQ Placement](peq.md#peq-placement).
