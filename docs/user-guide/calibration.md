@@ -14,7 +14,7 @@ Dirac Live app. Click a tab to switch slots. An empty slot shows as "Uncalibrate
 
 ### Naming a Slot
 
-You can rename a slot from the HTP-1 side, independently of the name Dirac Live gave it. Click the
+You can rename a slot from the HTP-1 side. Click the
 pencil icon next to the active slot's name, type a new name, and press Enter. This is only available
 for an empty slot — once a calibration is loaded into a slot, its name comes from Dirac Live and
 cannot be changed here.
@@ -64,7 +64,7 @@ remain at zero afterward.
     [Channel Levels](channel-levels.md) page instead to make a small, permanent level change under
     a BC or ART calibration.
 
-!!! warning "User delay and trim are reset to zero on transfer"
+!!! warning "User delay and trim are reset to zero on Dirac Live filter transfer"
     Delays and trims are set to zero during a Dirac Live calibration. When you open a saved Dirac
     Live project and transfer a filter into a slot, any user-defined delays and trims in that slot
     are therefore reset to zero as well. If you have hand-tuned values you want to keep, note them
@@ -106,5 +106,5 @@ everything that was muted). Muting a speaker preserves its trim, so unmuting res
 ### Advanced PEQ Options
 
 The **Change PEQ Configuration** button opens the same dialog described in
-[PEQ](peq.md#peq-placement), for choosing whether PEQ runs before or after the Dirac Live
+[PEQ](peq.md#peq-placement), for choosing whether PEQ runs pre or post the Dirac Live
 filter.

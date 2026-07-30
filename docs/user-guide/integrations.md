@@ -30,7 +30,7 @@ behavior and any open issues.
 ## Mobile Remote
 
 The HTP-1 serves a simple remote control page for phones and tablets at
-`http://<your-htp1-ip>/remote/`. It gives you a lightweight way to control volume, input, and
+`http://<your-htp1-ip>/remote/`. It gives you a lightweight way to control volume, bass, upmixer, center/surrounds/heights level, and
 power without loading the full web UI.
 
 ## HTTP Control

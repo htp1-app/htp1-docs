@@ -15,27 +15,28 @@
 
 The touchscreen shows the current input, program format, volume, upmix selection, and IP address, and doubles as a set of touch controls:
 
-- **Peak monitoring icon:** Tap to start peak monitoring, which monitors the digital signal pre volume control. Whenever one of the channels clips, a red bar lights up at the bottom of the screen. Tap the icon again to reset and stop peak monitoring. The same measurement is also available as the **Peak Monitor** page in the web interface.
-- **Help icon:** Tap to show the help screen, which provides information on how to connect to your HTP-1 for setup and lets you reset wired and wireless connections if there's a networking problem. The icon turns red if there is no network connection.
-- **Input source display:** Tap to show video input details. This area also shows if the signal generator is on. Tap two times to see playback parameters.
-- **Master volume level:** Tap to mute your HTP-1. Tap again to unmute. When muted, the display changes from white to red.
-- **Input format:** Tap to show more details.
-- **Output format:** Tap to show more details.
-- **Audio input details:** Tap to show more information about the audio input. Tap two times to see playback parameters.
-- **Audio output details:** Tap to show more information about the audio output. Tap two times to see playback parameters.
+- **Help icon (top right):** Tap to open the Help screen. This is the first place to look when setting up your HTP-1, as it provides the IP addresses needed to connect to the web-based user interface for setup and control. It also lets you reset the wired and wireless network connections if there is a networking problem. The icon turns red when no network connection is available.
+- **Peak monitoring icon (top left:** Tap to start peak monitoring, which monitors the digital signal pre volume control. Whenever one of the channels clips, a red bar lights up at the bottom of the screen. Tap the icon again to reset and stop peak monitoring. The same measurement is also available as the **Peak Monitor** page in the web interface.
+- **Input source display (top center):** Tap to show video input details. This area also shows if the signal generator is on. Tap two times to see playback parameters.
+- **Master volume level (center):** Tap to mute your HTP-1. Tap again to unmute. When muted, the display changes from white to red.
+- **Input format (middle left):** Tap to show more details.
+- **Output format (middle right):** Tap to show more details.
+- **Audio input details (bottom left):** Tap to show more information about the audio input. Tap two times to see playback parameters.
+- **Audio output details (bottom right):** Tap to show more information about the audio output. Tap two times to see playback parameters.
 
-The decibel value shown for volume is relative to the amplifier input sensitivity, which is set on the [Calibration](calibration.md) page. The **Program Format** shows the audio format of the current input — see [Speaker Configurations](speaker-configuration.md#speaker-configurations) for what the channel count in that reading means.
+The decibel value shown for volume is relative to the amplifier input sensitivity, which is set on the [Calibration](calibration.md) page.
 
-You access the web interface by typing the IP address shown in the lower-left corner of this screen into a browser's address bar. Some browsers default to `https://`, which will not work — type `http://` explicitly. The Wi-Fi address, if connected, is shown in the lower-right corner; either address can be used.
+To access the web interface, first open the **Help** screen on the front panel to find the HTP-1's IP address. Enter the displayed address into your browser's address bar, making sure to type `http://` explicitly, as some browsers default to `https://`, which will not work. If both wired and Wi-Fi addresses are shown, either can be used.
+You can also scan the displayed QR code with your mobile phone to open the web interface directly in your phone's browser.
 
 !!! note
-    **Front Panel Brightness**, **Time Zone**, and **Demo Mode**, all set on **Device Settings** in the web interface, affect what the front panel shows. Demo Mode in particular makes the front panel and web interface show simulated activity rather than the real system state.
+    **Front Panel Brightness** and **Demo Mode**, all set on **Device Settings** in the web interface, affect what the front panel shows. Demo Mode in particular makes the front panel and web interface show simulated activity rather than the real system state.
 
 ## Rear Panel
 
 ![HTP-1 rear panel](images/p12-1.jpg)
 
-1. **HDMI INPUTS:** Eight HDMI® inputs for connecting HDMI source devices. Each input supports the 4K resolution and the HDMI 2.0b and HDCP™ 2.3 standards.
+1. **HDMI INPUTS:** Eight HDMI® inputs for connecting HDMI source devices. Each input supports 4K resolution and the HDMI 2.0b and HDCP™ 2.3 standards.
 2. **ANALOG INPUTS:** Two pairs of RCA analog stereo jacks for connecting an analog stereo audio source.
 3. **COAXIAL/OPTICAL DIGITAL INPUTS:** Three digital coaxial and three digital optical S/PDIF audio inputs for connecting digital audio sources. All six inputs are active and can be independently selected.
 4. **AES/EBU DIGITAL INPUT:** Three-pin XLR jack for connecting an audio device that outputs an AES/EBU (aka AES3) digital audio signal.
@@ -61,7 +62,7 @@ You access the web interface by typing the IP address shown in the lower-left co
 1. **POWER:** Press the **POWER** button to turn the unit on or to put it into standby mode.
 2. **USER INPUTS:** Press the number buttons to select individual inputs. The numbers map to the visible inputs, from left to right, on the web interface Home page. Press the **LAST** button to select the last input used.
 3. **INFO:** Press the **INFO** button to display the relevant information on the front panel display.
-4. **COLORS:** The **Red**, **Green**, **Yellow**, and **Blue** buttons run whatever is assigned to those slots on the **Macros** page.
+4. **COLORS:** The **Red**, **Green**, **Yellow**, and **Blue** remote buttons execute the following commands: **Red** displays the debug screen, **Green** displays system information, **Yellow** reloads the front panel, and **Blue** resets the HDMI subsystem.
 5. **HDMI+:** Press the **HDMI+** button to cycle forward through the eight HDMI® inputs as well as the TV input. When using this button the interface will display the HDMI input that will be selected after a short timeout period expires (about 3 seconds). This allows the user to rotate through the input options without actually changing the input (which can slow things down). This delayed input change only applies to this button, not any of the other + buttons.
 6. **SURROUND MODES:** Press the buttons to select the **NATIVE**, **DTS**®, **DIRECT**, **DOLBY**®, or **AURO-3D**® surround modes.
 7. **SPDIF+:** Press the **SPDIF+** button to cycle forward through the digital audio inputs. The cycle order is **COAXIAL 1**, **COAXIAL 2**, **COAXIAL 3**, **OPTICAL 1**, **OPTICAL 2**, **OPTICAL 3**, and **AES/EBU**.
@@ -76,11 +77,11 @@ You access the web interface by typing the IP address shown in the lower-left co
 16. **ANALOG+:** Press the **ANALOG+** button to toggle between the two analog audio inputs.
 17. **DIALOG:** Press the **+** button to increase the **DIALOG** volume level or press the **-** button to decrease the **DIALOG** volume level.
 18. **MUTE:** Press the **MUTE** button to turn audio muting of all speakers on or off.
-19. **NUMBERS:** The preset **1**, **2**, **3**, and **4** buttons run the first four standard **Macros** slots.
+19. **NUMBERS:** The preset **1**, **2**, **3**, and **4** buttons run whatever is assigned to those slots on the **Macros** page.
 
 ## Web Interface
 
-The web interface is where you configure the HTP-1 and where day-to-day control happens from a phone, tablet, or computer. Reach it by typing `http://` followed by the HTP-1's IP address into a browser's address bar — for example, `http://192.168.1.101/`. The front panel display shows the current IP address. Some browsers default to `https://`, which will not work; type `http://` explicitly. Pages within the interface use hash-style addresses, such as `http://<your-htp1-ip>/#/settings/speakers` — bookmark the plain `http://<your-htp1-ip>/` address rather than a settings page.
+The web interface is where you configure the HTP-1 and where day-to-day control happens from a phone, tablet, or computer. Reach it by typing `http://` followed by the HTP-1's IP address into a browser's address bar — for example, `http://192.168.1.101/`. The front panel display shows the current IP address (tap the Help icon in the top right). Some browsers default to `https://`, which will not work; type `http://` explicitly. Pages within the interface use hash-style addresses, such as `http://<your-htp1-ip>/#/settings/speakers` — bookmark the plain `http://<your-htp1-ip>/` address rather than a settings page.
 
 ![HTP-1 web interface Home page](images/ui-home.png)
 
@@ -116,4 +117,5 @@ Once you are inside settings, a small line of text at the top of the screen — 
 
 The **?** button in the top-right corner of every page opens **Help**, a set of sections — one per settings page — that explains the controls on the page you came from. Help also links three PDF manuals: the User Guide, the User Guide Addendum, and the Front Panel Manual.
 
-The **i** button opens **System Status**, with the software version, release notes, and update history. The **power** button opens a confirmation dialog before putting the unit into standby.
+The i button opens System Status, which displays the software version, release notes, and update history. It is also the place from which you can check for and install system software updates.
+The **power** button opens a confirmation dialog that lets you put the unit into standby, restart it, or power it off completely.

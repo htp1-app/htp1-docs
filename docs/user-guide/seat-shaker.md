@@ -2,8 +2,8 @@
 
 A seat shaker — also called a tactile transducer, ButtKicker, or bass shaker — is bolted to a chair
 or to a riser under the seating. It turns low-frequency signal into motion you feel rather than
-sound you hear. The HTP-1 generates a dedicated seat shaker signal with its own content selection,
-filtering, delay, gain, trim and PEQ, and routes it either to an XLR output or to the Mix Out.
+sound you hear. The HTP-1 generates a dedicated seat shaker signal with its own input source,
+filtering, delay, gain, trim and PEQ, and routes it either to an XLR output or to the Mix Out RCA outputs.
 
 ![Seat Shaker page showing the output and content buttons, response chart, and PEQ table](images/ui-seat-shaker.png)
 
@@ -19,7 +19,7 @@ Choose where the seat shaker signal is sent.
 | Mix Out Diff | The seat shaker signal is sent to the Mix Out. The left and right outputs carry the same signal with inverted polarity. |
 
 !!! note
-    When a **Sub Out** is selected, that output is highlighted in yellow on the Speaker Map on the
+    When **Sub Out** is selected, that output is highlighted in yellow on the Speaker Map on the
     [Speakers](speaker-setup.md) page, so you can always see which physical output the seat shaker
     has claimed.
 
@@ -34,7 +34,7 @@ Choose where the seat shaker signal is sent.
 how the system sounds with and without the seat shaker. It becomes available once an output other
 than Off is chosen.
 
-## Content
+## Input Source
 
 Choose what the seat shaker plays.
 
@@ -87,14 +87,13 @@ so you can tell when you have made changes that have not been saved.
 ## LPF
 
 Sets the low-pass filter corner frequency for the seat shaker, from 20 to 200 Hz. The default is
-80 Hz. Use this to keep higher frequencies — which the shaker cannot usefully reproduce and which
-can make it buzz — out of the signal.
+80 Hz. Use this to remove higher frequencies from the signal. The shaker cannot reproduce them effectively, and they can cause unwanted buzzing.
 
 ## Delay
 
 Adds up to 50 ms of delay to the seat shaker channel, in addition to any speaker distance
 compensation, so the tactile effect is aligned in time with the rest of the system. The default is
-25 ms.
+25 ms, which compensates for the processing latency introduced by Dirac Live.
 
 ## LFE Gain
 

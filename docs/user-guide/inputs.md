@@ -52,10 +52,7 @@ Used** to leave the upmixer alone and keep whichever one was last selected.
 **Lip-Sync Delay (ms)** adds extra delay to an input's audio, to bring it back into sync with video
 that a TV or display has delayed through its own video processing. The range is 0–340 ms.
 
-The 340 ms figure is a ceiling on the total delay applied to a channel, not just the lip-sync delay
-you enter here — that ceiling also has to cover any delay already used by speaker calibration. At
-higher sample rates you have more headroom to work with; the full 340 ms is only guaranteed at
-192 kHz.
+The **340 ms** figure is a ceiling on the total delay applied to a channel, not just the lip-sync delay you enter here — that ceiling also has to cover any delay already used by speaker calibration. The full 340 ms is guaranteed at all supported sample rates up to and including 192 kHz.
 
 !!! tip
     Personalize lets you add an **Input Delay** ± stepper to the Home page, so you can nudge this
@@ -113,15 +110,15 @@ other states can lead to problems like noise (playing coded audio as PCM) or a s
 IEC pause packet). You will only know for sure by trying them. Here are some cases when the other
 states might be helpful.
 
-1. **Indicated** works very well with most HDMI sources. If you have a question, try it first.
+1. **Indicated** works very well with most HDMI sources. If you're unsure, try this setting first.
 2. If you know that this source always produces PCM and you get drop-outs or miss the beginning of
    sounds, you might try **Biased** if **Indicated** doesn't work. We have noticed that a YouTube
    recording of a news show including a discussion over Skype caused the automatic detector to find
    runs of zero data and mute.
 3. If you know that this source always produces PCM and you miss the beginning of sounds, you might
-   first try **Biased** if **Indicated** doesn't work. We notice this with CD material that has no
+   first try **Biased** if **Indicated** doesn't work. We noticed this with CD material that has no
    run-in time on each track.
-4. If you are using an old Apple TV or some other device that switches between coded audio and PCM
+4. If you are using an old Apple TV (1st generation) or some other device that switches between coded audio and PCM
    to make beeps, then **Biased** may allow you to hear more of the beeps. But **Indicated** probably
    works better.
 
@@ -170,4 +167,4 @@ appears in the web UI when a device asks to pair — accept it there.
 ## USB Audio Input
 
 Devices that produce USB audio can be connected to the (house-shaped) type B USB connector on the
-back panel. HTP-1 advertises itself as capable of accepting 24- or 32-bit audio at 48000 Hz.
+back panel. HTP-1 advertises itself as capable of accepting 24-bit or 32-bit audio at 48000 Hz.

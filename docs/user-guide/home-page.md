@@ -3,7 +3,7 @@
 The Home page is the screen you see when you open the web UI, and the one you will use most.
 It shows what the HTP-1 is doing right now and gives you quick control over volume, input,
 and a handful of other settings. The Home page always uses a dark display style, even if you
-have turned on [Dark Mode](personalize.md) elsewhere in the interface.
+have turned off [Dark Mode](personalize.md) on the [Personalize](personalize.md) page.
 
 Almost everything on this page is optional. What appears here — which status cards, which
 mode buttons, which Dirac Live slots and macros — is controlled from the [Personalize](personalize.md)

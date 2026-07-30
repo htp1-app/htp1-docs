@@ -58,7 +58,7 @@ Here the left (or right) input channel is taken as the input to the signal gener
 
 ## Left and Right Input as Signal
 
-This mode takes both the left and right input channels as signal at once, and routes each to its own channel. Selecting it splits **Speaker Select** into two tables — one for the left input, one for the right — so you can route a two-channel test signal, such as a REW stereo sweep, to two different speakers in one pass.
+This mode takes both the left and right input channels as signal at once, and routes each to its own channel. Selecting it splits **Speaker Select** into two tables — one for the left input, one for the right — so you can route a two-channel test signal. For example, you can route the left channel to a dedicated timing-reference speaker in REW while routing the right channel to the speaker being measured.
 
 ## Sine Wave
 

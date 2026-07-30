@@ -42,11 +42,11 @@ This table lists every version number that identifies your unit:
 | Field | What it is |
 | --- | --- |
 | System Software | The main firmware version, for example `V2.1.1`. |
-| Node-RED GUI | The build of the front-panel and control interface. |
+| Node-RED GUI | The build of the control and automation layer. |
 | avController | The version of the component that manages audio control and device state. |
 | APM Module | The version of the audio processing module. |
 | HDMI Module | The version of the HDMI receiver/transmitter firmware. |
-| Backplane Firmware | The version running on the rear-panel I/O board. |
+| Backplane Firmware | The version running on the internal communication hub. |
 | Hardware | The hardware revision of the backplane, MIO board, and DAC. |
 | Serial Number | Your unit's serial number. |
 | rootfs Version | The base Linux filesystem image version. |

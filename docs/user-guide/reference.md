@@ -23,13 +23,6 @@
 | Input Power | 100 ~ 240 VAC, 50/60 Hz |
 | Dimensions | 17.1" x 5.7" x 12.0" |
 
-!!! note
-    In earlier system software builds the wired interface could fail to obtain an address by DHCP
-    when cold-booted on a gigabit switch port. This has been resolved in the latest software. On
-    an older build, unplugging the Ethernet cable briefly and reconnecting it usually prompts the
-    router to assign an address, and limiting the switch port to 100 Mbit/s also works. See
-    [Updates and Support](maintenance.md).
-
 ## Signal Processing Flow
 
 This diagram gives a rough idea of the signal flow inside of the HTP-1, from the input driver
@@ -146,11 +139,6 @@ The second table lists other codes recognized by the HTP-1.
 | | | | | In USB | 2dd2 |
 | | | | | In AES | 5ba4 |
 
-!!! note
-    The remote's Dirac controls only toggle Dirac Live and switch it fully on or off. The web UI
-    exposes a third state, Bypass, that isn't reachable from these two codes; use the Home page or
-    a macro for that.
-
 ### Color Buttons and A-D / Preset Buttons
 
 The remote's color buttons run fixed system functions:
@@ -259,14 +247,14 @@ EQ](bass-eq.md) to apply community-maintained BEQ filters to your subwoofers.
 
 | Term | Meaning |
 | --- | --- |
-| ART | Dirac Live Active Room Treatment — the most capable Dirac Live filter type; it owns bass management and locks post-filter PEQ, delay, and trim. |
-| BC | Dirac Live Bass Control — an earlier bass-managing Dirac Live filter type, superseded by ART for new calibrations but still supported. |
-| BM | Dirac Live Bass Management — a Dirac Live filter type that manages bass without full room correction. |
+| ART | Dirac Live Active Room Treatment — Dirac's most advanced filter type. It manages bass across all capable speakers and subwoofers, and locks post-filter PEQ, delay, and trim. |
+| BC | Dirac Live Bass Control — an earlier Dirac Live filter type that adds advanced bass management. Superseded by ART for new calibrations, but still fully supported. |
+| BM | Dirac Live Bass Management - a Dirac Live feature that combines room correction with advanced bass management for seamless integration of speakers and subwoofers. |
 | RC | Dirac Live Room Correction — the base Dirac Live filter type; does not manage bass, so the HTP-1's own bass manager stays active. |
 | Upmixer | A process that expands a stereo or lower-channel-count signal to fill more of your speaker layout, for example Dolby Surround or Auro-Matic. |
 | LFE | Low-Frequency Effects — the dedicated bass channel carried in surround formats, normally sent to the subwoofer(s). |
-| Crossover | The frequency at which bass is handed off from a speaker to the subwoofer(s) during bass management. |
+| Crossover | The frequency below which bass is redirected from a speaker to the subwoofer(s) during bass management. |
 | dBFS | Decibels relative to Full Scale — a digital level measurement where 0 dBFS is the loudest a signal can be before clipping. |
 | Headroom | The margin between your current playback level and the point where the signal would clip. |
-| Zero Point | An adjustment that shifts where 0 dB sits on the volume scale, letting you align the HTP-1's displayed volume with your amplifier's actual output level. |
-| eARC | Enhanced Audio Return Channel — the HDMI connection that carries audio back from your TV to the HTP-1, supporting higher-bandwidth formats than the original ARC. |
+| Zero Point | Shifts the HTP-1's 0 dB reference point so the displayed volume matches your preferred reference listening level. |
+| eARC | Enhanced Audio Return Channel — the HDMI connection that carries audio back from your display to the HTP-1, supporting higher-bandwidth formats than the original ARC. |

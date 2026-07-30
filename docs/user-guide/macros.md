@@ -33,7 +33,7 @@ over.
 
 ## Additional Macros
 
-Beyond the 8 remote slots, you can create any number of additional macros in **Additional
+Beyond the 8 remote slots, you can create more macros in **Additional
 Macros**. These extra macros can only be run from the web UI — they have no remote button —
 but they can be added to the Home page from [Personalize](personalize.md). Only the 8
 remote-button macros can be set to run automatically from an input; see below.

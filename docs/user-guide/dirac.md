@@ -61,7 +61,7 @@ Complete the basic setup first — be able to play sound through your speaker se
    restores normal control.
 7. Set the volumes for calibration. The volume control on the left side of the Dirac Live screen
    matches the one on the remote control — you can adjust it with the remote. The app sets the
-   volume initially to -30 dB.
+   volume initially to -34 dB.
 
     ![Dirac Live app volume calibration screen with the master volume control on the left](images/p51-1.jpg)
 
@@ -73,7 +73,7 @@ Complete the basic setup first — be able to play sound through your speaker se
 
     ![Dirac Live app per-channel level adjustment showing output level meters for each speaker](images/p51-2.jpg)
 
-    Dolby-enabled speakers are labeled with "Atmos" in the speaker name. Dirac Live uses a sweep
+    Dolby Atmos Enabled speakers are labeled with "Atmos" in the speaker name. Dirac Live uses a modified sweep
     tailored to preserve their frequency response.
 
 9. Proceed to the **measure** screen and hear the sweeps. When a measurement completes you'll see
@@ -92,7 +92,7 @@ Complete the basic setup first — be able to play sound through your speaker se
     better correction.
 11. Proceed to the **Filter Design** screen and see the correction Dirac Live suggests. You can drag
     the left and right endpoints, investigate the cutoff frequency for your speakers, and grab the
-    dots to adjust the target curve. With Dirac Live bass management you can drag the crossover
+    dots to adjust the target curve. With Dirac Live Bass Management you can drag the crossover
     point and recalculate. Dirac Live's default target curve has a slight downward tilt at the low
     end; most users want more bass than that default:
 
@@ -246,7 +246,7 @@ BC and ART both require phase alignment that a later delay or trim change would 
 lock out User Delay and User Trim on the Calibration page. Use [Channel Levels](channel-levels.md)
 for a permanent trim adjustment under either filter type.
 
-BC and Basic Dirac Live licenses are included with the HTP-1. Bass Control and Active Room Treatment
+BC and RC licenses are included with the HTP-1. BC and ART 
 require additional licenses purchased from Dirac (<https://live.dirac.com/home-audio/>); if you
 already own a BC license it also works with ART.
 
@@ -276,8 +276,7 @@ A more comprehensive overview of Dirac Live ART™ is available at
 - **Subwoofer mismatches are not flagged.** Using a calibration made with more or fewer subwoofers
   than your current layout will still produce sound, but not optimally: extra subs get a copy of the
   first sub's signal, and a layout with fewer subs than the calibration only gets the primary sub
-  signal. This can be useful for driving a non-speaker transducer like a seat shaker, but is worth
-  knowing about if the balance sounds off after a layout change.
+  signal.
 - **The Dirac Live app can affect HTP-1 slots.** Deselecting all filters in the app disables Dirac
   Live on the HTP-1. Deleting a slot in the app removes that slot's user delay and trim on the HTP-1.
   Transferring a new filter into a slot resets that slot's user delay and trim to zero.
@@ -288,7 +287,7 @@ A more comprehensive overview of Dirac Live ART™ is available at
 ## Troubleshooting
 
 The Dirac Live system is reliable once a calibration is applied and you're listening, but it can
-become confusing while you're experimenting with multiple calibrations. The status pill described
+become confused while you're experimenting with multiple calibrations. The status pill described
 above is the first thing to check.
 
 ![Calibration page Dirac Live controls showing the Off / Bypass / ART On buttons and the green Active status pill](images/art-p14-1.png)
