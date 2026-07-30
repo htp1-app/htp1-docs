@@ -1,6 +1,6 @@
 # Speaker Setup
 
-Open the **Speakers** page from the sidebar (`/#/settings/speakers`). This is where you tell the HTP-1 which speakers you have, where they are, and how large they are.
+Open the **Speakers** page from the sidebar (`/#/settings/speakers`). This is where you configure the speaker layout, specify the location of each speaker, and define its size. Speaker size determines whether a speaker is treated as **Large** (full-range) or **Small** (bass-managed). For speakers configured as **Small**, bass below the user-selected crossover frequency is redirected by the bass management system to the configured subwoofer(s) or, if no subwoofer is present, to speakers configured as **Large**.
 
 ![Speakers page showing the Bass Manager badge, Current Layout readout, and Edit Speaker Layout button](images/ui-speakers.png)
 
@@ -16,8 +16,8 @@ The layout table on the Speakers page is read-only — the checkboxes, crossover
 The dialog lists every possible speaker in three groups — Main Speaker Outputs, Surround Speaker Outputs, and Upper Speaker Outputs — each with up to three controls per row:
 
 1. **Presence checkbox.** Click the speaker's row or its checkbox to enable or disable it. A speaker you can't currently enable shows a question-mark icon; hover it to see why (see [Valid Speaker Configurations](speaker-configuration.md#valid-speaker-configurations) for the underlying rules).
-2. **Crossover frequency (fc).** A numeric field, range **40–200 Hz** in steps of 10, that sets the corner frequency of that speaker's high-pass filter. It only appears for speakers set to Dolby or Small — Large speakers are full-range and skip the crossover. Subwoofers have no crossover field of their own; their low end is handled by the **LPF for LFE Channel** control described in [Bass Management](bass-management.md).
-3. **Size buttons — Dolby / Small / Large.** Choose **Large** for a full-range speaker that needs no bass redirection, **Small** for a speaker that should hand its low frequencies to the subwoofer(s), or **Dolby** for a Dolby Enabled speaker. The **Dolby** button only appears for **top** speaker groups — a wall-mounted "high" speaker cannot be Dolby Enabled.
+2. **Crossover frequency (fc).** A numeric field, range **40–200 Hz** in steps of 10, that sets the corner frequency of that speaker's high-pass filter. It only appears for speakers set to **Dolby** (Dolby Atmos Enabled) or **Small**—**Large** speakers are full-range and do not use a crossover. The up/down controls adjust the value in 10 Hz increments, but any whole-number value between **40 Hz** and **200 Hz** can be entered directly by typing it into the field. Subwoofers have no crossover field of their own; their low end is handled by the **LPF for LFE Channel** control described in [Bass Management](bass-management.md).
+3. **Size buttons — Dolby / Small / Large.** Choose **Large** for a full-range speaker that needs no bass redirection, **Small** for a speaker that should hand its low frequencies to the subwoofer(s), or **Dolby** for a Dolby Atmos Enabled speaker. The **Dolby** button only appears for **top** speaker groups — a wall-mounted "high" speaker cannot be Dolby Atmos Enabled.
 
 Changes you make in the dialog are staged, not applied immediately. A warning banner appears once you have unsaved changes: *"You have unsaved changes. Click Save to apply them. Updating speaker layout may take up to 5 minutes."* Click **Save** to send the change to the HTP-1, or **Cancel** to discard it.
 
@@ -32,12 +32,12 @@ While the dialog is open it also tells you whether the layout you're building ha
 
 If you are not sure whether your speakers are small or large, they are probably small. A large, full-range speaker does not need a subwoofer to produce the lowest frequencies. Setting a speaker to **Small** causes the bass manager to redirect its lowest frequencies to the subwoofer(s), protecting the speaker and letting it operate more efficiently.
 
-Many speaker manufacturers publish the frequency response of their speakers. For example, "60Hz to 18KHz" indicates that the speaker is not designed to produce sound much below 60 Hz. In that case, set the crossover frequency to 60 Hz — since the field only accepts 10 Hz steps, round up to the nearest step rather than trying to land exactly on the roll-off point. Choosing a cutoff clearly in the linear region of the speaker ensures the crossover, not the speaker's own natural roll-off, defines where bass hands off to the subwoofer. The HTP-1 uses a fourth-order Linkwitz-Riley crossover.
+Many speaker manufacturers publish the frequency response of their speakers. For example, "60Hz to 18KHz" indicates that the speaker is not designed to produce sound much below 60 Hz. In that case, set the crossover frequency to 60 Hz. Choosing a cutoff clearly in the linear region of the speaker ensures the crossover, not the speaker's own natural roll-off, defines where bass hands off to the subwoofer. The HTP-1 uses a fourth-order Linkwitz-Riley crossover.
 
 !!! tip
     If you don't have a spec sheet for your speakers, a basic Dirac Live calibration will show you the speaker's useful range. You can use that measurement to choose a crossover frequency, then finish the layout on the Speakers page.
 
-A Dolby Enabled speaker behaves like a "Small" speaker except that a Dirac Live calibration preserves the special filters used in Dolby Enabled speakers.
+A Dolby Atmos Enabled speaker behaves like a "Small" speaker except that a Dirac Live calibration preserves the special filters used in Dolby Atmos Enabled speakers.
 
 ## Enabling Speakers
 
@@ -67,9 +67,9 @@ The map also shows activity, not just wiring:
 !!! tip
     The Speaker Map is most useful for less common configurations, such as 7.5.4 or 9.5.2, where the location of the subwoofer or wide channels can vary.
 
-## Dolby Enabled Speakers
+## Dolby Atmos Enabled Speakers
 
-Dolby Enabled speakers have two independent drivers with two independent inputs. One of them points up, so the sound reflects off the ceiling and appears to come from a speaker overhead. A Dolby Enabled speaker also includes a filter that enhances this illusion of sound coming from above; otherwise it behaves like two Small speakers. When you set a speaker group to **Dolby** in the Edit Speaker Layout dialog, Dirac Live calibration respects this and preserves the psychoacoustic filter used by the up-firing driver.
+Dolby Atmos Enabled speakers have two independent drivers with two independent inputs. One of them points up, so the sound reflects off the ceiling and appears to come from a speaker overhead. A Dolby Atmos Enabled speaker also includes a filter that enhances this illusion of sound coming from above; otherwise it behaves like two Small speakers. When you set a speaker group to **Dolby** in the Edit Speaker Layout dialog, Dirac Live calibration respects this and preserves the psychoacoustic filter used by the up-firing driver.
 
 Only **top** speaker groups can be set to Dolby — high-mounted (wall) groups do not offer the Dolby button.
 
@@ -101,7 +101,7 @@ This speaker configuration uses 7 surround sound speakers, 2 subwoofers and 6 he
 
 ### Example 9.3.4 Speaker Configuration (Upper Level On the Ceiling)
 
-This speaker configuration uses 9 surround sound speakers, 3 subwoofers and 4 height speakers. The upper front speakers are mounted in the ceiling. The upper rear speakers are Top and Dolby Enabled.
+This speaker configuration uses 9 surround sound speakers, 3 subwoofers and 4 height speakers. The upper front speakers are mounted in the ceiling. The upper rear speakers are Top and Dolby Atmos Enabled.
 
 ![9.3.4 speaker layout diagram](images/p40-1.jpg)
 
