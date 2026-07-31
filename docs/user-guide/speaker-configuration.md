@@ -150,11 +150,12 @@ Dolby content is typically authored with the upper level speakers in the ceiling
 
 The status display uses suffixes to indicate the type of height speaker layout:
 
+* **h** – Height speakers.
 * **t** – Top Front, or Top Front and Top Rear speakers.
 * **b** – Top Front and Rear Height speakers.
 * **s** – Front Height and Top Rear speakers.
 
-These suffixes distinguish mixed height speaker layouts from standard top speaker layouts.
+These suffixes distinguish (mixed) height speaker layouts from standard top speaker layouts.
 
 The setup allows many choices so you can configure the decoders to drive the speakers that you have. But a few configurations are preferred:
 
@@ -166,7 +167,9 @@ The setup allows many choices so you can configure the decoders to drive the spe
 
 ## Multiple Subwoofers and Dirac Live Bass Control
 
-The HTP-1 can support up to 5 subwoofers. More than one subwoofer can minimize dead spots in the low frequency material. The trim (gain) and delay can be independently adjusted for each subwoofer. Dirac Live Bass Control automates this process — see [Dirac Live](dirac.md) for calibrating it. A basic Dirac Live calibration without Bass Control will set the gain and trim for each subwoofer independently, but will not optimally solve interactions among the subwoofers.
+The HTP-1 supports up to five subwoofers. Multiple subwoofers are commonly used to create a more even bass response across the listening area, not simply to increase bass output. The trim (gain) and delay of each subwoofer can be adjusted independently.
+
+Dirac Live Bass Control automatically optimizes the gain, delay, phase, and integration of all subwoofers with the main speakers. Without Bass Control, a standard Dirac Live calibration calibrates each subwoofer independently but cannot optimize how they work together as a system.
 
 !!! warning
     Your speaker configuration needs to match the number of subwoofers you are using. If you have two subwoofers, you must configure the system for two subwoofers and use the first two subwoofer outputs, as shown on the Speaker Map at the bottom of the Speakers page. If you have three subwoofers, use 1, 2 and 3. The system adjusts the gains of the subwoofers to account for how many subs are in the system. Enabling a subwoofer on the Speakers page and then not connecting it will result in a "sub"-optimal experience. This is in fact true for any speaker.
@@ -184,4 +187,6 @@ There can be cases in which the channels found in the program material do not ex
 4. The Auro-3D® speaker set is in fact "high" channels, not top channels. If you choose to install top speakers, the Auro-3D® high channels are mapped directly to the top speakers.
 
 !!! note
-    Dolby Atmos™ and DTS-X™ are object audio systems. This means that sound "objects" do not have to be located in a fixed channel but instead are decoded to match the available set of speakers. This makes it possible to move sounds around a room reliably with various speaker configurations. On the other hand, Auro-3D® is a channel-based system. The fixed speaker locations are therefore reproduced by the available speakers.
+    Dolby Atmos™ and DTS:X™ are object-based audio systems. Sound objects are not tied to fixed speaker channels but are mapped to the available speaker layout during playback. This allows sounds to move naturally around the room across a wide range of speaker configurations.
+
+    Auro-3D®, on the other hand, is a channel-based system. Sounds are mixed into fixed speaker channels, which are downmixed or remapped if the corresponding speakers are not present.

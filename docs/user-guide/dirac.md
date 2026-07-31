@@ -22,12 +22,9 @@ the best sound out of your system.
 
 ## Before You Start
 
-- **Turn off PEQ**, or leave PEQ placement set to pre-Dirac Live and be aware that it will be
-  measured along with your speakers. If PEQ is enabled during calibration, the Dirac Live filter
-  will attempt to nullify it back to a flat response. Advanced users can deliberately pre-compensate
-  speakers with PEQ before calibrating — see [PEQ placement](peq.md#peq-placement)
-  — but this is not where to start. Tone control and loudness are automatically disabled during
-  calibration.
+- For a normal calibration, disable **Post** PEQ. If **Post** PEQ is enabled, its effect is included in the Dirac Live measurements, and the resulting Dirac Live filter will compensate for it.
+  **Pre** PEQ does not affect the calibration because the Dirac Live measurement signal is injected downstream of the **Pre** PEQ stage. Advanced users can therefore use **Pre** PEQ to shape the incoming signal without influencing the Dirac Live measurements. See [PEQ placement](../peq/#peq-placement) for details.
+  Tone control and Loudness are automatically disabled during calibration.
 - Use the **Speakers** page to enable all of the speakers you have. Don't worry about size settings
   yet, but do label Dolby-enabled speakers correctly if you use them.
 - A calibrated USB microphone is required. Using an uncalibrated mic, or a laptop's built-in mic,

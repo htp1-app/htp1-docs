@@ -16,15 +16,13 @@
 The touchscreen shows the current input, program format, volume, upmix selection, and IP address, and doubles as a set of touch controls:
 
 - **Help icon (top right):** Tap to open the Help screen. This is the first place to look when setting up your HTP-1, as it provides the IP addresses needed to connect to the web-based user interface for setup and control. It also lets you reset the wired and wireless network connections if there is a networking problem. The icon turns red when no network connection is available.
-- **Peak monitoring icon (top left:** Tap to start peak monitoring, which monitors the digital signal pre volume control. Whenever one of the channels clips, a red bar lights up at the bottom of the screen. Tap the icon again to reset and stop peak monitoring. The same measurement is also available as the **Peak Monitor** page in the web interface.
-- **Input source display (top center):** Tap to show video input details. This area also shows if the signal generator is on. Tap two times to see playback parameters.
-- **Master volume level (center):** Tap to mute your HTP-1. Tap again to unmute. When muted, the display changes from white to red.
+- **Peak monitoring icon (top left):** Tap to start peak monitoring, which monitors the digital signal pre volume control. Whenever one of the channels clips, a red bar lights up at the bottom of the screen. Tap the icon again to reset and stop peak monitoring. The same measurement is also available as the **Peak Monitor** page in the web interface.
+- **Input source display (top center):** Tap to show video input details. This area also shows if the signal generator is on. Tap twice to view detailed playback and processing information.
+- **Master volume level (center):** Tap to mute your HTP-1. Tap again to unmute. When muted, the display changes from white to red. The displayed value is the current master volume. 0 dB represents the configured maximum output level; negative values indicate attenuation below that level.
 - **Input format (middle left):** Tap to show more details.
 - **Output format (middle right):** Tap to show more details.
-- **Audio input details (bottom left):** Tap to show more information about the audio input. Tap two times to see playback parameters.
-- **Audio output details (bottom right):** Tap to show more information about the audio output. Tap two times to see playback parameters.
-
-The decibel value shown for volume is relative to the amplifier input sensitivity, which is set on the [Calibration](calibration.md) page.
+- **Audio input details (bottom left):** Tap to show more information about the audio input. Tap twice to view detailed playback and processing information.
+- **Audio output details (bottom right):** Tap to show more information about the audio output. Tap twice to view detailed playback and processing information.
 
 To access the web interface, first open the **Help** screen on the front panel to find the HTP-1's IP address. Enter the displayed address into your browser's address bar, making sure to type `http://` explicitly, as some browsers default to `https://`, which will not work. If both wired and Wi-Fi addresses are shown, either can be used.
 You can also scan the displayed QR code with your mobile phone to open the web interface directly in your phone's browser.
@@ -61,7 +59,7 @@ You can also scan the displayed QR code with your mobile phone to open the web i
 
 1. **POWER:** Press the **POWER** button to turn the unit on or to put it into standby mode.
 2. **USER INPUTS:** Press the number buttons to select individual inputs. The numbers map to the visible inputs, from left to right, on the web interface Home page. Press the **LAST** button to select the last input used.
-3. **INFO:** Press the **INFO** button to display the relevant information on the front panel display.
+3. **INFO:** Press the **INFO** button once for playback details and twice for audio processing status.
 4. **COLORS:** The **Red**, **Green**, **Yellow**, and **Blue** remote buttons execute the following commands: **Red** displays the debug screen, **Green** displays system information, **Yellow** reloads the front panel, and **Blue** resets the HDMI subsystem.
 5. **HDMI+:** Press the **HDMI+** button to cycle forward through the eight HDMI® inputs as well as the TV input. When using this button the interface will display the HDMI input that will be selected after a short timeout period expires (about 3 seconds). This allows the user to rotate through the input options without actually changing the input (which can slow things down). This delayed input change only applies to this button, not any of the other + buttons.
 6. **SURROUND MODES:** Press the buttons to select the **NATIVE**, **DTS**®, **DIRECT**, **DOLBY**®, or **AURO-3D**® surround modes.
@@ -111,11 +109,12 @@ Click the **gear** icon (labeled **Settings**) in the top-left corner of the Hom
 
 Once you are inside settings, a small line of text at the top of the screen — `<volume> dB · <input> · <upmix>` — shows current status and links back to Home. A row of **shortcut icons** also sits in the top-right corner; which pages appear there is chosen on the Personalize page, so you can jump straight to the pages you use most.
 
-### Help and Power
+### System Status, Help and Power
 
 ![Help page showing the full sidebar and page-by-page help sections](images/ui-help.png)
 
-The **?** button in the top-right corner of every page opens **Help**, a set of sections — one per settings page — that explains the controls on the page you came from. Help also links three PDF manuals: the User Guide, the User Guide Addendum, and the Front Panel Manual.
+The **?** button in the top-right corner of every page opens **Help**, a set of sections — one per settings page — that explains the controls on the page you came from.
 
-The i button opens System Status, which displays the software version, release notes, and update history. It is also the place from which you can check for and install system software updates.
+The **i** button opens **System Status**, which displays the software version, release notes, and update history. It is also the place from which you can check for and install system software updates.
+
 The **power** button opens a confirmation dialog that lets you put the unit into standby, restart it, or power it off completely.

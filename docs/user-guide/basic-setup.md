@@ -31,8 +31,7 @@ The best way to become familiar with the HTP-1 is to simply start using it! Befo
 4. Using a Cat5e or Cat6 Ethernet cable (not included), plug one end into the ETHERNET jack on the rear panel, then plug the other end into your Wi-Fi® router or Ethernet switch.
 
     !!! note
-        In earlier system software builds the wired network interface could fail to obtain an IP address if connected to a gigabit Ethernet port. This problem has been resolved in the latest software. If your unit fails to get an IP address by DHCP when cold-booted, you have a few options. Configure the switch or router port it is connected to for 100 Mbit/s. Often unplugging the Ethernet cable for a few seconds and then plugging it back in will result in your router assigning an address. You can also reset the HTP-1's network interfaces from the **Help** screen by tapping the **?** icon on the front panel and selecting **Reset Network**.
-
+        In earlier system software builds the wired network interface could fail to obtain an IP address if connected to a gigabit Ethernet port. This problem has been resolved. If your unit still fails to get an IP address by DHCP when cold-booted, you have a few options. Configure the switch or router port it is connected to for 100 Mbit/s. Often unplugging the Ethernet cable for a few seconds and then plugging it back in will result in your router assigning an address. You can also reset the HTP-1's network interfaces from the **Help** screen by tapping the **?** icon on the front panel and selecting **Reset Network**.
 
 5. Using an HDMI Cable (not included), plug one end into the input on your HDMI® display, then plug the other end into HDMI OUTPUT 1 on the rear panel. A "Premium High Speed" HDMI cable is specified for UHD/4K operation.
 
@@ -49,7 +48,7 @@ The best way to become familiar with the HTP-1 is to simply start using it! Befo
 13. For normal operation, use the Power/Standby Button on the front panel to turn the unit on or put it into standby mode, rather than using the Master Power Switch on the rear panel.
 
     !!! note
-        The HTP-1 supports two standby modes: **Slow Boot** (default) and **Fast Start**. In **Slow Boot** mode, the unit powers down virtually all internal components, reducing standby power consumption to less than **0.5 W**. The front panel becomes operational in approximately **1 minute 40 seconds**, while additional initialization continues in the background and may take up to **2 minutes 30 seconds** to complete.
+        The HTP-1 supports two standby modes: **Slow Boot** (default) and **Fast Start**. In **Slow Boot** mode, the unit powers down virtually all internal components, reducing standby power consumption to less than **0.5 W**. The front panel becomes operational in approximately **1&nbsp;minute&nbsp;40&nbsp;seconds**, while additional initialization continues in the background and may take up to **2&nbsp;minutes&nbsp;30&nbsp;seconds** to complete.
 
         In **Fast Start** mode, most of the internal electronics remain powered, so the unit starts almost instantly. Only the front panel is turned off while in standby, resulting in standby power consumption that is nearly as high as when the unit is fully powered on.
 

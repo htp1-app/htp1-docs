@@ -52,22 +52,31 @@ By default, the master volume is displayed using the HTP-1's standard volume sca
 
 Zero Point ranges from −100 to +22 dB and includes a **Default** button. The advanced section displays both the internal master volume and the displayed volume so you can see how the offset is applied.
 
+### Headroom
+
 **Max. Digital Headroom**: The HTP-1 uses a two-stage volume control. Volume is first increased in the analog domain. Once the configured maximum analog output level is reached, any further increase is applied digitally. **Max. Digital Headroom** determines how many decibels are reserved in the digital signal for this second stage.
 
-Use the **Peak Monitor** to determine the smallest **Max. Digital Headroom** value that avoids clipping. Reducing the setting minimizes the amount of reserved headroom and therefore maximizes the available analog volume range.
+### Peak Level Measurement
+
+This is the same tool available under [Peak Monitor](peak-monitor.md). It is repeated here because peak levels are primarily used to configure **Max. Digital Headroom**, making it easier to observe clipping while adjusting the setting. See [Peak Monitor](peak-monitor.md) for a full description of its features.
+
+Use **Peak Monitor** to determine the smallest **Max. Digital Headroom** value that avoids clipping. Reducing the reserved digital headroom increases the available analog volume range, but leaves less margin for digital peaks before clipping.
 
 !!! tip
-    If you want to ensure the digital volume stage is never used at all, set **Max. Volume** to the
+    If you want to ensure the digital volume stage is never used, set **Max. Volume** to the
     negative value of **Max. Digital Headroom**, minus 1 dB (an additional 1 dB of headroom is
-    already applied internally). With the default 12 dB headroom, that means a Max. Volume of
-    −13 dB.
+    already applied internally). With the default 12 dB headroom, that means a **Max. Volume**
+    of −13 dB.
 
 | Control | Range | Default |
 |---|---|---|
 | Max. Digital Headroom | 0 to 30 dB | 12 dB |
 
-The page also shows two live readouts: the maximum volume that still leaves the full digital
-headroom available, and how much digital headroom is currently available at the present volume.
+The page also shows two live readouts:
+
+- **Highest volume with full digital headroom** — the highest master-volume setting at which the full configured digital headroom remains available. Above this level, further volume increases use digital gain and reduce the remaining headroom.
+- **Currently available digital headroom at current volume** — the digital headroom remaining at the current master-volume setting.
 
 !!! tip
-    The [Peak Monitor](peak-monitor.md) is the fastest way to determine the optimum **Max. Digital Headroom** setting. Play your loudest material with Peak Monitor enabled and reduce **Max. Digital Headroom** until no channels clip.
+    Play your loudest material with **Peak Monitor** enabled and reduce **Max. Digital Headroom**
+    until no channels clip.

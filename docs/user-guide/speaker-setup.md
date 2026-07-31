@@ -69,9 +69,11 @@ The map also shows activity, not just wiring:
 
 ## Dolby Atmos Enabled Speakers
 
-Dolby Atmos Enabled speakers have two independent drivers with two independent inputs. One of them points up, so the sound reflects off the ceiling and appears to come from a speaker overhead. A Dolby Atmos Enabled speaker also includes a filter that enhances this illusion of sound coming from above; otherwise it behaves like two Small speakers. When you set a speaker group to **Dolby** in the Edit Speaker Layout dialog, Dirac Live calibration respects this and preserves the psychoacoustic filter used by the up-firing driver.
+Dolby Atmos Enabled speakers use upward-firing drivers to create the perception of overhead sound by reflecting audio off the ceiling. They may be integrated into a conventional speaker or provided as a separate module placed on top of one. Dolby Atmos Enabled speakers use a specially designed frequency response that enhances this psychoacoustic effect.
 
-Only **top** speaker groups can be set to Dolby — high-mounted (wall) groups do not offer the Dolby button.
+When you set a top speaker group to **Dolby** in the **Edit Speaker Layout** dialog, Dirac Live calibration preserves this frequency response instead of attempting to flatten it.
+
+Only top speaker groups can be set to **Dolby**. High-mounted (wall) speaker groups do not offer the **Dolby** option.
 
 ## Example Speaker Setups
 
