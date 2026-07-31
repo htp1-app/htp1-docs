@@ -18,7 +18,7 @@ The **PEQ** page heading shows **Parametric Equalization on** or **off**, along 
 
 When PEQ is off, an alert reminds you that band settings can still be changed, but they will have no effect until PEQ is turned on.
 
-When a Dirac Live ART or Bass Control filter is loaded, PEQ is locked: an alert reads *"PEQ locked down because a Dirac Live ART/BC filter is loaded. Delete all BC/ART filters to regain access."* This is a Dirac Live requirement, not a bug — it protects the integrity of the calibration.
+When a Dirac Live ART or Bass Control filter is loaded, PEQ is locked: an alert reads *"PEQ locked down because a Dirac Live ART/BC filter is loaded. Delete all BC/ART filters to regain access."* This is a Dirac Live requirement. See PEQ Placement below for an explanation.
 
 ![PEQ page showing the on/off button, Change PEQ Configuration button, and response chart](images/ui-peq.png)
 
@@ -93,10 +93,12 @@ You can reset PEQ at three scopes: the current band across all channels, the cur
 
 PEQ can be placed either before (pre) or after (post) the Dirac Live filter block. Pre is the default.
 
+During a Dirac Live calibration, the measurement signal is injected at the Dirac Live filter stage. As a result, **Pre** PEQ does not affect the calibration, while **Post** PEQ is included in the measured response.
+
 Two things drive this choice:
 
 1. **Correcting the input signal** — restoring bass that was filtered out during mastering, or compensating for a listener's hearing. This requires PEQ **pre**, so the correction is applied to the source signal before bass management and Dirac Live process it.
-2. **Correcting speakers or the room** — this requires PEQ **post**, so PEQ isn't fighting the phase changes bass management introduces.
+2. **Correcting speakers or the room** — use PEQ **post**, so the correction is applied to the final signal sent to each speaker. This also allows the correction to be included in a subsequent Dirac Live calibration.
 
 Open the **Advanced PEQ Options** dialog to change placement. On the PEQ page, the **Change PEQ Configuration** button at the top is always visible. On the Calibration page, the same control lives under an **Advanced PEQ Options** heading, but only when **Show Advanced Settings** is turned on.
 
@@ -106,18 +108,20 @@ Open the **Advanced PEQ Options** dialog to change placement. On the PEQ page, t
 
 The dialog stages your choice locally — nothing is applied until you click **Save**. A banner reads *"You have unsaved changes. Click Save to apply them."* until you do.
 
-- **Apply PEQ pre-Dirac Live (default).** PEQ operates on the LFE signal, not on the separate subwoofer speaker signals. Bass EQ requires this setting.
-- **Apply PEQ post-Dirac Live and during calibration (advanced).** PEQ remains enabled while a Dirac Live calibration runs, so you can use it to pre-compensate the speakers Dirac Live will measure. Once an ART or BC calibration completes in this mode, the user delay, trim and PEQ settings are frozen — this is a Dirac Live rule, not a choice the HTP-1 makes.
+- **Apply PEQ pre-Dirac Live (default).** Use this for source-signal correction, such as Bass EQ (BEQ) or hearing compensation. Because Pre PEQ operates before bass management, it processes the LFE signal rather than the individual subwoofer outputs.
+- **Apply PEQ post-Dirac Live and during calibration (advanced).** Use this for speaker or room correction before running Dirac Live. Because Post PEQ is included in the Dirac Live measurements, it can be used to deliberately pre-compensate the speakers before calibration.
 
 !!! warning
-    PEQ is not automatically disabled during a Dirac Live calibration in either mode. If you want a clean calibration with no PEQ influence, turn PEQ off yourself first.
+    PEQ is never automatically disabled during a Dirac Live calibration. **Post** PEQ is included in the calibration, while **Pre** PEQ is bypassed by the measurement signal. If you want a calibration with no PEQ influence, either turn PEQ off or use **Pre** placement.
 
-Two separate locks can appear here, and they are not the same thing: whether you can edit the PEQ bands at all, and whether you can change pre/post placement. Both are driven by whether a Dirac Live ART or BC filter is currently loaded, and both are released the same way — delete the ART/BC filter.
+Two separate locks can appear here, and they are not the same thing: one prevents editing the PEQ filters themselves, while the other prevents changing between **Pre** and **Post** placement.
+
+Both locks are enforced whenever a Dirac Live **Bass Control (BC)** or **Active Room Treatment (ART)** filter is loaded. BC and ART optimize all speakers and subwoofers as a single system. Changing the PEQ filters or moving them between **Pre** and **Post** would alter the signal path that Dirac Live calibrated, invalidating the optimization. To preserve the calibration, Dirac Live locks these settings until all BC/ART filters have been deleted.
 
 ## Room Correction Methods and PEQ
 
 - **Manual calibration** — mainly used to tame room resonances with a single subwoofer, though tools like REW can compute more advanced multi-sub or multi-speaker solutions using PEQ, trim and delay together.
-- **Dirac Live Room Correction (RC)** — corrects frequency and phase per speaker and subwoofer individually. PEQ pre can prepare the speakers before calibration; subwoofer delay is often fine-tuned after.
-- **Dirac Live Bass Management (BM)** — similar to RC, using Dirac Live's own bass management. PEQ pre can prepare the speakers first.
-- **Dirac Live Bass Control (BC)** — adds smoothing across multiple subwoofers and flattens the sub/speaker crossover region. PEQ pre can prepare the speakers first.
-- **Dirac Live Active Room Treatment (ART)** — all speakers work together for the smoothest response across the listening area. PEQ pre can prepare the speakers first.
+- **Dirac Live Room Correction (RC)** — corrects frequency and phase per speaker and subwoofer individually. Post PEQ can be used to pre-compensate the speakers before calibration; subwoofer delay is often fine-tuned after.
+- **Dirac Live Bass Management (BM)** — similar to RC, using Dirac Live's own bass management. Post PEQ can be used to pre-compensate the speakers before calibration.
+- **Dirac Live Bass Control (BC)** — adds smoothing across multiple subwoofers and flattens the sub/speaker crossover region. PPost PEQ can be used to pre-compensate the speakers before calibration.
+- **Dirac Live Active Room Treatment (ART)** — all speakers work together for the smoothest response across the listening area. Post PEQ can be used to pre-compensate the speakers before calibration.
