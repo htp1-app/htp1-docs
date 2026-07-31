@@ -123,5 +123,5 @@ Both locks are enforced whenever a Dirac Live **Bass Control (BC)** or **Active 
 - **Manual calibration** — mainly used to tame room resonances with a single subwoofer, though tools like REW can compute more advanced multi-sub or multi-speaker solutions using PEQ, trim and delay together.
 - **Dirac Live Room Correction (RC)** — corrects frequency and phase per speaker and subwoofer individually. Post PEQ can be used to pre-compensate the speakers before calibration; subwoofer delay is often fine-tuned after.
 - **Dirac Live Bass Management (BM)** — similar to RC, using Dirac Live's own bass management. Post PEQ can be used to pre-compensate the speakers before calibration.
-- **Dirac Live Bass Control (BC)** — adds smoothing across multiple subwoofers and flattens the sub/speaker crossover region. PPost PEQ can be used to pre-compensate the speakers before calibration.
+- **Dirac Live Bass Control (BC)** — adds smoothing across multiple subwoofers and flattens the sub/speaker crossover region. Post PEQ can be used to pre-compensate the speakers before calibration.
 - **Dirac Live Active Room Treatment (ART)** — all speakers work together for the smoothest response across the listening area. Post PEQ can be used to pre-compensate the speakers before calibration.

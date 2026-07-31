@@ -56,9 +56,9 @@ Zero Point ranges from −100 to +22 dB and includes a **Default** button. The a
 
 **Max. Digital Headroom**: The HTP-1 uses a two-stage volume control. Volume is first increased in the analog domain. Once the configured maximum analog output level is reached, any further increase is applied digitally. **Max. Digital Headroom** determines how many decibels are reserved in the digital signal for this second stage.
 
-### Peak Level Measurement
-
-This is the same tool available under [Peak Monitor](peak-monitor.md). It is repeated here because peak levels are primarily used to configure **Max. Digital Headroom**, making it easier to observe clipping while adjusting the setting. See [Peak Monitor](peak-monitor.md) for a full description of its features.
+| Control | Range | Default |
+|---|---|---|
+| Max. Digital Headroom | 0 to 30 dB | 12 dB |
 
 Use **Peak Monitor** to determine the smallest **Max. Digital Headroom** value that avoids clipping. Reducing the reserved digital headroom increases the available analog volume range, but leaves less margin for digital peaks before clipping.
 
@@ -68,14 +68,14 @@ Use **Peak Monitor** to determine the smallest **Max. Digital Headroom** value t
     already applied internally). With the default 12 dB headroom, that means a **Max. Volume**
     of −13 dB.
 
-| Control | Range | Default |
-|---|---|---|
-| Max. Digital Headroom | 0 to 30 dB | 12 dB |
-
 The page also shows two live readouts:
 
 - **Highest volume with full digital headroom** — the highest master-volume setting at which the full configured digital headroom remains available. Above this level, further volume increases use digital gain and reduce the remaining headroom.
 - **Currently available digital headroom at current volume** — the digital headroom remaining at the current master-volume setting.
+
+### Peak Level Measurement
+
+This is the same tool available under [Peak Monitor](peak-monitor.md). It is repeated here because peak levels are primarily used to configure **Max. Digital Headroom**, making it easier to observe clipping while adjusting the setting. See [Peak Monitor](peak-monitor.md) for a full description of its features.
 
 !!! tip
     Play your loudest material with **Peak Monitor** enabled and reduce **Max. Digital Headroom**

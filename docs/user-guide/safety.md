@@ -30,7 +30,7 @@ Please read this entire manual before using this device, paying extra attention 
     A factory reset on **Device Settings** deletes all saved Dirac Live calibrations along with your other settings. Back up your configuration first, from the **Configs** page.
 
 !!! warning "Hearing safety"
-    Before using the tone generator, changing processing settings, or setting up a Seat Shaker on the Mix Out RCA output, mute all speakers on the Calibration page. Until the levels have been verified, the output may be much louder than expected.
+    Before using the **Signal Generator**, changing processing settings, or setting up a **Seat Shaker** on the Mix Out RCA output, mute all speakers on the **Calibration** page. Until the levels have been verified, the output may be much louder than expected.
 
 ## Licenses
 

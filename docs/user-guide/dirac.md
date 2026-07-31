@@ -23,7 +23,7 @@ the best sound out of your system.
 ## Before You Start
 
 - For a normal calibration, disable **Post** PEQ. If **Post** PEQ is enabled, its effect is included in the Dirac Live measurements, and the resulting Dirac Live filter will compensate for it.
-  **Pre** PEQ does not affect the calibration because the Dirac Live measurement signal is injected downstream of the **Pre** PEQ stage. Advanced users can therefore use **Pre** PEQ to shape the incoming signal without influencing the Dirac Live measurements. See [PEQ placement](../peq/#peq-placement) for details.
+  **Pre** PEQ does not affect the calibration because the Dirac Live measurement signal is injected downstream of the **Pre** PEQ stage. Advanced users can therefore use **Pre** PEQ to shape the incoming signal without influencing the Dirac Live measurements. See [PEQ placement](peq.md#peq-placement) for details.
   Tone control and Loudness are automatically disabled during calibration.
 - Use the **Speakers** page to enable all of the speakers you have. Don't worry about size settings
   yet, but do label Dolby-enabled speakers correctly if you use them.
