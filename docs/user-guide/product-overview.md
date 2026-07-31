@@ -61,7 +61,7 @@ You can also scan the displayed QR code with your mobile phone to open the web i
 
 1. **POWER:** Press the **POWER** button to turn the unit on or to put it into standby mode.
 2. **USER INPUTS:** Press the number buttons to select individual inputs. The numbers map to the visible inputs, from left to right, on the web interface Home page. Press the **LAST** button to select the last input used.
-3. **INFO:** Press the **INFO** button to display the relevant information on the front panel display.
+3. **INFO:** Press the **INFO** button once for playback details and twice for audio processing status.
 4. **COLORS:** The **Red**, **Green**, **Yellow**, and **Blue** remote buttons execute the following commands: **Red** displays the debug screen, **Green** displays system information, **Yellow** reloads the front panel, and **Blue** resets the HDMI subsystem.
 5. **HDMI+:** Press the **HDMI+** button to cycle forward through the eight HDMI® inputs as well as the TV input. When using this button the interface will display the HDMI input that will be selected after a short timeout period expires (about 3 seconds). This allows the user to rotate through the input options without actually changing the input (which can slow things down). This delayed input change only applies to this button, not any of the other + buttons.
 6. **SURROUND MODES:** Press the buttons to select the **NATIVE**, **DTS**®, **DIRECT**, **DOLBY**®, or **AURO-3D**® surround modes.
