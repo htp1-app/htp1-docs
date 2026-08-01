@@ -42,25 +42,25 @@ most accurate and effective calibrations for your specific needs.
 
 ### Channel Signals and Speaker Signals
 
-It is especially important to distinguish between *channel signals* and *speaker signals*. Audio leaving the decoder is organized into **channel signals**, one of which is the LFE (Low-Frequency Effects) channel. A channel signal is the decoded audio stream for one audio channel before bass management and other speaker-specific processing.
+It is especially important to distinguish between *channel signals* and *speaker signals*. Audio leaving the decoder is organized into **channel signals**, one of which is the LFE (Low-Frequency Effects) channel. A **channel signal** is the decoded audio stream for one audio channel before bass management and other speaker-specific processing.
 
-From there, the bass manager and other processing stages convert these channel signals into **speaker signals** that are sent to the physical loudspeakers. A speaker signal is the final processed signal sent to one physical loudspeaker. Unlike a channel signal, it may contain audio originating from several decoded channels after bass management, delay, trim, and other speaker-specific processing have been applied.
+From there, the bass manager and other processing stages convert these channel signals into **speaker signals** that are sent to the physical loudspeakers. A **speaker signal** is the final processed signal sent to one physical loudspeaker after bass management, delay, trim, and other speaker-specific processing have been applied. Unlike a channel signal, it may contain audio originating from several decoded channels.
 
-As part of this processing, delay and trim are applied to compensate for differences in speaker distance, sensitivity, and amplifier gain. The bass manager redirects bass from Small speakers and routes the LFE (Low-Frequency Effects) channel according to the configured speaker layout. This may include combining redirected bass and LFE in one or more subwoofers, or routing the LFE channel to Large speakers when no subwoofer is configured.
+As part of this processing, delay and trim are applied to compensate for differences in speaker distance, sensitivity, and amplifier gain. The bass manager redirects bass from Small speakers and routes the LFE (Low-Frequency Effects) channel according to the speaker configuration. This may include combining redirected bass and LFE in one or more subwoofers, or routing the LFE channel to Large speakers when no subwoofer is configured.
 
-Dirac Live provides four filter types. Depending on the selected filter, bass management is performed either by the HTP-1 or by Dirac Live. With the HTP-1's traditional bass manager, PEQ is commonly used to correct the speaker or room response after bass management. However, when Dirac Live ART or BC is performing bass management, applying PEQ downstream of the calibration can interfere with or even negate the calibration. For this reason, the PEQ block is placed in **Pre** mode by default, ensuring that those adjustments do not alter the signal path that BC or ART calibrated.
+Dirac Live provides four filter types. Depending on the selected filter, bass management is performed either by the HTP-1 or by Dirac Live. With the HTP-1's traditional bass manager, PEQ is commonly used to correct speaker and/or room response after bass management. However, when Dirac Live ART or BC performs bass management, applying PEQ after the Dirac Live processing can interfere with or even invalidate the calibration. **Pre** is therefore the default PEQ placement. Once a BC or ART calibration has been created, the placement used for that calibration—whether **Pre** or **Post**—is locked because changing it would invalidate the calibration.
 
 Note that the HTP-1 bass manager and the Dirac Live bass manager are separate processing stages. When Dirac Live is off, or a Dirac Live RC filter is loaded, the HTP-1's traditional bass manager is used. When a Dirac Live BM, BC, or ART filter is selected, the Dirac Live bass manager becomes active. The active filter type is shown as a badge, with a legend, on the Calibration page; which bass manager is active—HTP-1 or Dirac Live—is badged on the Speakers page.
 
-With an ART or BC filter loaded, the PEQ placement associated with that calibration is locked, whether it is **Pre** or **Post**. Switching placement, or editing user delay or user trim, is blocked because these changes would alter the calibrated signal path. With Dirac Live RC and BM filters, these controls remain editable.
+With an ART or BC filter loaded, PEQ placement is locked, whether it is **Pre** or **Post**. Switching placement, or editing user delay or user trim, is blocked because these changes would alter the speaker signals produced by the calibration. With Dirac Live RC and BM filters, these controls remain editable.
 
 ### Delays and Trims
 
-Dirac Live computes the necessary speaker delays and trims as part of its calibration process. All user-adjustable speaker delays and trims are set to zero during calibration. This applies to all Dirac Live filter types: RC, BM, BC, and ART. Accordingly, whenever a filter is transferred to a slot, any user-defined delays and trims are reset to zero because the calibration was created with those values at zero.
+Dirac Live computes its own speaker delays and trims as part of calibration. The separate user-adjustable speaker delay and trim controls are set to zero during every calibration. This applies to RC, BM, BC, and ART. Whenever a filter is transferred to a slot, any existing user delay and trim settings are reset because the calibration was created with those controls at zero.
 
-With RC and BM filters, user delay and trim can be adjusted again after the filter has been loaded. With BC and ART filters, these controls remain locked because changing them would alter the calibrated speaker signals.
+With RC and BM filters, user delay and trim can be adjusted again after the filter is loaded. With BC and ART filters, these controls remain locked because changing them would alter the speaker signals produced by the calibration.
 
-The **Channel Levels** page lets you adjust channel levels (channel trim) upstream of where the Dirac Live filters are applied. Because these adjustments affect the *channel signals* before they are converted into *speaker signals*, they do not alter the calibrated speaker signals and therefore do not compromise BC or ART.
+The **Channel Levels** page adjusts channel trim upstream of the Dirac Live filters and other speaker-specific processing. These adjustments affect the *channel signals* before they are converted into the *speaker signals* produced by the calibration, so they do not compromise BC or ART.
 
 ## IR Code Tables
 
@@ -221,7 +221,7 @@ EQ](bass-eq.md) to apply community-maintained BEQ filters to your subwoofers.
 | RC | Dirac Live Room Correction — the base Dirac Live filter type; does not manage bass, so the HTP-1's own bass manager stays active. |
 | BM | Dirac Live Bass Management — a Dirac Live filter type that combines room correction with Dirac Live's own bass management for seamless integration of speakers and subwoofers. |
 | BC | Dirac Live Bass Control — an earlier Dirac Live filter type that adds advanced bass management. Superseded by ART for new calibrations, but still fully supported. |
-| ART | Dirac Live Active Room Treatment — Dirac's most advanced filter type. It manages bass across all capable speakers and subwoofers, and locks post-filter PEQ, delay, and trim. |
+| ART | Dirac Live Active Room Treatment — Dirac's most advanced filter type. It manages bass across all capable speakers and subwoofers, and locks PEQ placement, speaker delay, and speaker trim. |
 | Channel Signal | The decoded audio stream for one audio channel before bass management and other speaker-specific processing. |
 | Speaker Signal | The final processed signal sent to one physical loudspeaker after bass management, delay, trim, and other speaker-specific processing. |
 | LFE | Low-Frequency Effects — the dedicated bass channel carried in surround formats, normally routed to the subwoofer(s) by bass management. |
@@ -229,5 +229,5 @@ EQ](bass-eq.md) to apply community-maintained BEQ filters to your subwoofers.
 | Upmixer | A process that expands a stereo or lower-channel-count signal to fill more of your speaker layout, for example Dolby Surround or Auro-Matic. |
 | dBFS | Decibels relative to Full Scale — a digital level measurement where 0 dBFS is the loudest a signal can be before clipping. |
 | Headroom | The margin between the digital signal level and 0 dBFS, where clipping occurs. |
-| Zero Point | Shifts where 0 dB appears on the HTP-1's volume display without changing the actual playback level. |
+| Zero Point | Offsets the displayed master volume reading without changing the underlying volume control. |
 | eARC | Enhanced Audio Return Channel — the HDMI connection that carries audio back from your display to the HTP-1, supporting higher-bandwidth formats than the original ARC. |
