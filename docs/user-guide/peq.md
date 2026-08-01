@@ -122,10 +122,10 @@ Both locks are enforced whenever a Dirac Live **Bass Control (BC)** or **Active 
 
     PEQ placement (**Pre** or **Post**) is a global setting and is **not** stored with a Dirac Live filter.
 
-    If you delete a BC or ART filter, change the PEQ placement or its settings, and then reload the original filter, the calibration no longer matches the current signal path and may not perform as intended.
+    If you delete a BC or ART filter, change the PEQ placement or modify any active **Post** PEQ filters, and then reload the original filter, the signal path may no longer match the one used during calibration. In that case, the calibration may not perform as intended.
 
-    If you plan to reload a BC or ART filter, restore the original PEQ placement and PEQ settings before loading it.
-
+    If you plan to reload a BC or ART filter, restore the original PEQ placement and Post PEQ settings before loading it.
+    
 ## Room Correction Methods and PEQ
 
 - **Manual calibration** — mainly used to tame room resonances with a single subwoofer, though tools like REW can compute more advanced multi-sub or multi-speaker solutions using PEQ, trim and delay together.
