@@ -1,0 +1,16 @@
+trigger:
+  branches:
+    include:
+      - main
+
+pr: none
+
+resources:
+  repositories:
+    - repository: ops
+      type: git
+      name: htp1-ops
+      ref: refs/heads/master
+
+extends:
+  template: azure-pipelines-docs-template.yml@ops
