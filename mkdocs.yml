@@ -123,7 +123,7 @@ nav:
           - Updates and Support: user-guide/maintenance.md
           - Integrations and Control: user-guide/integrations.md
           - Reference: user-guide/reference.md
-  - Apps:
+  - Apps & Integrations:
       - apps/index.md
   # - Self-Hosting:
   #     - self-hosting/index.md
