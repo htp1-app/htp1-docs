@@ -321,3 +321,36 @@
 .md-footer-meta {
   font-size: 0.68rem;
 }
+
+/* App store badges. Apple ships its badge with no surrounding whitespace while
+   Google's includes transparent padding, so the Google asset is cropped to the
+   badge itself and both are sized by height here. The flex gap restores the
+   clear space each vendor's brand guidelines ask for. */
+/* Markdown wraps the links in a paragraph, so both the wrapper and that
+   paragraph need to be flex containers for the gap to land between badges. */
+.store-badges,
+.store-badges p {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+}
+
+.store-badges {
+  margin: 0.6rem 0 0.4rem;
+}
+
+.store-badges p {
+  margin: 0;
+}
+
+.store-badges a {
+  display: inline-flex;
+  line-height: 0;
+}
+
+.store-badges img {
+  height: 44px;
+  width: auto;
+  display: block;
+}

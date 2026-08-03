@@ -1,13 +1,6 @@
 # Apps & Integrations
 
 Software built by the HTP-1 community, including remotes, home-automation integrations, and more.
-None of these are Monoprice products. They exist because the HTP-1 exposes a documented control
-interface on your local network.
-
-!!! note
-    Everything listed here is third-party software. It is not supplied or supported by Monoprice.
-    Each entry links to its own source, so you can see what a project does before pointing it at your
-    hardware, and each has its own place to report problems.
 
 !!! tip
     Looking for what the HTP-1 provides *itself*, such as Roon Ready, the built-in mobile remote, or
@@ -17,7 +10,7 @@ interface on your local network.
 
 ## Apps
 
-### HTP-1 Native Controller
+### HTP-1 Remote
 
 *iOS and Android · open source*
 
@@ -38,8 +31,10 @@ browser. Both apps are built from the same repository.
 <!--   App Store    -> https://apps.apple.com/app/id<APP_ID>                          -->
 <!--   Google Play  -> https://play.google.com/store/apps/details?id=<PACKAGE_NAME>   -->
 <!-- Then delete the "pending store review" line beneath the badges.                  -->
-[![Download on the App Store](../assets/download-on-the-app-store.svg){ width="160" }](https://apps.apple.com/)
-[![Get it on Google Play](../assets/get-it-on-google-play.png){ width="180" }](https://play.google.com/)
+<div class="store-badges" markdown>
+[![Download on the App Store](../assets/download-on-the-app-store.svg)](https://apps.apple.com/)
+[![Get it on Google Play](../assets/get-it-on-google-play.png)](https://play.google.com/)
+</div>
 
 *Pending store review: these badges will link to their listings once each app is approved.*
 
