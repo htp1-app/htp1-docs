@@ -1,8 +1,8 @@
 # Apps & Integrations
 
-Software built by the HTP-1 community — remotes, home-automation integrations, and tools. None of
-these are Monoprice products. They exist because the HTP-1 exposes a documented control interface on
-your local network.
+Software built by the HTP-1 community, including remotes, home-automation integrations, and more.
+None of these are Monoprice products. They exist because the HTP-1 exposes a documented control
+interface on your local network.
 
 !!! note
     Everything listed here is third-party software. It is not supplied or supported by Monoprice.
@@ -10,33 +10,38 @@ your local network.
     hardware, and each has its own place to report problems.
 
 !!! tip
-    Looking for what the HTP-1 provides *itself* — Roon Ready, the built-in mobile remote, or HTTP
-    control for home automation? That's [Integrations and Control](../user-guide/integrations.md) in
-    the user manual. This page covers what other people have built on top of those interfaces.
+    Looking for what the HTP-1 provides *itself*, such as Roon Ready, the built-in mobile remote, or
+    HTTP control for home automation? That's
+    [Integrations and Control](../user-guide/integrations.md) in the user manual. This page covers
+    what other people have built on top of those interfaces.
 
 ## Apps
 
 ### HTP-1 Native Controller
 
-*iOS · open source*
+*iOS and Android · open source*
 
-A native iOS remote for the HTP-1. It gives you the everyday controls — volume, input selection,
-upmixer, and modes — from an iPhone, without loading the full web interface in a browser.
+A native remote for the HTP-1, available for both iPhone and Android. It gives you the everyday
+controls (volume, input selection, upmixer, and modes) without loading the full web interface in a
+browser. Both apps are built from the same repository.
 
 **Requirements**
 
-- An iPhone or iPad on the same network as your HTP-1
+- An iPhone, iPad, or Android device on the same network as your HTP-1
 - The HTP-1's IP address, shown on the front panel **Help** screen (tap the **?** icon in the top
   right)
 
 **Install**
 
-<!-- APP STORE LINK PLACEHOLDER -->
-<!-- When the app is approved, replace the href below with the real App Store product URL -->
-<!-- (https://apps.apple.com/app/id<APP_ID>) and delete the "pending review" line beneath it. -->
+<!-- STORE LINK PLACEHOLDERS -->
+<!-- When each app is approved, replace the placeholder href with the real store URL: -->
+<!--   App Store    -> https://apps.apple.com/app/id<APP_ID>                          -->
+<!--   Google Play  -> https://play.google.com/store/apps/details?id=<PACKAGE_NAME>   -->
+<!-- Then delete the "pending store review" line beneath the badges.                  -->
 [![Download on the App Store](../assets/download-on-the-app-store.svg){ width="160" }](https://apps.apple.com/)
+[![Get it on Google Play](../assets/get-it-on-google-play.png){ width="180" }](https://play.google.com/)
 
-*Pending App Store review — this badge will link to the listing once the app is approved.*
+*Pending store review: these badges will link to their listings once each app is approved.*
 
 **Source and issues**
 
@@ -80,8 +85,8 @@ Assistant again.
 
 ## Tools and Utilities
 
-Nothing listed yet. If you have built something — a configuration editor, a measurement helper, a
-client library — it belongs here.
+Nothing listed yet. If you have built something, such as a configuration editor, a measurement
+helper, or a client library, it belongs here.
 
 ## Adding your project
 

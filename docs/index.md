@@ -25,8 +25,8 @@ community.
 
     ---
 
-    Software the community has built around the HTP-1 — an iOS remote, a Home
-    Assistant integration, and tools. All open source.
+    Software the community has built around the HTP-1: native iOS and Android
+    remotes, a Home Assistant integration, and more.
 
     [:octicons-arrow-right-24: Browse projects](apps/index.md)
 
