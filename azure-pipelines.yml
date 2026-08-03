@@ -1,0 +1,29 @@
+# Publishes docs.htp1.app whenever main changes.
+#
+# This file contains no build steps and no credentials. It states which branch
+# to build and points at a template in the private htp1-ops repository, which
+# holds the deploy steps and the Cloudflare configuration.
+#
+# The Cloudflare API token and account ID live in the "htp1-cloudflare" variable
+# group in Azure Pipelines Library. They are not present in this repository, in
+# the template, or in any build log.
+#
+# Pull requests are never built, so a pull request cannot run this pipeline or
+# reach anything it has access to.
+
+trigger:
+  branches:
+    include:
+      - main
+
+pr: none
+
+resources:
+  repositories:
+    - repository: ops
+      type: git                  # Azure Repos Git, in the same project
+      name: HTP1/htp1-ops
+      ref: refs/heads/master
+
+extends:
+  template: azure-pipelines-docs-template.yml@ops
