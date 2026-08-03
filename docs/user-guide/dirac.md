@@ -34,8 +34,7 @@ Dirac® calibration requires a PC or Mac laptop running the Dirac Live app with 
 attached to the laptop.
 
 !!! note
-    The Dirac smartphone app does not support running a calibration, either with the phone's
-    internal mic or with a mic attached to the phone.
+    The HTP-1 requires the desktop version of Dirac Live. The mobile Dirac Live app cannot be used because the HTP-1 does not provide the external microphone support required by the mobile app.
 
 ## Calibration Steps
 
