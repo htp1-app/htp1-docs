@@ -36,7 +36,7 @@ Clipping means the digital signal ran out of headroom and was cut off — you'll
 on loud passages. Ideally no signal should clip, that is, peak above 0 dB. If Peak Monitor shows a
 channel clipping:
 
-- Reduce **Max. Digital Headroom** until no further peaks occur
+- Reduce **Maximum Digital Headroom** until no further peaks occur
 
 The control is on [Volume Setup](volume-setup.md). Play your loudest material while watching the
 meters, and adjust until peaks land close to 0 dBFS without crossing it.
