@@ -62,7 +62,7 @@ Complete the basic setup first — be able to play sound through your speaker se
 
     ![Dirac Live app volume calibration screen with the master volume control on the left](images/p51-1.jpg)
 
-    Use the Dirac Live **Volume Calibration** screen to make sure the monitoring signal is well above the room
+    Use the Dirac Live **Volume Calibration** screen to make sure the test signal is well above the room
     noise floor without clipping. A good target is roughly 20 dB of separation between the ambient
     noise floor and the test signal, with more being better if the room is quiet.
 
@@ -76,7 +76,7 @@ Complete the basic setup first — be able to play sound through your speaker se
     3. Click the play button for the left front speaker and slowly raise the master output until
        that channel plays at a comfortable level. The noise plays for about 30 seconds; press play
        again if you need to. Then click the play button for each speaker in turn and note which one
-       is the softest, omitting the subwoofer for the first pass.
+       is the softest. Omit the subwoofer for this step.
     4. Click the play button for the softest speaker and raise the master output until that channel
        reaches at least roughly -20 to -30 dB on the meter, which is about 20 dB above the noise
        floor. Then click the play button for the left speaker and reduce its level so it also falls
