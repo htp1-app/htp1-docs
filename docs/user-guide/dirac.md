@@ -62,18 +62,36 @@ Complete the basic setup first — be able to play sound through your speaker se
 
     ![Dirac Live app volume calibration screen with the master volume control on the left](images/p51-1.jpg)
 
-8. Press the play arrow under the left front speaker and adjust the master volume to reach
-   approximately -20 dB on the scale for the channel. The noise plays for about 30 seconds; press
-   play again if you need to. Repeat this for each channel. The volumes don't have to be identical,
-   but they should be close. If several amps are involved, like with a powered subwoofer, it's
-   better to get the volumes about even using the amp volumes.
+    Use the Dirac Live **Volume Calibration** screen to make sure the monitoring signal is well above the room
+    noise floor without clipping. A good target is roughly 20 dB of separation between the ambient
+    noise floor and the test signal, with more being better if the room is quiet.
+
+    1. Start with the master output low and raise the microphone gain until the background noise is
+       just below the -50 dB mark, or barely peaking above it. If the room is noisy, reduce the mic
+       gain and use a louder test signal level; if the room is quiet, you can use more mic gain and a
+       lower test signal level.
+    2. Move all speaker and subwoofer channel sliders to their maximum, then turn the subwoofer's
+       own gain or level control down as a precaution. If the subwoofer has a low-pass filter, make
+       sure it is switched off or set to the highest value.
+    3. Click the play button for the left front speaker and slowly raise the master output until
+       that channel plays at a comfortable level. The noise plays for about 30 seconds; press play
+       again if you need to. Then click the play button for each speaker in turn and note which one
+       is the softest, omitting the subwoofer for the first pass.
+    4. Click the play button for the softest speaker and raise the master output until that channel
+       reaches at least roughly -20 to -30 dB on the meter, which is about 20 dB above the noise
+       floor. Then click the play button for the left speaker and reduce its level so it also falls
+       into that range. Repeat this for all other speakers except the subwoofer.
+    5. Move the subwoofer channel slider roughly to the same value as the loudest speaker, then click
+       the play button for the subwoofer and turn the subwoofer's own gain or level knob up until it
+       also reaches the same target range. Do not use the Dirac Live subwoofer slider for this step;
+       the adjustment should be made on the subwoofer itself.
 
     ![Dirac Live app per-channel level adjustment showing output level meters for each speaker](images/p51-2.jpg)
 
     Dolby Atmos Enabled speakers are labeled with "Atmos" in the speaker name. Dirac Live uses a modified sweep
     tailored to preserve their frequency response.
 
-9. Proceed to the **measure** screen and hear the sweeps. When a measurement completes you'll see
+8. Proceed to the **measure** screen and hear the sweeps. When a measurement completes you'll see
    the frequency response displayed. A single sweep is fine for trying things out, but a good
    calibration uses more measurements.
 
@@ -84,10 +102,10 @@ Complete the basic setup first — be able to play sound through your speaker se
     volume page and adjust. Also check that your speaker configuration is correct: if you set up
     for 7.1.4 but have only 7.1.2, the missing speakers show as "missing samples".
 
-10. The Dirac Live app encourages multiple sweep locations. Try a calibration with one location
+9. The Dirac Live app encourages multiple sweep locations. Try a calibration with one location
     first to become familiar with the process, then do a full set of measurement locations for a
     better correction.
-11. Proceed to the **Filter Design** screen and see the correction Dirac Live suggests. You can drag
+10. Proceed to the **Filter Design** screen and see the correction Dirac Live suggests. You can drag
     the left and right endpoints, investigate the cutoff frequency for your speakers, and grab the
     dots to adjust the target curve. With Dirac Live Bass Management you can drag the crossover
     point and recalculate. Dirac Live's default target curve has a slight downward tilt at the low
@@ -95,12 +113,12 @@ Complete the basic setup first — be able to play sound through your speaker se
 
     ![Dirac Live app filter design screen with an adjusted target curve raising the low end](images/p53-1.jpg)
 
-12. The "groups" at the right let you view one set of speakers at a time. The spread between
+11. The "groups" at the right let you view one set of speakers at a time. The spread between
     measurements shows where more work is needed on the crossover and target curve.
 
     ![Dirac Live app filter design screen showing the spread between measurements, with a dip at the crossover](images/p53-2.jpg)
 
-13. Choose a slot to store this calibration in. The HTP-1 has up to six Dirac Live filter slots
+12. Choose a slot to store this calibration in. The HTP-1 has up to six Dirac Live filter slots
     (the exact number is shown on the Calibration page heading). You can store calibrations for
     different room configurations, like curtains open and closed, or for different speaker layouts.
     Dirac Live suggests the names of physicists and philosophers; this name is visible in the HTP-1
@@ -109,17 +127,17 @@ Complete the basic setup first — be able to play sound through your speaker se
 
     ![Dirac Live app filter export screen showing the calibration slots](images/p54-1.jpg)
 
-14. Export the filter. This takes a minute or two. When complete, the resulting filter is installed
+13. Export the filter. This takes a minute or two. When complete, the resulting filter is installed
     and enabled on the HTP-1. You can see this on the [Calibration](calibration.md) page.
-15. Save the session as a Dirac Live "project" on your PC before you exit. Each project contains one
+14. Save the session as a Dirac Live "project" on your PC before you exit. Each project contains one
     calibration session and is tied to your HTP-1's serial number. A project can't be transferred to
     a different serial number, but you can ignore the warning that results from changing the name.
-16. Close the Dirac Live app. The read-only banner on the HTP-1 should clear. If it doesn't, launch
+15. Close the Dirac Live app. The read-only banner on the HTP-1 should clear. If it doesn't, launch
     the Dirac Live app again, then close it.
-17. Open the HTP-1 web UI and go to **Calibration** (`#/settings/calibration`). If a calibration
+16. Open the HTP-1 web UI and go to **Calibration** (`#/settings/calibration`). If a calibration
     covers fewer speakers than your current layout, the uncalibrated speakers pass through without
     filtering, and the page highlights them as mismatched.
-18. The calibration delay and trim values shown are what Dirac Live measured, applied whenever that
+17. The calibration delay and trim values shown are what Dirac Live measured, applied whenever that
     filter is active. Notice that the delay and trim on one channel may read zero — that speaker was
     farthest from the microphone during calibration.
 
