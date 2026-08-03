@@ -21,6 +21,15 @@ community.
 
     [:octicons-arrow-right-24: Read the manual](user-guide/index.md)
 
+-   :material-cellphone-link:{ .lg .middle } **Apps**
+
+    ---
+
+    Community-built apps that control your HTP-1 over the network, including a
+    native iOS remote. All open source.
+
+    [:octicons-arrow-right-24: Browse apps](apps/index.md)
+
 -   :material-comment-edit-outline:{ .lg .middle } **Suggest a Correction**
 
     ---
