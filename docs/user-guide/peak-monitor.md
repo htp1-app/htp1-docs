@@ -1,7 +1,6 @@
 # Peak Monitor
 
-Peak Monitor shows how close each channel is getting to clipping (the signal exceeds the available digital range and creates audible distortion), so you can set headroom and
-output levels by measurement instead of by ear.
+Peak Monitor shows how close each channel is getting to clipping (the signal exceeds the available digital range and creates audible distortion), so you can set headroom and **Reference Output Voltage** by measurement instead of by ear.
 
 ![Peak Monitor page in Table view](images/ui-peak-monitor.png)
 

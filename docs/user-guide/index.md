@@ -53,7 +53,7 @@ New to the HTP-1? Start with [Welcome](welcome.md), then [Basic Setup](basic-set
 | [Video Features](video.md) | UHD, EDID, Dolby Vision, and triggers |
 | [Macros](macros.md) | Recording and running command sequences |
 | [Personalize](personalize.md) | Choosing what appears in the interface |
-| [Volume Setup](volume-setup.md) | Volume limits, output level, and headroom |
+| [Volume Setup](volume-setup.md) | Volume limits, **Reference Output Voltage**, and headroom |
 | [Peak Monitor](peak-monitor.md) | Watching for clipping |
 | [Device Settings](device-settings.md) | Unit name, power, display, and maintenance tools |
 | [Backup and Restore](configs.md) | Saving and restoring your configuration |

@@ -229,5 +229,5 @@ EQ](bass-eq.md) to apply community-maintained BEQ filters to your subwoofers.
 | Upmixer | A process that expands a stereo or lower-channel-count signal to fill more of your speaker layout, for example Dolby Surround or Auro-Matic. |
 | dBFS | Decibels relative to Full Scale — a digital level measurement where 0 dBFS is the loudest a signal can be before clipping. |
 | Headroom | The margin between the digital signal level and 0 dBFS, where clipping occurs. |
-| Zero Point | Offsets the displayed master volume reading without changing the underlying volume control. |
+| **Zero Point** | Offsets the displayed master volume reading without changing the actual playback level or internal master volume. |
 | eARC | Enhanced Audio Return Channel — the HDMI connection that carries audio back from your display to the HTP-1, supporting higher-bandwidth formats than the original ARC. |
