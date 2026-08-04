@@ -27,7 +27,7 @@ you've decided are sensible.
 
 The **Reference Output Voltage** sets the analog output level, in Vrms, produced at 0 dB master volume. It is designed to match the HTP-1's analog output to your amplifier's input sensitivity—the input voltage required to drive the amplifier to full power.
 
-Depending on this setting, the HTP-1 may eventually need to apply digital gain at very high master-volume settings, once the analog stage has reached the configured reference output voltage.
+The configured Reference Output Voltage determines how much analog gain is available above 0 dB master volume. Depending on this setting, the HTP-1 may eventually need to apply digital gain at very high master-volume settings once the analog stage reaches its maximum output capability.
 
 | Control | Range | Default button |
 |---|---|---|
