@@ -1,6 +1,6 @@
 # Volume Setup
 
-The HTP-1 uses a combination of analog and digital gain to implement the master volume. Volume Setup lets you configure the power-on volume, allowable volume range, output level, and digital headroom that determine how the volume control behaves.
+The HTP-1 uses a combination of analog and digital gain to implement the master volume. Volume Setup lets you configure the power-on volume, allowable volume range, **Reference Output Voltage**, and digital headroom that determine how the volume control behaves.
 
 ![Volume Setup page showing Power On, Volume Limits, and Output Level controls](images/ui-volume-setup.png)
 
@@ -25,9 +25,9 @@ you've decided are sensible.
 
 ## Reference Output Voltage
 
-The **Reference Output Voltage** sets the analog output level, in Vrms, produced at 0 dB master volume. It is designed to match the HTP-1's analog output to your amplifier's input sensitivity—the input voltage required to drive the amplifier to full power.
+The **Reference Output Voltage** defines the nominal analog output voltage, in Vrms, associated with 0 dB master volume. It is designed to match the HTP-1's analog output to your amplifier's input sensitivity—the input voltage required to drive the amplifier to full power.
 
-The configured Reference Output Voltage determines how much analog gain is available above 0 dB master volume. Depending on this setting, the HTP-1 may eventually need to apply digital gain at very high master-volume settings once the analog stage reaches its maximum output capability.
+The configured Reference Output Voltage sets the nominal output level at 0 dB master volume and affects how much additional gain can be provided by the analog stage before the HTP-1 may need to apply positive digital gain at very high master-volume settings.
 
 | Control | Range | Default button |
 |---|---|---|
@@ -39,8 +39,7 @@ The HTP-1's balanced outputs are on XLR connectors.
 
 ## Show Advanced Settings and Peak Monitor
 
-Turn on **Show Advanced Settings and Peak Monitor** to reveal the Zero Point, Headroom, and Peak
-Monitor controls described below.
+Turn on **Show Advanced Settings and Peak Monitor** to reveal the **Zero Point**, **Headroom**, and **Peak Monitor** controls described below.
 
 ![Volume Setup advanced section showing Zero Point, Headroom, and the embedded Peak Monitor](images/ui-volume-advanced.png)
 
@@ -52,13 +51,13 @@ Zero Point ranges from −100 to +22 dB and includes a **Default** button. The a
 
 ### Maximum Digital Headroom
 
-**Maximum Digital Headroom** reserves digital headroom for DSP processing. As the master volume increases, the HTP-1 automatically balances analog and digital gain while preserving the configured digital headroom for as long as possible. In most systems, the default value provides a good balance between clipping protection and available analog gain.
+**Maximum Digital Headroom** specifies the maximum reserve of digital headroom the HTP-1 attempts to preserve for DSP processing. As the master volume rises beyond the displayed **Highest volume with full digital headroom**, the HTP-1 gradually consumes that reserved headroom. In most systems, the default value provides a good balance between clipping protection and available analog gain.
 
 | Control | Range | Default |
 |---|---|---|
 | Maximum Digital Headroom | 0 to 30 dB | 12 dB |
 
-Use **Peak Monitor** to determine the smallest **Maximum Digital Headroom** value that avoids digital clipping. Reducing the reserved digital headroom increases the available analog volume range, but leaves less margin for digital peaks before clipping.
+Use **Peak Monitor** to determine the smallest **Maximum Digital Headroom** value that avoids digital clipping. Reducing **Maximum Digital Headroom** allows the HTP-1 to use more analog gain before it begins consuming digital headroom.
 
 The page also shows two live readouts:
 
@@ -69,15 +68,16 @@ The page also shows two live readouts:
 
 The HTP-1 automatically combines analog and digital volume control to maximize dynamic range while minimizing the risk of digital clipping. These transitions are automatic and normally require no user intervention. The exact transition points depend on the configured **Reference Output Voltage** and **Maximum Digital Headroom**.
 
-At lower listening levels, the HTP-1 preserves the configured **Maximum Digital Headroom** while increasing the analog output level. As the master volume approaches **0 dB**, the reserved digital headroom is gradually reduced until only the normal 1 dB reserve remains.
-
-Above **0 dB**, the processor can continue increasing the analog output level until the analog stage reaches its maximum output capability. If additional gain is still required, the remaining increase is applied digitally.
+At lower listening levels, the HTP-1 can increase the analog output while keeping the full configured **Maximum Digital Headroom** available. As the master volume rises beyond the displayed **Highest volume with full digital headroom**, the HTP-1 gradually consumes the reserved headroom while continuing to raise playback level. Above **0 dB**, the analog stage continues to increase output until it reaches its maximum capability; if more gain is still needed, the remaining increase is applied digitally.
 
 ### Recommended Setup
 
-1. Set **Reference Output Voltage** to match your power amplifier's input sensitivity. If you're unsure, leave it at the default.
+1. Set **Reference Output Voltage** to match your power amplifier's input sensitivity. This calibration is referenced to **0 dB master volume**. If you're unsure, leave it at the default.
 2. Leave **Maximum Digital Headroom** at its default value.
 3. Increase **Maximum Digital Headroom** only if the **Peak Monitor** indicates digital clipping during normal listening.
+
+!!! note
+    The configured **Maximum Digital Headroom** is fully available only up to the displayed **Highest volume with full digital headroom**. Above that point, the HTP-1 gradually consumes the reserved headroom to allow higher playback levels.
 
 ### Peak Level Measurement
 
