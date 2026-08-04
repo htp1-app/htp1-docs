@@ -1,359 +1,386 @@
-# HTP-1 Volume Control Findings
+# HTP-1 Volume-Control Findings
 
-This document summarizes the current understanding of the HTP-1 volume-control
-implementation. It is based on reverse engineering of the `avController` source,
-code inspection, and observed system behavior.
+This document records the current understanding of the HTP-1 volume-control
+implementation. It is based on inspection of the `avController` source, related
+UI code, hardware/output-stage information, and observed behavior.
 
-Unless newer evidence contradicts these findings, this document should be treated
-as the authoritative description of the HTP-1 volume system.
+Treat this as an engineering reference for changes to volume-control code, UI
+labels, on-device help, and online documentation. Where a point remains
+unverified, it is marked as an open question rather than presented as fact.
 
----
+## Terminology
 
-# Terminology
-
-## Master Volume
+### Master Volume
 
 The user-facing volume control.
 
-Default range:
+The normal available range is approximately:
 
--100 dB … +22 dB
+```text
+-100 dB to +22 dB
+```
 
-Maximum Volume merely limits the user interface and does not change the internal
-gain calculation.
+### Maximum Volume
 
----
+**Maximum Volume** only clamps the user-accessible Master Volume range.
 
-## Reference Output Voltage
+It does not:
 
-Formerly called **Maximum Output Level**.
+- move the internal 0 dB reference point;
+- change the gain calculation;
+- redefine Reference Output Voltage;
+- guarantee that reference playback level remains reachable.
 
-Defines the analog output voltage (Vrms) produced at **0 dB master volume**.
+### Reference Output Voltage
 
-It does **not** define the maximum voltage the HTP-1 is capable of producing.
+Previously called **Maximum Output Level**.
 
-Higher master-volume settings may produce a higher output voltage.
+The setting ranges from **0.1 to 4.0 Vrms** and defines the nominal balanced
+output voltage associated with **0 dB Master Volume** for a full-scale signal
+under nominal conditions.
 
-The value should normally match the amplifier's input sensitivity.
+It does not mean:
 
----
+- the instantaneous output voltage is always fixed at that value;
+- every signal produces that voltage;
+- processing cannot raise or lower the signal level;
+- the value is necessarily the hardware's absolute maximum output in every
+  operating condition.
 
-## Maximum Digital Headroom
+The instantaneous output also depends on program level and processing such as
+Dirac Live, PEQ, trims, tone controls, Loudness, bass management, and mixing.
 
-Specifies the maximum amount of digital headroom the HTP-1 attempts to preserve
-for DSP processing.
+The name **Reference Output Voltage** is intended to distinguish the setting
+from the hardware's absolute output limit. In user-facing help, define the
+reference explicitly as **0 dB Master Volume**.
 
-This value is **not** guaranteed to remain available at every listening level.
+### Maximum Digital Headroom
 
-As the master volume increases, the HTP-1 gradually consumes the configured
-digital headroom to allow higher playback levels.
+**Maximum Digital Headroom** specifies the maximum amount of digital headroom
+the HTP-1 attempts to preserve for DSP processing.
 
----
+It is not a fixed reserve guaranteed at every Master Volume setting.
 
-# Confirmed implementation
+As Master Volume rises beyond the point reported as **Highest volume with full
+digital headroom**, the HTP-1 gradually consumes the configured reserve to allow
+higher playback levels.
 
-## Reference Output Voltage
+### Configured and available digital headroom
 
-User value:
+These are different quantities:
 
-0.1 … 4 Vrms
+- **Configured digital headroom** is the value selected with Maximum Digital
+  Headroom.
+- **Currently available digital headroom** is the reserve remaining at the
+  current Master Volume.
 
-Conversion:
+Documentation must not use these terms interchangeably.
 
+### Zero Point
+
+**Zero Point** changes only the displayed Master Volume value.
+
+It does not change:
+
+- the underlying Master Volume;
+- analog or digital gain;
+- output voltage;
+- the internal 0 dB reference point.
+
+## Confirmed implementation details
+
+### Voltage conversion
+
+The user-facing voltage setting is converted approximately as follows:
+
+```text
 Vrms
+→ 20 × log10(Vrms)
+→ user clip/reference level in dBV
+→ board correction
+→ _correctedClipVolume_dB
+```
 
-↓
+The production-board correction found in the source is approximately:
 
-20 × log10(V)
-
-↓
-
-dBV
-
-↓
-
-subtract board correction
-
-↓
-
-_correctedClipVolume_dB
-
-Board correction:
-
+```text
 2.556 dB
+```
 
-derived from
+derived from:
 
+```text
 ((12.077 + 12.035) / 2) - 9.5
+```
 
----
+The full engineering rationale for this correction has not yet been verified.
+Do not expose it in normal user documentation unless that rationale is known.
 
-## Internal headroom
+### Internal 1 dB reserve
 
-The firmware permanently keeps an additional 1 dB of headroom.
+The implementation retains an additional approximately **1 dB** digital reserve.
 
-Therefore:
+With configured headroom `H`, the highest Master Volume that retains the full
+configured headroom is approximately:
 
-Highest MV with full configured headroom
-
-≈
-
-1 dB − Maximum Digital Headroom
+```text
+Highest MV with full configured headroom ≈ 1 dB - H
+```
 
 Examples:
 
-12 dB headroom
+```text
+12 dB configured headroom → approximately -11 dB MV
+18 dB configured headroom → approximately -17 dB MV
+```
 
-↓
+Use the live UI readout as the authoritative value where available.
 
-approximately -11 dB MV
+### Analog gain limit
 
-18 dB headroom
+`volAna` is capped at **+22 dB**, matching the maximum gain of the CS3318 analog
+volume-control stage.
 
-↓
+Conceptually, the implementation does this:
 
-approximately -17 dB MV
+```cpp
+if (volAna > 22) {
+    volDig += (volAna - 22);
+    volAna = 22;
+}
+```
 
----
+Any requested gain beyond the analog stage's +22 dB limit is transferred to the
+digital stage.
 
-# Gain algorithm
+### Maximum external balanced output
 
-The implementation is more sophisticated than a simple
+The HTP-1's clean external balanced output is approximately **4.0 Vrms**.
 
-Analog
+This is a separate concept from the CS3318's +22 dB maximum analog gain:
 
-↓
+- **+22 dB** is the analog gain-control limit.
+- **Approximately 4 Vrms** is the external balanced output limit.
 
-Digital
+With **Reference Output Voltage = 4 Vrms**, a full-scale signal at 0 dB Master
+Volume is already at approximately the clean external output limit. Raising
+Master Volume further cannot produce proportionally higher clean voltage for
+that signal; additional digital gain instead causes sufficiently high-level
+signals to clip.
 
-transition.
+With a lower Reference Output Voltage, analog gain may remain available above
+0 dB Master Volume until the output approaches approximately 4 Vrms.
 
-Instead it behaves approximately as follows.
+Example:
 
-## Region 1
+```text
+Reference Output Voltage = 2 Vrms
+2 Vrms → 4 Vrms requires approximately +6 dB
+```
 
-Low master volume
+Beyond that point, any further requested increase must come from digital gain
+and may clip sufficiently high-level signals.
 
-The analog gain increases while the configured digital headroom remains fully
-available.
+## Gain algorithm
 
-## Region 2
+The system does not follow one universal, simple sequence such as:
 
-Approaching 0 dB
+```text
+analog only → digital only → analog only
+```
 
-The HTP-1 gradually consumes the configured digital headroom while continuing
-to increase playback level.
+Its behavior depends on both **Reference Output Voltage** and **Maximum Digital
+Headroom**.
 
-At 0 dB MV only the internal 1 dB reserve remains.
+A useful approximation is:
 
-## Region 3
+### Region 1: Full configured headroom
 
-Above 0 dB
+At lower Master Volume settings, analog gain increases while the full configured
+digital headroom remains available.
 
-Analog gain continues increasing until the analog stage reaches its maximum
-capability.
+### Region 2: Configured headroom is consumed
 
-## Region 4
+Above **Highest volume with full digital headroom**, the HTP-1 begins consuming
+the configured digital reserve to allow higher playback levels.
 
-If additional gain is required
+At approximately 0 dB Master Volume, only the normal internal reserve remains.
 
-Positive digital gain is applied.
+### Region 3: Analog gain above 0 dB
 
-This region depends on Reference Output Voltage and does not necessarily occur
-for every configuration.
+Above 0 dB Master Volume, the processor may continue increasing analog gain,
+depending on the configured Reference Output Voltage and the remaining analog
+output capability.
 
----
+### Region 4: Positive digital gain
 
-# Important consequences
+Once `volAna` reaches its +22 dB limit, any remaining requested gain is moved to
+`volDig`.
 
-Configured Digital Headroom
+Whether and where this region occurs depends on Reference Output Voltage.
 
-≠
+## Important consequences
 
-Currently Available Digital Headroom
+### Maximum Digital Headroom is not permanent
 
-The configured value is the maximum reserve.
+The configured value is the maximum reserve the HTP-1 attempts to preserve.
 
-The available value depends on master volume.
+It remains fully available only up to the displayed **Highest volume with full
+digital headroom**. Above that point, available headroom decreases.
 
-This distinction should be reflected throughout the documentation.
+### Reference Output Voltage is anchored to 0 dB MV
 
----
+Reference Output Voltage is not anchored to Maximum Volume.
 
-Reference Output Voltage
+Reducing Maximum Volume therefore reduces the highest output level the user can
+reach without changing the gain calculation.
 
-does not define
+### A 4 Vrms setting does not imply clean output above 4 Vrms
 
-maximum analog output
+With Reference Output Voltage set to 4 Vrms, a full-scale signal at 0 dB Master
+Volume is already near the clean balanced-output limit.
 
-It defines
+Higher Master Volume settings may request more gain, but they do not create
+proportionally higher clean voltage for a full-scale signal. Positive digital
+gain can instead drive the digital signal into clipping.
 
-output voltage at 0 dB master volume.
+### Processing affects actual output and clipping risk
 
----
+The nominal voltage reference does not account for every possible processing
+state. Actual output and peak level can be changed by:
 
-Maximum Volume
+- program material;
+- channel trims;
+- user delay/trim interactions where applicable;
+- Dirac Live filters;
+- PEQ;
+- tone controls;
+- Loudness;
+- bass management;
+- channel summation and mixing.
 
-does not influence
+## Practical reference-level limitation
 
-gain calculation
+A common home-theater goal is to:
 
-It only limits the user interface.
+1. preserve a fixed amount of digital headroom that is never consumed; and
+2. still reach the amplifier voltage required for acoustic reference level at
+   the highest permitted Master Volume.
 
----
+The current implementation makes those goals difficult to combine because:
 
-Zero Point
+- Reference Output Voltage is anchored to **0 dB Master Volume**;
+- Maximum Volume only clamps the UI;
+- Reference Output Voltage is limited to **4 Vrms**.
 
-changes only the displayed volume scale.
+### Example: 12 dB headroom, 1.66 Vrms amplifier sensitivity
 
-It has no effect on gain or output level.
+Assume:
 
----
+```text
+Amplifier sensitivity: 1.66 Vrms
+Maximum Digital Headroom: 12 dB
+Highest MV preserving full headroom: approximately -11 dB
+```
 
-# Practical implications
+To produce 1.66 Vrms at -11 dB Master Volume, the voltage referenced to 0 dB
+would need to be:
 
-The commonly recommended configuration
+```text
+1.66 × 10^(11/20) ≈ 5.89 Vrms
+```
 
-Maximum Volume
+The HTP-1 setting is limited to 4 Vrms.
 
-=
+At 4 Vrms, the nominal voltage available at -11 dB is approximately:
 
--(Maximum Digital Headroom)
+```text
+4 × 10^(-11/20) ≈ 1.13 Vrms
+```
 
-(or similar)
+This is approximately **3.4 dB below** 1.66 Vrms.
 
-does indeed prevent the configured headroom from being consumed.
+### Example: 18 dB headroom, 1.66 Vrms amplifier sensitivity
 
-However,
+Assume:
 
-it also reduces the maximum analog output available to the user because
-Reference Output Voltage remains referenced to 0 dB MV.
+```text
+Amplifier sensitivity: 1.66 Vrms
+Maximum Digital Headroom: 18 dB
+Highest MV preserving full headroom: approximately -17 dB
+```
 
-Example
+To produce 1.66 Vrms at -17 dB Master Volume, the voltage referenced to 0 dB
+would need to be:
 
-Amplifier sensitivity
+```text
+1.66 × 10^(17/20) ≈ 11.8 Vrms
+```
 
-1.66 Vrms
+This is far beyond the 4 Vrms setting and external-output limit.
 
-Maximum Digital Headroom
+## Possible future Reference Level Mode
 
-12 dB
+An optional mode could define Reference Output Voltage at **Maximum Volume**
+instead of at **0 dB Master Volume**.
 
-Maximum Volume
+Conceptually:
 
--11 dB
+```text
+Current mode:
+Reference Output Voltage ↔ 0 dB MV
 
-To achieve
+Proposed mode:
+Reference Output Voltage ↔ Maximum Volume
+```
 
-1.66 Vrms
+This could allow the user to:
 
-at
+- choose a fixed digital-headroom reserve;
+- set Maximum Volume so that reserve is never consumed;
+- produce the desired amplifier input voltage at Maximum Volume.
 
--11 dB
+Such a change must be optional or include careful migration logic. Silently
+changing the meaning of existing settings could cause a large and potentially
+unsafe increase in playback level.
 
-the Reference Output Voltage would need to be
+## Documentation guidance
 
-approximately
+Preferred terms:
 
-5.9 Vrms
+- **Reference Output Voltage**
+- **Maximum Digital Headroom**
+- **configured digital headroom**
+- **currently available digital headroom**
+- **Highest volume with full digital headroom**
+- **Maximum Volume**
+- **Zero Point**
 
-The HTP-1 only allows
+Recommended user-level explanation:
 
-4 Vrms
+> The HTP-1 automatically combines analog and digital volume control. At lower
+> listening levels it preserves the full configured Maximum Digital Headroom.
+> As Master Volume increases beyond the displayed Highest volume with full
+> digital headroom, that reserve is gradually consumed. Above 0 dB Master
+> Volume, analog gain may continue to increase until the analog stage reaches
+> its limit. Any remaining requested gain is applied digitally and may clip
+> sufficiently high-level signals.
 
-therefore the system remains roughly
+Avoid wording that implies:
 
-3.4 dB
+- Maximum Digital Headroom is permanently reserved;
+- Reference Output Voltage is always the instantaneous output voltage;
+- Reference Output Voltage is unrelated to 0 dB Master Volume;
+- Reference Output Voltage is the only factor controlling actual output;
+- the HTP-1 always follows one fixed analog/digital gain sequence;
+- Maximum Volume changes internal gain calculations;
+- Zero Point changes playback level;
+- a 4 Vrms reference setting allows clean full-scale output above 4 Vrms.
 
-below reference level.
+## Open questions
 
-With
-
-18 dB
-
-headroom
-
-the required Reference Output Voltage would be
-
-approximately
-
-11.8 Vrms.
-
----
-
-# Documentation decisions
-
-Preferred terminology
-
-Reference Output Voltage
-
-instead of
-
-Maximum Output Level
-
-because the setting is referenced to
-
-0 dB MV
-
-rather than the maximum achievable output.
-
-Maximum Digital Headroom
-
-should always be described as
-
-the maximum headroom the HTP-1 attempts to preserve.
-
-Avoid wording such as
-
-"reserves digital headroom"
-
-without qualification.
-
----
-
-# Open questions
-
-Still unknown
-
-• Exact analog output capability of the hardware
-
-• Exact point where positive digital gain begins for every Reference Output
-  Voltage
-
-• Engineering rationale behind the 2.556 dB correction factor
-
----
-
-# Possible future feature
-
-Reference Level Mode
-
-Instead of defining
-
-Reference Output Voltage
-
-at
-
-0 dB MV
-
-allow it to be referenced to
-
-Maximum Volume.
-
-Benefits
-
-• fixed digital headroom is never consumed
-
-• reference level remains reachable
-
-• Maximum Volume becomes the calibration point
-
-This would require either
-
-- migration logic
-
-or
-
-- an optional operating mode
-
-to avoid changing existing installations.
+- Full engineering rationale for the approximately 2.556 dB board correction.
+- Exact behavior under every processing combination and every Reference Output
+  Voltage setting.
+- Whether additional hardware tolerances or per-board calibration affect the
+  practical 4 Vrms limit.

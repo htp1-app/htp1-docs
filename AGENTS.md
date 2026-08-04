@@ -81,3 +81,28 @@ When documentation and implementation disagree:
 3. then update on-device help and online documentation consistently.
 
 Do not guess at unresolved implementation details. Mark them as open questions instead.
+
+## Confirmed analog and output limits
+
+When working on the volume-control implementation or documentation, preserve
+these confirmed distinctions:
+
+- `volAna` is capped at **+22 dB**, matching the CS3318 analog gain limit.
+- Gain requested beyond +22 dB is transferred to the digital stage.
+- The clean external balanced output is approximately **4 Vrms**.
+- **Reference Output Voltage = 4 Vrms** therefore places a full-scale signal at
+  approximately the clean output limit at 0 dB Master Volume.
+- Raising Master Volume above that point does not provide proportionally higher
+  clean voltage for a full-scale signal; positive digital gain can instead
+  cause clipping.
+- With a lower Reference Output Voltage, analog gain may remain available above
+  0 dB Master Volume until the output approaches approximately 4 Vrms.
+
+Do not describe **Reference Output Voltage** as either:
+
+- the analog gain limit; or
+- a promise that higher Master Volume can produce clean voltage beyond 4 Vrms.
+
+The engineering reference remains:
+
+- `docs/development/volume-control-findings.md`
