@@ -1,6 +1,6 @@
 # Peak Monitor
 
-Peak Monitor shows how close each channel is getting to clipping (the signal exceeds the available digital range and creates audible distortion), so you can set headroom and **Reference Output Voltage** by measurement instead of by ear.
+Peak Monitor shows how close each channel is getting to clipping (the signal exceeds the available digital range and creates audible distortion), so you can set **Maximum Digital Headroom** by measurement instead of by ear. **Reference Output Voltage** is set separately in [Volume Setup](volume-setup.md).
 
 ![Peak Monitor page in Table view](images/ui-peak-monitor.png)
 
@@ -28,6 +28,17 @@ cleared peaks. The marker is green while there's headroom to spare, amber as the
 
 If you have a seat shaker channel active, it appears alongside the speaker channels, set apart by a
 divider and its own icon.
+
+## Setting the Controls
+
+Peak Monitor is most useful for setting **Maximum Digital Headroom**.
+
+1. Set **Reference Output Voltage** on [Volume Setup](volume-setup.md) to match your amplifier's input sensitivity at **0 dB master volume**. If you're unsure, leave the default.
+2. With Peak Monitor running and your loudest program material playing, lower **Maximum Digital Headroom** until clipping first appears.
+3. Increase **Maximum Digital Headroom** by 1–2 dB until the peaks stay below clipping.
+4. Recheck at your normal loudest listening level and adjust again if needed.
+
+Peak Monitor does not directly set **Reference Output Voltage**; that value is chosen in [Volume Setup](volume-setup.md) based on your amplifier and the nominal voltage you want at 0 dB master volume.
 
 ## If a Channel Clips
 
