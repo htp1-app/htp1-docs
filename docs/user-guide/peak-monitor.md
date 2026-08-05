@@ -2,6 +2,8 @@
 
 Peak Monitor shows how close each channel is getting to clipping (the signal exceeds the available digital range and creates audible distortion), so you can set **Maximum Digital Headroom** by measurement instead of by ear. **Reference Output Voltage** is set separately in [Volume Setup](volume-setup.md).
 
+Peak Monitor measures the largest instantaneous processed sample, so it reports how close the signal is to digital full scale. It does not measure RMS level or analog output voltage.
+
 ![Peak Monitor page in Table view](images/ui-peak-monitor.png)
 
 ## Turning It On
@@ -39,6 +41,8 @@ Peak Monitor is most useful for setting **Maximum Digital Headroom**.
 4. Recheck at your normal loudest listening level and adjust again if needed.
 
 Peak Monitor does not directly set **Reference Output Voltage**; that value is chosen in [Volume Setup](volume-setup.md) based on your amplifier and the nominal voltage you want at 0 dB master volume.
+
+Peak Monitor is a peak-level measurement, not an RMS measurement.
 
 ## If a Channel Clips
 

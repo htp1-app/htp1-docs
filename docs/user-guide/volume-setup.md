@@ -27,6 +27,8 @@ you've decided are sensible.
 
 The **Reference Output Voltage** defines the nominal analog output voltage, in Vrms, associated with 0 dB master volume. It is designed to match the HTP-1's analog output to your amplifier's input sensitivity—the input voltage required to drive the amplifier to full power.
 
+This is a nominal calibration reference for 0 dB master volume. It does not mean every source or program signal produces that exact RMS voltage, nor does it guarantee the instantaneous output is always that value.
+
 The configured **Reference Output Voltage** sets the nominal output level at 0 dB master volume and affects how much additional gain the analog stage can provide before the HTP-1 may need to apply positive digital gain at very high master-volume settings.
 
 | Control | Range | Default button |
@@ -51,7 +53,7 @@ Zero Point ranges from −100 to +22 dB and includes a **Default** button. The a
 
 ### Maximum Digital Headroom
 
-**Maximum Digital Headroom** specifies the maximum reserve of digital headroom the HTP-1 attempts to preserve for DSP processing. As the master volume rises beyond the displayed **Highest volume with full digital headroom**, the HTP-1 gradually consumes that reserved headroom. In most systems, the default value provides a good balance between clipping protection and available analog gain.
+**Maximum Digital Headroom** specifies the maximum reserve of digital headroom the HTP-1 attempts to preserve for DSP processing. This is a configured reserve, not a fixed amount guaranteed at every master-volume setting. As the master volume rises beyond the displayed **Highest volume with full digital headroom**, the HTP-1 gradually consumes that reserved headroom. In most systems, the default value provides a good balance between clipping protection and available analog gain.
 
 | Control | Range | Default |
 |---|---|---|

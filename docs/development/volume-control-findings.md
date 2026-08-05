@@ -2,7 +2,8 @@
 
 This document records the current understanding of the HTP-1 volume-control
 implementation. It is based on inspection of the `avController` source, related
-UI code, hardware/output-stage information, and observed behavior.
+UI code, the Peak Monitor implementation, CS3318 data-sheet limits, hardware
+output-stage information, and observed behavior.
 
 Treat this as an engineering reference for changes to volume-control code, UI
 labels, on-device help, and online documentation. Where a point remains
@@ -29,35 +30,31 @@ It does not:
 - move the internal 0 dB reference point;
 - change the gain calculation;
 - redefine Reference Output Voltage;
-- guarantee that reference playback level remains reachable.
+- change actual gain below the cap.
 
 ### Reference Output Voltage
 
 Previously called **Maximum Output Level**.
 
 The setting ranges from **0.1 to 4.0 Vrms** and defines the nominal balanced
-output voltage associated with **0 dB Master Volume** for a full-scale signal
-under nominal conditions.
+output produced by a **0 dBFS sine wave at 0 dB Master Volume**, subject to the
+normal board correction and calibration tolerances.
 
 It does not mean:
 
+- every signal produces that RMS voltage;
 - the instantaneous output voltage is always fixed at that value;
-- every signal produces that voltage;
-- processing cannot raise or lower the signal level;
-- the value is necessarily the hardware's absolute maximum output in every
-  operating condition.
+- processing cannot raise or lower peak levels before the master-volume stage;
+- a momentary full-scale sample has an independently defined Vrms value;
+- the setting can override the HTP-1's approximately 4 Vrms hardware limit.
 
-The instantaneous output also depends on program level and processing such as
-Dirac Live, PEQ, trims, tone controls, Loudness, bass management, and mixing.
-
-The name **Reference Output Voltage** is intended to distinguish the setting
-from the hardware's absolute output limit. In user-facing help, define the
-reference explicitly as **0 dB Master Volume**.
+The name **Reference Output Voltage** distinguishes the calibration setting from
+the hardware's absolute clean-output capability.
 
 ### Maximum Digital Headroom
 
-**Maximum Digital Headroom** specifies the maximum amount of digital headroom
-the HTP-1 attempts to preserve for DSP processing.
+**Maximum Digital Headroom** specifies the maximum amount of digital attenuation
+the HTP-1 can retain to accommodate gain introduced by DSP processing.
 
 It is not a fixed reserve guaranteed at every Master Volume setting.
 
@@ -75,6 +72,24 @@ These are different quantities:
   current Master Volume.
 
 Documentation must not use these terms interchangeably.
+
+### Peak Monitor
+
+Peak Monitor records the largest instantaneous post-processing sample at its
+measurement point.
+
+A linear value of `1.0` represents digital full scale. It does not calculate:
+
+- RMS level;
+- average level;
+- crest factor;
+- sustained power;
+- an analog Vrms value.
+
+If Peak Monitor indicates that `H` dB of headroom is required, the relevant
+interpretation is that the largest observed post-processing sample was about
+`H` dB above digital full scale before the protective digital attenuation was
+applied.
 
 ### Zero Point
 
@@ -138,8 +153,8 @@ Use the live UI readout as the authoritative value where available.
 
 ### Analog gain limit
 
-`volAna` is capped at **+22 dB**, matching the maximum gain of the CS3318 analog
-volume-control stage.
+`volAna` is capped at **+22 dB**, matching the maximum gain setting of the
+CS3318 analog volume-control stage.
 
 Conceptually, the implementation does this:
 
@@ -150,36 +165,60 @@ if (volAna > 22) {
 }
 ```
 
-Any requested gain beyond the analog stage's +22 dB limit is transferred to the
-digital stage.
+Any requested gain beyond the analog stage's +22 dB control limit is transferred
+to the digital stage.
 
-### Maximum external balanced output
+### CS3318 signal-swing limit
 
-The HTP-1's clean external balanced output is approximately **4.0 Vrms**.
+The CS3318 is operated from approximately **±9 V analog rails**.
 
-This is a separate concept from the CS3318's +22 dB maximum analog gain:
-
-- **+22 dB** is the analog gain-control limit.
-- **Approximately 4 Vrms** is the external balanced output limit.
-
-With **Reference Output Voltage = 4 Vrms**, a full-scale signal at 0 dB Master
-Volume is already at approximately the clean external output limit. Raising
-Master Volume further cannot produce proportionally higher clean voltage for
-that signal; additional digital gain instead causes sufficiently high-level
-signals to clip.
-
-With a lower Reference Output Voltage, analog gain may remain available above
-0 dB Master Volume until the output approaches approximately 4 Vrms.
-
-Example:
+Its data sheet specifies the full-scale input/output range for
+`THD+N < 1%` as:
 
 ```text
-Reference Output Voltage = 2 Vrms
-2 Vrms → 4 Vrms requires approximately +6 dB
+(VA-) + 1.35 V  to  (VA+) - 1.35 V
 ```
 
-Beyond that point, any further requested increase must come from digital gain
-and may clip sufficiently high-level signals.
+With ±9 V rails, this corresponds to approximately:
+
+```text
+±7.65 Vpeak
+15.3 Vpp
+5.41 Vrms for a sine wave
+```
+
+This is a signal-swing limit, not the same thing as the CS3318's **+22 dB gain
+setting**.
+
+### Output stage and maximum external balanced output
+
+The analog output stage after the CS3318 has approximately **-2.7 dB gain**.
+
+Applying that fixed attenuation to the CS3318's approximately 5.41 Vrms maximum
+sine-wave output gives:
+
+```text
+5.41 × 10^(-2.7/20) ≈ 3.96 Vrms
+```
+
+This explains the HTP-1's approximately **4.0 Vrms clean balanced-output limit**.
+
+The resulting analog structure is approximately:
+
+```text
+CS3318 maximum clean sine-wave output: ≈5.4 Vrms
+                           ↓ -2.7 dB
+Balanced XLR output:                    ≈4.0 Vrms
+```
+
+Therefore:
+
+- the CS3318's unused gain-setting range is not necessarily unused clean
+  output-voltage capability;
+- increasing analog gain also raises any full-scale peak;
+- once the required output reaches the hardware limit, further gain only moves
+  clipping into the analog path;
+- exceeding approximately 4 Vrms cleanly requires hardware changes.
 
 ## Gain algorithm
 
@@ -232,117 +271,156 @@ digital headroom**. Above that point, available headroom decreases.
 
 Reference Output Voltage is not anchored to Maximum Volume.
 
-Reducing Maximum Volume therefore reduces the highest output level the user can
-reach without changing the gain calculation.
+Reducing Maximum Volume therefore reduces the output of a conventional 0 dBFS
+test signal, but it does not by itself describe the output produced by an
+internally boosted post-processing peak.
+
+### Peak level and Vrms must not be mixed
+
+Peak Monitor reports instantaneous digital sample peaks. Reference Output
+Voltage is specified using the RMS value of a sine wave.
+
+A full-scale sine with a 4 Vrms output has:
+
+```text
+4.00 Vrms
+5.66 Vpeak
+11.31 Vpp
+```
+
+Any legal DAC signal whose samples stay within ±1.0 cannot require more than the
+corresponding instantaneous peak voltage at the same gain setting, although its
+RMS value may be very different.
+
+Do not assign a program transient an RMS voltage solely from its sample peak.
+RMS requires knowledge of the waveform over time.
 
 ### A 4 Vrms setting does not imply clean output above 4 Vrms
 
-With Reference Output Voltage set to 4 Vrms, a full-scale signal at 0 dB Master
+With Reference Output Voltage set to 4 Vrms, a full-scale sine at 0 dB Master
 Volume is already near the clean balanced-output limit.
 
 Higher Master Volume settings may request more gain, but they do not create
 proportionally higher clean voltage for a full-scale signal. Positive digital
-gain can instead drive the digital signal into clipping.
+gain can instead drive the digital or analog path into clipping.
 
-### Processing affects actual output and clipping risk
+### Gain-setting range is not output-voltage headroom
 
-The nominal voltage reference does not account for every possible processing
-state. Actual output and peak level can be changed by:
-
-- program material;
-- channel trims;
-- user delay/trim interactions where applicable;
-- Dirac Live filters;
-- PEQ;
-- tone controls;
-- Loudness;
-- bass management;
-- channel summation and mixing.
-
-## Practical reference-level limitation
-
-A common home-theater goal is to:
-
-1. preserve a fixed amount of digital headroom that is never consumed; and
-2. still reach the amplifier voltage required for acoustic reference level at
-   the highest permitted Master Volume.
-
-The current implementation makes those goals difficult to combine because:
-
-- Reference Output Voltage is anchored to **0 dB Master Volume**;
-- Maximum Volume only clamps the UI;
-- Reference Output Voltage is limited to **4 Vrms**.
-
-### Example: 12 dB headroom, 1.66 Vrms amplifier sensitivity
-
-Assume:
+The earlier idea that apparently unused CS3318 gain could be used to preserve
+more digital headroom was based on conflating:
 
 ```text
-Amplifier sensitivity: 1.66 Vrms
-Maximum Digital Headroom: 12 dB
-Highest MV preserving full headroom: approximately -11 dB
+unused CS3318 gain-setting range
 ```
 
-To produce 1.66 Vrms at -11 dB Master Volume, the voltage referenced to 0 dB
-would need to be:
+with:
 
 ```text
-1.66 × 10^(11/20) ≈ 5.89 Vrms
+unused clean analog output-voltage capability
 ```
 
-The HTP-1 setting is limited to 4 Vrms.
+They are not equivalent.
 
-At 4 Vrms, the nominal voltage available at -11 dB is approximately:
+If a post-processing peak is attenuated to 0 dBFS at the DAC, adding analog gain
+raises that same full-scale peak. Once the XLR output would exceed approximately
+4 Vrms for a sine-equivalent full-scale signal, clipping has merely moved from
+the digital domain to the analog domain.
+
+### Crest factor does not change the instantaneous clipping limit
+
+Crest factor affects:
+
+- RMS level;
+- average power;
+- heating;
+- perceived loudness.
+
+It does not change the instantaneous voltage required for the specific maximum
+sample captured by Peak Monitor.
+
+## Reassessment of “Preserve Digital Headroom” mode
+
+The original proposal assumed the current algorithm left clean analog gain
+unused and that gain could be reallocated to preserve more digital headroom
+while still reaching an independently selected output voltage.
+
+The hardware review shows that premise is incorrect.
+
+A fixed-headroom or shifted-reference algorithm cannot create additional clean
+output capability. It can only:
+
+- change where gain is allocated;
+- change where clipping occurs;
+- or limit the accessible volume range.
+
+A new gain-allocation mode therefore cannot guarantee both:
+
+1. full configured digital headroom; and
+2. an independently chosen Reference Output Voltage at the maximum listening
+   level;
+
+unless that combination already fits within the existing total gain and
+approximately 4 Vrms hardware limit.
+
+The preferred product improvement is a calibration workflow that configures and
+explains the existing controls rather than introducing a second gain algorithm.
+
+## UI guidance
+
+### “Effective voltage at that volume”
+
+A value calculated as:
 
 ```text
-4 × 10^(-11/20) ≈ 1.13 Vrms
+Reference Output Voltage × 10^(Master Volume / 20)
 ```
 
-This is approximately **3.4 dB below** 1.66 Vrms.
+is mathematically valid only as:
 
-### Example: 18 dB headroom, 1.66 Vrms amplifier sensitivity
+> Expected RMS output of a 0 dBFS sine wave at the selected Master Volume.
 
-Assume:
+It is not:
+
+- the output of the loudest program material;
+- a headroom-status value;
+- the RMS voltage corresponding to the Peak Monitor reading;
+- proof that the amplifier will or will not clip on a transient.
+
+On the Levels page this value is likely to confuse users because it answers a
+test-signal question rather than a calibration question.
+
+Preferred options:
+
+1. remove it from the Levels page; or
+2. move it to diagnostics and label it explicitly:
 
 ```text
-Amplifier sensitivity: 1.66 Vrms
-Maximum Digital Headroom: 18 dB
-Highest MV preserving full headroom: approximately -17 dB
+Expected output for a 0 dBFS sine at this volume
 ```
 
-To produce 1.66 Vrms at -17 dB Master Volume, the voltage referenced to 0 dB
-would need to be:
+Do not label it merely as **Effective voltage**.
+
+### Headroom preservation status
+
+A more useful Levels-page status is the relationship between Maximum Volume and
+configured headroom.
+
+Examples:
 
 ```text
-1.66 × 10^(17/20) ≈ 11.8 Vrms
+Full configured headroom is preserved up to -11 dB MV.
 ```
-
-This is far beyond the 4 Vrms setting and external-output limit.
-
-## Possible future Reference Level Mode
-
-An optional mode could define Reference Output Voltage at **Maximum Volume**
-instead of at **0 dB Master Volume**.
-
-Conceptually:
 
 ```text
-Current mode:
-Reference Output Voltage ↔ 0 dB MV
-
-Proposed mode:
-Reference Output Voltage ↔ Maximum Volume
+Maximum Volume preserves all configured digital headroom.
 ```
 
-This could allow the user to:
+```text
+Maximum Volume consumes 3 dB of configured digital headroom.
+```
 
-- choose a fixed digital-headroom reserve;
-- set Maximum Volume so that reserve is never consumed;
-- produce the desired amplifier input voltage at Maximum Volume.
-
-Such a change must be optional or include careful migration logic. Silently
-changing the meaning of existing settings could cause a large and potentially
-unsafe increase in playback level.
+This status should use the live implementation result rather than reproducing
+the gain algorithm independently in the UI where possible.
 
 ## Documentation guidance
 
@@ -355,6 +433,7 @@ Preferred terms:
 - **Highest volume with full digital headroom**
 - **Maximum Volume**
 - **Zero Point**
+- **Peak Monitor**
 
 Recommended user-level explanation:
 
@@ -370,9 +449,11 @@ Avoid wording that implies:
 
 - Maximum Digital Headroom is permanently reserved;
 - Reference Output Voltage is always the instantaneous output voltage;
-- Reference Output Voltage is unrelated to 0 dB Master Volume;
-- Reference Output Voltage is the only factor controlling actual output;
-- the HTP-1 always follows one fixed analog/digital gain sequence;
+- Reference Output Voltage describes arbitrary program RMS level;
+- a Peak Monitor sample value can be converted directly into Vrms without
+  knowing the waveform;
+- unused CS3318 gain-setting range equals unused clean output voltage;
+- a different gain split can create clean voltage beyond the hardware limit;
 - Maximum Volume changes internal gain calculations;
 - Zero Point changes playback level;
 - a 4 Vrms reference setting allows clean full-scale output above 4 Vrms.
@@ -382,5 +463,7 @@ Avoid wording that implies:
 - Full engineering rationale for the approximately 2.556 dB board correction.
 - Exact behavior under every processing combination and every Reference Output
   Voltage setting.
-- Whether additional hardware tolerances or per-board calibration affect the
-  practical 4 Vrms limit.
+- Exact tolerance of the practical 4 Vrms limit across production units and
+  loads.
+- Whether the UI should remove the 0 dBFS sine-output calculation entirely or
+  retain it in an advanced diagnostics section.
