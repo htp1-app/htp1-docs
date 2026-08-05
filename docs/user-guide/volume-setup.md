@@ -53,7 +53,7 @@ Zero Point ranges from −100 to +22 dB and includes a **Default** button. The a
 
 ### Maximum Digital Headroom
 
-**Maximum Digital Headroom** specifies the maximum reserve of digital headroom the HTP-1 attempts to preserve for DSP processing. This is a configured reserve, not a fixed amount guaranteed at every master-volume setting. As the master volume rises beyond the displayed **Highest volume with full digital headroom**, the HTP-1 gradually consumes that reserved headroom. In most systems, the default value provides a good balance between clipping protection and available analog gain.
+**Maximum Digital Headroom** specifies the maximum reserve of digital headroom the HTP-1 attempts to preserve for DSP processing. This is a configured reserve, not a fixed amount guaranteed at every master-volume setting. As the master volume rises beyond the displayed **Highest playback volume that preserves digital headroom**, the HTP-1 gradually consumes that reserved headroom. In most systems, the default value provides a good balance between clipping protection and available analog gain.
 
 | Control | Range | Default |
 |---|---|---|
@@ -63,14 +63,14 @@ Use **Peak Monitor** to determine the smallest **Maximum Digital Headroom** valu
 
 The page also shows two live readouts:
 
-- **Highest volume with full digital headroom** — the highest master-volume setting at which the full configured digital headroom remains available. Above this level, further volume increases begin consuming the reserved digital headroom.
+- **Highest playback volume that preserves digital headroom** — the highest master-volume setting at which the full configured digital headroom remains available. Above this level, further volume increases begin consuming the reserved digital headroom.
 - **Currently available digital headroom at current volume** — the digital headroom remaining at the current master-volume setting.
 
 ## How the Volume Control Works
 
 The HTP-1 automatically combines analog and digital volume control to maximize dynamic range while minimizing the risk of digital clipping. These transitions are automatic and normally require no user intervention. The exact transition points depend on the configured **Reference Output Voltage** and **Maximum Digital Headroom**.
 
-At lower listening levels, the HTP-1 can increase the analog output while keeping the full configured **Maximum Digital Headroom** available. As the master volume rises beyond the displayed **Highest volume with full digital headroom**, the HTP-1 gradually consumes the reserved headroom while continuing to raise playback level. Above **0 dB**, the analog stage may continue to increase output until it reaches its limit; if more gain is still needed, the remaining increase is applied digitally.
+At lower listening levels, the HTP-1 can increase the analog output while keeping the full configured **Maximum Digital Headroom** available. As the master volume rises beyond the displayed **Highest playback volume that preserves digital headroom**, the HTP-1 gradually consumes the reserved headroom while continuing to raise playback level. Above **0 dB**, the analog stage may continue to increase output until it reaches its limit; if more gain is still needed, the remaining increase is applied digitally.
 
 ### Recommended Setup
 
@@ -79,7 +79,7 @@ At lower listening levels, the HTP-1 can increase the analog output while keepin
 3. Increase **Maximum Digital Headroom** only if the **Peak Monitor** indicates digital clipping during normal listening.
 
 !!! note
-    The configured **Maximum Digital Headroom** is fully available only up to the displayed **Highest volume with full digital headroom**. Above that point, the HTP-1 gradually consumes the reserved headroom to allow higher playback levels.
+    The configured **Maximum Digital Headroom** is fully available only up to the displayed **Highest playback volume that preserves digital headroom**. Above that point, the HTP-1 gradually consumes the reserved headroom to allow higher playback levels.
 
 ### Peak Level Measurement
 
