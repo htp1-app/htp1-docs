@@ -157,7 +157,7 @@ The status display uses suffixes (e.g. 7.1.4**h**) to indicate the type of heigh
 
 These suffixes distinguish (mixed) height speaker layouts from standard top speaker layouts.
 
-The setup allows many choices so you can configure the decoders to drive the speakers that you have. But a few configurations are preferred:
+The HTP-1 supports many speaker layouts, allowing you to configure the system to match the speakers you have installed. While some layouts are more common than others, the recommendations below provide a good starting point for most home theaters.
 
 - 5.1.2 is a "minimum object audio" recommendation.
 - 7.1.4 is a "normal object audio" configuration.
