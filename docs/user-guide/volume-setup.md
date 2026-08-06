@@ -59,7 +59,9 @@ Zero Point ranges from −100 to +22 dB and includes a **Default** button. The a
 
 **Maximum Digital Headroom** specifies the maximum amount of digital headroom the HTP-1 attempts to preserve for DSP processing.
 
-The full configured headroom remains available up to **Highest playback volume that preserves digital headroom**. Above that point, the HTP-1 gradually consumes the reserved headroom to allow higher playback levels.
+The HTP-1 calculates and displays the **Highest playback volume that preserves digital headroom**—the highest master-volume setting before it begins consuming the configured digital headroom.
+
+The full configured digital headroom remains available from the minimum volume up to this value. Above it, the HTP-1 gradually consumes the reserved headroom to allow higher playback levels.
 
 In most systems, the default value provides a good balance between clipping protection and available analog gain.
 
@@ -71,16 +73,18 @@ Use **Peak Monitor** to determine the smallest **Maximum Digital Headroom** valu
 
 The page also shows two live readouts:
 
-- **Highest playback volume that preserves digital headroom** — the highest master-volume setting that retains the full configured digital headroom.
+- **Highest playback volume that preserves digital headroom** — the calculated threshold described above.
 - **Currently available digital headroom** — the digital headroom remaining at the current master-volume setting.
 
 ---
 
 ## How the Volume Control Works
 
-The HTP-1 automatically combines analog and digital gain to maximize dynamic range while minimizing the risk of digital clipping. These transitions are automatic and normally require no user intervention.
+The HTP-1 automatically combines analog and digital gain to maximize dynamic range while minimizing the risk of digital clipping. The transition points depend on the configured **Reference Output Voltage** and **Maximum Digital Headroom**.
 
-At lower listening levels, the HTP-1 keeps the full configured **Maximum Digital Headroom** available while adjusting playback level primarily through the analog stage. As the master volume rises beyond **Highest playback volume that preserves digital headroom**, the reserved headroom is gradually consumed. Above **0 dB**, the analog stage may continue increasing output until it reaches its limit. If more gain is still required, the remaining increase is applied digitally.
+At lower listening levels, the HTP-1 keeps the full configured **Maximum Digital Headroom** available while adjusting playback level primarily through the analog stage. As the master volume rises beyond **Highest playback volume that preserves digital headroom**, the reserved headroom is gradually consumed.
+
+Above **0 dB**, the HTP-1 continues increasing analog gain when the configured **Reference Output Voltage** leaves sufficient analog output range. Once the analog gain reaches its limit, any remaining requested gain is applied digitally.
 
 ---
 
