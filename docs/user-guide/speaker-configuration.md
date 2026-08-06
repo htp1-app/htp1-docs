@@ -187,6 +187,6 @@ There can be cases in which the channels found in the program material do not ex
 4. The Auro-3D® speaker set is in fact "high" channels, not top channels. If you choose to install top speakers, the Auro-3D® high channels are mapped directly to the top speakers.
 
 !!! note
-    Dolby Atmos™ and DTS:X™ are object-based audio systems. Sound objects are not tied to fixed speaker channels but are mapped to the available speaker layout during playback. This allows sounds to move naturally around the room across a wide range of speaker configurations.
+    **Dolby Atmos™** and **DTS:X™** are object-based audio systems. Sound objects are not tied to fixed speaker channels but are rendered according to your configured speaker layout during playback. This allows sounds to move naturally around the room across a wide range of speaker configurations, so the same soundtrack automatically adapts to different layouts without requiring a separate mix.
 
-    Auro-3D®, on the other hand, is a channel-based system. Sounds are mixed into fixed speaker channels, which are downmixed or remapped if the corresponding speakers are not present.
+    **Auro-3D®**, on the other hand, is a channel-based system. Sounds are mixed into fixed speaker channels, which are downmixed or remapped if the corresponding speakers are not present.
