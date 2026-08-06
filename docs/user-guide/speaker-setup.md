@@ -41,7 +41,7 @@ A Dolby Atmos Enabled speaker behaves like a "Small" speaker except that a Dirac
 
 ## Enabling Speakers
 
-The factory default enables only the front left and right speakers. From there, the dialog only lets you build supported speaker configurations — a speaker you can't yet add shows why in its tooltip. The full rule set is documented in [Valid Speaker Configurations](speaker-configuration.md#valid-speaker-configurations); the tooltips in the dialog quote the same rules directly, for example *"Subwoofer 2 must be enabled before Subwoofer 3."*
+The factory default enables only the front left and right speakers. From there, the dialog only lets you build supported speaker configurations. Depending on the selected speaker layout, some output channels can instead be allocated to additional subwoofers, allowing up to five independently configurable subwoofers. A speaker you can't yet add shows why in its tooltip. The full rule set is documented in [Valid Speaker Configurations](speaker-configuration.md#valid-speaker-configurations); the tooltips in the dialog quote the same rules directly, for example *"Subwoofer 2 must be enabled before Subwoofer 3."*
 
 !!! tip
     If you have only two upper speakers it is a good idea to choose the top middle pair. Many Dolby tracks are authored to favor this upper pair. The "5.1.2" Atmos configuration uses the top-middle pair. DTS-X streams are likely authored using four high speakers. The HTP-1 "remaps" any source arrangement to match the speaker setup you choose using algorithms provided by the decoder. This is why you should describe/configure your speaker setup as accurately as possible, though few people will be able to tell the difference if a pair of speakers labeled "top front" are actually high on the wall in front.
@@ -56,7 +56,7 @@ At the bottom of the Speakers page is the **Speaker Map**: an image of the HTP-1
 
 ![Speaker Map showing enabled channels highlighted green](images/ui-speakers.png)
 
-As you use more of the 16 output channels, the jack assignment changes depending on which speakers you've enabled — a 9.1.6 layout (nine mains, one sub, six uppers) uses the back panel differently than a 5.5.6 (five mains, five subs, six uppers) or 7.5.4 (seven mains, five subs, four uppers). The Speaker Map is always the current, correct reference for this — treat it as authoritative over the silkscreen labels printed on the back panel itself, which can be misleading for less common configurations.
+As you use more of the 16 output channels, the jack assignment changes depending on which speakers you've enabled. This allows layouts ranging from 9.1.6 (nine mains, one subwoofer, six uppers) to layouts with up to five independently configurable subwoofers, such as 5.5.6 or 7.5.4.
 
 The map also shows activity, not just wiring:
 
