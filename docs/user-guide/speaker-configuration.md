@@ -148,7 +148,7 @@ Dolby content is typically authored with the upper level speakers in the ceiling
 | **6 High**: front and rear are high on the wall | The signal for the upper middle pair is actually the "top middle" for Dolby, so the pair is separated more widely than Dolby suggests. But this is best for Auro-3D®. See [Top Middle vs High Side](#top-middle-vs-high-side). |
 | **6 Mixed**: top middle plus front high, rear top or front top and rear high | Might be a good compromise with high fronts for Auro and top rears for Dolby. |
 
-The status display uses suffixes to indicate the type of height speaker layout:
+The status display uses suffixes (e.g. 7.1.4**h**) to indicate the type of height speaker layout:
 
 * **h** – Height speakers.
 * **t** – Top Front, or Top Front and Top Rear speakers.
@@ -159,7 +159,6 @@ These suffixes distinguish (mixed) height speaker layouts from standard top spea
 
 The setup allows many choices so you can configure the decoders to drive the speakers that you have. But a few configurations are preferred:
 
-- The HTP-1 supports up to 5 subwoofers depending on main and upper level channel allocation.
 - 5.1.2 is a "minimum object audio" recommendation.
 - 7.1.4 is a "normal object audio" configuration.
 - 9.1.6 is increasingly common for a well-appointed object audio room.
