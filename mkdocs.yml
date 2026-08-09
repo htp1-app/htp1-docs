@@ -116,6 +116,7 @@ nav:
           - Macros: user-guide/macros.md
           - Personalize: user-guide/personalize.md
           - Volume Setup: user-guide/volume-setup.md
+          - Volume Calibration: user-guide/volume-calibration.md
           - Peak Monitor: user-guide/peak-monitor.md
           - Device Settings: user-guide/device-settings.md
           - Backup and Restore: user-guide/configs.md
