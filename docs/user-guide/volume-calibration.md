@@ -4,7 +4,7 @@
 
 The wizard is opened from the **Volume Calibration** section of [Volume Setup](volume-setup.md). The individual settings remain available there for anyone who wants to inspect or adjust them manually; a calibration is a starting point, not a lock.
 
-![Volume Calibration wizard summary step listing the four derived settings with the reasoning for each](images/ui-volume-calibration.png)
+![Volume Calibration wizard asking what 0 dB should mean on the volume control](images/ui-volume-calibration.png)
 
 ## Before You Start
 
@@ -88,6 +88,8 @@ Each option is labeled with exactly what it costs. The **Reference Output Voltag
 ## Summary and Apply
 
 The final step lists the four settings the wizard will write — **Reference Output Voltage**, **Maximum Digital Headroom**, **Maximum Volume**, and **Zero Point** — each with the reasoning behind its value. **Apply** writes them together and stores a calibration record on the HTP-1, so the calibration state is visible from any browser.
+
+![Volume Calibration wizard summary step listing the four derived settings with the reasoning for each](images/ui-volume-calibration-summary.png)
 
 Applying is blocked while a Dirac Live filter transfer or calibration is in progress, and when the measurement no longer matches the active filter.
 
