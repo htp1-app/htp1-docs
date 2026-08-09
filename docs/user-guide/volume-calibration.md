@@ -4,6 +4,8 @@
 
 The wizard is opened from the **Volume Calibration** section of [Volume Setup](volume-setup.md). The individual settings remain available there for anyone who wants to inspect or adjust them manually; a calibration is a starting point, not a lock.
 
+![Volume Calibration wizard summary step listing the four derived settings with the reasoning for each](images/ui-volume-calibration.png)
+
 ## Before You Start
 
 - Run Volume Calibration **after** Dirac Live calibration. Its measurements are taken through your active filters, so a new Dirac calibration calls for a new measurement.
