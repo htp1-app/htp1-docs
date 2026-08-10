@@ -25,7 +25,7 @@ The **Minimum Volume** and **Maximum Volume** controls define the allowed range 
 
 ## Reference Output Voltage
 
-**Reference Output Voltage** defines the nominal analog output voltage, in Vrms, produced by a **0 dBFS sine wave** at **0 dB Master Volume**. It is intended to match the HTP-1's output to your amplifier's input sensitivity—the input voltage required to drive the amplifier to full power.
+**Reference Output Voltage** defines the nominal balanced analog output voltage, in Vrms, produced by a **0 dBFS sine wave** at the HTP-1's **internal 0 dB Master Volume**. It is intended to match the HTP-1's output to your amplifier's input sensitivity—the input voltage required to drive the amplifier to full power.
 
 This is a calibration reference only. Actual output depends on the program material and any processing such as Dirac Live, PEQ, trims, Loudness, bass management, and mixing.
 
@@ -95,7 +95,7 @@ Above **0 dB**, the HTP-1 continues increasing analog gain when the configured *
 3. Use **Peak Monitor** to determine whether additional digital headroom is required.
 
 !!! tip
-    Set **Zero Point** to **Highest playback volume that preserves digital headroom**. This makes **0 dB** your reference listening level. Increasing the volume above **0 dB** gradually reduces the available digital headroom and may cause clipping on very loud peaks.
+    Set **Zero Point** to **Highest playback volume that preserves digital headroom**. This makes **displayed 0 dB** your reference listening level. Increasing the volume above **0 dB** gradually reduces the available digital headroom and may cause clipping on very loud peaks.
 
 ---
 
