@@ -1,10 +1,10 @@
 # Inputs
 
 The Inputs page lets you set up each input: its name, whether it shows on the homepage, its default
-sound mode, its lip-sync delay, its Dirac Live filter slot, and a macro to run when you select it.
+listening mode, its lip-sync delay, its Dirac Live filter slot, and a macro to run when you select it.
 HDMI CEC and Bluetooth are also set up on this page.
 
-![Inputs page showing the input table with Label, Visible on Homepage, Sound Mode, Lip-Sync Delay, Dirac Live Slot, Run Macro, and UHD Capable columns](images/ui-inputs.png)
+![Inputs page showing the input table with Label, Visible on Homepage, Listening Mode, Lip-Sync Delay, Dirac Live Slot, Run Macro, and UHD Capable columns](images/ui-inputs.png)
 
 Clicking an input's name in the **Input** column selects that input immediately, so the table also
 works as an input selector.
@@ -16,7 +16,7 @@ works as an input selector.
 | Input | Shows the input's name. Click it to select that input. |
 | Label | The name shown for this input on the front panel, the homepage, and the remote. |
 | Visible on Homepage | Turns this input's button on or off on the Home page. |
-| Sound Mode | The upmixer applied when you select this input, or **Last Used** to keep whatever upmixer was last chosen. |
+| Listening Mode | The upmixer applied when you select this input, or **Last Used** to keep whatever upmixer was last chosen. |
 | Lip-Sync Delay (ms) | Extra audio delay for this input, 0–340 ms. See [Lip-Sync Delay](#lip-sync-delay) below. |
 | Dirac Live Slot | The Dirac Live filter slot applied when you select this input, or **Last Used**. |
 | Run Macro | A macro to run automatically when you select this input, or **None**. |
@@ -42,9 +42,9 @@ the visible inputs, in that order, the remote's user input buttons map as follow
 
 (1) Satellite (2) Streaming Stick (3) Cable Box (4) Blu-ray (5) Game Console (6) CD Player (7) Roon
 
-## Sound Mode
+## Listening Mode
 
-**Sound Mode** sets the upmixer the HTP-1 switches to whenever you select this input. Choose **Last
+**Listening Mode** sets the upmixer the HTP-1 switches to whenever you select this input. Choose **Last
 Used** to leave the upmixer alone and keep whichever one was last selected.
 
 ## Lip-Sync Delay
