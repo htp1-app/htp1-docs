@@ -1,7 +1,7 @@
 # Calibration
 
 The Calibration page holds your Dirac Live filter slots and the per-speaker delay and trim values
-that ride on top of them. For setting output levels and the maximum output voltage, see
+that ride on top of them. For setting output levels and the **Reference Output Voltage**, see
 [Volume Setup](volume-setup.md). For lip-sync delay, see [Inputs](inputs.md) — it is set per input,
 not on this page.
 

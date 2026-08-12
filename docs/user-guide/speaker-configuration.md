@@ -148,7 +148,7 @@ Dolby content is typically authored with the upper level speakers in the ceiling
 | **6 High**: front and rear are high on the wall | The signal for the upper middle pair is actually the "top middle" for Dolby, so the pair is separated more widely than Dolby suggests. But this is best for Auro-3D®. See [Top Middle vs High Side](#top-middle-vs-high-side). |
 | **6 Mixed**: top middle plus front high, rear top or front top and rear high | Might be a good compromise with high fronts for Auro and top rears for Dolby. |
 
-The status display uses suffixes to indicate the type of height speaker layout:
+The status display uses suffixes (e.g. 7.1.4**h**) to indicate the type of height speaker layout:
 
 * **h** – Height speakers.
 * **t** – Top Front, or Top Front and Top Rear speakers.
@@ -157,9 +157,8 @@ The status display uses suffixes to indicate the type of height speaker layout:
 
 These suffixes distinguish (mixed) height speaker layouts from standard top speaker layouts.
 
-The setup allows many choices so you can configure the decoders to drive the speakers that you have. But a few configurations are preferred:
+The HTP-1 supports many speaker layouts, allowing you to configure the system to match the speakers you have installed. While some layouts are more common than others, the recommendations below provide a good starting point for most home theaters.
 
-- The HTP-1 supports up to 5 subwoofers depending on main and upper level channel allocation.
 - 5.1.2 is a "minimum object audio" recommendation.
 - 7.1.4 is a "normal object audio" configuration.
 - 9.1.6 is increasingly common for a well-appointed object audio room.
@@ -187,6 +186,6 @@ There can be cases in which the channels found in the program material do not ex
 4. The Auro-3D® speaker set is in fact "high" channels, not top channels. If you choose to install top speakers, the Auro-3D® high channels are mapped directly to the top speakers.
 
 !!! note
-    Dolby Atmos™ and DTS:X™ are object-based audio systems. Sound objects are not tied to fixed speaker channels but are mapped to the available speaker layout during playback. This allows sounds to move naturally around the room across a wide range of speaker configurations.
+    **Dolby Atmos™** and **DTS:X™** are object-based audio systems. Sound objects are not tied to fixed speaker channels but are rendered according to your configured speaker layout during playback. This allows sounds to move naturally around the room across a wide range of speaker configurations, so the same soundtrack automatically adapts to different layouts without requiring a separate mix.
 
-    Auro-3D®, on the other hand, is a channel-based system. Sounds are mixed into fixed speaker channels, which are downmixed or remapped if the corresponding speakers are not present.
+    **Auro-3D®**, on the other hand, is a channel-based system. Sounds are mixed into fixed speaker channels, which are downmixed or remapped if the corresponding speakers are not present.
