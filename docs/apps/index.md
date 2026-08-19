@@ -72,6 +72,50 @@ Assistant again.
 [:material-github: Source on GitHub](https://github.com/TimoJJ/ha-monolith-htp1){ .md-button }
 [:material-bug: Report an issue](https://github.com/TimoJJ/ha-monolith-htp1/issues){ .md-button }
 
+### Monoprice HTP-1 for Unfolded Circle
+
+*Unfolded Circle Remote 2/3 integration · open source (MPL-2.0) · by
+[Meir Miyara](https://github.com/mase1981)*
+
+Adds the HTP-1 to an [Unfolded Circle](https://www.unfoldedcircle.com/) Remote 2 or Remote 3, so the
+processor can be driven from the remote itself and pulled into its activities. It connects over the
+HTP-1's own WebSocket interface and exposes a media player entity for the everyday controls, a
+remote entity for activity buttons, and sensors that report the unit's state.
+
+Between them the entities cover power, volume and mute, input selection, upmixer and listening
+modes, Dirac calibration slot selection, Seat Shaker trim and presets, and browsing or loading BEQ
+filters.
+
+**Requirements**
+
+- An Unfolded Circle Remote 2 or Remote 3 on the same network as the HTP-1
+- A wired connection for the HTP-1, with a static IP address or a DHCP reservation, is recommended
+  so the integration keeps finding it
+- The HTP-1's IP address, shown on the front panel **Help** screen (tap the **?** icon in the top
+  right)
+
+**Install**
+
+The integration can run on the remote itself, or as a Docker container elsewhere on your network.
+To install it on the remote:
+
+1. Download the latest `uc-intg-monoprice-htp1-<version>-aarch64.tar.gz` from the repository's
+   releases page.
+2. Open your remote's web interface at `http://<remote-ip>`.
+3. Go to **Settings → Integrations → Add Integration**.
+4. Choose **Upload** and select the archive you downloaded.
+5. Enter your HTP-1's IP address and a name for the device.
+
+To run it in Docker instead, use the `ghcr.io/mase1981/uc-intg-monoprice-htp1:latest` image with the
+Compose example in the repository, then add it to the remote as an external integration. The author
+recommends this if you plan to use the BEQ filter browser, which is less reliable when the
+integration runs on the remote's own hardware.
+
+**Source and issues**
+
+[:material-github: Source on GitHub](https://github.com/mase1981/uc-intg-monoprice-htp1){ .md-button }
+[:material-bug: Report an issue](https://github.com/mase1981/uc-intg-monoprice-htp1/issues){ .md-button }
+
 ## Tools and Utilities
 
 Nothing listed yet. If you have built something, such as a configuration editor, a measurement
