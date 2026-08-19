@@ -21,22 +21,16 @@ browser. Both apps are built from the same repository.
 **Requirements**
 
 - An iPhone, iPad, or Android device on the same network as your HTP-1
-- The HTP-1's IP address, shown on the front panel **Help** screen (tap the **?** icon in the top
-  right)
+- Firmware 2.1.2 or later, so the app finds your HTP-1 on the network by itself. On older firmware,
+  connect by IP address instead, using the address shown on the front panel **Help** screen (tap the
+  **?** icon in the top right)
 
 **Install**
 
-<!-- STORE LINK PLACEHOLDERS -->
-<!-- When each app is approved, replace the placeholder href with the real store URL: -->
-<!--   App Store    -> https://apps.apple.com/app/id<APP_ID>                          -->
-<!--   Google Play  -> https://play.google.com/store/apps/details?id=<PACKAGE_NAME>   -->
-<!-- Then delete the "pending store review" line beneath the badges.                  -->
 <div class="store-badges" markdown>
-[![Download on the App Store](../assets/download-on-the-app-store.svg)](https://apps.apple.com/)
-[![Get it on Google Play](../assets/get-it-on-google-play.png)](https://play.google.com/)
+[![Download on the App Store](../assets/download-on-the-app-store.svg)](https://apps.apple.com/app/htp-1-remote/id6797359816)
+[![Get it on Google Play](../assets/get-it-on-google-play.png)](https://play.google.com/store/apps/details?id=app.htp1.controller)
 </div>
-
-*Pending store review: these badges will link to their listings once each app is approved.*
 
 **Source and issues**
 
