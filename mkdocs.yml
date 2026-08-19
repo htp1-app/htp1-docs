@@ -76,7 +76,6 @@ plugins:
 # repository; remove a line here and uncomment its nav entry when it is ready.
 exclude_docs: |
   getting-started/
-  apps/
   self-hosting/
   developers/
   firmware/
@@ -124,8 +123,8 @@ nav:
           - Updates and Support: user-guide/maintenance.md
           - Integrations and Control: user-guide/integrations.md
           - Reference: user-guide/reference.md
-  # - Apps:
-  #     - apps/index.md
+  - Apps & Integrations:
+      - apps/index.md
   # - Self-Hosting:
   #     - self-hosting/index.md
   # - Developers:

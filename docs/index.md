@@ -21,6 +21,15 @@ community.
 
     [:octicons-arrow-right-24: Read the manual](user-guide/index.md)
 
+-   :material-cellphone-link:{ .lg .middle } **Apps & Integrations**
+
+    ---
+
+    Software the community has built around the HTP-1: native iOS and Android
+    remotes, a Home Assistant integration, and more.
+
+    [:octicons-arrow-right-24: Browse projects](apps/index.md)
+
 -   :material-comment-edit-outline:{ .lg .middle } **Suggest a Correction**
 
     ---
