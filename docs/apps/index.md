@@ -18,21 +18,14 @@ A native remote for the HTP-1, available for both iPhone and Android. It gives y
 controls (volume, input selection, upmixer, and modes) without loading the full web interface in a
 browser. Both apps are built from the same repository.
 
-**Requirements**
-
-- An iPhone, iPad, or Android device on the same network as your HTP-1
-- Firmware 2.1.2 or later, so the app finds your HTP-1 on the network by itself. On older firmware,
-  connect by IP address instead, using the address shown on the front panel **Help** screen (tap the
-  **?** icon in the top right)
-
-**Install**
+On firmware 2.1.2 or later the app finds your HTP-1 on the network by itself. On older firmware,
+connect by IP address instead, using the address shown on the front panel **Help** screen (tap the
+**?** icon in the top right).
 
 <div class="store-badges" markdown>
 [![Download on the App Store](../assets/download-on-the-app-store.svg)](https://apps.apple.com/app/htp-1-remote/id6797359816)
 [![Get it on Google Play](../assets/get-it-on-google-play.png)](https://play.google.com/store/apps/details?id=app.htp1.controller)
 </div>
-
-**Source and issues**
 
 [:material-github: Source on GitHub](https://github.com/htp1-app/htp1-native-controller){ .md-button }
 [:material-bug: Report an issue](https://github.com/htp1-app/htp1-native-controller/issues){ .md-button }
@@ -47,30 +40,29 @@ Brings the HTP-1 into [Home Assistant](https://www.home-assistant.io/) as a devi
 available to dashboards, automations, and anything else you drive from HA. It is set up through Home
 Assistant's own integrations UI once installed, and only needs the unit's IP address.
 
-**Requirements**
+It is a custom component rather than a HACS listing, so it is installed by hand. The repository has
+the current steps.
 
-- A running Home Assistant instance that can reach the HTP-1 on your network
-- The HTP-1's IP address, shown on the front panel **Help** screen (tap the **?** icon in the top
-  right)
-
-**Install**
-
-This is a custom component and is not currently distributed through HACS, so installation is manual:
-
-1. Download the latest release archive from the repository.
-2. Copy the `monoprice_htp1` directory out of the archive into a `custom_components` directory under
-   your Home Assistant configuration directory.
-3. Restart Home Assistant.
-4. Go to **Settings → Devices & Services → Add Integration** and search for **Monoprice**.
-5. Enter your HTP-1's IP address. Entities appear and begin updating after roughly 10–15 seconds.
-
-To update later, delete the old `monoprice_htp1` directory, copy in the new one, and restart Home
-Assistant again.
-
-**Source and issues**
-
+[:material-book-open-variant: Setup instructions](https://github.com/TimoJJ/ha-monolith-htp1#readme){ .md-button }
 [:material-github: Source on GitHub](https://github.com/TimoJJ/ha-monolith-htp1){ .md-button }
 [:material-bug: Report an issue](https://github.com/TimoJJ/ha-monolith-htp1/issues){ .md-button }
+
+### Monoprice HTP-1 for Unfolded Circle
+
+*Unfolded Circle Remote 2/3 integration · open source (MPL-2.0) · by
+[Meir Miyara](https://github.com/mase1981)*
+
+Adds the HTP-1 to an [Unfolded Circle](https://www.unfoldedcircle.com/) Remote 2 or Remote 3, so the
+processor can be driven from the remote itself and pulled into its activities. Between them the
+entities it exposes cover power, volume and mute, input selection, upmixer and listening modes,
+Dirac calibration slot selection, Seat Shaker trim and presets, and browsing or loading BEQ filters.
+
+It can run on the remote itself or as a Docker container elsewhere on your network. The repository
+has the current steps for both, and needs the unit's IP address.
+
+[:material-book-open-variant: Setup instructions](https://github.com/mase1981/uc-intg-monoprice-htp1#readme){ .md-button }
+[:material-github: Source on GitHub](https://github.com/mase1981/uc-intg-monoprice-htp1){ .md-button }
+[:material-bug: Report an issue](https://github.com/mase1981/uc-intg-monoprice-htp1/issues){ .md-button }
 
 ## Tools and Utilities
 
