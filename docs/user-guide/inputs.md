@@ -95,35 +95,27 @@ resets the DSP. A cold power cycle from the back panel also resets the HDMI boar
 
 ## PCM Detect Sensitivity
 
-By default the HTP-1 automatically detects the audio format for each signal. There are a few cases
-where this automatic detection might not be optimal. Turn on **Show Advanced Input Settings**, at the
-top of the Inputs page, to reveal this control.
+The HTP-1 normally detects the audio format by examining the incoming bitstream. **Auto** is
+appropriate for almost all modern sources.
+
+Turn on **Show Advanced Input Settings**, at the top of the Inputs page, to reveal the **PCM Detect
+Sensitivity** column.
 
 ![Inputs page with Show Advanced Input Settings on, revealing the PCM Detect Sensitivity column](images/ui-inputs-advanced.png)
 
-The options offered depend on the input: some inputs offer no PCM Detect Sensitivity choice at all,
-some offer **Auto** and **Biased**, and some offer **Auto**, **Biased**, and **Indicated**.
+The choices depend on the input. Some inputs provide no PCM Detect Sensitivity setting, some provide
+**Auto** and **Biased**, and some provide **Auto**, **Biased**, and **Indicated**.
 
-The **Biased** state biases the detector toward PCM material. The **Indicated** state relies on the
-PCM/non-PCM bit indicated in the HDMI stream. **Auto** is appropriate for most sources. Choosing the
-other states can lead to problems like noise (playing coded audio as PCM) or a squeal (playing the
-IEC pause packet). You will only know for sure by trying them. Here are some cases when the other
-states might be helpful.
+- **Auto** detects the format by examining the bitstream and decodes it accordingly. This should be
+  correct in almost all cases. Automatic detection was less reliable in older firmware versions.
+- **Indicated** uses the format reported through HDMI signaling. If **Auto** does not identify an
+  HDMI signal correctly, try **Indicated**.
+- **Biased** biases automatic detection toward PCM. This was particularly useful with older Apple TV (Gen 1)
+  devices that switched from coded audio to PCM for menu sounds.
 
-1. **Indicated** works very well with most HDMI sources. If you're unsure, try this setting first.
-2. If you know that this source always produces PCM and you get drop-outs or miss the beginning of
-   sounds, you might try **Biased** if **Indicated** doesn't work. We have noticed that a YouTube
-   recording of a news show including a discussion over Skype caused the automatic detector to find
-   runs of zero data and mute.
-3. If you know that this source always produces PCM and you miss the beginning of sounds, you might
-   first try **Biased** if **Indicated** doesn't work. We noticed this with CD material that has no
-   run-in time on each track.
-4. If you are using an old Apple TV (1st generation) or some other device that switches between coded audio and PCM
-   to make beeps, then **Biased** may allow you to hear more of the beeps. But **Indicated** probably
-   works better.
-
-!!! tip
-    Try these alternate settings only if necessary.
+Unconventional material from sources such as YouTube may occasionally be identified incorrectly. If
+coded digital audio is mistaken for PCM, it is reproduced as loud white noise. If this happens, stop
+playback and try another available setting.
 
 ## HDMI CEC
 
