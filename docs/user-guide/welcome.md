@@ -14,14 +14,14 @@ If you last set up your HTP-1 with V1.x firmware, several things have changed:
 
 - **Dirac Live ART** (Active Room Treatment) is supported, alongside the existing Bass Control, Bass Management, and Room Correction filter types. See [Dirac Live](dirac.md).
 - The web interface has been rewritten with a modern design.
-- The front panel touchscreen has been redesigned.
+- The [front panel touchscreen](product-overview.md#front-panel-display) has been redesigned.
 - [**Seat Shaker**](seat-shaker.md) support adds a dedicated tactile-transducer output with its own content routing, filtering, and presets.
 - [**Channel Levels**](channel-levels.md) adds a per-channel trim control ahead of tone controls, loudness, PEQ, bass management, and Dirac Live.
 - [**PEQ**](peq.md) can now be placed either before Dirac Live (**Pre**, the default) or after Dirac Live (**Post**).
 - [**Peak Monitor**](peak-monitor.md) is now its own page, with both Table and Bars views.
 - The [**Mix Out**](home-page.md#mix-out-volume) output has its own volume and power-on volume, independent of the main volume. It can be used as a dedicated Zone 2 output or as the output for the Seat Shaker, allowing independent level control without affecting the main listening volume.
 - A simple [mobile remote control](integrations.md#mobile-remote) app is available at `http://<your-htp1-ip>/remote/`.
-- Numerous existing features have been enhanced, and many bugs have been fixed.
+- V2.x also delivers major improvements to audio processing, calibration, playback reliability, and system control.
 
 ## Customer Service
 
