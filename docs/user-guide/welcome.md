@@ -6,19 +6,22 @@ You configure and control the HTP-1 from a built-in web interface, reachable fro
 
 ## About This Manual
 
-This guide covers firmware **V2.1.2**. It is organized to follow the order of the web interface's sidebar: setup chapters first, then a chapter for each group of settings pages, then reference material at the end.
+This guide covers firmware **V2.x**. It is organized to follow the order of the web interface's sidebar: setup chapters first, then a chapter for each group of settings pages, then reference material at the end.
 
 ## What's New in V2.x
 
-If you set up an HTP-1 some time ago, several things have changed:
+If you last set up your HTP-1 with V1.x firmware, several things have changed:
 
-- **Dirac Live ART** (Active Room Treatment) is supported, alongside the existing Bass Control, Bass Management and Room Correction filter types. See [Dirac Live](dirac.md).
+- **Dirac Live ART** (Active Room Treatment) is supported, alongside the existing Bass Control, Bass Management, and Room Correction filter types. See [Dirac Live](dirac.md).
+- The web interface has been rewritten with a modern design.
 - The front panel touchscreen has been redesigned.
-- **Seat Shaker** support adds a dedicated tactile-transducer output with its own content routing, filtering, and presets.
-- **Channel Levels** adds a per-channel trim control ahead of tone control, loudness, bass management, and Dirac Live.
-- **Peak Monitor** is now its own page, with both a table and a bar-meter view.
-- The **Mix Out** output has its own volume and power-on volume, independent of the main volume. It can be used as a dedicated Zone 2 output or as the output for the Seat Shaker, allowing independent level control without affecting the main listening volume.
-- A simple mobile remote control app is available at `http://<your-htp1-ip>/remote`.
+- [**Seat Shaker**](seat-shaker.md) support adds a dedicated tactile-transducer output with its own content routing, filtering, and presets.
+- [**Channel Levels**](channel-levels.md) adds a per-channel trim control ahead of tone controls, loudness, PEQ, bass management, and Dirac Live.
+- [**PEQ**](peq.md) can now be placed either before Dirac Live (**Pre**, the default) or after Dirac Live (**Post**).
+- [**Peak Monitor**](peak-monitor.md) is now its own page, with both Table and Bars views.
+- The [**Mix Out**](home-page.md#mix-out-volume) output has its own volume and power-on volume, independent of the main volume. It can be used as a dedicated Zone 2 output or as the output for the Seat Shaker, allowing independent level control without affecting the main listening volume.
+- A simple [mobile remote control](integrations.md#mobile-remote) app is available at `http://<your-htp1-ip>/remote/`.
+- Numerous existing features have been enhanced, and many bugs have been fixed.
 
 ## Customer Service
 

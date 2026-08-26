@@ -54,7 +54,7 @@ This documentation is part of that effort: a living manual that keeps pace with 
 
 - **Written for owners.** Plain language, one chapter per screen in the interface, in the same order
   you meet them on the device.
-- **Current.** Covers firmware V2.1.1.
+- **Current.** Covers firmware V2.x.
 - **Open.** Corrections and additions are welcome from anyone who owns the hardware.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
