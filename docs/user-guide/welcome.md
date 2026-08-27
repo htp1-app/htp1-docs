@@ -13,7 +13,7 @@ This guide covers firmware **V2.x**. It is organized to follow the order of the 
 If you last set up your HTP-1 with V1.x firmware, several things have changed:
 
 - **Dirac Live ART** (Active Room Treatment) is supported, alongside the existing Bass Control, Bass Management, and Room Correction filter types. See [Dirac Live](dirac.md).
-- The web interface has been rewritten with a modern design.
+- The [web interface](product-overview.md#web-interface) has been rewritten with a modern design.
 - The [front panel touchscreen](product-overview.md#front-panel-display) has been redesigned.
 - [**Seat Shaker**](seat-shaker.md) support adds a dedicated tactile-transducer output with its own content routing, filtering, and presets.
 - [**Channel Levels**](channel-levels.md) adds a per-channel trim control ahead of tone controls, loudness, PEQ, bass management, and Dirac Live.
