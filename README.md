@@ -47,13 +47,13 @@
 
 The HTP-1 is a 16-channel home theater processor. What started as
 an effort to bring Dirac Live Active Room Treatment to the platform grew into a community-driven
-project, and the processor has gained a great deal along the way including Dirac ART, a redesigned front panel, a redesigned web UI,
-Seat Shaker, per-channel levels, and more.
+project, and the processor has gained a great deal along the way including Dirac Live ART, a redesigned front panel, a redesigned web interface,
+Seat Shaker, Channel Levels, and more.
 
 This documentation is part of that effort: a living manual that keeps pace with the software, and open for any owner to improve it.
 
-- **Written for owners.** Plain language, one chapter per screen in the interface, in the same order
-  you meet them on the device.
+- **Written for owners.** Plain language, with settings chapters organized to follow the web
+  interface's sidebar.
 - **Current.** Covers firmware V2.x.
 - **Open.** Corrections and additions are welcome from anyone who owns the hardware.
 
@@ -83,8 +83,8 @@ a value that does not match, a step that no longer works, or an explanation that
 ### Editing the Manual Yourself
 
 Chapters are Markdown files in `docs/user-guide/`, images live in `docs/user-guide/images/`, and the
-navigation is set in `mkdocs.yml`. For a small fix, use the pencil icon on any page in GitHub and
-open a pull request — no tools required.
+navigation is set in `mkdocs.yml`. For a small fix, use the pencil icon on any page of the
+documentation site and open a pull request — no tools required.
 
 To preview a larger change, you need Python 3.12 or newer:
 
@@ -92,7 +92,8 @@ To preview a larger change, you need Python 3.12 or newer:
 git clone https://github.com/htp1-app/htp1-docs.git
 cd htp1-docs
 python -m venv .venv
-.venv/bin/pip install -r requirements.txt      # Windows: .venv\Scripts\pip
+source .venv/bin/activate                       # Windows: .venv\Scripts\activate
+pip install -r requirements.txt
 mkdocs serve                                    # preview at http://127.0.0.1:8000
 ```
 
