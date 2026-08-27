@@ -14,9 +14,9 @@ Software built by the HTP-1 community, including remotes, home-automation integr
 
 *iOS and Android · open source*
 
-A native remote for the HTP-1, available for both iPhone and Android. It gives you the everyday
-controls (volume, input selection, upmixer, and modes) without loading the full web interface in a
-browser. Both apps are built from the same repository.
+A native remote for the HTP-1, available for iOS and Android. It provides volume, input and upmixer
+selection, Dirac Live, and Bass EQ controls without loading the full web interface in a browser.
+Both apps are built from the same repository.
 
 On firmware 2.1.2 or later the app finds your HTP-1 on the network by itself. On older firmware,
 connect by IP address instead, using the address shown on the front panel **Help** screen (tap the
@@ -40,8 +40,8 @@ Brings the HTP-1 into [Home Assistant](https://www.home-assistant.io/) as a devi
 available to dashboards, automations, and anything else you drive from HA. It is set up through Home
 Assistant's own integrations UI once installed, and only needs the unit's IP address.
 
-It is a custom component rather than a HACS listing, so it is installed by hand. The repository has
-the current steps.
+It can be installed through HACS as a custom repository or installed manually. The repository has
+the current steps for both methods.
 
 [:material-book-open-variant: Setup instructions](https://github.com/TimoJJ/ha-monolith-htp1#readme){ .md-button }
 [:material-github: Source on GitHub](https://github.com/TimoJJ/ha-monolith-htp1){ .md-button }
@@ -53,12 +53,12 @@ the current steps.
 [Meir Miyara](https://github.com/mase1981)*
 
 Adds the HTP-1 to an [Unfolded Circle](https://www.unfoldedcircle.com/) Remote 2 or Remote 3, so the
-processor can be driven from the remote itself and pulled into its activities. Between them the
-entities it exposes cover power, volume and mute, input selection, upmixer and listening modes,
-Dirac calibration slot selection, Seat Shaker trim and presets, and browsing or loading BEQ filters.
+processor can be controlled from the remote and included in its activities. The exposed entities
+cover power, volume and mute, input selection, upmixer and listening modes, Dirac Live calibration
+slot selection, Seat Shaker trim and presets, and browsing or loading BEQ filters.
 
-It can run on the remote itself or as a Docker container elsewhere on your network. The repository
-has the current steps for both, and needs the unit's IP address.
+It can run on the remote itself or as a Docker container elsewhere on your network. Both methods
+require the HTP-1's IP address; the repository has the current setup instructions.
 
 [:material-book-open-variant: Setup instructions](https://github.com/mase1981/uc-intg-monoprice-htp1#readme){ .md-button }
 [:material-github: Source on GitHub](https://github.com/mase1981/uc-intg-monoprice-htp1){ .md-button }

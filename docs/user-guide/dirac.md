@@ -179,8 +179,8 @@ Dirac Live can handle bass management instead.
 If the current speaker layout has no calibration in any slot, the button instead shows a single
 **No Filter** state.
 
-This cycle is sometimes called the "Dirac bypass loop". Because a calibration can carry large
-negative trim values, your system may sound noticeably louder with Dirac Live off than on.
+With a Dirac Live calibration active, the system may sound noticeably quieter than with Dirac Live
+off because the calibration can apply substantial negative trim values.
 
 !!! tip
     If you switch between On and Bypass often, consider a macro that does it in one press. See
@@ -201,7 +201,7 @@ On Error, a **Restart Dirac Live Server** button appears. This restarts just the
 which is faster than rebooting the whole HTP-1 and is the recommended first step. A second copy of
 this button lives on the Device Settings page, under Danger Zone.
 
-## Tips for a Successful Dirac Calibration
+## Tips for a Successful Dirac Live Calibration
 
 Dirac Live is generally not too sensitive to small differences between calibrations, but a few tips
 can help it go more easily.

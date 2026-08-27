@@ -7,8 +7,7 @@ hide:
 # HTP-1 Documentation
 
 Documentation for the Monolith HTP-1 16-channel home theater processor,
-maintained against the current and latest firmware, and built for the HTP-1
-community.
+maintained for current V2.x firmware and built for the HTP-1 community.
 
 <div class="grid cards home-cards" markdown>
 
@@ -56,5 +55,5 @@ New to the HTP-1? [Welcome](user-guide/welcome.md) covers what is in the box and
 what you need, then [Basic Setup](user-guide/basic-setup.md) takes you from first
 power-on to first sound.
 
-Looking for a specific screen? The manual follows the same order as the
-processor's own menu, so the chapter names match what you see on the device.
+Looking for a specific settings page? The settings chapters follow the web
+interface's sidebar and use the names shown there.

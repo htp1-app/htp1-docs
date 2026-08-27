@@ -18,7 +18,7 @@ The **Speakers** page (`/#/settings/speakers` in the sidebar) is a great referen
 
 A card at the top of the Speakers page shows a **Bass Manager** badge reading either **HTP-1** or **DIRAC LIVE**. This tells you which system is handling bass redirection right now.
 
-The badge reads **DIRAC LIVE** whenever the loaded Dirac Live filter is a Bass Control, Bass Management, or ART filter. In that case Dirac is doing the crossover and subwoofer routing work, and the HTP-1's own Bass Manager section and the speaker size/crossover controls are hidden. See [Bass Management](bass-management.md) for the controls that appear when the badge reads **HTP-1**.
+The badge reads **DIRAC LIVE** whenever the loaded Dirac Live filter is a Bass Control, Bass Management, or ART filter. In that case Dirac Live is doing the crossover and subwoofer routing work, and the HTP-1's own Bass Manager section and the speaker size/crossover controls are hidden. See [Bass Management](bass-management.md) for the controls that appear when the badge reads **HTP-1**.
 
 ### The Dirac Live Lockout
 
@@ -27,7 +27,7 @@ Next to the badge is the **Dirac Live** button group, a three-state control: **O
 !!! note
     Dirac Live filters come in four types: **RC** (Room Correction), **BM** (Bass Management), **BC** (Bass Control), and **ART** (Active Room Treatment). RC filters use the HTP-1's own bass management and therefore leave speaker controls editable. BM, BC, and ART filters take over bass management and lock the affected controls while Dirac Live is on.
 
-### The Current Layout Readout and Dirac Filter Mismatch
+### The Current Layout Readout and Dirac Live Filter Mismatch
 
 Under the speaker diagram, a **Current Layout** readout shows the speaker configuration string (for example `7.1.4h`) for whatever you have enabled. This is the fastest way to confirm what the HTP-1 thinks your layout is.
 
