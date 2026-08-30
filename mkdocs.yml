@@ -120,6 +120,7 @@ nav:
           - Backup and Restore: user-guide/configs.md
       - Status and Reference:
           - System Status: user-guide/system-status.md
+          - Troubleshooting: user-guide/troubleshooting.md
           - Updates and Support: user-guide/maintenance.md
           - Integrations and Control: user-guide/integrations.md
           - Reference: user-guide/reference.md
