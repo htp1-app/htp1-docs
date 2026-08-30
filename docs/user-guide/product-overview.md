@@ -16,7 +16,7 @@
 The touchscreen shows the current input, program format, volume, upmix selection, and IP address, and doubles as a set of touch controls:
 
 - **Help icon (top right):** Tap to open the Help screen. This is the first place to look when setting up your HTP-1, as it provides the IP addresses needed to connect to the web-based user interface for setup and control. It also lets you reset the wired and wireless network connections if there is a networking problem. The icon turns red when no network connection is available.
-- **Peak monitoring icon (top left):** Tap to start peak monitoring, which monitors the digital signal pre volume control. Whenever one of the channels clips, a red bar lights up at the bottom of the screen. Tap the icon again to reset and stop peak monitoring. The same measurement is also available as the **Peak Monitor** page in the web interface.
+- **Peak monitoring icon (top left):** Tap to start or stop Peak Monitor. While active, the display shows the highest peak level and its channel. See [Peak Monitor](peak-monitor.md#front-panel-display) for details.
 - **Input source display (top center):** Tap to show video input details. This area also shows if the signal generator is on. Tap twice to view detailed playback and processing information.
 - **Master volume level (center):** Tap to mute your HTP-1. Tap again to unmute. When muted, the display changes from white to red. The displayed value is the current master volume. 0 dB represents the configured **Reference Output Voltage**; negative values indicate attenuation below that level.
 - **Input format (middle left):** Tap to show more details.

@@ -12,6 +12,16 @@ again to turn monitoring off.
 **Clear Peaks** resets the peak-hold markers so you can start a fresh measurement — useful when you
 want to check a specific scene or passage without earlier, louder peaks skewing the reading.
 
+## Front Panel Display
+
+Tap the peak monitoring icon in the top-left corner of the front panel to start monitoring.
+
+![Front panel showing the Peak Monitor level and channel](images/fp-peak-monitor.png)
+
+While Peak Monitor is active, the bottom of the display shows the highest peak level in dBFS and the corresponding channel. The text and bar turn red if clipping is detected.
+
+Tap the icon again to reset the measurement and stop monitoring. The front panel and web interface use the same peak measurement.
+
 ## Table and Bars Views
 
 Switch between **Table** and **Bars** with the buttons above the meters.
