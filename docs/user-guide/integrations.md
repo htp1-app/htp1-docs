@@ -65,7 +65,8 @@ current state after making a change.
 
 ## Third-Party Applications
 
-A number of third parties have built their own tools around the HTP-1, discussed in the
-[Official Monoprice Monolith HTP-1 Owners Thread](https://www.avsforum.com/threads/the-official-monoprice-monolith-htp-1-owners-thread.3112176/)
-on the AVS Forum. If you're building your own integration, see the Developers section of
-this site for the underlying control protocol.
+A number of third parties have built their own tools around the HTP-1, which are listed in the separate [Apps & Integrations](https://docs.htp1.app/apps/) section.  
+They are discussed in the [Official Monoprice Monolith HTP-1 Owners Thread](https://www.avsforum.com/threads/the-official-monoprice-monolith-htp-1-owners-thread.3112176/) on the AVS Forum.
+
+If you're building your own integration, see the Developers section of this site for the underlying control protocol.
+
