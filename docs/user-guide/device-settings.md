@@ -11,10 +11,6 @@ and display behavior, the clock, and the Danger Zone tools used for troubleshoot
 letters are allowed, though the name may be truncated in some places. You should see this name when
 using Dirac Live, Roon, and Bluetooth.
 
-## Web UI IP Address
-
-**Web UI IP address** tells your web browser which HTP-1 to connect to. Enter the unit's IP address or hostname and click **Save**. This setting is stored only in the web browser you're using—it does not change any settings on the HTP-1 itself. Make sure the address is correct; otherwise, the Web UI will not be able to connect.
-
 ## Demo Mode
 
 **Demo Mode** points the web UI at a hosted demonstration unit instead of your own HTP-1, so you can
