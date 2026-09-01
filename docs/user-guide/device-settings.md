@@ -8,8 +8,11 @@ and display behavior, the clock, and the Danger Zone tools used for troubleshoot
 ## Unit Name
 
 **Unit Name** is used for all other services the HTP-1 provides. Set it once. Spaces and capital
-letters are allowed, though the name may be truncated in some places. You should see this name when
-using Dirac Live, Roon, and Bluetooth.
+letters are allowed in the displayed name, though it may be truncated in some places. You should see
+this name when using Dirac Live, Roon, and Bluetooth. It also determines the hostname used to access
+the web UI on the local network. For reliable hostname access, use only letters, numbers, and
+hyphens, with a letter or number at the beginning and end. For example, set **Unit Name** to `HTP-1`
+and open `htp-1.local`.
 
 ## Power
 
