@@ -87,6 +87,46 @@ allow you to listen to music from a non-HDMI source while watching an HDMI sourc
 blank the video while listening to audio, just choose an inactive HDMI source before choosing the
 audio.
 
+To save a pairing you use often, so that one selection sets both halves, see
+[Virtual Inputs](#virtual-inputs) below.
+
+## Virtual Inputs
+
+A virtual input shows the picture from one HDMI input while playing the sound from a different
+input, under a name you choose. It saves the combination described above, so you can select it in
+one step instead of choosing two inputs in the right order every time.
+
+For example, a turntable on Analog 1 that you listen to while watching a streaming stick on HDMI 2
+can be saved as a single input named Turntable.
+
+Virtual inputs have their own **Virtual Inputs** table below the main input list. The main list is
+fixed; the virtual list is yours to add to and remove from.
+
+To create one:
+
+1. Press **+ Add virtual input**.
+2. In the **Video from** column, choose the HDMI input to take the picture from.
+3. In the **Audio from** column, choose the input to take the sound from.
+4. Type a name in the **Name** column.
+
+The new input then works like any other. Turn on its **Visible on Homepage** switch to give it a
+button on the Home page, set a listening mode, lip-sync delay, Dirac Live slot, or macro for it,
+and click its name to select it.
+
+To remove a virtual input, press the **×** button at the end of its row.
+
+A few limits apply:
+
+- **Video from** offers HDMI inputs only, because HDMI is the only source of picture.
+- **Audio from** offers any other input, including Roon, Bluetooth, USB audio, and the streaming
+  receivers described in [Integrations and Control](integrations.md#airplay-spotify-connect-and-dlna).
+- A virtual input cannot take its sound from another virtual input.
+
+!!! note
+    The remote's **+** buttons (HDMI+, ANALOG+, SPDIF+, STRM+) step through the physical inputs
+    only and skip virtual inputs. The USER INPUT buttons do reach them, because those buttons follow
+    the inputs you have made visible on the Home page, in order.
+
 ## Partial Reset by Changing Inputs
 
 Changing inputs resets the DSP path but not the entire DSP. In the rare case that a source is not
