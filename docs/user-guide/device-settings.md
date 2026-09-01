@@ -22,8 +22,8 @@ unit itself is off.
 
 ## Display
 
-**Front Panel Brightness** sets how bright the front panel display is, on a scale of 1 (dimmest) to
-7 (brightest).
+**Front Panel Brightness** sets how bright the front panel display is, on a scale of 1 (off) to
+7 (brightest). When set to brightness 1, the front panel will briefly illuminate in response to Volume and Dialog Enhance adjustments.
 
 ## Time Zone
 
