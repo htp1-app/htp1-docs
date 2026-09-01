@@ -11,16 +11,6 @@ and display behavior, the clock, and the Danger Zone tools used for troubleshoot
 letters are allowed, though the name may be truncated in some places. You should see this name when
 using Dirac Live, Roon, and Bluetooth.
 
-## Demo Mode
-
-**Demo Mode** points the web UI at a hosted demonstration unit instead of your own HTP-1, so you can
-explore the interface without touching real hardware. Turning it off reconnects the web UI to your
-unit.
-
-!!! note
-    While Demo Mode is on, you are not connected to your HTP-1 — any state you see is the demo
-    unit's, not yours.
-
 ## Power
 
 **Fast Start** and **Video Passthrough** are two-state switches.
