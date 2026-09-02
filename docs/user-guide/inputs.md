@@ -130,12 +130,12 @@ Turn on the **CEC** button to enable CEC. The **CEC Options** table then appears
 
 | Option | What it does |
 |---|---|
-| Alternate TV Input | The input the HTP-1 uses to pick up TV audio when your TV doesn't support ARC/eARC. Options are None, Analog1, Analog2, COAX1, COAX2, COAX3, Optical1, Optical2, Optical3. See [Alternate TV Input](connectivity.md#alternate-tv-input). |
-| Allow automatic input switching | Lets other CEC devices tell the HTP-1 to change inputs. |
-| Allow volume and mute control | Lets other CEC devices control the HTP-1's volume and mute. |
-| Allow switching to TV speakers | Lets other CEC devices disable [System Audio Mode](connectivity.md#system-audio-control) on the HTP-1. |
-| Allow power commands | Lets other CEC devices turn the HTP-1 on, off, or toggle its power. |
-| Allow standby commands | Lets other CEC devices put the HTP-1 into standby. |
+| Alternate TV Input | Selects the HTP-1 input used for TV audio when ARC/eARC is unavailable. Options are None, Analog1, Analog2, COAX1, COAX2, COAX3, Optical1, Optical2, Optical3. See [Alternate TV Input](connectivity.md#alternate-tv-input). |
+| Allow automatic input switching | Allows the HTP-1 to follow CEC source and input changes. |
+| Allow volume and mute control | Allows CEC volume and mute commands to control the HTP-1. |
+| Allow switching to TV speakers | Allows CEC to turn [System Audio Mode](connectivity.md#system-audio-control) off and return audio playback to the TV. |
+| Allow power commands | Allows CEC power commands (on, off, and toggle) to control the HTP-1. |
+| Allow standby commands | Allows CEC Standby commands to put the HTP-1 into standby. |
 
 All five switches should stay on unless a specific device on your CEC network doesn't play well with
 one of them. For instance, you might turn off **Allow automatic input switching** if a source doesn't
