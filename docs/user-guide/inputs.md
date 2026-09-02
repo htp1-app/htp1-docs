@@ -133,7 +133,7 @@ Turn on the **CEC** button to enable CEC. The **CEC Options** table then appears
 | Alternate TV Input | The input the HTP-1 uses to pick up TV audio when your TV doesn't support ARC/eARC. Options are None, Analog1, Analog2, COAX1, COAX2, COAX3, Optical1, Optical2, Optical3. See [Alternate TV Input](connectivity.md#alternate-tv-input). |
 | Allow Power keys | Lets other CEC devices turn the HTP-1 on, off, or toggle its power. |
 | Allow Volume/Mute keys | Lets other CEC devices control the HTP-1's volume and mute. |
-| Allow System Audio off | Lets other CEC devices turn off System Audio on the HTP-1. |
+| Allow System Audio off | Lets other CEC devices disable [System Audio Mode](connectivity.md#system-audio-control) on the HTP-1. |
 | Allow Input changes | Lets other CEC devices tell the HTP-1 to change inputs. |
 | Allow Standby | Lets other CEC devices put the HTP-1 into standby. |
 

@@ -56,12 +56,12 @@ input. It tries them in that order — eARC, then ARC, then Alternate. When TV i
 which of the three is actually in use is shown as **TV Sound Source** on the
 [System Status](system-status.md) page.
 
-### System Audio
+### System Audio Control
 
-CEC includes a feature called **System Audio** that determines whether the TV or the HTP-1 plays the system's audio. When System Audio is on, the HTP-1 is the active audio device. When it is off, the TV uses its own speakers instead.
+CEC includes a feature called **System Audio Control**. Within this feature, **System Audio Mode** determines whether audio is played by the TV or by an external audio device such as the HTP-1. When System Audio Mode is enabled, the HTP-1 is the active audio device. When it is disabled, the TV uses its own speakers instead.
 
-When the HTP-1 powers on with CEC enabled, it requests that System Audio be enabled and automatically selects the appropriate audio source. If no active source is found, it remains on the last input used.
+When the HTP-1 powers on with CEC enabled, it requests that System Audio Mode be enabled and automatically selects the appropriate audio source. If no active source is found, it remains on the last input used.
 
-Most TVs let you choose between **TV Speakers** and an external **Receiver** or **Audio System**. Selecting the TV speakers turns System Audio off, causing the TV to play audio through its own speakers. Selecting the external receiver turns System Audio back on and returns audio playback to the HTP-1.
+Most TVs provide an audio output setting with choices such as **TV Speakers**, **Audio System**, or **Receiver**. In this setting, **Audio System** refers to the external audio device, not to the CEC feature itself. Selecting **TV Speakers** disables System Audio Mode, causing the TV to play audio through its own speakers. Selecting **Audio System** or **Receiver** enables System Audio Mode again and returns audio playback to the HTP-1.
 
-You can also re-enable System Audio by selecting an audio-only source on the HTP-1, such as **Coax**, **Optical**, or **USB**.
+You can also re-enable System Audio Mode by selecting an audio-only source on the HTP-1, such as **Coax**, **Optical**, or **USB**.
