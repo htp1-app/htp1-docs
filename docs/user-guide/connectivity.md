@@ -58,10 +58,10 @@ which of the three is actually in use is shown as **TV Sound Source** on the
 
 ### System Audio Control
 
-CEC includes a feature called **System Audio Control**. Within this feature, **System Audio Mode** determines whether audio is played by the TV or by an external audio device such as the HTP-1. When System Audio Mode is enabled, the HTP-1 is the active audio device. When it is disabled, the TV uses its own speakers instead.
+CEC includes a feature called **System Audio Control**. Within this feature, **System Audio Mode** determines whether audio is handled by the TV or by an external audio device such as the HTP-1. When System Audio Mode is enabled, the HTP-1 handles system audio and the TV mutes its own speakers. When it is disabled, the TV resumes playback through its own speakers.
 
 When the HTP-1 powers on with CEC enabled, it requests that System Audio Mode be enabled and automatically selects the appropriate audio source. If no active source is found, it remains on the last input used.
 
-Most TVs provide an audio output setting with choices such as **TV Speakers**, **Audio System**, or **Receiver**. In this setting, **Audio System** refers to the external audio device, not to the CEC feature itself. Selecting **TV Speakers** disables System Audio Mode, causing the TV to play audio through its own speakers. Selecting **Audio System** or **Receiver** enables System Audio Mode again and returns audio playback to the HTP-1.
+Most TVs provide an audio output setting with choices such as **TV Speakers**, **Audio System**, or **Receiver**. In this setting, **Audio System** refers to the external audio device, not to the CEC feature itself. Selecting **TV Speakers** causes the TV to request that System Audio Mode be disabled. Once disabled, the TV resumes playback through its own speakers. Selecting **Audio System** or **Receiver** causes System Audio Mode to be enabled again and returns audio playback to the HTP-1.
 
 You can also re-enable System Audio Mode by selecting an audio-only source on the HTP-1, such as **Coax**, **Optical**, or **USB**.
