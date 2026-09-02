@@ -32,8 +32,8 @@ When the badge reads **HTP-1**, two controls appear:
 
 | Control | Range | What it does |
 |---|---|---|
-| **LPF for LFE Channel** | 40–200 Hz | Sets the cutoff frequency of the low-pass filter applied to the LFE channel. |
-| **Reinforce Bass** | On / Off | Routes the subwoofer signal also to large speakers. |
+| LPF for LFE Channel | 40–200 Hz | Sets the cutoff frequency of the low-pass filter applied to the LFE channel. |
+| Reinforce Bass | On / Off | Routes the subwoofer signal also to large speakers. |
 
 **Reinforce Bass** redirects low-frequency content from speakers configured as **Small** to those set
 as **Large**, so full-range mains carry some of the redirected bass energy rather than sending it to

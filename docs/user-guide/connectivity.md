@@ -37,9 +37,9 @@ When CEC is turned on, "TV" becomes one of the available input sources.
 ### CEC Settings
 
 Turn CEC on or off, and set the CEC options, on the [Inputs](inputs.md#hdmi-cec) page. By default CEC
-is off. When you turn it on, all five CEC options should start out enabled — leave them that way
-unless a specific device on your CEC network needs one of them disabled. For example, you might
-disable Allow Input changes if a source doesn't handle it well.
+is off. When you turn it on, all five CEC command switches should start out enabled — leave them that
+way unless a specific device on your CEC network needs one of them disabled. For example, you might
+disable **Allow automatic input switching** if a source doesn't handle it well.
 
 Next, make sure CEC and ARC/eARC are enabled on your TV. On many TVs, CEC is marketed under a vendor-specific name rather than "CEC". Common examples include **Anynet+** (Samsung), **Simplink** (LG), **BRAVIA Sync** (Sony), **VIERA Link** (Panasonic), **EasyLink** (Philips), **Aquos Link** (Sharp), and **T-Link** (TCL). Other manufacturers simply call it **HDMI Control** or **HDMI-CEC**.
 
