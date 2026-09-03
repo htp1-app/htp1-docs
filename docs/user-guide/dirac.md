@@ -25,8 +25,10 @@ the best sound out of your system.
 - For a normal calibration, disable **Post** PEQ. If **Post** PEQ is enabled, its effect is included in the Dirac Live measurements, and the resulting Dirac Live filter will compensate for it.
   **Pre** PEQ does not affect the calibration because the Dirac Live measurement signal is injected downstream of the **Pre** PEQ stage. Advanced users can therefore use **Pre** PEQ to shape the incoming signal without influencing the Dirac Live measurements. See [PEQ placement](peq.md#peq-placement) for details.
   Tone control and Loudness are automatically disabled during calibration.
-- Use the **Speakers** page to enable all of the speakers you have. Don't worry about size settings
-  yet, but do label Dolby-enabled speakers correctly if you use them.
+- Use the **Speakers** page to enable all of your speakers. Don't worry about crossover settings yet,
+  but set any [Dolby Atmos Enabled speaker groups](speaker-setup.md#dolby-atmos-enabled-speakers)
+  to **Dolby** before calibration. They should then appear in Dirac Live with "Atmos" in the speaker
+  name, and Dirac Live will preserve their specially designed frequency response.
 - A calibrated USB microphone is required. Using an uncalibrated mic, or a laptop's built-in mic,
   will skew the frequency response of your system.
 
@@ -38,7 +40,7 @@ attached to the laptop.
 
 ## Calibration Steps
 
-Complete the basic setup first — be able to play sound through your speaker set.
+Complete the [basic setup](basic-setup.md) first — be able to play sound through your speaker set.
 
 1. Download and install the Dirac Live app: <https://live.dirac.com/download/>. Use the latest
    version for the best results.
@@ -86,9 +88,6 @@ Complete the basic setup first — be able to play sound through your speaker se
        the adjustment should be made on the subwoofer itself.
 
     ![Dirac Live app per-channel level adjustment showing output level meters for each speaker](images/p51-2.jpg)
-
-    Dolby Atmos Enabled speakers are labeled with "Atmos" in the speaker name. Dirac Live uses a modified sweep
-    tailored to preserve their frequency response.
 
 8. Proceed to the **measure** screen and hear the sweeps. When a measurement completes you'll see
    the frequency response displayed. A single sweep is fine for trying things out, but a good
