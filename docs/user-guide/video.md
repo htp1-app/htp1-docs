@@ -18,6 +18,11 @@ add a Video card to the Home page: turn on **Display Video Status on Homepage** 
 [Personalize](personalize.md) page, and it appears in the status row at the top of Home alongside
 Program Format and Listening Format.
 
+!!! note
+    Video details are available only for video received through an HTP-1 HDMI input. ARC/eARC returns
+    audio from the TV but does not provide the HTP-1 with information about the video being displayed
+    by the TV.
+
 ## UHD Support
 
 By default, all HDMI inputs have Ultra High Definition (UHD) support turned on. Some older source

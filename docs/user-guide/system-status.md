@@ -26,7 +26,7 @@ badge means you are already on the latest release for your branch.
 | IP Address | The address the HTP-1 is using on your network. |
 | Decoder Sample Rate | The sample rate of the incoming audio, after decoding. |
 | Encoder Sample Rate | The sample rate of the audio being sent to the speaker outputs. |
-| Video Status | The current video resolution, color space, chroma subsampling, HDR status, bit depth, and 3D status. |
+| Video Status | The current video resolution, color space, chroma subsampling, HDR status, bit depth, and 3D status for video received through an HTP-1 HDMI input. Video details are not available for video originating from the TV when using ARC/eARC. |
 | TV Sound Source | Where the audio driving the TV input is coming from, for example `eARC`. |
 | eARC Link Status | The state of the eARC connection to your TV. |
 | CEC Status | The state of CEC (Consumer Electronics Control) communication with your TV and other HDMI devices. |
