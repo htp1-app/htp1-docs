@@ -47,6 +47,21 @@ Turn on **Show Macro Code Editor** to reveal the raw list of recorded commands a
 text for each macro. This is an advanced view — use it only if you are comfortable editing
 the underlying command list directly.
 
+### Supported Operations
+
+In addition to the standard `replace` operation, macros support two convenience operations:
+
+- **`toggle`** reverses the current value of a Boolean setting (`true` ↔ `false`).
+- **`increment`** adds the specified numeric `value` to the current value of a numeric setting. Use a negative value to decrease it.
+
+For example:
+
+```json
+{"op":"toggle","path":"/peq/peqsw"}
+{"op":"increment","path":"/eq/bass/level","value":1}
+{"op":"increment","path":"/eq/bass/level","value":-1}
+```
+
 ## Where Macros Appear
 
 - On the **Home Page**, if you have added them in Personalize.
