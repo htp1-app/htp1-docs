@@ -71,7 +71,7 @@ You can also scan the displayed QR code with your mobile phone to open the web i
 12. **LOUD:** Press the **LOUD** button to enable or disable Loudness mode, which boosts low and high frequencies for low volume music listening. This is described in more detail under *Audio Features*.
 13. **BT PAIR:** Press the **BT PAIR** button to initiate Bluetooth® pairing.
 14. **DIM:** Press the **DIM** button to cycle through several brightness levels for the front panel LCD display. When the dim level is zero, the screen will briefly brighten to show changes in volume.
-15. **STRM+:** Press the **STRM+** button to cycle through the **USB**, **Roon**®, and **Bluetooth**® streaming inputs.
+15. **STRM+:** Press the **STRM+** button to cycle through the streaming inputs: **Roon**®, **Bluetooth**®, **USB**, **AirPlay**, **Spotify**, and **DLNA**.
 16. **ANALOG+:** Press the **ANALOG+** button to toggle between the two analog audio inputs.
 17. **DIALOG:** Press the **+** button to increase the **DIALOG** volume level or press the **-** button to decrease the **DIALOG** volume level.
 18. **MUTE:** Press the **MUTE** button to turn audio muting of all speakers on or off.

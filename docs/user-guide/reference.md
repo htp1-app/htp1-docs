@@ -8,7 +8,7 @@
 | Part Number | 38788 |
 | Video Inputs | 8x HDMI® |
 | Audio-Only Inputs | 2x analog stereo RCA, 3x digital coaxial, 3x digital optical, 1x AES/EBU, 1x ARC/eARC |
-| Streaming Inputs | Roon Ready®, USB audio, Bluetooth® |
+| Streaming Inputs | Roon Ready®, USB audio, Bluetooth®, AirPlay, Spotify Connect, DLNA |
 | Video Outputs | 1x HDMI ARC/eARC, 1x HDMI |
 | Audio Outputs | 16-channel balanced XLR line outputs, max level 4.0 Vrms. Unbalanced stereo analog RCA Mix Out, with its own volume, mute, and power-on volume, independent of the main output. The Mix Out (or an XLR sub output) can also carry the Seat Shaker signal. |
 | Triggers | 1x trigger input, 4x trigger outputs |
