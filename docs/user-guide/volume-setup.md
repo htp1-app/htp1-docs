@@ -6,9 +6,15 @@ The HTP-1 uses a combination of analog and digital gain to implement the master 
 
 ## Power On
 
-**Power On Volume** sets the master volume the HTP-1 comes up at when it turns on, from −100 to 0 dB.
+**Power On Volume** sets the master volume the HTP-1 uses when it turns on. Its underlying range is −100 to 0 dB.
 
-**Mix Out Power On Volume** does the same for the Mix Out (Zone 2) output, which has its own independent volume. Set it separately if you use Mix Out for a zone that should come up at a different level than the main output.
+When Zero Point is changed, Power On Volume is shown using the same shifted scale as the main volume. Zero Point does not change the actual power-on level.
+
+For example, with Zero Point set to −15 dB, an underlying Power On Volume of −35 dB is displayed as −20 dB. After a restart, the HTP-1 returns to that same playback level and displays −20 dB.
+
+The 0 dB underlying safety ceiling also shifts on the displayed scale. With a Zero Point of −15 dB, for example, the highest displayed Power On Volume is +15 dB.
+
+**Mix Out Power On Volume** sets the startup level for the Mix Out output. Its range is −100 to 0 dBFS. Mix Out uses its own independent volume scale and is not affected by Zero Point.
 
 ---
 
@@ -20,6 +26,8 @@ The **Minimum Volume** and **Maximum Volume** controls define the allowed range 
 |---|---|---|
 | Minimum Volume | −100 to −60 dB | Resets to the factory minimum |
 | Maximum Volume | −59 to +22 dB | Resets to the factory maximum |
+
+These ranges refer to the underlying master-volume scale. When Zero Point is not 0 dB, the Minimum Volume and Maximum Volume controls are displayed on the shifted scale, just like the main volume and Power On Volume. Changing Zero Point changes only the displayed values; it does not change the underlying limits or playback level.
 
 ---
 
@@ -53,6 +61,10 @@ This changes only the displayed volume. It does **not** change the actual playba
 
 Zero Point ranges from −100 to +22 dB and includes a **Default** button. The advanced section displays both the internal and displayed Master Volume values so you can see how the offset is applied.
 
+Zero Point applies to main-volume positions: current Main Volume, Power On Volume, Minimum Volume, Maximum Volume, and Highest playback volume that preserves digital headroom.
+It does not apply to Mix Out Volume, Mix Out Power On Volume, Maximum Digital Headroom, or Currently Available Digital Headroom.
+Changing Zero Point does not rewrite any of those underlying settings. Their displayed values change because the scale has moved.
+
 ---
 
 ### Maximum Digital Headroom
@@ -84,7 +96,7 @@ The HTP-1 automatically combines analog and digital gain to maximize dynamic ran
 
 At lower listening levels, the HTP-1 keeps the full configured **Maximum Digital Headroom** available while adjusting playback level primarily through the analog stage. As the master volume rises beyond **Highest playback volume that preserves digital headroom**, the reserved headroom is gradually consumed.
 
-Above **0 dB**, the HTP-1 continues increasing analog gain when the configured **Reference Output Voltage** leaves sufficient analog output range. Once the analog gain reaches its limit, any remaining requested gain is applied digitally.
+Above internal **0 dB**, the HTP-1 continues increasing analog gain when the configured **Reference Output Voltage** leaves sufficient analog output range. Once the analog gain reaches its limit, any remaining requested gain is applied digitally.
 
 ---
 
