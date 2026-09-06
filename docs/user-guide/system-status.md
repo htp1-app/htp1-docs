@@ -23,7 +23,9 @@ badge means you are already on the latest release for your branch.
 
 | Field | What it shows |
 | --- | --- |
-| IP Address | The address the HTP-1 is using on your network. |
+| IP Address | The IP address currently assigned to the HTP-1 on your network. |
+| Web UI Address | The local address for opening the HTP-1 Web UI in a browser. |
+| mDNS Hostname | The HTP-1’s unique hostname used for mDNS/Bonjour discovery so applications can identify and connect to this specific unit on the local network. |
 | Decoder Sample Rate | The sample rate of the incoming audio, after decoding. |
 | Encoder Sample Rate | The sample rate of the audio being sent to the speaker outputs. |
 | Video Status | The current video resolution, color space, chroma subsampling, HDR status, bit depth, and 3D status for video received through an HTP-1 HDMI input. No video details are shown when ARC/eARC is used. |
