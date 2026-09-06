@@ -27,7 +27,7 @@ The touchscreen shows the current input, program format, volume, upmix selection
 To access the web interface, first open the **Help** screen on the front panel to find the HTP-1's IP address. Enter the displayed address into your browser's address bar, making sure to type `http://` explicitly, as some browsers default to `https://`, which will not work. If both wired and Wi-Fi addresses are shown, either can be used.
 You can also scan the displayed QR code with your mobile phone to open the web interface directly in your phone's browser.
 
-For IR codes and more details about the color buttons and assignable A–D / Preset buttons, see [Color Buttons and A-D / Preset Buttons](reference.md#color-buttons-and-a-d--preset-buttons).
+For IR codes and more details about the color buttons and assignable A–D / Preset buttons, see [Color Buttons and A-D / Preset Buttons](reference.md#color-buttons-and-a-d-preset-buttons).
 
 ## Rear Panel
 
