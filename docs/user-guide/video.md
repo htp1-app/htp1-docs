@@ -19,9 +19,9 @@ add a Video card to the Home page: turn on **Display Video Status on Homepage** 
 Program Format and Listening Format.
 
 !!! note
-    Video details are available only for video received through an HTP-1 HDMI input. ARC/eARC returns
-    audio from the TV but does not provide the HTP-1 with information about the video being displayed
-    by the TV.
+    No video details are shown when ARC/eARC is used. Video details are available only for video
+    received through an HTP-1 HDMI input; ARC/eARC returns audio from the TV but does not provide the
+    HTP-1 with information about the video being displayed by the TV.
 
 ## UHD Support
 
