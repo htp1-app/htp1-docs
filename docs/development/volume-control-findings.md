@@ -13,13 +13,16 @@ unverified, it is marked as an open question rather than presented as fact.
 
 ### Master Volume
 
-The user-facing volume control.
+The main volume control.
 
-The normal available range is approximately:
+The underlying Master Volume (`/volume`) range is:
 
 ```text
 -100 dB to +22 dB
 ```
+
+**Zero Point** can shift the value shown to the user without changing this
+underlying range or the actual playback level.
 
 ### Maximum Volume
 
@@ -32,13 +35,60 @@ It does not:
 - redefine Reference Output Voltage;
 - change actual gain below the cap.
 
+Maximum Volume is stored on the underlying Master Volume scale. When Zero Point
+is non-zero, the value shown to the user is shifted by the same amount as the
+displayed Master Volume.
+
+### Power On Volume
+
+**Power On Volume** defines the underlying Master Volume applied when the HTP-1
+starts.
+
+Its underlying range is:
+
+```text
+-100 dB to 0 dB
+```
+
+The 0 dB upper limit is a safety ceiling and is independent of Maximum Volume.
+
+Power On Volume is stored on the underlying Master Volume scale. When Zero Point
+is non-zero, the value shown to the user is shifted by the same amount as the
+displayed Master Volume.
+
+For example:
+
+```text
+Zero Point = -15 dB
+stored Power On Volume = -35 dB
+displayed Power On Volume = -20 dB
+```
+
+After restart, the HTP-1 restores the stored `-35 dB` underlying Master Volume,
+which is again displayed as `-20 dB`.
+
+### Mix Out Volume
+
+The Mix Out uses a separate digital volume control and does not use the main
+output's Zero Point.
+
+The confirmed ranges are:
+
+```text
+/secondaryVolume         -100 … 0 dBFS
+/secondaryPowerOnVolume  -100 … 0 dBFS
+```
+
+Unlike the main outputs, Mix Out does not provide the main analog volume
+control's gain range above 0 dB.
+
 ### Reference Output Voltage
 
 Previously called **Maximum Output Level**.
 
 The setting ranges from **0.1 to 4.0 Vrms** and defines the nominal balanced
-output produced by a **0 dBFS sine wave at 0 dB Master Volume**, subject to the
-normal board correction and calibration tolerances.
+output produced by a **0 dBFS sine wave at internal 0 dB Master Volume**, subject
+to the normal board correction and calibration tolerances.
 
 It does not mean:
 
@@ -69,7 +119,7 @@ These are different quantities:
 - **Configured digital headroom** is the value selected with Maximum Digital
   Headroom.
 - **Currently available digital headroom** is the reserve remaining at the
-  current Master Volume.
+  current underlying Master Volume.
 
 Documentation must not use these terms interchangeably.
 
@@ -93,16 +143,99 @@ applied.
 
 ### Zero Point
 
-**Zero Point** changes only the displayed Master Volume value.
+**Zero Point** changes the displayed scale used for main-volume positions. It
+does not change any underlying volume setting or gain.
 
-It does not change:
+The relationship is:
+
+```text
+displayed Main Volume     = /volume     - /cal/zeroPoint
+displayed Power On Volume = /powerOnVol - /cal/zeroPoint
+displayed Minimum Volume  = /cal/vpl    - /cal/zeroPoint
+displayed Maximum Volume  = /cal/vph    - /cal/zeroPoint
+```
+
+The displayed **Highest volume with full digital headroom** is shifted by the
+same Zero Point offset.
+
+Zero Point does not change:
 
 - the underlying Master Volume;
+- Power On Volume;
+- Minimum Volume or Maximum Volume;
 - analog or digital gain;
 - output voltage;
-- the internal 0 dB reference point.
+- the internal 0 dB reference point;
+- Maximum Digital Headroom;
+- currently available digital headroom;
+- Mix Out Volume or Mix Out Power On Volume.
+
+The confirmed underlying ranges are:
+
+```text
+/volume                              -100 … +22 dB
+/powerOnVol                          -100 …   0 dB
+
+/secondaryVolume                     -100 …   0 dBFS
+/secondaryPowerOnVolume              -100 …   0 dBFS
+/shaker/savedSecondaryPowerOnVolume  -100 …   0 dBFS
+```
+
+Zero Point is never added to or subtracted from these stored values. Changing
+Zero Point therefore changes their presentation where applicable, but not the
+actual playback level, power-on level, or volume limits.
+
+For example, with Zero Point set to `-15 dB`, an underlying Master Volume or
+Power On Volume of `-35 dB` is displayed as `-20 dB`.
+
+When Mix Out tracks Main Volume, the tracked Mix Out level follows the
+underlying Main Volume but is clamped to `0 dBFS` if Main Volume rises above
+internal 0 dB.
 
 ## Confirmed implementation details
+
+### Volume ranges
+
+The confirmed volume-related ranges are:
+
+```text
+/volume                              -100 … +22 dB
+/powerOnVol                          -100 …   0 dB
+
+/secondaryVolume                     -100 …   0 dBFS
+/secondaryPowerOnVolume              -100 …   0 dBFS
+/shaker/savedSecondaryPowerOnVolume  -100 …   0 dBFS
+```
+
+The main output and Mix Out therefore do not share the same upper volume limit.
+
+The main output's `+22 dB` range is associated with the analog volume-control
+stage described below. Mix Out is a digital downmix level and is limited to
+`0 dBFS`.
+
+### Power-on restore behavior
+
+Power On Volume values are stored on their underlying scales.
+
+At startup:
+
+```text
+/volume = /powerOnVol
+```
+
+and:
+
+```text
+/secondaryVolume = /secondaryPowerOnVolume
+```
+
+subject to Seat Shaker routing and volume-tracking behavior.
+
+Zero Point is not part of this restore calculation.
+
+This distinction is important. Applying Zero Point while restoring Power On
+Volume would change the actual playback level after restart rather than merely
+changing its displayed value.
 
 ### Voltage conversion
 
@@ -135,8 +268,8 @@ Do not expose it in normal user documentation unless that rationale is known.
 
 The implementation retains an additional approximately **1 dB** digital reserve.
 
-With configured headroom `H`, the highest Master Volume that retains the full
-configured headroom is approximately:
+With configured headroom `H`, the highest underlying Master Volume that retains
+the full configured headroom is approximately:
 
 ```text
 Highest MV with full configured headroom ≈ 1 dB - H
@@ -148,6 +281,8 @@ Examples:
 12 dB configured headroom → approximately -11 dB MV
 18 dB configured headroom → approximately -17 dB MV
 ```
+
+The UI displays this threshold using the current Zero Point scale.
 
 Use the live UI readout as the authoritative value where available.
 
@@ -167,6 +302,9 @@ if (volAna > 22) {
 
 Any requested gain beyond the analog stage's +22 dB control limit is transferred
 to the digital stage.
+
+This analog gain range applies to the main output path. It must not be used as
+the range for Mix Out.
 
 ### CS3318 signal-swing limit
 
@@ -235,21 +373,25 @@ A useful approximation is:
 
 ### Region 1: Full configured headroom
 
-At lower Master Volume settings, analog gain increases while the full configured
-digital headroom remains available.
+At lower underlying Master Volume settings, analog gain increases while the full
+configured digital headroom remains available.
 
 ### Region 2: Configured headroom is consumed
 
 Above **Highest volume with full digital headroom**, the HTP-1 begins consuming
 the configured digital reserve to allow higher playback levels.
 
-At approximately 0 dB Master Volume, only the normal internal reserve remains.
+At approximately internal 0 dB Master Volume, only the normal internal reserve
+remains.
 
-### Region 3: Analog gain above 0 dB
+### Region 3: Analog gain above internal 0 dB
 
-Above 0 dB Master Volume, the processor may continue increasing analog gain,
-depending on the configured Reference Output Voltage and the remaining analog
-output capability.
+Above internal 0 dB Master Volume, the processor may continue increasing analog
+gain, depending on the configured Reference Output Voltage and the remaining
+analog output capability.
+
+A non-zero Zero Point may cause this region to appear at a different displayed
+volume value.
 
 ### Region 4: Positive digital gain
 
@@ -264,16 +406,80 @@ Whether and where this region occurs depends on Reference Output Voltage.
 
 The configured value is the maximum reserve the HTP-1 attempts to preserve.
 
-It remains fully available only up to the displayed **Highest volume with full
-digital headroom**. Above that point, available headroom decreases.
+It remains fully available only up to **Highest volume with full digital
+headroom**. Above that point, available headroom decreases.
 
-### Reference Output Voltage is anchored to 0 dB MV
+The UI displays that threshold using the Zero Point-shifted volume scale, but the
+underlying threshold does not change when Zero Point changes.
 
-Reference Output Voltage is not anchored to Maximum Volume.
+### Reference Output Voltage is anchored to internal 0 dB MV
+
+Reference Output Voltage is anchored to **internal 0 dB Master Volume**, not
+displayed 0 dB and not Maximum Volume.
 
 Reducing Maximum Volume therefore reduces the output of a conventional 0 dBFS
 test signal, but it does not by itself describe the output produced by an
 internally boosted post-processing peak.
+
+Changing Zero Point does not change Reference Output Voltage or the internal
+volume setting to which it is referenced.
+
+### Displayed 0 dB is not necessarily internal 0 dB
+
+With Zero Point set to 0 dB:
+
+```text
+displayed 0 dB = internal 0 dB
+```
+
+With a non-zero Zero Point, that is no longer true.
+
+For example:
+
+```text
+Zero Point = -15 dB
+internal Master Volume = -15 dB
+displayed Master Volume = 0 dB
+```
+
+Documentation and UI text discussing gain behavior, Reference Output Voltage,
+or hardware limits must therefore use **internal 0 dB Master Volume** where that
+distinction matters.
+
+### Power On Volume is stored independently of Zero Point
+
+Changing Zero Point must not rewrite Power On Volume.
+
+For example:
+
+```text
+stored Power On Volume = -35 dB
+Zero Point = 0 dB
+displayed Power On Volume = -35 dB
+
+Zero Point changed to -15 dB
+
+stored Power On Volume = -35 dB
+displayed Power On Volume = -20 dB
+```
+
+The actual power-on playback level remains unchanged.
+
+### Mix Out does not use Zero Point
+
+Mix Out Volume and Mix Out Power On Volume remain on their own `-100 … 0 dBFS`
+scale regardless of the main output's Zero Point setting.
+
+When Seat Shaker volume tracking routes the signal through Mix Out, the tracked
+level follows underlying Main Volume only up to `0 dBFS`.
+
+For example:
+
+```text
+Main Volume = -10 dB → Mix Out tracking = -10 dBFS
+Main Volume =   0 dB → Mix Out tracking =   0 dBFS
+Main Volume =  +8 dB → Mix Out tracking =   0 dBFS
+```
 
 ### Peak level and Vrms must not be mixed
 
@@ -297,12 +503,12 @@ RMS requires knowledge of the waveform over time.
 
 ### A 4 Vrms setting does not imply clean output above 4 Vrms
 
-With Reference Output Voltage set to 4 Vrms, a full-scale sine at 0 dB Master
-Volume is already near the clean balanced-output limit.
+With Reference Output Voltage set to 4 Vrms, a full-scale sine at internal 0 dB
+Master Volume is already near the clean balanced-output limit.
 
-Higher Master Volume settings may request more gain, but they do not create
-proportionally higher clean voltage for a full-scale signal. Positive digital
-gain can instead drive the digital or analog path into clipping.
+Higher underlying Master Volume settings may request more gain, but they do not
+create proportionally higher clean voltage for a full-scale signal. Positive
+digital gain can instead drive the digital or analog path into clipping.
 
 ### Gain-setting range is not output-voltage headroom
 
@@ -367,6 +573,57 @@ explains the existing controls rather than introducing a second gain algorithm.
 
 ## UI guidance
 
+### Displayed and underlying volume values
+
+Any UI that presents main-volume positions must distinguish between the
+underlying value and the Zero Point-shifted displayed value.
+
+The intended model is:
+
+```text
+displayed value = underlying value - Zero Point
+```
+
+for:
+
+- Main Volume;
+- Power On Volume;
+- Minimum Volume;
+- Maximum Volume;
+- Highest volume with full digital headroom.
+
+Zero Point must not be applied to:
+
+- Mix Out Volume;
+- Mix Out Power On Volume;
+- Maximum Digital Headroom;
+- currently available digital headroom;
+- stored underlying MSO values.
+
+User input entered on a displayed Zero Point-shifted scale must be converted back
+to the underlying scale before being stored.
+
+For example:
+
+```text
+Zero Point = -15 dB
+user enters displayed Power On Volume = -20 dB
+stored /powerOnVol = -35 dB
+```
+
+### Volume limits
+
+The underlying limits are:
+
+```text
+Main Volume:          -100 … +22 dB
+Main Power On Volume: -100 …   0 dB
+Mix Out Volume:       -100 …   0 dBFS
+Mix Out Power On:     -100 …   0 dBFS
+```
+
+UI controls must not reuse the main output's `+22 dB` ceiling for Mix Out.
+
 ### “Effective voltage at that volume”
 
 A value calculated as:
@@ -377,7 +634,8 @@ Reference Output Voltage × 10^(Master Volume / 20)
 
 is mathematically valid only as:
 
-> Expected RMS output of a 0 dBFS sine wave at the selected Master Volume.
+> Expected RMS output of a 0 dBFS sine wave at the selected underlying Master
+> Volume.
 
 It is not:
 
@@ -419,6 +677,10 @@ Maximum Volume preserves all configured digital headroom.
 Maximum Volume consumes 3 dB of configured digital headroom.
 ```
 
+Where Zero Point is active, normal user-facing values should use the displayed
+volume scale. Engineering explanations of the gain algorithm should identify
+underlying or internal Master Volume explicitly.
+
 This status should use the live implementation result rather than reproducing
 the gain algorithm independently in the UI where possible.
 
@@ -432,30 +694,42 @@ Preferred terms:
 - **currently available digital headroom**
 - **Highest volume with full digital headroom**
 - **Maximum Volume**
+- **Power On Volume**
+- **Mix Out Volume**
 - **Zero Point**
 - **Peak Monitor**
+- **internal 0 dB Master Volume**, where the distinction from displayed 0 dB
+  matters
 
 Recommended user-level explanation:
 
 > The HTP-1 automatically combines analog and digital volume control. At lower
 > listening levels it preserves the full configured Maximum Digital Headroom.
 > As Master Volume increases beyond the displayed Highest volume with full
-> digital headroom, that reserve is gradually consumed. Above 0 dB Master
-> Volume, analog gain may continue to increase until the analog stage reaches
-> its limit. Any remaining requested gain is applied digitally and may clip
-> sufficiently high-level signals.
+> digital headroom, that reserve is gradually consumed. Above internal 0 dB
+> Master Volume, analog gain may continue to increase until the analog stage
+> reaches its limit. Any remaining requested gain is applied digitally and may
+> clip sufficiently high-level signals. Zero Point changes only the displayed
+> main-volume scale and does not change these underlying gain relationships.
 
 Avoid wording that implies:
 
 - Maximum Digital Headroom is permanently reserved;
 - Reference Output Voltage is always the instantaneous output voltage;
 - Reference Output Voltage describes arbitrary program RMS level;
+- Reference Output Voltage is referenced to displayed 0 dB when Zero Point is
+  non-zero;
 - a Peak Monitor sample value can be converted directly into Vrms without
   knowing the waveform;
 - unused CS3318 gain-setting range equals unused clean output voltage;
 - a different gain split can create clean voltage beyond the hardware limit;
 - Maximum Volume changes internal gain calculations;
 - Zero Point changes playback level;
+- Zero Point changes stored Power On Volume, Minimum Volume, or Maximum Volume;
+- Zero Point applies to Mix Out Volume or Mix Out Power On Volume;
+- displayed 0 dB necessarily corresponds to internal 0 dB Master Volume;
+- the main output and Mix Out have the same upper volume limit;
+- Mix Out can use the main analog stage's +22 dB gain range;
 - a 4 Vrms reference setting allows clean full-scale output above 4 Vrms.
 
 ## Open questions

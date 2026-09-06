@@ -10,7 +10,7 @@
 | Audio-Only Inputs | 2x analog stereo RCA, 3x digital coaxial, 3x digital optical, 1x AES/EBU, 1x ARC/eARC |
 | Streaming Inputs | Roon Ready®, USB audio, Bluetooth® |
 | Video Outputs | 1x HDMI ARC/eARC, 1x HDMI |
-| Audio Outputs | 16-channel balanced XLR line outputs, max level 4.0 Vrms. Unbalanced stereo analog RCA Mix Out, with its own volume, mute, and power-on volume, independent of the main output. The Mix Out (or an XLR sub output) can also carry the Seat Shaker signal. |
+| Audio Outputs | 16-channel balanced XLR line outputs, max level 4.0 Vrms. Unbalanced stereo analog RCA Mix Out, with independent −100 to 0 dBFS digital level, mute, and power-on volume. The Mix Out (or an XLR sub output) can also carry the Seat Shaker signal. |
 | Triggers | 1x trigger input, 4x trigger outputs |
 | HDMI Version / HDCP™ Version | 2.0 / 2.3 |
 | Maximum Video Resolution | 4K@60Hz UHD |
