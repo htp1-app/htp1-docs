@@ -24,7 +24,7 @@ The touchscreen shows the current input, program format, volume, upmix selection
 - **Audio input details (bottom left):** Tap to show more information about the audio input. Tap twice to view detailed playback and processing information.
 - **Audio output details (bottom right):** Tap to show more information about the audio output. Tap twice to view detailed playback and processing information.
 
-For first-time setup and instructions on accessing the web interface, see [Basic Setup](basic-setup.md).
+The front panel also provides the network information needed for first-time setup and access to the web interface. See [Basic Setup](basic-setup.md) for details.
 
 The remote's color buttons provide shortcuts to several front-panel functions. See [Remote Color Button Functions](reference.md#color-buttons-and-a-d-preset-buttons) for details.
 
