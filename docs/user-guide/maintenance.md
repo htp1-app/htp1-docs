@@ -2,25 +2,43 @@
 
 ## Checking Your Version
 
-Open [System Status](system-status.md) to see the software version currently running, under
-**System Software Version**. If a newer release is available, an **Update available** badge
-appears next to the **Open History page** button.
+Open [System Status](system-status.md). The panel at the top shows the version you are
+running, its stage and build date, and on the right either **Your HTP-1 is up to date** or
+**V2.1.4 is available** with a short summary of the newer release.
+
+The unit checks for new releases on its own every six hours. **Check for updates** asks the
+release server right away. When a newer release is known, an **Update available** mark also
+appears on the Home page and next to the version.
 
 ## Reading Release Notes
 
-Click **Release Notes**, next to the software version, to see what changed in the current
-release — new features, fixes, and any known issues. Read these before updating, especially if
-you rely on a feature that could be affected.
+The notes for the version you have are on the System Status page, folded under **Release notes
+for V2.1.3**. When an update is available, **What's new** shows the newer release's notes above
+them. Read these before updating, especially if you rely on a feature that could be affected.
+
+Every release's notes are also on the **Version history** page, under each version.
 
 ## Performing an Update
 
-Click **Open History page** on the System Status page. This opens a separate page listing
-available software releases.
+On the System Status page, click **Install V2.1.4** for the release that is available, or
+open **Version history** to pick a different one. A dialog shows what you have now, what will
+be installed, and what to expect. Confirm to start.
 
-Releases on the **master** branch are recommended for most users. **Preview**, **Beta** und **Release Candidate** releases are also
-listed; these are newer builds still being tested, and are meant for owners who want to help find
-problems before a release reaches master. Choose a release from the list to install it. You will
-be asked to confirm before the update starts.
+![Install dialog showing the installed version, the version that will be installed, and what to expect](images/ui-install-dialog.png)
+
+The **Version history** page lists every release published for the HTP-1, newest first. Each
+row shows the version, its stage, the date it was published, a one-line summary, its release
+notes, and an **Install** button. The version you are running is marked **Installed**; anything
+above it is marked **Newer than installed**.
+
+![Version history page listing releases with their stage, date, summary and Install buttons](images/ui-version-history.png)
+
+Stages tell you how tested a release is:
+
+- **Final release** is recommended for most owners.
+- **Release candidate** and **Public beta** releases are newer builds still being tested, meant
+  for owners who want to help find problems before a final release. Untick **Show release
+  candidates and betas** to hide them.
 
 !!! tip
     Export a configuration backup before updating, in case anything needs to be restored
@@ -34,6 +52,15 @@ close the browser tab or power down the unit while this is showing — the unit 
 when the update finishes.
 
 User settings, input names, and calibrations are preserved across a normal update.
+
+## Going Back to an Earlier Version
+
+Any release listed on the **Version history** page can be installed, newer or older. To return
+to an earlier version, find it in the list and click **Install**. The dialog warns when you are
+moving to an older version, because settings saved by newer software may not carry over.
+
+Versions before 2.0 are not listed. Returning to the 1.x series uses the separate downgrade
+procedure linked at the bottom of the page.
 
 ## Upgrading from Version 1.x
 

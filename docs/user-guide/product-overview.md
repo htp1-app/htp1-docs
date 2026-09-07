@@ -113,6 +113,6 @@ Once you are inside settings, a small line of text at the top of the screen — 
 
 The **?** button in the top-right corner of every page opens **Help**, a set of sections — one per settings page — that explains the controls on the page you came from.
 
-The **i** button opens **System Status**, which displays the software version, release notes, and update history. It is also the place from which you can check for and install system software updates.
+The **i** button opens **System Status**, which shows the software version you are running, whether a newer release is available, and its release notes. Updates are installed from there, and the **Version history** page behind it lists every release you can install.
 
 The **power** button opens a confirmation dialog that lets you put the unit into standby, restart it, or power it off completely.
