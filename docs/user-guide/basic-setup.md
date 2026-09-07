@@ -54,8 +54,15 @@ The best way to become familiar with the HTP-1 is to simply start using it! Befo
 
         You can enable **Fast Start** from the **Device Settings** page of the web interface.
 
-14. Open the **Help** screen on the front panel by tapping the **?** icon in the top right. Note the IP address displayed there.
-15. Open a web browser on your computer, then type `http://` followed by the IP Address on the display into the address bar and hit Enter to display the web interface Home page. Note that some browsers default to using `https://` on the address, which will not work. To be safe, it is best to explicitly type `http://` before the address. Bookmark the plain address (`http://<your-htp1-ip>/`) rather than a settings page, since pages within the interface use hash-mode addresses like `http://<your-htp1-ip>/#/settings/speakers`.
+14. On first startup, the front panel provides the information needed to access the HTP-1's web interface from another device on the same network. Open the **Help** screen by tapping the **?** icon in the top right. It shows the HTP-1's mDNS hostname, network addresses, and a QR code.
+
+    ![HTP-1 Front Panel Help page](images/fp-help.png)
+
+15. Open a web browser on your computer or other device on the same network. The easiest address to use is usually the mDNS hostname shown on the front panel, such as `http://htp-1.local`. You can also use the displayed IP address.
+
+    Make sure to include `http://` explicitly, as some browsers default to `https://`, which will not work. You can also scan the displayed QR code with your mobile phone to open the web interface directly.
+
+    Bookmark the plain address rather than a settings page, since pages within the interface use hash-mode addresses such as `http://htp-1.local/#/settings/speakers`.
 16. If your source connected to HDMI 1 is playing, you should see the front panel and the Home page describe the program format and the listening format. The front panel should display -50dB as the default initial volume.
 17. Slowly turn the Volume Knob on the front panel clockwise until the volume is at a comfortable level. Verify that both the left and right audio channels are playing audio properly and that there is video on your display.
 

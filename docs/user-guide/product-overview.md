@@ -13,9 +13,9 @@
 
 ![Front panel touchscreen controls](images/fp-p01-1.png)
 
-The touchscreen shows the current input, program format, volume, upmix selection, and IP address, and doubles as a set of touch controls:
+The touchscreen shows the current input, program format, volume, upmix selection, and other system status information, and doubles as a set of touch controls:
 
-- **Help icon (top right):** Tap to open the Help screen. This is the first place to look when setting up your HTP-1, as it provides the IP addresses needed to connect to the web-based user interface for setup and control. It also lets you reset the wired and wireless network connections if there is a networking problem. The icon turns red when no network connection is available.
+- **Help icon (top right):** Tap to open the Help screen, which shows network information and lets you reset the network connections. The icon turns red when no network connection is available.
 - **Peak monitoring icon (top left):** Tap to start or stop Peak Monitor. While active, the display shows the highest peak level and its channel. See [Peak Monitor](peak-monitor.md#front-panel-display) for details.
 - **Input source display (top center):** Tap to show video input details. This area also shows if the signal generator is on. Tap twice to view detailed playback and processing information.
 - **Master volume level (center):** Tap to mute your HTP-1. Tap again to unmute. When muted, the display changes from white to red. The displayed value is the current master volume. 0 dB represents the configured **Reference Output Voltage**; negative values indicate attenuation below that level.
@@ -24,8 +24,7 @@ The touchscreen shows the current input, program format, volume, upmix selection
 - **Audio input details (bottom left):** Tap to show more information about the audio input. Tap twice to view detailed playback and processing information.
 - **Audio output details (bottom right):** Tap to show more information about the audio output. Tap twice to view detailed playback and processing information.
 
-To access the web interface, first open the **Help** screen on the front panel to find the HTP-1's IP address. Enter the displayed address into your browser's address bar, making sure to type `http://` explicitly, as some browsers default to `https://`, which will not work. If both wired and Wi-Fi addresses are shown, either can be used.
-You can also scan the displayed QR code with your mobile phone to open the web interface directly in your phone's browser.
+For first-time setup and instructions on accessing the web interface, see [Basic Setup](basic-setup.md).
 
 The remote's color buttons provide shortcuts to several front-panel functions. See [Remote Color Button Functions](reference.md#color-buttons-and-a-d-preset-buttons) for details.
 
