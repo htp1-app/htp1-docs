@@ -38,7 +38,7 @@ The best way to become familiar with the HTP-1 is to simply start using it! Befo
     !!! note
         HDMI OUTPUT 1 supports the Audio Return Channel (ARC) and Enhanced Audio Return Channel (eARC) HDMI features, which send audio from the connected display back to the amplifier. The ARC/eARC feature is necessary if you plan on streaming video from the internet using an application on your TV or if you plan on receiving over-the-air TV broadcasts using an HD antenna connected to the TV. You must connect the TV to output 1 for (e)ARC to work.
 
-6. Using suitable speaker cable (not included), connect your speakers to the corresponding outputs on your power amplifier. A **2.5 mm² (approximately 14 AWG)** cable is sufficient for most home theater installations. Ensure that there are no stray wire strands that could cause a short circuit, and maintain correct polarity (**+** to **+**, **−** to **−**) for all speaker connections.
+6. Using suitable speaker cable (not included), connect your speakers to the corresponding outputs on your power amplifier. A 2.5 mm² (approximately 14 AWG) copper cable is sufficient for most home theater installations and cable runs up to about 15 m (50 ft). Ensure that there are no stray wire strands that could cause a short circuit, and maintain correct polarity (**+** to **+**, **−** to **−**) for all speaker connections.
 7. If your power amplifier has XLR inputs, plug an XLR cable (not included) into the left channel input on your power amplifier, then plug the other end into the LEFT MAIN OUTPUT on the rear panel. If your power amplifier only has RCA inputs, use an XLR to RCA cable (not included) instead. Repeat for the right channel.
 8. Using another (Premium High Speed) HDMI® Cable (not included), plug one end into HDMI INPUT 1 on the rear panel, then plug the other end into the HDMI output on a video source device (e.g., DVD player, Blu-ray Disc™ player, satellite receiver, cable box, etc.).
 9. Ensure that the Master Power Switch on the rear panel is in the OFF position (O side depressed).
@@ -63,7 +63,9 @@ The best way to become familiar with the HTP-1 is to simply start using it! Befo
     Make sure to include `http://` explicitly, as some browsers default to `https://`, which will not work. You can also scan the displayed QR code with your mobile phone to open the web interface directly.
 
     Bookmark the plain address rather than a settings page, since pages within the interface use hash-mode addresses such as `http://htp-1.local/#/settings/speakers`.
+
 16. If your source connected to HDMI 1 is playing, you should see the front panel and the Home page describe the program format and the listening format. The front panel should display -50dB as the default initial volume.
+
 17. Slowly turn the Volume Knob on the front panel clockwise until the volume is at a comfortable level. Verify that both the left and right audio channels are playing audio properly and that there is video on your display.
 
     Congratulations! You have finished the Basic Setup and are ready to learn more about the advanced features and functionality of the HTP-1.
