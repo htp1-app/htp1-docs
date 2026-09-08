@@ -4,11 +4,25 @@
 
 Open [System Status](system-status.md). The panel at the top shows the version you are
 running, its stage and build date, and on the right either **Your HTP-1 is up to date** or
-**V2.1.4 is available** with a short summary of the newer release.
+**V2.1.3 is available** with a short summary of the newer release.
 
-The unit checks for new releases on its own every six hours. **Check for updates** asks the
-release server right away. When a newer release is known, an **Update available** mark also
-appears on the Home page and next to the version.
+The unit checks for new releases on its own every six hours. **Check for updates**, at the top
+right of the page, asks the release server right away; **Last checked** beside it tells you how
+old the answer is. When a newer release is known, an **Update available** mark also appears on
+the Home page.
+
+### Without an Internet Connection
+
+The HTP-1 needs to reach the release server on the internet to learn about new releases. If it
+could not the last time it checked, System Status shows **Can't check for updates** with the
+time of that attempt, and the Version history page notes that its list may be missing newer
+releases. Nothing else on the unit is affected.
+
+![System Status page when the release server could not be reached](images/ui-system-status-offline.png)
+
+Make sure the unit is connected to a network with internet access, then click **Check for
+updates**. Releases already known to the unit can still be installed while it is offline, as
+long as the release server is reachable when the install starts.
 
 ## Reading Release Notes
 
@@ -20,9 +34,12 @@ Every release's notes are also on the **Version history** page, under each versi
 
 ## Performing an Update
 
-On the System Status page, click **Install V2.1.4** for the release that is available, or
+On the System Status page, click **Install V2.1.3** for the release that is available, or
 open **Version history** to pick a different one. A dialog shows what you have now, what will
 be installed, and what to expect. Confirm to start.
+
+You can also do this while the unit is in standby: the standby screen's **Quick Links** open
+the Version history page, and installing from there works the same way.
 
 ![Install dialog showing the installed version, the version that will be installed, and what to expect](images/ui-install-dialog.png)
 

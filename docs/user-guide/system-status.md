@@ -8,28 +8,26 @@ exact hardware and software versions that support will ask for if you report a p
 
 ## System software
 
-The panel at the top is about the software itself.
+The controls at the top right apply to the whole page: **Last checked** tells you how old the
+information is, **Version history** opens the list of every release you can install, and
+**Check for updates** asks the release server again. The unit also checks on its own every six
+hours.
 
-On the left is the version you are running, for example `V2.1.3`, with its stage next to it
-(**Final release 2.1**, **Release candidate 2**) and the date it was built.
-
-On the right is where you stand:
+The panel below is about the software itself. On the left is the version you are running, for
+example `V2.1.3`, with its stage next to it (**Final release 2.1**, **Release candidate 2**) and
+the date it was built. On the right is where you stand:
 
 | You see | It means |
 | --- | --- |
-| **Your HTP-1 is up to date** | You have the newest release. **Check for updates** asks the release server again; the unit also checks on its own every six hours. |
-| **V2.1.4 is available** | A newer release exists. A one-line summary of it appears beneath. **Install V2.1.4** installs it after a confirmation; **What's new in V2.1.4** scrolls to its release notes. |
-| **Development build installed** | The unit is running a developer build rather than a public release. Owners will not normally see this. |
-
-Beneath the panel, **Version history** opens the list of every release you can install, and
-**Release notes for V2.1.3** opens the notes for the version you have. **Last checked** tells
-you how old the answer is.
+| **Your HTP-1 is up to date** | You have the newest release. |
+| **V2.1.3 is available** | A newer release exists, with a one-line summary beneath. **Install V2.1.3** installs it after a confirmation; **What's new in V2.1.3** scrolls to its release notes. |
+| **Can't check for updates** | The unit could not reach the release server the last time it checked, so it cannot tell whether a newer release exists. See [Updates and Support](maintenance.md#without-an-internet-connection). |
+| **Not a public release** | The unit is running a developer build rather than a public release. Owners will not normally see this. |
 
 ![System Status page when the installed release is the newest one](images/ui-system-status-up-to-date.png)
 
-When an update is available, a **What's new** panel lists its new features, changes and fixes,
-and the release notes for your installed version are folded beneath it. Open them with the
-arrow.
+When an update is available, a **What's new** panel lists its new features, changes and fixes.
+The release notes for the version you have are folded beneath it; open them with the arrow.
 
 See [Updates and Support](maintenance.md) for the update procedure and what to expect.
 
