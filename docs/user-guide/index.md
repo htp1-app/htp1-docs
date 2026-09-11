@@ -64,7 +64,7 @@ New to the HTP-1? Start with [Welcome](welcome.md), then [Basic Setup](basic-set
 |---|---|
 | [System Status](system-status.md) | Versions, detailed status, and HDMI diagnostics |
 | [Updates and Support](maintenance.md) | Firmware updates, logs, and feedback |
-| [Integrations and Control](integrations.md) | Roon, the mobile remote, and HTTP control |
+| [Integrations and Control](integrations.md) | Roon, AirPlay, Spotify Connect, DLNA, the mobile remote, and HTTP control |
 | [Reference](reference.md) | Specifications, signal flow, IR codes, and glossary |
 
 ## If You Are Looking for a Setting That Moved
