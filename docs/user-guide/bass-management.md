@@ -51,6 +51,8 @@ The other half of bass management — deciding *which* speakers hand off their b
 - A speaker set to **Large** is treated as full-range and keeps its own bass.
 - Subwoofers have no size or crossover control of their own. The **LPF for LFE Channel** control above applies only to the LFE channel and does not affect bass redirected from other speakers by bass management.
 
+For guidance on choosing a crossover frequency from the speaker's specifications, see [Most Speakers Should Be Small](speaker-setup.md#most-speakers-should-be-small).
+
 !!! tip
     If you don't have a spec sheet for your speakers, a basic Dirac Live calibration will show you the speaker's useful range. You can use that measurement to choose a crossover frequency. Unless you really have "Large" full-range speakers, set the size to "Small" or "Dolby" (if it is a Dolby Atmos Enabled speaker) and pick a cutoff within the effective range of the speaker.
 
