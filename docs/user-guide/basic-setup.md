@@ -90,7 +90,7 @@ The [Connectivity](connectivity.md) chapter gives further information on Wi-Fi, 
 
 ## Update the Firmware
 
-After you have completed the basic setup is a good time to check for firmware updates. Available firmware updates are advertised on the **System Status** page, under **History and Updates**. See [Firmware Updates & Support](maintenance.md) for the update process.
+After you have completed the basic setup is a good time to check for firmware updates. The **System Status** page shows the version you are running and, when a newer release exists, an **Install** button for it. See [Updates and Support](maintenance.md) for the update process.
 
 ## Interface Description
 
