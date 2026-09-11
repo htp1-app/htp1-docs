@@ -32,7 +32,7 @@ While the dialog is open it also tells you whether the layout you're building ha
 
 If you are not sure whether your speakers are small or large, they are probably small. A large, full-range speaker does not need a subwoofer to produce the lowest frequencies. Setting a speaker to **Small** causes the bass manager to redirect its lowest frequencies to the subwoofer(s), protecting the speaker and letting it operate more efficiently.
 
-Many speaker manufacturers publish the frequency response of their speakers. For example, "60Hz to 18KHz" indicates that the speaker is not designed to produce sound much below 60 Hz. In that case, set the crossover frequency to 60 Hz. Choosing a cutoff clearly in the linear region of the speaker ensures the crossover, not the speaker's own natural roll-off, defines where bass hands off to the subwoofer. The HTP-1 uses a fourth-order Linkwitz-Riley crossover.
+Many speaker manufacturers publish the frequency response of their speakers. For a speaker set to **Small**, adjust its crossover frequency based on the low-frequency **−3 dB point** (f<sub>−3 dB</sub>) specified for that speaker model. Choosing a cutoff clearly in the linear region of the speaker ensures the crossover, not the speaker's own natural roll-off, defines where bass hands off to the subwoofer. The HTP-1 uses a fourth-order Linkwitz-Riley crossover.
 
 !!! tip
     If you don't have a spec sheet for your speakers, a basic Dirac Live calibration will show you the speaker's useful range. You can use that measurement to choose a crossover frequency, then finish the layout on the Speakers page.
