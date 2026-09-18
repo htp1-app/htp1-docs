@@ -2,7 +2,13 @@
 
 The HTP-1 uses a combination of analog and digital gain to implement the master volume. **Volume Setup** lets you configure the power-on volume, allowable volume range, **Reference Output Voltage**, and **Maximum Digital Headroom**, which together determine how the volume control behaves.
 
-![Volume Setup page showing Power On, Volume Limits, and Output Level controls](images/ui-volume-setup.png)
+![Volume Setup page showing Power On, Volume Limits, and Output Level controls, with the Volume Calibration status alongside](images/ui-volume-setup.png)
+
+## Volume Calibration
+
+The **Volume Calibration** section of this page is the guided way to configure the controls described below. It measures what your amplifier and your processing actually need and derives **Reference Output Voltage**, **Maximum Digital Headroom**, **Maximum Volume**, and **Zero Point** for you; once applied, the section reports whether the settings still match the calibration. The individual controls on this page remain fully adjustable. See [Volume Calibration](volume-calibration.md) for a complete description.
+
+---
 
 ## Power On
 
