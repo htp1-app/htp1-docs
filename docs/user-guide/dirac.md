@@ -215,7 +215,7 @@ short notice at the top of the page.
 | State | Meaning and what to do |
 |---|---|
 | Not Applied | Dirac Live is on, but the processor isn't applying it. Turn Dirac Live off and back on. |
-| Still Applied | Off or Bypass is selected, but the processor is still applying the filter. Select it again; if it stays, restart the Dirac Live server. |
+| Still Applied | Off or Bypass is selected, but the processor is still applying the filter. Switch Dirac Live On and back; if it stays, restart the Dirac Live server. |
 | Wrong Filter | The processor holds a filter for another slot, for another sample rate, or from the slot's previous calibration. Use **Load correct filter**. |
 | Filter Missing | No filter for this sample rate has been loaded yet. Use **Load filter**; it takes up to a minute. |
 | Filter Not Confirmed | Dirac Live is on, but the HTP-1 couldn't confirm which filter is loaded. Use **Load and check filter**. |
