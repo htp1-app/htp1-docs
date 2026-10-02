@@ -189,18 +189,54 @@ off because the calibration can apply substantial negative trim values.
 
 ## Dirac Live Status
 
-A status pill next to "Dirac Live" on the Calibration and Home pages shows one of four states:
+A status pill next to "Dirac Live" on the Calibration page shows what the processor is actually
+doing, not only what you selected. Hover over it, or tap it, for a sentence of detail. On the Home
+page the Dirac Live button takes the pill's colour, and any state that needs attention also shows a
+short notice at the top of the page.
+
+**Green: working.**
 
 | State | Meaning |
 |---|---|
-| Inactive | No Dirac Live filter is loaded or active. |
-| Active | The calibration is active and the filter is working as expected. |
-| Warning | The calibration is in an unexpected state. Turn Dirac Live off and back on. |
-| Error | The filter failed to load. Restart the Dirac Live server or the HTP-1. |
+| Active | Dirac Live is on with the right filter for the selected slot and the source's sample rate. |
+| Ready | Dirac Live is on and nothing is playing. It applies as soon as audio starts. |
 
-On Error, a **Restart Dirac Live Server** button appears. This restarts just the Dirac Live process,
-which is faster than rebooting the whole HTP-1 and is the recommended first step. A second copy of
-this button lives on the Device Settings page, under Danger Zone.
+**Grey or blue: as selected, or waiting.**
+
+| State | Meaning |
+|---|---|
+| Off, Bypass | As selected. A slot without a calibration also reads **Off**. |
+| No Filter | No slot has a calibration for the current speaker layout. |
+| Starting, Checking | The Dirac Live server is starting, or the HTP-1 is confirming the filter. This resolves on its own; if it lasts a minute it turns into one of the warnings below. |
+| Loading, Applying | A filter is being transferred, or a change you made is reaching the processor. |
+
+**Yellow: correction is not what you selected.**
+
+| State | Meaning and what to do |
+|---|---|
+| Not Applied | Dirac Live is on, but the processor isn't applying it. Turn Dirac Live off and back on. |
+| Still Applied | Off or Bypass is selected, but the processor is still applying the filter. Switch Dirac Live On and back; if it stays, restart the Dirac Live server. |
+| Wrong Filter | The processor holds a filter for another slot, for another sample rate, or from the slot's previous calibration. Use **Load correct filter**. |
+| Filter Missing | No filter for this sample rate has been loaded yet. Use **Load filter**; it takes up to a minute. |
+| Filter Not Confirmed | Dirac Live is on, but the HTP-1 couldn't confirm which filter is loaded. Use **Load and check filter**. |
+| Filters Loading | Some slots' filters for one sample rate aren't loaded yet, or are still from a previous calibration. They load automatically the next time nothing is playing. |
+| Not Checked | The HTP-1 hasn't been able to check the stored filters yet. It retries on its own; **Check now** asks straight away. |
+| Not Supported | The source's sample rate isn't supported by Dirac Live (see [Calibrating for Higher Sample Rates](#calibrating-for-higher-sample-rates)). Turn Dirac Live off while that source plays. |
+
+**Red: something failed.**
+
+| State | Meaning and what to do |
+|---|---|
+| Load Failed | A filter or slot change didn't load. Restart the Dirac Live server. |
+| Load Interrupted | A filter load stopped part way, so speaker delays may be wrong. It loads again automatically when audio plays, or use **Load filter again**. |
+| Setup Failed | The processor refused part of the Dirac Live setup, such as speaker delays or levels. Restart the Dirac Live server. |
+| Cache Damaged | Stored filters are damaged. Recalibrate the slot, or transfer its filters again from the Dirac Live app. |
+| Service Down | The Dirac Live server isn't responding. Restart it. |
+
+Where restarting helps, a **Restart Dirac Live Server** button appears with the message. This
+restarts just the Dirac Live process, which is faster than rebooting the whole HTP-1 and is the
+recommended first step. A second copy of this button lives on the Device Settings page, under
+Danger Zone.
 
 ## Tips for a Successful Dirac Live Calibration
 
@@ -236,9 +272,19 @@ can help it go more easily.
 
 ## Calibrating for Higher Sample Rates
 
-The Dirac Live filter itself does not run above 48 kHz; a sample rate converter drops the rate to
-48 kHz range whenever the filter is active. Calibration runs at the sample rate of the active input.
-44.1 kHz input is supported for calibration; 48 kHz is recommended.
+The Dirac Live filter runs at 44.1 kHz and 48 kHz. Higher rates are converted down whenever the
+filter is active: 88.2 and 176.4 kHz to 44.1 kHz, and 96 and 192 kHz to 48 kHz. Calibration runs at
+the sample rate of the active input. 44.1 kHz input is supported for calibration; 48 kHz is
+recommended.
+
+Each calibration slot holds one filter for the 44.1 kHz family and one for the 48 kHz family.
+Transferring a calibration loads the filter for the rate it was made at; the HTP-1 prepares the
+other one automatically the next time nothing is playing, and the status shows **Filters Loading**
+until it has.
+
+32 kHz audio, which a few TV broadcasts use and which can only arrive over HDMI or S/PDIF, is not
+supported by Dirac Live. The status shows **Not Supported** while such a source plays; turn Dirac
+Live off for it. Current firmware still applies the filter to 32 kHz audio at the wrong rate.
 
 <!-- verify: whether Dirac Live Bypass mode also avoids engaging the sample rate converter, or only the RC/BM/BC/ART filter itself -->
 
@@ -310,15 +356,16 @@ above is the first thing to check.
 
 If the status shows a warning or error:
 
-1. **Make sure an active slot is selected.** If the selected slot has no calibration for the current
-   speaker layout, no filter is applied and a warning appears. Select a slot that has one.
-2. **Select an active input.** A 48 kHz source is recommended but not required — see
-   [Calibrating for Higher Sample Rates](#calibrating-for-higher-sample-rates).
-3. **On a Warning**, turn Dirac Live off and back on.
-4. **On an Error**, turn Dirac Live off and back on first. If that doesn't help, confirm a valid
-   input is selected, then use **Restart Dirac Live Server** (on the Calibration page, or Device
+1. **Read the message.** Hover over or tap the status pill; the message names the problem and,
+   where one helps, shows the button that fixes it. See [Dirac Live Status](#dirac-live-status).
+2. **Make sure an active slot is selected.** If the selected slot has no calibration for the current
+   speaker layout, no filter is applied. Select a slot that has one.
+3. **Check the source's sample rate.** Dirac Live supports 44.1 and 48 kHz, and higher rates that
+   convert down to them — see [Calibrating for Higher Sample Rates](#calibrating-for-higher-sample-rates).
+4. **On a yellow state**, use the button shown with it, or turn Dirac Live off and back on.
+5. **On a red state**, use **Restart Dirac Live Server** (on the Calibration page, or Device
    Settings → Danger Zone). This is faster than a full reboot and should be tried first.
-5. **If none of that resolves it**, force a cache reload by switching to a different, unused speaker
+6. **If none of that resolves it**, force a cache reload by switching to a different, unused speaker
    layout and back to your original one. This reloads the Dirac Live cache the same way a reboot
    does, without the downtime.
 
