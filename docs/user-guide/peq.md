@@ -27,7 +27,7 @@ When a Dirac Live ART or Bass Control filter is loaded, PEQ is locked: an alert 
 The PEQ page shows a response chart for the bands you have set. Two buttons above the chart switch between views:
 
 - **Chart** — a read-only plot of the combined response.
-- **Editor** — an interactive chart where you can drag a band's marker to change its frequency and gain, and drag its edges to change Q. The Editor is only available when grouping **By Channel**.
+- **Editor** — an interactive chart where you can drag a band's marker to change its frequency and gain, and drag its edges to change Q. The Editor is available when grouping **By Channel** on wider screens. Phone layouts keep the chart and the numeric fields and sliders.
 
 ![PEQ page in Editor mode, showing draggable band markers on the response chart](images/ui-peq-editor.png)
 
@@ -48,8 +48,8 @@ Each band has the following controls:
 
 | Control | Range | Notes |
 |---|---|---|
-| Center Frequency | 15–20000 Hz | |
-| Gain | −99 to 20 dB | A gain of 0 dB is equivalent to bypassing the filter. |
+| Center Frequency | 15–20000 Hz | New edits use whole-Hz steps. |
+| Gain | −63 to 20 dB | New edits use 0.5 dB steps. A gain of 0 dB is equivalent to bypassing the filter. |
 | Q | 0.1–10 | Hidden for filter types that don't use Q. |
 | Filter Type | PEQ, Low Shelf, High Shelf | |
 | Bypass | on/off | Turns the individual band off without losing its settings. |
@@ -80,6 +80,10 @@ The PEQ page offers several import and export operations, at different scopes:
 
 !!! tip
     Importing a REW filter file is a fast way to bring in PEQ bands you designed in REW.
+
+New edits and REW imports round frequency to the nearest whole Hz and gain to the nearest 0.5 dB step within the controls' limits. Saved JSON configurations retain their original values; import notices explain when the processor uses a different value.
+
+The curves use the processor's representation: frequency rounded to whole Hz, gain limited to ±63 dB and truncated toward zero to 0.5 dB steps, and Q truncated to 1/256 steps. A preserved decimal frequency is shown at its whole-Hz value; the field tooltip identifies the saved value.
 
 ## Cloning a Channel's PEQ
 
