@@ -71,7 +71,7 @@ Channels or bands with active, non-zero settings are marked with an asterisk.
 
 ## Channel Groups and Linking
 
-You can link channels so that editing one band updates the same band on every linked channel. Check the link box next to a channel's name (in **By Channel** view) to add it to the link group; editing that channel's bands then also edits every other linked channel. Use **Disable** to turn linking off.
+You can link channels so that editing one band updates the same band on every linked channel. Check the link box next to a channel's name (in **By Channel** view) to add it to the link group; editing that channel's bands then also edits every other linked channel. Use **Unlink all** to clear every channel link.
 
 ## Import and Export
 
