@@ -43,6 +43,7 @@ extra_css:
 
 extra_javascript:
   - javascripts/copy-link.js
+  - javascripts/link-labels.js
 
 hooks:
   - hooks/preserve_images.py
