@@ -114,7 +114,7 @@ If you try to enable more speakers than the current allocation allows, the Speak
 
     Alternatively, the **Mix Out** RCA outputs can be configured as the seat shaker output. In this mode, the seat shaker does **not** consume one of the 16 XLR output channels, allowing all 16 XLR outputs to remain available for speakers.
 
-The speakers in the main and upper levels are restricted to the following configurations:
+The speaker editor currently offers the following configurations, subject to the 16-output limit:
 
 | Main Level Speaker Count/Configuration | Upper Level Options* |
 |---|---|
@@ -126,15 +126,17 @@ The speakers in the main and upper levels are restricted to the following config
 | **7 speakers**: L/R Front + Center + L/R Surround + L/R Rear/Back | 0, 2, 4, or 6 speakers |
 | **9 speakers**: L/R Front + Center + L/R Surround + L/R Rear + L/R Wide | 0, 2, 4, or 6 speakers |
 
-*Refer to the table below regarding upper level options. There is no supported 8-speaker main level configuration; L/R Wide requires L/R Rear Surround to already be enabled, which is why the main level jumps from 7 to 9.
+*Refer to the table below regarding upper level options. The editor does not allow saving an eight-speaker main level configuration. **L/R Wide** requires both **Center** and **L/R Rear Surround**, which is why the main level jumps from 7 to 9.
 
 The upper level table on the Speakers page is named **Upper Speaker Outputs**, with the subtitle *"Maximum of 6 highs/tops allowed."* Beyond the counts above, a few pairs depend on each other:
 
 - **L/R Top Front** and **L/R Front Height** are mutually exclusive — enabling one requires the other to be off.
 - **L/R Top Rear** and **L/R Rear Height** are mutually exclusive in the same way.
-- **L/R Top Middle** requires Center or L/R Rear Surround to already be enabled.
+- **L/R Top Middle** requires **Center** or **L/R Rear Surround**. If a front upper pair is selected, a rear upper pair must also be enabled before adding **L/R Top Middle**.
 - If **L/R Top Front** or **L/R Front Height** is enabled, then either L/R Surround must be enabled, or L/R Top Middle must be disabled.
-- **L/R Rear Height** and **L/R Top Rear** each require L/R Top Front or L/R Front Height to already be enabled.
+- **L/R Rear Height** and **L/R Top Rear** each require **L/R Surround** and either **L/R Top Front** or **L/R Front Height**.
+
+Enable prerequisites before selecting a dependent pair. Removing a prerequisite can clear dependent pairs; for example, disabling **L/R Surround** clears the rear upper pair. If you disable **Center** while **L/R Wide** is selected, enable **Center** again or disable **L/R Wide** before saving.
 
 The HTP-1 can support many different configurations of upper speakers. The upper speakers can be "high," which are mounted on the wall, or "top," which are on the ceiling firing down.
 
