@@ -4,7 +4,7 @@ The approved default-state 1200 px captures have been adopted. They use the unmo
 (0b726dc, assembled build 3f128c9b) with isolated settings seeded from the firmware's
 empty-state initialization. They are not captures of a physically factory-reset unit.
 The capture viewport was 1200 × 900 CSS pixels; full-page images can be taller.
-No physical-unit configuration was changed. Physical factory-default confirmation is deferred until after the final v2.2 release.
+No physical-unit configuration was changed. Physical factory-default confirmation is deferred until final v2.2 preparation.
 
 ## Adopted
 
@@ -100,7 +100,7 @@ No screenshots are required for those features.
 
 Both captures use the shipped WebUI in the isolated preview. The preview supplies the
 firmware-derived output mapping needed to render the map; no physical-unit settings
-were changed. Physical factory-default confirmation is deferred until after the final v2.2 release. Release captures
+were changed. Physical factory-default confirmation is deferred until final v2.2 preparation. Release captures
 and safe recovery captures were completed in the later rc1 batches below. Third-party Dirac app replacements were completed in the Bass Management batch below.
 
 ## Available detail captures
@@ -130,7 +130,7 @@ customer unit without a development remote; no physical settings were changed.
 - [x] Current third-party Dirac Live app workflow images — approved Bass Management walkthrough adopted; see capture notes below.
 - [x] Signal-flow diagrams reviewed for Pre/Post PEQ placement; current figure clarified and historical figure warning strengthened.
 - [x] Remaining hardware and measurement figures reviewed; retained without replacement.
-- [ ] Physical factory-default confirmation — deferred until after the final v2.2 release. Source-derived effective-default verification is complete; no reset has been performed.
+- [ ] Physical factory-default confirmation — deferred until final v2.2 preparation. Source-derived effective-default verification is complete; no reset has been performed.
 - [x] Rendered-page and image-readability review completed at 1200 px; four approved caption/context corrections applied.
 
 The Home status cards are blank because the isolated default preview has no audio stream.
@@ -160,7 +160,7 @@ All unfinished screenshot items listed above remain pending.
 - [x] `ui-device-settings.jpg`: approved 1200 px isolated rc1 capture now shows all four trigger outputs On, representing settled power-on with the default Auto-on settings and 0/1/2/3-second delays. Fast Start remains On and Video Passthrough remains Off.
 - [x] Device Settings → Power now identifies Fast Start On as the software default, consistent with rc1 initialization and the screenshot.
 
-No physical-unit settings were changed. Physical factory-default confirmation is deferred until after the final v2.2 release. Third-party Dirac app replacements were completed in the Bass Management batch below; no other outstanding item is closed by this update.
+No physical-unit settings were changed. Physical factory-default confirmation is deferred until final v2.2 preparation. Third-party Dirac app replacements were completed in the Bass Management batch below; no other outstanding item is closed by this update.
 
 
 ## Adopted Dirac Live Bass Management walkthrough
@@ -181,6 +181,30 @@ The temporary one-subwoofer layout was restored to the original 5.2.0 layout; th
 original settings and filter metadata were verified, apart from regenerated internal
 filter IDs for slots 3–6. The project was saved separately.
 
-Physical factory-default confirmation remains deferred until after the final v2.2
-release. Aaron's disabled volume-calibration wizard remains outside the manual and
+Physical factory-default confirmation remains deferred until final v2.2
+preparation. Aaron's disabled volume-calibration wizard remains outside the manual and
 untouched; it requires further work before inclusion.
+
+
+## Adopted speaker-setup examples
+
+- [x] `ui-example-7-1-4h.jpg`: seven ear-level speakers, one subwoofer and four wall-mounted height speakers.
+- [x] `ui-example-7-2-6.jpg`: seven ear-level speakers, two subwoofers and six ceiling speakers.
+- [x] `ui-example-9-3-4.jpg`: nine ear-level speakers, three subwoofers and four upper speakers; retains Large front L/R and Dolby Atmos Enabled rear uppers.
+- [x] `ui-example-9-1-6.jpg`: nine ear-level speakers, one subwoofer and six ceiling speakers.
+- [x] `diagram-example-9-3-4-corrected.png`: approved edit of the original connector drawing, with Subwoofers 2/3 on outputs 11/12 and Wides on outputs 15/16. Printed connector labels are retained.
+
+The four unmodified current-interface captures use isolated example settings and a
+1200 × 900 viewport. Detail crops are 934 × 755 pixels; crossover fields show
+80 Hz. These are example configurations, not factory-default layouts. No physical
+unit settings were changed. Output assignments were compared with executable
+controller-source mapping; no new physical-output test was performed. The other
+three connector drawings remain unchanged.
+
+The earlier-interface caveat is removed. The 9.3.4 description identifies its mixed
+ceiling/upward-firing arrangement, and the 9.1.6 description now matches its six
+ceiling speakers. The existing 9.3.4 section anchor is preserved.
+
+Physical factory-default confirmation remains deferred until final v2.2 preparation.
+Aaron's disabled volume-calibration wizard and its documentation remain deferred
+until the feature is ready for inclusion.

@@ -85,14 +85,13 @@ The back panel of the unit is shown below along with a diagram of the XLR connec
 
 As you use more of the 16 channels, the order of channels assigned to the back panel varies with your choice of speakers. The actual assignment for your current layout is always shown on the [Speaker Map](#the-speaker-map) at the bottom of the Speakers page.
 
-The examples below use screenshots from an earlier web interface. They illustrate speaker layouts
-and output assignments; use the current Speakers page and Speaker Map to configure your unit.
+The examples below show speaker layouts and output assignments in the current web interface. Use the Speaker Map for the exact connector assignment.
 
 ### Example 7.1.4h Speaker Configuration (Upper Level On the Wall)
 
 This speaker configuration uses 7 surround sound speakers, 1 subwoofer and 4 height speakers. The height speakers are mounted high on the walls, in the corners of the listening area.
 
-![Earlier web interface showing a 7.1.4h speaker configuration](images/p38-1.jpg)
+![Current web interface showing a 7.1.4h speaker configuration](images/ui-example-7-1-4h.jpg)
 
 ![Back panel connections for the 7.1.4h configuration](images/p38-2.jpg)
 
@@ -100,22 +99,22 @@ This speaker configuration uses 7 surround sound speakers, 1 subwoofer and 4 hei
 
 This speaker configuration uses 7 surround sound speakers, 2 subwoofers and 6 height speakers. The height speakers are mounted in the ceiling.
 
-![Earlier web interface showing a 7.2.6 speaker configuration](images/p39-1.jpg)
+![Current web interface showing a 7.2.6 speaker configuration](images/ui-example-7-2-6.jpg)
 
 ![Back panel connections for the 7.2.6 configuration](images/p39-2.jpg)
 
-### Example 9.3.4 Speaker Configuration (Upper Level On the Ceiling)
+### Example 9.3.4 Speaker Configuration (Ceiling Front and Dolby Atmos Enabled Rear) { #example-934-speaker-configuration-upper-level-on-the-ceiling }
 
-This speaker configuration uses 9 surround sound speakers, 3 subwoofers and 4 height speakers. The upper front speakers are mounted in the ceiling. The upper rear speakers are Top and Dolby Atmos Enabled.
+This configuration uses nine ear-level speakers, three subwoofers and four upper speakers. Top Front uses ceiling speakers; Top Rear uses Dolby Atmos Enabled upward-firing speakers.
 
-![Earlier web interface showing a 9.3.4 speaker configuration](images/p40-1.jpg)
+![Current web interface showing a 9.3.4 speaker configuration with Dolby Atmos Enabled rear upper speakers](images/ui-example-9-3-4.jpg)
 
-![Back panel connections for the 9.3.4 configuration](images/p40-2.jpg)
+![Back panel connections for 9.3.4, with Subwoofers 2/3 on outputs 11/12 and Wides on outputs 15/16](images/diagram-example-9-3-4-corrected.png)
 
 ### Example 9.1.6 Speaker Configuration (Upper Level On the Ceiling)
 
-This speaker configuration uses 9 surround sound speakers, 1 subwoofer and 6 height speakers. The height speakers are mounted high on the walls, in the corners of the listening area.
+This configuration uses nine ear-level speakers, one subwoofer and six ceiling speakers: Top Front, Top Middle and Top Rear.
 
-![Earlier web interface showing a 9.1.6 speaker configuration](images/p41-1.jpg)
+![Current web interface showing a 9.1.6 speaker configuration](images/ui-example-9-1-6.jpg)
 
 ![Back panel connections for the 9.1.6 configuration](images/p41-2.jpg)
