@@ -43,6 +43,8 @@
   </ol>
 </details>
 
+Use this repository’s issue tracker for documentation feedback. For firmware bugs and troubleshooting, please use the [HTP-1 owners thread on AVS Forum](https://www.avsforum.com/threads/the-official-monoprice-monolith-htp-1-owners-thread.3112176/).
+
 ## About The Project
 
 The HTP-1 is a 16-channel home theater processor. What started as
