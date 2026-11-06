@@ -10,6 +10,24 @@ Before changing volume-control code, labels, help text, or user documentation, r
 
 Treat that file as the current shared understanding of the HTP-1 volume-control system unless newer source-code or hardware evidence clearly contradicts it.
 
+## Help and documentation edits
+
+Before changing manual content, labels, inline explanations, notices or Help,
+read the surrounding text and relevant existing documentation. Understand the
+task, terminology, dependencies and possible contradictions.
+
+Make the smallest complete correction and its necessary dependent updates within
+the requested scope. Patch the affected sentences or steps. Preserve unaffected
+wording, structure, examples, links, captions, formatting and specifically reviewed
+decisions. Retain technical facts, prerequisites, values, defaults, exceptions,
+warnings, consequences and recovery steps unless the correction changes them.
+Apply style and length guidance to the affected passage. Broader rewriting or
+restructuring requires an explicitly agreed scope.
+
+Review the diff and resulting text in context. Revert unrelated edits, check
+consistency with related documentation, and account for any moved or removed
+information. Flag contradictions outside the requested scope for review.
+
 ## Volume-control terminology
 
 Use these terms consistently:
