@@ -235,10 +235,14 @@ attention. Its label and color provide more information than a simple on/off ind
 | Off / Bypass | Dirac Live filtering is intentionally disabled or bypassed. |
 | Ready | Dirac Live is enabled and ready to process audio when playback starts. |
 | Active | The correct filter is loaded and confirmed active for the selected slot and source. |
-| Loading / Applying / Checking | A filter operation is in progress or the processor's state is being verified. |
+| Starting / Loading / Applying / Checking | Dirac Live is starting, a filter operation is in progress, or the processor's state is being verified. |
+| Filter Not Confirmed | Dirac Live is on, but the HTP-1 has not confirmed that the right filter is loaded for the current source. |
+| Filters Loading / Not Checked | Some filter versions are not loaded yet, or the HTP-1 has not confirmed that every slot's filters are ready. Missing filters load automatically when nothing is playing. |
 | Filter Missing / Wrong Filter | The required filter is missing or the processor has loaded a different filter than expected. |
+| Not Supported | Dirac Live does not support the current sample rate, such as 32 kHz. |
 | Not Applied / Still Applied | The processor's actual filtering state does not match the selected setting. |
-| Load Failed / Service Down / Setup Failed | A filter operation or service has failed and needs attention. |
+| Load Failed / Load Interrupted / Cache Damaged / Service Down / Setup Failed | A filter operation or service has failed and needs attention. |
+| Unknown | The HTP-1 has not reported the Dirac Live setting. |
 
 The Calibration page provides a detailed explanation when something needs attention. The Home page
 also shows a notice for problems that require action.
@@ -283,8 +287,9 @@ can help it go more easily.
 
 ## Calibrating for Higher Sample Rates
 
-The Dirac Live filter itself does not run above 48 kHz; a sample rate converter drops the rate to
-48 kHz range whenever the filter is active. Calibration runs at the sample rate of the active input.
+The Dirac Live filter itself does not run above 48 kHz. Whenever the filter is active, a sample rate
+converter drops 88.2 and 176.4 kHz to 44.1 kHz, and 96 and 192 kHz to 48 kHz, so these rates use the
+calibration's 44.1 kHz or 48 kHz filter. Calibration runs at the sample rate of the active input.
 44.1 kHz input is supported for calibration; 48 kHz is recommended.
 
 <!-- verify: whether Dirac Live Bypass mode also avoids engaging the sample rate converter, or only the RC/BM/BC/ART filter itself -->
@@ -377,10 +382,16 @@ and been verified. Some controls are temporarily unavailable during this operati
 
 If Dirac Live reports a problem, open the **Calibration** page and read the displayed message.
 
-- **Filter Missing or Wrong Filter:** Use the offered filter-loading button.
-- **Not Applied or Still Applied:** Apply the selected Dirac Live setting again. If this fails,
-  the interface may recommend restarting the Dirac Live server.
-- **Load Interrupted:** Load the filter again when prompted.
+- **Filter Missing or Wrong Filter:** Use the offered filter-loading button, such as
+  **Load 48 kHz filter** or **Load correct filter**.
+- **Filter Not Confirmed:** Use **Load and check filter**.
+- **Filters Loading or Not Checked:** Missing filters load the next time nothing is playing. Use
+  **Check now** or **Check again** to repeat the check, or **Load now** when offered.
+- **Not Applied or Still Applied:** Use **Apply Dirac Live again** (or **Apply Bypass again** or
+  **Turn Dirac Live Off again**, depending on the setting). If this fails, the interface offers
+  **Restart Dirac Live Server**.
+- **Load Interrupted:** Use **Load filter again** when offered. If no audio is playing, the filter
+  loads again automatically when playback starts.
 - **Service Down or Setup Failed:** Use **Restart Dirac Live Server** when offered.
 - **Cache Damaged:** The stored calibration may need to be transferred again from the Dirac Live app.
 
