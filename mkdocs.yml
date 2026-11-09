@@ -82,6 +82,7 @@ exclude_docs: |
   getting-started/
   self-hosting/
   firmware/
+  development/
 
 nav:
   - Home: index.md
