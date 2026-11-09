@@ -1,7 +1,7 @@
 # Backup and Restore
 
-Configs lets you save your entire HTP-1 configuration to a file and restore it later, or move it to
-another unit.
+The **Import/Export Configuration** section of [Device Settings](device-settings.md) lets you save
+your entire HTP-1 configuration to a file and restore it later, or move it to another unit.
 
 ![Export Preview dialog showing the current configuration](images/ui-export-preview-crop.png)
 

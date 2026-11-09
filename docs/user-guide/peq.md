@@ -81,7 +81,7 @@ You can link channels so that editing one band updates the same band on every li
 The PEQ page offers several import and export operations, at different scopes:
 
 - **Export Band {n} PEQ Configuration to File** — every channel's setting for one band.
-- **Export Channel {name} PEQ Configuration to File** — every band for one channel.
+- **Export {name} PEQ Configuration to File**, where {name} is the selected channel — every band for one channel.
 - **Export Full PEQ Configuration to File** — the entire 16-band, all-channel configuration.
 - **Import Band PEQ Configuration to Band {n}**
 - **Import Channel PEQ Configuration or REW Filter to Channel {name}** (or to all linked channels, if any are linked) — this accepts both the HTP-1's own channel export format and a filter file exported from Room EQ Wizard (REW).

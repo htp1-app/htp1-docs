@@ -62,6 +62,10 @@ configuration, and resets front-panel text to white.
 Set the HTP-1's **Time Zone** from the list. This affects log timestamps and any scheduled
 maintenance the unit performs in the background.
 
+## Import/Export Configuration
+
+Save your configuration to a file or restore a saved one. See [Backup and Restore](configs.md).
+
 ## Danger Zone
 
 The Danger Zone holds tools for troubleshooting and reset. Each asks you to confirm before it acts.
