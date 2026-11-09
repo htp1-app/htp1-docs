@@ -7,30 +7,30 @@ change immediately.
 
 ![Personalize page showing homepage settings, shortcuts, sound controls, and the live preview](images/ui-personalize.jpg)
 
-## Homepage Status Display
+## Home Page Visibility
 
-Choose what appears in the top-left and top-right corners of the Home page in desktop mode:
-nothing, the current input name, or the unit name.
+Under **Top Left Label** and **Top Right Label** (desktop mode), choose what appears in the
+corners of the Home page: **None**, **Current Input**, or **Unit Name**.
 
-Use these switches to choose additional Home page displays and volume buttons:
+Under **Status and volume**, use these switches to choose additional Home page displays and volume
+buttons:
 
 | Switch | Effect |
 |---|---|
-| Display Video Status on Homepage | Adds the Video status card. |
-| Display Audio Sample Rate on Homepage | Adds the sample rate to the Program Format and Listening Format cards. |
-| Display Mix Out Volume on Homepage | Adds the Mix Out Volume control below the main volume. |
+| Video status | Adds the Video status card. |
+| Audio sample rate | Adds the sample rate to the Program Format and Listening Format cards. |
+| Mix Out volume | Adds the Mix Out Volume control below the main volume. |
 | ±3 dB volume buttons | Adds outer **−3** and **+3** buttons to Main Volume and Mix Out Volume. Each press applies a single 3 dB step. |
 
 !!! note
-    "Display Mix Out Volume on Homepage" is unavailable when the Seat Shaker is using the
-    Mix Out.
+    "Mix Out volume" is unavailable when the Seat Shaker is using the Mix Out.
 
-## Shortcuts
+## Navigation Shortcuts (Top Bar)
 
 Choose which pages get a shortcut icon in the shortcut bar. Home and Power Off can each be
 shown or hidden, along with every other settings page.
 
-### Power Off Shortcut Buttons
+### Power Off Dialog Buttons
 
 If the Power Off shortcut is turned on, choose which buttons appear in the power dialog:
 Shutdown, Sleep, Restart, and Cancel.
@@ -41,20 +41,20 @@ opening the Power dialog show all options.
 ## Sound Controls
 
 Choose which buttons appear in the Home page’s Sound Controls section: Dirac Live, PEQ, Tone Control,
-Tone Control - Bass, Tone Control - Treble, Loudness, Dialog Enhance, Night Mode, Wide Synth, and
+Tone Control - Bass, Tone Control - Treble, Loudness, Dialog Enhance, Night, Wide Synth, and
 Input Delay (lip-sync).
 
-## Homepage Dirac Live Slots
+## Calibration Slot Buttons
 
 Choose which Dirac Live filter slots get a button on the Home page. Each slot is listed by
 name, or as "Uncalibrated" if it holds no filter.
 
-## Homepage Macros
+## Macro Buttons
 
 Choose which macros get a button on the Home page, both the eight remote-button macros and
 any additional macros you have created. See [Macros](macros.md).
 
-## Settings
+## Interface Settings
 
 | Setting | Effect |
 |---|---|
@@ -62,7 +62,7 @@ any additional macros you have created. See [Macros](macros.md).
 | Vertical Padding | Adjusts the row spacing used in tables throughout the web UI, from 0 to 0.4 rem. |
 | Restore All Dismissed Notices | Restores optional tips hidden on this HTP-1. Dismissals are saved on the unit and shared by all browsers. |
 
-## User CSS
+## Custom CSS
 
 An advanced option for owners comfortable with CSS. Enter custom styles here to change the
 appearance of the web UI beyond what Dark Mode and Vertical Padding offer.

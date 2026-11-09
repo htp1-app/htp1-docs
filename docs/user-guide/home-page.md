@@ -22,8 +22,7 @@ Up to three cards sit at the top of the page:
 | Listening Format | The format the HTP-1 is currently outputting, including the active upmix mode. |
 
 The Video card only appears if it is turned on in Personalize. Program Format and Listening
-Format can also show the sample rate, if you have turned on "Display Audio Sample Rate on
-Homepage" in Personalize.
+Format can also show the sample rate, if you have turned on "Audio sample rate" in Personalize.
 
 ## Header Icons
 
