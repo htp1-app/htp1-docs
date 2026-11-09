@@ -45,7 +45,7 @@ settling time has passed. If every Auto-on switch is off, there is no trigger-re
 ## Display
 
 **Front Panel Brightness** sets how bright the front panel display is, on a scale of 1 (off) to
-7 (brightest). When set to brightness 1, the front panel will briefly illuminate in response to Volume and Dialog Enhance adjustments.
+7 (brightest). When set to brightness 1, the front panel will briefly illuminate in response to Volume and Dialog Enhance adjustments and other recognized remote-control commands.
 
 **Front Panel Theme** chooses the appearance of the front panel display. The Default theme retains
 the original layout; alternative themes offer additional display options.

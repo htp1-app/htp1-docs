@@ -88,5 +88,7 @@ HTP-1 to turn on.
     If you use the trigger input, do not also use the remote or the front panel to turn the unit on
     or off — the trigger input takes precedence.
 
-The trigger outputs can source 50 mA at 12V. They are enabled when the HTP-1 is turned on. The trigger
-outputs are over-current protected by a thermistor.
+The trigger outputs can source 50 mA at 12V. By default they are enabled when the HTP-1 is turned on;
+each trigger's **Auto-on** and **Power-on delay** settings are in
+[Device Settings](device-settings.md#amplifier-triggers). The trigger outputs are over-current
+protected by a thermistor.

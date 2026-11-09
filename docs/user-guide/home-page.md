@@ -61,7 +61,8 @@ below the main volume, labeled Mix Out Volume. It works the same way — press, 
 tap the dB reading to mute — but it controls the level of the Mix Out output rather than the
 main speaker outputs. Turn this display on or off from Personalize.
 
-Mix Out also keeps its volume reading visible while muted.
+Mix Out also keeps its volume reading visible while muted. Muting Mix Out does not mute the main
+outputs, and Mix Out stays muted when you unmute Main Volume.
 
 Mix Out has a range of −100 to 0 dBFS and is not affected by the Main Volume Zero Point setting.
 

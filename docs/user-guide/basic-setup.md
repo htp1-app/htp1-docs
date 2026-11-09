@@ -45,7 +45,7 @@ The best way to become familiar with the HTP-1 is to simply start using it! Befo
 9. Ensure that the Master Power Switch on the rear panel is in the OFF position (O side depressed).
 10. Plug the included AC Power Cord into the C14 power connector on the rear panel, then plug the other end into a nearby AC power outlet.
 11. Plug in and power on all connected devices. Start video playback on your video source device.
-12. Flip the Master Power Switch on the rear panel to the ON position (I side depressed) to boot the system. You should see the Monolith logo displayed on the front panel within seconds after pressing the power switch. The front panel power switch should begin flashing blue. Startup normally takes about a minute. During startup, you may see **Almost Ready**, **HTP-1 is starting**, or **Preparing Dirac Live filters** before the main screen appears. The first startup after updating can take several minutes while missing Dirac Live filter versions are prepared. Once the unit has finished booting, the Front Panel LCD Display will look similar to the display in the [Product Overview](product-overview.md) section. The blue light on the front panel power switch goes dark again when the unit is ready.
+12. Flip the Master Power Switch on the rear panel to the ON position (I side depressed) to boot the system. You should see the Monolith logo displayed on the front panel within seconds after pressing the power switch. The front panel power switch should begin flashing blue. Startup normally takes about a minute. During startup, the front panel may show **Almost ready** or **Preparing Dirac Live filters** before the main screen appears, and the web interface shows **HTP-1 is starting** with the current step, such as **Preparing Dirac Live filters**. The first startup after updating can take several minutes while missing Dirac Live filter versions are prepared. Once the unit has finished booting, the Front Panel LCD Display will look similar to the display in the [Product Overview](product-overview.md) section. The blue light on the front panel power switch goes dark again when the unit is ready.
 13. For normal operation, use the Power/Standby Button on the front panel to turn the unit on or put it into standby, rather than using the Master Power Switch on the rear panel.
 
     **Fast Start** controls startup time and standby power consumption. See [Device Settings → Power](device-settings.md#power) for the differences between the two standby modes and how to enable Fast Start.
@@ -74,7 +74,7 @@ The best way to become familiar with the HTP-1 is to simply start using it! Befo
 
 The HTP-1 serves a web page via its Ethernet connection and this is used for all setup. You must connect to a network. If you wish to use a Wi-Fi connection exclusively, begin by booting up the HTP-1 with a wired connection. You can set up the Wi-Fi connection, disconnect the Ethernet cable and then move the HTP-1 to its final location.
 
-The [Connectivity](connectivity.md) chapter gives further information on Wi-Fi, in the context of the **Network** page.
+The [Network](network.md#wi-fi) chapter gives further information on Wi-Fi, in the context of the **Network** page.
 
 1. Connect the included Bluetooth®/Wi-Fi® Antenna to the antenna jack on the rear panel.
 2. Connect an Ethernet cable to the HTP-1 so that your router can assign an IP address.
