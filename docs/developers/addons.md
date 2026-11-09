@@ -33,6 +33,89 @@ Addon support arrived with firmware 2.2.0.
 An addon declares the capabilities it needs in `requires.capabilities`. A unit without one refuses
 the install, and the Addons page says why. Firmware 2.2.0 offers `source/1` and `ui-home/1`.
 
+## Addon Types
+
+An addon uses only the parts it needs: a manifest can leave out `units`, `service`, `input` or `ui`.
+The kinds below can be combined. A page with a service or a flow behind it is a common shape, for
+example a tool that shows its own logs and settings.
+
+### Service
+
+A service runs a program on the unit, such as a bridge to another system, an extra network service or
+a metrics exporter. With `service` and a switch, the user turns it on and off on the Addons page:
+
+```json
+{
+  "id": "example",
+  "version": "0.1.0",
+  "label": "Example",
+  "summary": "What it does, in one line",
+  "units": { "example.service": "link" },
+  "service": { "unit": "example.service", "defaultOn": false },
+  "ui": { "switch": true, "page": null }
+}
+```
+
+For a service with no switch, register its unit in `enable` mode instead. It then starts at install
+and at every boot:
+
+```json
+"units": { "example.service": "enable" }
+```
+
+A service can advertise itself on the network alongside the firmware's own services, for example over
+mDNS, but its unit names must not match one the firmware provides.
+
+### Page
+
+A page addon adds a web page, opened from its **Open** link on the Addons page. Put the built page in
+`www/`:
+
+```json
+"ui": { "switch": false, "page": "/addons/example/" }
+```
+
+The unit serves the page at `/addons/<id>/`, and the page talks to the unit over `/ws/controller`
+(see [Pages](#pages)). It can also call a backend of its own: either a service listening on its own
+port, or HTTP endpoints defined in the addon's flows, which the unit's Node-RED serves from the same
+address as the page.
+
+### Replacement WebUI
+
+A replacement WebUI takes over from the HTP-1's home interface while the user has it switched on:
+
+```json
+"requires": { "capabilities": ["ui-home/1"] },
+"ui": { "switch": true, "home": "/addons/example/" }
+```
+
+It is switched off after install. The built-in WebUI always stays reachable at `/ui/default`.
+
+### Node-RED Flows
+
+A flow addon adds logic to the unit's Node-RED, for example an automation that reacts to state
+changes, or HTTP endpoints for a page. Files in `flows/` are linked automatically and need no manifest
+field; see [Node-RED Flows](#node-red-flows).
+
+### Audio Source
+
+An audio source is a player whose audio the HTP-1 processes like any other input; see
+[Audio Sources](#audio-sources).
+
+### Not Supported Yet
+
+- **Front-panel themes:** the front panel's themes are part of the firmware, and an addon cannot add
+  one.
+- **Changing the built-in WebUI:** an addon cannot add styles or scripts to it. **Custom CSS** on the
+  [Personalize](../user-guide/personalize.md#custom-css) page is stored in each browser, not on the
+  unit. To change how the WebUI looks, replace it with `ui.home`.
+- **Replacing a firmware service:** a unit whose name matches one the firmware provides is refused.
+  If a later firmware adds a unit with an addon's unit name, the firmware's unit wins.
+- **Other kinds of input:** `input.routesTo` accepts only `i2s`, the playback device described below.
+- **Editing firmware files:** an addon must not change files under `/opt/olympia`. The firmware reaches
+  an addon only through its manifest and the links it creates, and a firmware update can revert such
+  changes.
+
 ## The Target
 
 | | |
@@ -72,21 +155,7 @@ The package is a `.tar.gz` with this directory as its single top level. `tools/p
 htp1-addons builds it reproducibly, sets permissions, and builds the web page first if the addon has a
 `package.json`.
 
-A minimal manifest for a service with a switch:
-
-```json
-{
-  "id": "example",
-  "version": "0.1.0",
-  "label": "Example",
-  "summary": "What it does, in one line",
-  "units": { "example.service": "link" },
-  "service": { "unit": "example.service", "defaultOn": false },
-  "ui": { "switch": true, "page": null }
-}
-```
-
-Key rules. See [`format.md`](https://github.com/htp1-app/htp1-addons/blob/main/docs/format.md#manifest) for every field.
+[Addon Types](#addon-types) shows minimal manifests. Key rules; see [`format.md`](https://github.com/htp1-app/htp1-addons/blob/main/docs/format.md#manifest) for every field.
 
 - `id` uses lower-case letters, digits and hyphens. `catalog`, `install`, `remove`, `refresh`,
   `source` and `operations` are reserved.
