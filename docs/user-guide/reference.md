@@ -170,7 +170,7 @@ automation:
     The Dirac Live filter slot codes select filter slots 1 through 6 (internally slots 0 through
     5). A code for a slot beyond how many your unit has calibrated does nothing.
 
-The Seat Shaker, Bass EQ, Channel Levels, Demo Mode, and other features added since 2021 don't
+The Seat Shaker, Bass EQ, Channel Levels, and other features added since 2021 don't
 have their own IR codes — control them through a macro instead.
 
 ## HTTP Control
@@ -220,14 +220,11 @@ toggles PEQ on and off: `http://<your-htp1-ip>/ircmd?code=718e`
 Every request returns the full system status as JSON. This is an advanced feature intended for
 automation and control; some properties in the response are internal and undocumented, and can be
 ignored. See [Integrations and Control](integrations.md) for more on driving the HTP-1 from a home
-automation system, and the Developers section of this site for the full control protocol used by
-the web UI itself.
+automation system.
 
 !!! warning
     `/ircmd` has no authentication. The HTP-1 is designed to sit inside your home network — do not
     expose it directly to the internet.
-
-Open the HTP-1’s main web address and use **Settings → Speakers** to configure speakers.
 
 ## Custom Presets, Macros, and Bass EQ
 

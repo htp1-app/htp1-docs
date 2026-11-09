@@ -28,8 +28,8 @@ behavior and any open issues.
 ## Mobile Remote
 
 The HTP-1 serves a simple remote control page for phones and tablets at
-`http://<your-htp1-ip>/remote/`. It gives you a lightweight way to control volume, bass, upmixer, center/surrounds/heights level, and
-power without loading the full web UI.
+`http://<your-htp1-ip>/remote/`. It gives you a lightweight way to control volume, Quick Volume presets, bass, upmixer, center/surrounds/heights level,
+Mix Out Volume, and power without loading the full web UI.
 
 ![Mobile Remote page showing playback and volume controls](images/remote.jpg){ width="50%" style="display: block; margin: 0 auto;" }
 
@@ -66,5 +66,5 @@ current state after making a change.
 A number of third parties have built their own tools around the HTP-1, which are listed in the separate [Apps & Integrations](https://docs.htp1.app/apps/) section.  
 They are discussed in the [Official Monoprice Monolith HTP-1 Owners Thread](https://www.avsforum.com/threads/the-official-monoprice-monolith-htp-1-owners-thread.3112176/) on the AVS Forum.
 
-If you're building your own integration, see the Developers section of this site for the underlying control protocol.
+If you're building your own integration, start with [HTTP Control](#http-control) and the IR code tables in [Reference](reference.md#ir-code-tables).
 
