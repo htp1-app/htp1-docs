@@ -124,8 +124,8 @@ Open the **Advanced PEQ Options** dialog to change placement. On the PEQ page, t
 
 The dialog stages your choice locally — nothing is applied until you click **Save**. A banner reads *"You have unsaved changes. Click Save to apply them."* until you do.
 
-- **Apply PEQ pre-Dirac Live (default).** Use this for source-signal correction, such as Bass EQ (BEQ) or hearing compensation. Because Pre PEQ operates before bass management, it processes the LFE signal rather than the individual subwoofer outputs.
-- **Apply PEQ post-Dirac Live and during calibration (advanced).** Use this for speaker or room correction before running Dirac Live. Because Post PEQ is included in the Dirac Live measurements, it can be used to deliberately pre-compensate the speakers before calibration.
+- **Pre (default).** Use this for source-signal correction, such as Bass EQ (BEQ) or hearing compensation. Because Pre PEQ operates before bass management, it processes the LFE signal rather than the individual subwoofer outputs.
+- **Post (advanced).** Use this for speaker or room correction before running Dirac Live. Because Post PEQ is included in the Dirac Live measurements, it can be used to deliberately pre-compensate the speakers before calibration.
 
 !!! warning
     PEQ is never automatically disabled during a Dirac Live calibration. **Post** PEQ is included in the calibration, while **Pre** PEQ is bypassed by the measurement signal. If you want a calibration with no PEQ influence, either turn PEQ off or use **Pre** placement.
