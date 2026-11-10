@@ -141,8 +141,8 @@ Bass Control and ART are optional, separately licensed upgrades.
     between groups; the destination group’s target curve and crossover settings then apply to
     those speakers. Review the target curve and crossover response for each group.
 
-12. Choose a slot to store this calibration in. The HTP-1 has up to six Dirac Live filter slots
-    (the exact number is shown on the Calibration page heading). You can store calibrations for
+12. Choose a slot to store this calibration in. The HTP-1 has up to six Dirac Live filter slots;
+    the available slots are shown on the **Calibration** page. You can store calibrations for
     different room configurations, like curtains open and closed, or for different speaker layouts.
     Dirac Live suggests the names of physicists and philosophers; this name is visible in the HTP-1
     UI, so choose something meaningful to you. The description is not visible in the HTP-1 UI, but
