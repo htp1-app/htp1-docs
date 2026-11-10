@@ -254,13 +254,14 @@ changed by this documentation update.
 ### Remaining final-candidate screenshot checks
 
 Earlier rc1 approvals above remain the capture history. The following checks are
-still pending for this final-candidate review; none is closed by this batch.
+updated by the consolidated review below. Only the final public release captures
+remain pending.
 
 - [ ] Final public System Status and Version history captures:
   `ui-version-history.png`, `ui-system-status.png`.
-- [ ] Dirac Live desktop-app privacy and full-resolution readability recheck:
+- [x] Dirac Live desktop-app privacy and full-resolution readability recheck:
   `p50-1.jpg`, `p51-2.jpg`, `p52-1.jpg`, `p53-1.jpg`, `p54-1.jpg`.
-- [ ] Remaining matching-state detail, example, Home, Personalize, Remote and native front-panel comparisons:
+- [x] Remaining matching-state detail, example, Home, Personalize, Remote and native front-panel comparisons:
   `fp-help.png`, `ui-home.jpg`, `ui-export-preview-crop.png`, `ui-import-differences-detail.png`, `ui-import-default-match-crop.png`, `p51-1.jpg`, `ui-inputs-cec-crop.png`, `remote.jpg`, `ui-network-static-crop.png`, `fp-peak-monitor.png`, `fp-level-meter.png`, `ui-peq-options-button.jpg`, `ui-personalize.jpg`, `fp-main.png`, `ui-sinewave-crop.png`, `ui-example-7-1-4h.jpg`, `ui-example-7-2-6.jpg`, `ui-example-9-3-4.jpg`, `ui-example-9-1-6.jpg`, `ui-hdmi-status.png`.
 
 ### Approved final-v2.2 screenshot review — second batch
@@ -291,8 +292,42 @@ Recovery states were supplied by the isolated preview; no physical fault was
 induced and no recovery action was executed. BEQ used the live catalogue with
 loaded artwork, and application was confined to the isolated preview.
 
-Only the seven checks listed in this batch are closed. The remaining 27 image
-checks above stay pending, and both agreed deferrals below remain unchanged.
+This second batch closed seven checks. The remaining 27 image checks were carried
+forward to the consolidated review below. Both agreed deferrals remain unchanged.
+
+### Approved final-v2.2 screenshot review — consolidated
+
+All 27 remaining images have been reviewed together: 22 are retained, the three
+approved replacements below are adopted, and the two final public release
+captures remain pending.
+
+- [x] The five Dirac Live desktop-app images were inspected at full resolution:
+  account email, filters 2–6 and the mouse pointer are absent; the relevant
+  labels, readings and crops remain clear. The approved illustrative level
+  readings are retained.
+- [x] The other 17 matching-state images are retained, including the four
+  speaker examples and their matching diagrams. Current WebUI comparisons used
+  the same example states; minor spacing differences do not require replacements.
+  The native front-panel images were inspected and compared with the current
+  rendering code, rather than retaken on the physical unit.
+- [x] `ui-personalize.jpg`: current full-page overview includes the explanation
+  that hidden tips are saved on the HTP-1 and shared by all browsers.
+- [x] `p51-1.jpg`: calibration-connected banner and status cards now show
+  **No Upmix** instead of the older **Direct** label; retains the 1200 × 330 crop.
+- [x] `ui-hdmi-status.png`: current HDMI Status dialog, cropped to 800 × 844
+  from a 1200 px desktop viewport. The obsolete page behind the dialog is excluded.
+
+The replacement captures use the unmodified assembled candidate
+`a1f6a051bed64edcb6c57c471819c99b7d27d725` (WebUI
+`b6d90a141637cd301bcc17e0b4137330b95fd5e1`) at a 1200 × 900 viewport.
+Personalize uses the isolated default-state preview; the banner illustrates a
+calibration-connected state. HDMI Status uses read-only diagnostic text from the
+physical unit, displayed in the isolated current dialog. No unit settings or
+playback were changed, and no import or calibration was performed.
+
+This review does not establish physical factory defaults. System Status and
+Version history still show rc1 and await the final public release captures;
+both agreed deferrals below remain unchanged.
 
 ### Agreed deferred items
 
