@@ -256,8 +256,6 @@ changed by this documentation update.
 Earlier rc1 approvals above remain the capture history. The following checks are
 still pending for this final-candidate review; none is closed by this batch.
 
-- [ ] Active Peak Monitor, Dirac recovery and BEQ captures:
-  `ui-bass-eq-author.jpg`, `ui-bass-eq-applied-browsed.jpg`, `ui-dirac-load-now-crop.png`, `ui-dirac-filter-missing-crop.png`, `ui-dirac-service-down-crop.png`, `ui-peak-monitor.jpg`, `ui-peak-monitor-bars.jpg`.
 - [ ] Final public System Status and Version history captures:
   `ui-version-history.png`, `ui-system-status.png`.
 - [ ] Dirac Live desktop-app privacy and full-resolution readability recheck:
@@ -265,10 +263,36 @@ still pending for this final-candidate review; none is closed by this batch.
 - [ ] Remaining matching-state detail, example, Home, Personalize, Remote and native front-panel comparisons:
   `fp-help.png`, `ui-home.jpg`, `ui-export-preview-crop.png`, `ui-import-differences-detail.png`, `ui-import-default-match-crop.png`, `p51-1.jpg`, `ui-inputs-cec-crop.png`, `remote.jpg`, `ui-network-static-crop.png`, `fp-peak-monitor.png`, `fp-level-meter.png`, `ui-peq-options-button.jpg`, `ui-personalize.jpg`, `fp-main.png`, `ui-sinewave-crop.png`, `ui-example-7-1-4h.jpg`, `ui-example-7-2-6.jpg`, `ui-example-9-3-4.jpg`, `ui-example-9-1-6.jpg`, `ui-hdmi-status.png`.
 
-Two wording follow-ups also remain unedited for the next approval: Loudness still
-refers to **Reset** where the current button says **Reset Vintage Custom**, and
-Dirac Live step 12 still says the slot count appears in the Calibration heading,
-which the current heading no longer shows.
+### Approved final-v2.2 screenshot review — second batch
+
+- [x] Peak Monitor Table and Bars views refreshed with real playback data.
+- [x] Dirac Live Filter Missing, Load now and Service Down detail crops refreshed.
+- [x] BEQ Author-filter and applied-versus-browsed views refreshed with artwork loaded.
+- [x] Loudness references now use the button label **Reset Vintage Custom**.
+- [x] Dirac Live step 12 points to the available Calibration slots without claiming
+  that their count appears in the page heading. The rest of the step is preserved.
+
+- [x] `ui-peak-monitor.jpg`
+- [x] `ui-peak-monitor-bars.jpg`
+- [x] `ui-dirac-filter-missing-crop.png`
+- [x] `ui-dirac-load-now-crop.png`
+- [x] `ui-dirac-service-down-crop.png`
+- [x] `ui-bass-eq-author.jpg`
+- [x] `ui-bass-eq-applied-browsed.jpg`
+
+The same assembled candidate and 1200 × 900 viewport as the first batch were
+used. Full-page images can be taller; recovery detail crops preserve their
+original pixels. Peak Monitor used the physical unit's 5.2.0 layout with Seat
+Shaker and real signal data. Bars view was restored, Peak hold was retained,
+and Clear Peaks was not pressed. The before/after comparison found no change
+to the checked unit settings or calibration slots.
+
+Recovery states were supplied by the isolated preview; no physical fault was
+induced and no recovery action was executed. BEQ used the live catalogue with
+loaded artwork, and application was confined to the isolated preview.
+
+Only the seven checks listed in this batch are closed. The remaining 27 image
+checks above stay pending, and both agreed deferrals below remain unchanged.
 
 ### Agreed deferred items
 

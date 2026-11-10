@@ -63,10 +63,10 @@ disabled whenever loudness compensation is off.
 | High Shelf | 4000–20000 Hz | 0.01–0.5 | 1–5 oct |
 | High-Pass Filter | 10–80 Hz | — | — |
 
-**Reset** restores the Vintage defaults: Low Shelf at 63 Hz, High Shelf at 12700 Hz, PEQ at
+**Reset Vintage Custom** restores the Vintage defaults: Low Shelf at 63 Hz, High Shelf at 12700 Hz, PEQ at
 1000 Hz, and the High-Pass Filter at 20 Hz.
 
-Switching between curve types preserves your Vintage Custom settings. Use **Reset** to restore
+Switching between curve types preserves your Vintage Custom settings. Use **Reset Vintage Custom** to restore
 their defaults.
 
 ![Vintage Custom filter editors for Low Shelf, PEQ, High Shelf and High-Pass Filter](images/ui-loudness-vintage-custom-crop.png)
