@@ -13,9 +13,9 @@ At system startup (a cold start, not a Fast Start), no video passes through the 
 control system is up and running.
 
 The current video status — resolution, color space, video mode, HDR status, bit depth, and 3D — is
-shown as **Video Status** on the [System Status](system-status.md#detailed-status) page. You can also
-add a Video card to the Home page: turn on **Display Video Status on Homepage** on the
-[Personalize](personalize.md) page, and it appears in the status row at the top of Home alongside
+shown as **Video** in the **Connection** panel of the [System Status](system-status.md#connection)
+page. You can also add a Video card to the Home page: turn on **Video status** on the
+[Personalize](personalize.md#home-page-visibility) page, and it appears in the status row at the top of Home alongside
 Program Format and Listening Format.
 
 !!! note
@@ -69,9 +69,9 @@ really stopped before turning the output back on.
 
 ## HDMI Status
 
-The [System Status](system-status.md) page has an **HDMI Status** button that opens a detailed dump of
+The [System Status](system-status.md) page has an **HDMI status** button that opens a detailed dump of
 the HDMI system's live state — useful when troubleshooting EDID or handshake problems with a source or
-display. Press **Show** to open it, and **Refresh** to pull a fresh dump without closing the dialog.
+display. Press **Refresh** in the dialog to pull a fresh dump without closing it.
 
 ![HDMI Status dialog showing a detailed HDMI/EDID dump](images/ui-hdmi-status.png)
 
@@ -88,5 +88,7 @@ HTP-1 to turn on.
     If you use the trigger input, do not also use the remote or the front panel to turn the unit on
     or off — the trigger input takes precedence.
 
-The trigger outputs can source 50 mA at 12V. They are enabled when the HTP-1 is turned on. The trigger
-outputs are over-current protected by a thermistor.
+The trigger outputs can source 50 mA at 12V. By default they are enabled when the HTP-1 is turned on;
+each trigger's **Auto-on** and **Power-on delay** settings are in
+[Device Settings](device-settings.md#amplifier-triggers). The trigger outputs are over-current
+protected by a thermistor.

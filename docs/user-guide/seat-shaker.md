@@ -28,6 +28,10 @@ Choose where the seat shaker signal is sent.
     displays the settings it will use — the Content selection stays lit, for example — but nothing
     can be changed until an output other than Off is chosen.
 
+!!! note "Known issue"
+    In version 2.2.0, Mix Out can still produce brief noise bursts during some transitions,
+    particularly while the seat shaker is enabled.
+
 ## Mute
 
 **Mute** silences the seat shaker without changing the Output selection, so you can quickly compare
@@ -79,7 +83,8 @@ band count, and all PEQ bands.
 
 - Select **Preset 1**–**6** to recall a stored setup.
 - **Save** asks which of the six slots to save the current settings into.
-- **Clear** removes the saved data from the active preset and returns the page to defaults.
+- **Clear** asks you to confirm, then removes the saved data from the active preset and returns the
+  page to defaults.
 
 A preset button changes color when its stored settings differ from what is currently on the page,
 so you can tell when you have made changes that have not been saved.
@@ -120,7 +125,8 @@ as swapping the input wires on your seat shaker.
 
 **Peak Monitoring** lets you watch the seat shaker signal level to prevent clipping. The indicator
 turns red when the signal exceeds 0 dBFS, showing that clipping is occurring. Lower the **Trim**
-setting to keep the signal below this threshold for optimal performance without distortion.
+setting to keep the signal below this threshold for optimal performance without distortion. While
+Peak Monitoring is on, **Clear Peak** resets the displayed peak.
 
 ## Setting Levels and Headroom
 

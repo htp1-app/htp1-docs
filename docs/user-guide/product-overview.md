@@ -24,6 +24,8 @@ The touchscreen shows the current input, program format, volume, upmix selection
 - **Audio input details (bottom left):** Tap to show more information about the audio input. Tap twice to view detailed playback and processing information.
 - **Audio output details (bottom right):** Tap to show more information about the audio output. Tap twice to view detailed playback and processing information.
 
+The detailed playback and processing information also shows the selected Dirac Live **Filter Slot**.
+
 The front panel also provides the network information needed for first-time setup and access to the web interface. See [Basic Setup](basic-setup.md) for details.
 
 The remote's color buttons provide shortcuts to several front-panel functions. See [Remote Color Button Functions](reference.md#color-buttons-and-a-d-preset-buttons) for details.
@@ -38,7 +40,7 @@ The remote's color buttons provide shortcuts to several front-panel functions. S
 4. **AES/EBU DIGITAL INPUT:** Three-pin XLR jack for connecting an audio device that outputs an AES/EBU (aka AES3) digital audio signal.
 5. **MIX OUT:** One pair of RCA analog stereo jacks for connecting a stereo amplifier or powered speakers. The main signal is mixed down to a stereo signal. Mix Out has its own volume and power-on volume, independent of the main outputs, set from the Home page and the Volume Setup page. Mix Out can also carry the Seat Shaker signal instead, in normal or differential mode.
 6. **TRIGGER INPUT:** A 3.5mm trigger input turns the HTP-1 on when a 12V signal is applied. The HTP-1 will go into standby mode when the trigger signal is removed. Note that the **Master Power Switch** on the rear panel must be in the **ON** position for the trigger signal to turn the HTP-1 on.
-7. **TRIGGER OUTPUTS:** Four 3.5mm jacks send a 12V trigger signal when the HTP-1 is powered on. These triggers are typically used to power on the power amplifiers.
+7. **TRIGGER OUTPUTS:** Four 3.5mm jacks send a 12V trigger signal when the HTP-1 is powered on. These triggers are typically used to power on the power amplifiers. Each trigger can be set not to switch on automatically, or to switch on after a delay; see [Amplifier Triggers](device-settings.md#amplifier-triggers).
 8. **HDMI OUTPUTS:** Two HDMI® outputs for connecting HDMI displays. The "HDMI 1" output supports the Audio Return Channel (ARC)/Extended Audio Return Channel (eARC) HDMI features, which receive audio signals from the connected display. This is necessary if you are going to stream video from an app on your TV or if you are receiving over-the-air television broadcasts using an HD antenna. The **System Status** page reports eARC connection status if you need to troubleshoot this link.
 9. **USB AUDIO:** A USB Type-B jack for streaming audio from a connected computer.
 10. **SYSTEM RECOVERY:** Mini SD card slot used by the factory for production purposes only. A factory restore procedure is available using this.
@@ -62,14 +64,14 @@ The remote's color buttons provide shortcuts to several front-panel functions. S
 5. **HDMI+:** Press the **HDMI+** button to cycle forward through the eight HDMI® inputs as well as the TV input. When using this button the interface will display the HDMI input that will be selected after a short timeout period expires (about 3 seconds). This allows the user to rotate through the input options without actually changing the input (which can slow things down). This delayed input change only applies to this button, not any of the other + buttons.
 6. **SURROUND MODES:** Press the buttons to select the **NATIVE**, **DTS**®, **DIRECT**, **DOLBY**®, or **AURO-3D**® surround modes.
 7. **SPDIF+:** Press the **SPDIF+** button to cycle forward through the digital audio inputs. The cycle order is **COAXIAL 1**, **COAXIAL 2**, **COAXIAL 3**, **OPTICAL 1**, **OPTICAL 2**, **OPTICAL 3**, and **AES/EBU**.
-8. **MASTER:** Press the **+** button to increase the **MASTER** volume level or press the **-** button to decrease the **MASTER** volume level.
+8. **MASTER:** Press the **+** button to increase the **MASTER** volume level or press the **-** button to decrease the **MASTER** volume level. Hold either button to change the volume in steady 1 dB steps.
 9. **LETTERS:** The **A**, **B**, **C**, and **D** buttons run whatever is assigned to those slots on the **Macros** page.
 10. **DIRAC:** Press the **DIRAC** button to cycle Dirac Live through Off → On → Bypass → Off.
 11. **NIGHT:** Pressing the **NIGHT** button rotates between off, auto, and on. Night mode is designed for low volume movie viewing. See more details under *Audio Features*.
 12. **LOUD:** Press the **LOUD** button to enable or disable Loudness mode, which boosts low and high frequencies for low volume music listening. This is described in more detail under *Audio Features*.
 13. **BT PAIR:** Press the **BT PAIR** button to initiate Bluetooth® pairing.
-14. **DIM:** Press the **DIM** button to cycle through several brightness levels for the front panel LCD display. When the dim level is zero, the screen will briefly brighten to show changes in volume.
-15. **STRM+:** Press the **STRM+** button to cycle through the **USB**, **Roon**®, and **Bluetooth**® streaming inputs.
+14. **DIM:** Press the **DIM** button to cycle through several brightness levels for the front panel LCD display. When the display is set to its lowest level (off), the screen will briefly brighten to show changes in volume and other recognized remote commands.
+15. **STRM+:** Press the **STRM+** button to cycle through the **Roon**®, **Bluetooth**®, and **USB** streaming inputs.
 16. **ANALOG+:** Press the **ANALOG+** button to toggle between the two analog audio inputs.
 17. **DIALOG:** Press the **+** button to increase the **DIALOG** volume level or press the **-** button to decrease the **DIALOG** volume level.
 18. **MUTE:** Press the **MUTE** button to turn audio muting of all speakers on or off.
@@ -85,11 +87,11 @@ The web interface is where you configure the HTP-1 and where day-to-day control 
 
 The Home page is what you land on, and what most day-to-day control happens from:
 
-- Your **unit name** is the page title, with the HTP-1 wordmark in the top-right corner.
+- In desktop mode, the top-left and top-right corners can show the current input name or the unit name, as chosen on Personalize.
 - **Program Format** and **Listening Format** status cards report the incoming and actual decoded formats. A **Video** status card can also appear here, if enabled on Personalize.
 - The **Volume** readout sits in the center, with tap targets on either side to step it up or down. If Mix Out is enabled, a second **Mix Out Volume** control appears below it.
 - **Input Select** and **Upmix Select** button rows choose the active input and upmix mode. Which inputs and upmixes appear, and in what order, is set on the [Inputs](inputs.md) and [Upmix](upmix.md) pages.
-- The **Sound Controls** section toggles **Dirac Live** (a three-state on / bypass / off control), **Loudness**, **Dialog Enhance**, and **Night** (off / auto / on).
+- The **Sound Controls** section holds the buttons chosen on Personalize, such as **Dirac Live** (a three-state on / bypass / off control), **PEQ**, **Loudness**, **Dialog Enhance**, and **Night** (off / auto / on). See [Sound Controls](home-page.md#sound-controls) for the full list.
 - If you have Dirac Live calibrations saved, a **Dirac Live Slot Select** row lets you switch between them directly from Home.
 - Rows of **macro** buttons can also appear here, if you have set any up.
 
@@ -112,7 +114,7 @@ Once you are inside settings, a small line of text at the top of the screen — 
 
 ![Help page showing the full sidebar and page-by-page help sections](images/ui-help.jpg)
 
-The **?** button in the top-right corner of every page opens **Help**, a set of sections — one per settings page — that explains the controls on the page you came from.
+The **?** button in the top-right corner of every page opens Help for the current page in a side panel without leaving your settings. To browse all Help topics, select **Help** in the settings sidebar.
 
 The **i** button opens **System Status**, which displays the software version, release notes, and update history. It is also the place from which you can check for and install system software updates.
 

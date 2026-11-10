@@ -86,9 +86,10 @@ This mode takes both the left and right input channels as signal at once, and ro
 
 A sine wave can also be chosen as the signal. Frequency is adjustable from 10 to 20000 Hz. Amplitude is set in dBFS (peak), from −140 to 0 dBFS.
 
-You can type a frequency in whole Hz or an amplitude with decimal dB values. Use
-**Frequency step** to choose 1, 5, 10 or 100 Hz, and **Amplitude step** to choose 1, 5 or
-10 dB. The default steps are 10 Hz and 5 dB each time you visit the page.
+You can type a frequency in whole Hz or an amplitude with decimal dB values. Use the
+**Step size** control beside **Frequency (Hz)** to choose 1, 5, 10 or 100 Hz, and the one beside
+**Amplitude (peak, dBFS)** to choose 1, 5 or 10 dB. The default steps are 10 Hz and 5 dB each
+time you visit the page.
 
 The minus/plus buttons, up/down arrow keys in a field, and mouse wheel over a focused
 field use the selected step. They move to the next multiple of that step: for example,

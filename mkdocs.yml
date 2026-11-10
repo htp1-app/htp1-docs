@@ -81,8 +81,8 @@ plugins:
 exclude_docs: |
   getting-started/
   self-hosting/
-  developers/
   firmware/
+  development/
 
 nav:
   - Home: index.md
@@ -133,7 +133,8 @@ nav:
       - apps/index.md
   # - Self-Hosting:
   #     - self-hosting/index.md
-  # - Developers:
-  #     - developers/index.md
+  - Developers:
+      - developers/index.md
+      - Addon Development: developers/addons.md
   # - Firmware:
   #     - firmware/index.md

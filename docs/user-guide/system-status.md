@@ -27,19 +27,21 @@ If the release server cannot be reached, System Status displays a warning rather
 that the software is up to date. See [Updates and Support](maintenance.md) for the full update
 procedure.
 
-## Detailed Status
+<div id="detailed-status"></div>
+
+## Connection
 
 | Field | What it shows |
 | --- | --- |
-| IP Address | The IP address currently assigned to the HTP-1 on your network. |
-| Web UI Address | The local address for opening the HTP-1 Web UI in a browser. |
-| mDNS Hostname | The HTP-1’s unique hostname used for mDNS/Bonjour discovery so applications can identify and connect to this specific unit on the local network. |
-| Decoder Sample Rate | The sample rate of the incoming audio, after decoding. |
-| Encoder Sample Rate | The sample rate of the audio being sent to the speaker outputs. |
-| Video Status | The current video resolution, color space, chroma subsampling, HDR status, bit depth, and 3D status for video received through an HTP-1 HDMI input. No video details are shown when ARC/eARC is used. |
-| TV Sound Source | Where the audio driving the TV input is coming from, for example `eARC`. |
-| eARC Link Status | The state of the eARC connection to your TV. |
-| CEC Status | The state of CEC (Consumer Electronics Control) communication with your TV and other HDMI devices. |
+| IP address | The IP address currently assigned to the HTP-1 on your network. |
+| Web UI address | The local address for opening the HTP-1 Web UI in a browser. |
+| mDNS hostname | The HTP-1’s unique hostname used for mDNS/Bonjour discovery so applications can identify and connect to this specific unit on the local network. |
+| Decoder sample rate | The sample rate of the incoming audio, after decoding. |
+| Encoder sample rate | The sample rate of the audio being sent to the speaker outputs. |
+| Video | The current video resolution, color space, chroma subsampling, HDR status, bit depth, and 3D status for video received through an HTP-1 HDMI input. No video details are shown when ARC/eARC is used. |
+| TV sound source | Where the audio driving the TV input is coming from, for example `eARC`. |
+| eARC link | The state of the eARC connection to your TV. |
+| CEC | The state of CEC (Consumer Electronics Control) communication with your TV and other HDMI devices. |
 
 These last two fields report a short internal status string rather than a friendly sentence.
 Support may ask you to read one of them aloud, or you can copy it exactly when writing in for
@@ -47,35 +49,37 @@ help. See [Reference](reference.md) for a glossary of the terms that appear in t
 
 ## Community Discussion
 
-Under **Discussion** on the System Status page, the
+Under **Discussion** in the **Web UI** panel of the System Status page, the
 [AVS Forum HTP-1 owners thread](https://www.avsforum.com/threads/the-official-monoprice-monolith-htp-1-owners-thread.3112176/)
-links to the community conversation about setup, troubleshooting, and new features.
+links to the community conversation about setup, troubleshooting, and new features. The same
+panel shows when the Web UI was last updated, who maintains it, and its original author.
 
 ## Software and Hardware Versions
 
-This table lists every version number that identifies your unit:
+The **Hardware and firmware** panel lists the version numbers that identify your unit. The
+installed system software version is shown at the top of the page.
 
 | Field | What it is |
 | --- | --- |
-| System Software | The main firmware version, for example `V2.2.0`. |
-| Node-RED GUI | The build of the control and automation layer. |
 | avController | The version of the component that manages audio control and device state. |
-| APM Module | The version of the audio processing module. |
-| HDMI Module | The version of the HDMI receiver/transmitter firmware. |
-| Backplane Firmware | The version running on the internal communication hub. |
+| APM module | The version of the audio processing module. |
+| HDMI module | The version of the HDMI receiver/transmitter firmware. |
+| Backplane | The version running on the internal communication hub. |
 | Hardware | The hardware revision of the backplane, MIO board, and DAC. |
-| Serial Number | Your unit's serial number. |
-| rootfs Version | The base Linux filesystem image version. |
+| Serial number | Your unit's serial number. |
+| rootfs | The base Linux filesystem image version. |
+| System build | The commit and date of the installed system software build. |
+| Commit | The short commit identifier of the installed software. |
 
 !!! tip
-    If you contact support, include the System Software, avController, APM Module, and Serial
-    Number values from this table. They let the development team match your report to the exact
-    build you are running.
+    If you contact support, include the System software version shown at the top of the page and
+    the avController, APM module, and Serial number values from this table. They let the
+    development team match your report to the exact build you are running.
 
 ## HDMI Status
 
-Click **Show** under HDMI Status to open a detailed dump of the current HDMI connection —
-useful when troubleshooting handshake, ARC/eARC, or CEC problems with your TV or other HDMI
-devices. Click **Refresh** inside the dialog to pull a new reading without closing it.
+Click **HDMI status** in the **Connection** panel to open a detailed dump of the current HDMI
+connection — useful when troubleshooting handshake, ARC/eARC, or CEC problems with your TV or other
+HDMI devices. Click **Refresh** inside the dialog to pull a new reading without closing it.
 
 ![HDMI Status dialog showing detailed HDMI connection diagnostics](images/ui-hdmi-status.png)

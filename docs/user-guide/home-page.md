@@ -3,7 +3,7 @@
 The Home page is the screen you see when you open the web UI, and the one you will use most.
 It shows what the HTP-1 is doing right now and gives you quick control over volume, input,
 and a handful of other settings. The Home page always uses a dark display style, even if you
-have turned off [Dark Mode](personalize.md) on the [Personalize](personalize.md) page.
+have turned off [Dark Mode](personalize.md#interface-settings) on the [Personalize](personalize.md) page.
 
 Almost everything on this page is optional. What appears here — which status cards, which
 mode buttons, which Dirac Live slots and macros — is controlled from the [Personalize](personalize.md)
@@ -22,8 +22,7 @@ Up to three cards sit at the top of the page:
 | Listening Format | The format the HTP-1 is currently outputting, including the active upmix mode. |
 
 The Video card only appears if it is turned on in Personalize. Program Format and Listening
-Format can also show the sample rate, if you have turned on "Display Audio Sample Rate on
-Homepage" in Personalize.
+Format can also show the sample rate, if you have turned on "Audio sample rate" in Personalize.
 
 ## Header Icons
 
@@ -52,7 +51,7 @@ While muted, the volume reading remains visible with a **muted** label. Tap the 
 The displayed Main Volume uses the scale configured with Zero Point on the Volume Setup page.
 
 To add outer **−3** and **+3** buttons, enable **±3 dB volume buttons** on the
-[Personalize](personalize.md) page. Each press changes Main Volume by a single 3 dB step;
+[Personalize](personalize.md#home-page-visibility) page. Each press changes Main Volume by a single 3 dB step;
 these buttons do not repeat when held.
 
 ## Mix Out Volume
@@ -62,7 +61,8 @@ below the main volume, labeled Mix Out Volume. It works the same way — press, 
 tap the dB reading to mute — but it controls the level of the Mix Out output rather than the
 main speaker outputs. Turn this display on or off from Personalize.
 
-Mix Out also keeps its volume reading visible while muted.
+Mix Out also keeps its volume reading visible while muted. Muting Mix Out does not mute the main
+outputs, and Mix Out stays muted when you unmute Main Volume.
 
 Mix Out has a range of −100 to 0 dBFS and is not affected by the Main Volume Zero Point setting.
 

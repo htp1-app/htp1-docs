@@ -29,6 +29,8 @@ The **Minimum Volume** and **Maximum Volume** controls define the allowed range 
 
 These ranges refer to the underlying master-volume scale. When Zero Point is not 0 dB, the Minimum Volume and Maximum Volume controls are displayed on the shifted scale, just like the main volume and Power On Volume. Changing Zero Point changes only the displayed values; it does not change the underlying limits or playback level.
 
+Each **Default** button on this page is disabled while its setting is already at the default value.
+
 ---
 
 ## Reference Output Voltage

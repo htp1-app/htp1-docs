@@ -45,7 +45,7 @@ settling time has passed. If every Auto-on switch is off, there is no trigger-re
 ## Display
 
 **Front Panel Brightness** sets how bright the front panel display is, on a scale of 1 (off) to
-7 (brightest). When set to brightness 1, the front panel will briefly illuminate in response to Volume and Dialog Enhance adjustments.
+7 (brightest). When set to brightness 1, the front panel will briefly illuminate in response to Volume and Dialog Enhance adjustments and other recognized remote-control commands.
 
 **Front Panel Theme** chooses the appearance of the front panel display. The Default theme retains
 the original layout; alternative themes offer additional display options.
@@ -61,6 +61,10 @@ configuration, and resets front-panel text to white.
 
 Set the HTP-1's **Time Zone** from the list. This affects log timestamps and any scheduled
 maintenance the unit performs in the background.
+
+## Import/Export Configuration
+
+Save your configuration to a file or restore a saved one. See [Backup and Restore](configs.md).
 
 ## Danger Zone
 
