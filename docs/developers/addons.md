@@ -292,6 +292,7 @@ accepted only from an addon that is installed, valid, switched on and owns its i
     ```
 
 The three receivers in htp1-addons show the common hook patterns:
+
 - shairport-sync's `sessioncontrol` with `wait_for_completion = "yes"`;
 - librespot's `--onevent` with `--emit-sink-events`;
 - gmediarender with a start command.
@@ -342,6 +343,7 @@ A repository is an `index.json` that lists each addon's current version and down
 ```
 
 Users add either of these on the Addons page:
+
 - a GitHub repository address, such as `https://github.com/<owner>/<repo>`, which the unit reads as
   the `index.json` on that repository's `main` branch;
 - any `https://` address of an `index.json` file.
