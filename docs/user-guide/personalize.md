@@ -7,6 +7,8 @@ change immediately.
 
 ![Personalize page showing homepage settings, shortcuts, sound controls, and the live preview](images/ui-personalize.jpg)
 
+<div id="homepage-status-display"></div>
+
 ## Home Page Visibility
 
 Under **Top Left Label** and **Top Right Label** (desktop mode), choose what appears in the
@@ -25,10 +27,14 @@ buttons:
 !!! note
     "Mix Out volume" is unavailable when the Seat Shaker is using the Mix Out.
 
+<div id="shortcuts"></div>
+
 ## Navigation Shortcuts (Top Bar)
 
 Choose which pages get a shortcut icon in the shortcut bar. Home and Power Off can each be
 shown or hidden, along with every other settings page.
+
+<div id="power-off-shortcut-buttons"></div>
 
 ### Power Off Dialog Buttons
 
@@ -44,15 +50,21 @@ Choose which buttons appear in the Home page’s Sound Controls section: Dirac L
 Tone Control - Bass, Tone Control - Treble, Loudness, Dialog Enhance, Night, Wide Synth, and
 Input Delay (lip-sync).
 
+<div id="homepage-dirac-live-slots"></div>
+
 ## Calibration Slot Buttons
 
 Choose which Dirac Live filter slots get a button on the Home page. Each slot is listed by
 name, or as "Uncalibrated" if it holds no filter.
 
+<div id="homepage-macros"></div>
+
 ## Macro Buttons
 
 Choose which macros get a button on the Home page, both the eight remote-button macros and
 any additional macros you have created. See [Macros](macros.md).
+
+<div id="settings"></div>
 
 ## Interface Settings
 
@@ -61,6 +73,8 @@ any additional macros you have created. See [Macros](macros.md).
 | Dark Mode | Switches the web UI (other than the Home page, which is always dark) between light and dark display styles. |
 | Vertical Padding | Adjusts the row spacing used in tables throughout the web UI, from 0 to 0.4 rem. |
 | Restore All Dismissed Notices | Restores optional tips hidden on this HTP-1. Dismissals are saved on the unit and shared by all browsers. |
+
+<div id="user-css"></div>
 
 ## Custom CSS
 

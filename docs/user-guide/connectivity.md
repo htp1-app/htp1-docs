@@ -54,7 +54,7 @@ If ARC/eARC is unavailable, you can send the TV’s audio to another HTP-1 input
 The HTP-1 has three ways to pick up audio from the TV: eARC, ARC, or the alternate, user-defined
 input. It tries them in that order — eARC, then ARC, then Alternate. When TV is the current input,
 which of the three is actually in use is shown as **TV Sound Source** on the
-[System Status](system-status.md) page.
+[System Status](system-status.md#connection) page.
 
 ### System Audio Control
 

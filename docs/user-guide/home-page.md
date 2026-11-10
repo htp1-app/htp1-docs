@@ -3,7 +3,7 @@
 The Home page is the screen you see when you open the web UI, and the one you will use most.
 It shows what the HTP-1 is doing right now and gives you quick control over volume, input,
 and a handful of other settings. The Home page always uses a dark display style, even if you
-have turned off [Dark Mode](personalize.md) on the [Personalize](personalize.md) page.
+have turned off [Dark Mode](personalize.md#interface-settings) on the [Personalize](personalize.md) page.
 
 Almost everything on this page is optional. What appears here — which status cards, which
 mode buttons, which Dirac Live slots and macros — is controlled from the [Personalize](personalize.md)
@@ -51,7 +51,7 @@ While muted, the volume reading remains visible with a **muted** label. Tap the 
 The displayed Main Volume uses the scale configured with Zero Point on the Volume Setup page.
 
 To add outer **−3** and **+3** buttons, enable **±3 dB volume buttons** on the
-[Personalize](personalize.md) page. Each press changes Main Volume by a single 3 dB step;
+[Personalize](personalize.md#home-page-visibility) page. Each press changes Main Volume by a single 3 dB step;
 these buttons do not repeat when held.
 
 ## Mix Out Volume

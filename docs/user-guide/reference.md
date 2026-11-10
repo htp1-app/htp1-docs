@@ -146,7 +146,7 @@ change them on the [Macros](macros.md) page.
 The **A**–**D** buttons (55aa, 56a9, 57a8, 58a7) and **Preset 1**–**4** buttons (03fc, 04fb, 05fa,
 06f9) are freely assignable from the [Macros](macros.md) page. Macros can record multiple setting
 changes so a single button plays them all back in sequence. Macros beyond these 8 remote slots —
-**Additional Macros** — can be added to the Home page from [Personalize](personalize.md), but they
+**Additional Macros** — can be added to the Home page from [Personalize](personalize.md#macro-buttons), but they
 are not reachable by remote or IR code.
 
 ### Additional Codes for Automation

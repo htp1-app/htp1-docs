@@ -44,7 +44,7 @@ over. After **Clear All Commands**, select **Save** to store the empty sequence.
 
 Beyond the eight remote-button slots, you can create more macros in **Additional Macros**. These have
 no dedicated physical remote button. They can be added to the Home page through
-[Personalize](personalize.md) or assigned to an input through [Inputs](inputs.md).
+[Personalize](personalize.md#macro-buttons) or assigned to an input through [Inputs](inputs.md).
 
 Press **Create New Macro** to add one. Each additional macro can also be deleted from its
 editor.

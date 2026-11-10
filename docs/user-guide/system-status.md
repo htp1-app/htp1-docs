@@ -27,6 +27,8 @@ If the release server cannot be reached, System Status displays a warning rather
 that the software is up to date. See [Updates and Support](maintenance.md) for the full update
 procedure.
 
+<div id="detailed-status"></div>
+
 ## Connection
 
 | Field | What it shows |

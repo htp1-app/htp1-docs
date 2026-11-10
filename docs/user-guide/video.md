@@ -15,7 +15,7 @@ control system is up and running.
 The current video status — resolution, color space, video mode, HDR status, bit depth, and 3D — is
 shown as **Video** in the **Connection** panel of the [System Status](system-status.md#connection)
 page. You can also add a Video card to the Home page: turn on **Video status** on the
-[Personalize](personalize.md) page, and it appears in the status row at the top of Home alongside
+[Personalize](personalize.md#home-page-visibility) page, and it appears in the status row at the top of Home alongside
 Program Format and Listening Format.
 
 !!! note
