@@ -208,3 +208,71 @@ ceiling speakers. The existing 9.3.4 section anchor is preserved.
 Physical factory-default confirmation remains deferred until final v2.2 preparation.
 Aaron's disabled volume-calibration wizard and its documentation remain deferred
 until the feature is ready for inclusion.
+
+
+## Approved final-v2.2 screenshot review — first batch
+
+- [x] Desktop Dirac Live requirement and download links updated in Welcome and the
+  Dirac Live walkthrough. The microphone recommendation link now points to Dirac's
+  microphone guidance.
+- [x] PEQ placement labels updated to **Pre (default)** and **Post (advanced)**;
+  the existing placement explanations are preserved.
+- [x] The 17 reviewed WebUI screenshots below replaced, with Help showing every
+  section collapsed as approved.
+
+- [x] `ui-speakers-21.png`
+- [x] `ui-calibration.jpg`
+- [x] `ui-calibration-slot-rename-crop.png`
+- [x] `ui-calibration-advanced.jpg`
+- [x] `ui-balance.jpg`
+- [x] `ui-dirac-active-calibrated.jpg`
+- [x] `ui-loudness.jpg`
+- [x] `ui-loudness-vintage-custom-crop.png`
+- [x] `ui-peq.jpg`
+- [x] `ui-peq-editor-crop.png`
+- [x] `ui-peq-options-dialog-crop.png`
+- [x] `ui-help.jpg`
+- [x] `ui-speakers.jpg`
+- [x] `ui-speakers-layout-dialog-crop.png`
+- [x] `ui-speaker-map-detail.png`
+- [x] `ui-volume-setup.jpg`
+- [x] `ui-volume-advanced.jpg`
+
+Captures use a 1200 × 900 CSS-pixel viewport and the unmodified assembled candidate
+`a1f6a051bed64edcb6c57c471819c99b7d27d725` (WebUI
+`b6d90a141637cd301bcc17e0b4137330b95fd5e1`). Full-page images can be taller; detail
+crops preserve their original pixels. Defaults and the previously approved PEQ,
+2.1 and calibrated-state examples are supplied by the isolated preview. No
+physical-unit settings were changed. These captures do not establish physical
+factory defaults or a final public release.
+
+The refreshed Loudness images report a valid 48 kHz output sample rate. The older
+images displayed the chart's fallback message because no supported output sample
+rate was supplied. The fallback message remains in the WebUI; no UI behavior was
+changed by this documentation update.
+
+### Remaining final-candidate screenshot checks
+
+Earlier rc1 approvals above remain the capture history. The following checks are
+still pending for this final-candidate review; none is closed by this batch.
+
+- [ ] Active Peak Monitor, Dirac recovery and BEQ captures:
+  `ui-bass-eq-author.jpg`, `ui-bass-eq-applied-browsed.jpg`, `ui-dirac-load-now-crop.png`, `ui-dirac-filter-missing-crop.png`, `ui-dirac-service-down-crop.png`, `ui-peak-monitor.jpg`, `ui-peak-monitor-bars.jpg`.
+- [ ] Final public System Status and Version history captures:
+  `ui-version-history.png`, `ui-system-status.png`.
+- [ ] Dirac Live desktop-app privacy and full-resolution readability recheck:
+  `p50-1.jpg`, `p51-2.jpg`, `p52-1.jpg`, `p53-1.jpg`, `p54-1.jpg`.
+- [ ] Remaining matching-state detail, example, Home, Personalize, Remote and native front-panel comparisons:
+  `fp-help.png`, `ui-home.jpg`, `ui-export-preview-crop.png`, `ui-import-differences-detail.png`, `ui-import-default-match-crop.png`, `p51-1.jpg`, `ui-inputs-cec-crop.png`, `remote.jpg`, `ui-network-static-crop.png`, `fp-peak-monitor.png`, `fp-level-meter.png`, `ui-peq-options-button.jpg`, `ui-personalize.jpg`, `fp-main.png`, `ui-sinewave-crop.png`, `ui-example-7-1-4h.jpg`, `ui-example-7-2-6.jpg`, `ui-example-9-3-4.jpg`, `ui-example-9-1-6.jpg`, `ui-hdmi-status.png`.
+
+Two wording follow-ups also remain unedited for the next approval: Loudness still
+refers to **Reset** where the current button says **Reset Vintage Custom**, and
+Dirac Live step 12 still says the slot count appears in the Calibration heading,
+which the current heading no longer shows.
+
+### Agreed deferred items
+
+- [ ] Physical factory-default confirmation — deferred until final v2.2
+  preparation; no reset or physical settings change is authorized by this batch.
+- [ ] Aaron's disabled volume-calibration wizard and its documentation — deferred
+  until the feature is ready for inclusion. The wizard remains untouched.

@@ -40,8 +40,8 @@ combined response can differ substantially from the individual responses shown i
 This recommendation also applies to Room Correction used with the HTP-1’s own bass manager.
 Bass Control and ART provide joint optimization and support individually connected subwoofers.
 
-Dirac® calibration requires a PC or Mac laptop running the Dirac Live app with an external mic
-attached to the laptop.
+Dirac Live calibration requires a Windows PC or Mac running the desktop app, with a calibrated
+USB microphone connected to the computer.
 
 !!! note
     The HTP-1 requires the desktop version of Dirac Live. The mobile Dirac Live app cannot be used because the HTP-1 does not provide the external microphone support required by the mobile app.
@@ -56,8 +56,9 @@ crossovers. When this calibration is active, it replaces the HTP-1’s own bass 
 
 Bass Control and ART are optional, separately licensed upgrades.
 
-1. Download and install the Dirac Live app: <https://live.dirac.com/download/>. Use the latest
-   version for the best results.
+1. Download and install the Dirac Live desktop app for Windows or macOS from
+   [Dirac’s downloads page](https://www.dirac.com/resources/downloads). Use the latest version
+   for the best results.
 2. Attach a calibrated USB microphone to the computer.
 3. Launch Dirac Live and log in. The HTP-1 includes Dirac Live Room Correction
    with Bass Management.

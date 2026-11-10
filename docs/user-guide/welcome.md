@@ -44,6 +44,6 @@ Please take an inventory of the package contents to ensure you have all the item
 - A separate power amplifier or powered speakers are required.
 - A laptop or desktop computer with a web browser. Macs and PCs are supported by the Dirac Live® calibration software.
 
-- A USB connected *calibrated* microphone (not included) is required to perform a Dirac Live calibration. For Dirac Live calibration, it is recommended to use the desktop version on a Windows PC or Mac, as it provides features that are not available in the mobile version. The Dirac Live ART upgrade requires its own license, purchased separately through Dirac. The Dirac Live calibration app is downloaded from [dirac.com/resources/downloads](https://www.dirac.com/resources/downloads); the same page lists recommended microphones.
+- A USB-connected *calibrated* microphone (not included) is required to perform a Dirac Live calibration. Calibration requires the desktop app on a Windows PC or Mac; the mobile app cannot be used with the HTP-1. The Dirac Live ART upgrade requires its own license, purchased separately through Dirac. Download the app from [Dirac’s downloads page](https://www.dirac.com/resources/downloads). See [Dirac’s microphone guidance](https://helpdesk.dirac.com/en/faq/What-microphone-is-required-recommended-for-Dirac-Live-9a3b) for requirements and recommendations.
 
 Read [Safety Warnings and Guidelines](safety.md) before using the device.
