@@ -255,7 +255,7 @@ Call `/opt/olympia/addon-source` from the player's event hooks:
 | Call | When |
 |---|---|
 | `addon-source start <id>` | Synchronously, just before the player opens the device for a new stream or a resume. |
-| `addon-source volume <id> <fraction>` | Whenever the sender's volume changes, as 0 to 1 of the sender's range. |
+| `addon-source volume <id> <fraction>` | Right after each `start` with the sender's current volume, then whenever it changes, as 0 to 1 of the sender's range. |
 | `addon-source mute <id>` | When the sender mutes or reaches the bottom of its range. |
 
 **`start`** selects the input, or wakes the unit from standby and selects it once the unit is
@@ -263,11 +263,18 @@ running. It returns once the device is free, or after about 2.5 seconds if it is
 another addon source is playing, that source is restarted to free the device. The latest start wins,
 and a user choosing an input or putting the unit into standby cancels a start that is still waiting.
 
-**`volume` and `mute`** move the unit's volume relatively. Each report moves it by the change since
-the sender's previous report, with the sender's whole range spanning 60 dB, inside the unit's
-calibrated limits. Starting playback therefore never changes the level, and a level set with the
-remote stays until the sender's slider moves. A single report moves the volume up by at most 7.5 dB
-and down by at most 15 dB.
+**`volume`** moves the unit's volume relatively. Each report moves it by the change since the
+sender's previous report, with the sender's whole range spanning 60 dB, inside the unit's calibrated
+limits. Starting playback therefore never changes the level, and a level set with the remote stays
+until the sender's slider moves. A single report moves the volume up by at most 7.5 dB and down by at
+most 15 dB. The volume moves in whole dB, so a 7.5 dB rise can round to 8 dB.
+
+The first report after a `start` only sets the baseline that later reports are measured from. Send
+the sender's current volume right after each `start`, even while the unit is still waking, or the
+user's first adjustment is ignored.
+
+**`mute`** sets Main Mute and leaves the level alone. While the unit is muted, a report that lowers
+the sender's volume is ignored and one that raises it clears Main Mute.
 
 A well-formed call always exits 0, so a player never fails because Node-RED is busy. Calls are
 accepted only from an addon that is installed, valid, switched on and owns its input.
