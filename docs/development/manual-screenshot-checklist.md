@@ -329,6 +329,66 @@ This review does not establish physical factory defaults. System Status and
 Version history still show rc1 and await the final public release captures;
 both agreed deferrals below remain unchanged.
 
+### Approved final screenshot comparison — 20 November 2026
+
+The 56 WebUI, Remote and front-panel images were checked against assembled
+candidate `150abd95f026882faa3a411dd4f5869612eeef0d` (WebUI
+`ebeb74e763d0b43396da8f7a52a1f0637cb801fa`, integration
+`963811de89e88f71a7c1a139803fd08bc9f3d337`). The physical unit reports that
+same installed build. Existing components, shared controls and styling were
+inspected before preparing replacements; no application code was changed.
+
+Fifteen approved replacements are adopted:
+
+- [x] Calibration overview, advanced view, calibrated ART example and slot-rename
+  detail: current tab styling, quoted Notes labels, bulk mute button colors and
+  editable Seat Shaker controls.
+- [x] Dirac Live Load now and Filter Missing details: current Calibration tabs.
+- [x] Channel Levels, PEQ overview and Editor detail, Seat Shaker and Vintage Custom
+  Loudness detail: current reset-button styling.
+- [x] Advanced Volume Setup: current Zero Point layout and headroom readout label.
+- [x] Personalize: removed the explanation no longer displayed in the interface.
+- [x] On-Device Help: current introduction and User Guide button layout; all
+  sections remain collapsed.
+- [x] Device Settings: current collapsed Danger Zone heading and disclosure arrow;
+  source-derived defaults, brightness 7 and settled trigger outputs On are retained.
+
+The other 39 current-interface images are retained. Comparison combines browser
+renders of the shipped assets with inspection of the rendering changes since the
+previous approved review. The four speaker examples were rendered with their
+matching example states. Import/export, HDMI Status, PEQ placement, BEQ, Peak
+Monitor and other retained detail views still represent the relevant controls;
+minor spacing changes alone do not trigger replacements.
+
+The normal front panel was also captured read-only on the physical unit at
+800 × 480. Help was compared in an isolated rendering of the shipped panel.
+The Remote files and native meter drawing code are unchanged from the previous
+review. Existing native illustrations are retained; no new active-meter capture
+or physical panel interaction was performed. Alternative-panel features remain
+text-only. The third-party Dirac Live app images and historical upgrade image
+are outside this WebUI/front-panel refresh and are retained.
+
+Replacement captures use a 1200 × 900 desktop viewport. Detail crops preserve
+source pixels and include the relevant controls and context. Defaults, recovery
+states and calibrated examples were prepared in the isolated preview; no
+physical recovery fault was induced. Before/after settings snapshots found no
+changes to the checked unit settings or calibration slots.
+
+The directly related wording corrections describe Seat Shaker controls on
+Calibration, use the current Volume Setup headroom readout label, and remove
+crossover fields from the alt text of the Large-speaker layout-editor image.
+The approved Dirac Live corrections add the Calibrating status and replace the
+32 kHz manual-Off advice with automatic restoration while On remains selected.
+The wording refers to output sample rate rather than input sample rate. These
+corrections were traced through the shipped WebUI, avController 5.187 and APM 430
+source; five focused UI-state checks passed. No new physical 32 kHz playback
+test was performed. Other wording, captions, image paths and page organization
+are preserved.
+
+System Status and Version history remain pending final public release captures.
+They retain the existing rc1 images; development-build information is not added
+to the public manual. Both agreed deferrals below remain unchanged.
+
 ### Agreed deferred items
 
 - [ ] Physical factory-default confirmation — deferred until final v2.2

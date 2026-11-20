@@ -64,7 +64,7 @@ This changes only the displayed volume. It does **not** change the actual playba
 Zero Point ranges from −100 to +22 dB and includes a **Default** button. The advanced section displays both the internal and displayed Master Volume values so you can see how the offset is applied.
 
 Zero Point applies to main-volume positions: current Main Volume, Power On Volume, Minimum Volume, Maximum Volume, and Highest playback volume that preserves digital headroom.
-It does not apply to Mix Out Volume, Mix Out Power On Volume, Maximum Digital Headroom, or Currently Available Digital Headroom.
+It does not apply to Mix Out Volume, Mix Out Power On Volume, Maximum Digital Headroom, or Digital headroom available at current master volume.
 Changing Zero Point does not rewrite any of those underlying settings. Their displayed values change because the scale has moved.
 
 ---
@@ -88,7 +88,7 @@ Use **Peak Monitor** to determine the smallest **Maximum Digital Headroom** valu
 The page also shows two live readouts:
 
 - **Highest playback volume that preserves digital headroom** — the calculated threshold described above.
-- **Currently available digital headroom** — the digital headroom remaining at the current master-volume setting.
+- **Digital headroom available at current master volume** — the digital headroom remaining at the current master-volume setting.
 
 ---
 
