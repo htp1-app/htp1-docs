@@ -236,11 +236,12 @@ attention. Its label and color provide more information than a simple on/off ind
 | Off / Bypass | Dirac Live filtering is intentionally disabled or bypassed. |
 | Ready | Dirac Live is enabled and ready to process audio when playback starts. |
 | Active | The correct filter is loaded and confirmed active for the selected slot and source. |
+| Calibrating | The Dirac Live app is in calibration mode. |
 | Starting / Loading / Applying / Checking | Dirac Live is starting, a filter operation is in progress, or the processor's state is being verified. |
 | Filter Not Confirmed | Dirac Live is on, but the HTP-1 has not confirmed that the right filter is loaded for the current source. |
 | Filters Loading / Not Checked | Some filter versions are not loaded yet, or the HTP-1 has not confirmed that every slot's filters are ready. Missing filters load automatically when nothing is playing. |
 | Filter Missing / Wrong Filter | The required filter is missing or the processor has loaded a different filter than expected. |
-| Not Supported | Dirac Live does not support the current sample rate, such as 32 kHz. |
+| Not Supported | Dirac Live does not support the current output sample rate, such as 32 kHz. |
 | Not Applied / Still Applied | The processor's actual filtering state does not match the selected setting. |
 | Load Failed / Load Interrupted / Cache Damaged / Service Down / Setup Failed | A filter operation or service has failed and needs attention. |
 | Unknown | The HTP-1 has not reported the Dirac Live setting. |
@@ -403,8 +404,8 @@ If Dirac Live reports a problem, open the **Calibration** page and read the disp
 Some filter loads may be refused when no audio is playing. If a load cannot be completed, start
 playback and try the suggested recovery action again.
 
-Dirac Live does not support 32 kHz audio. If the interface reports an unsupported sample rate,
-switch Dirac Live off while playing that source.
+At a 32 kHz output sample rate, audio plays without Dirac Live filtering. If Dirac Live is set to
+On, filtering resumes automatically when playback returns to a supported output sample rate.
 
 !!! tip
     Loading several calibrations for a large speaker layout can take several minutes. Wait until

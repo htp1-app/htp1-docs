@@ -11,7 +11,7 @@ The layout table on the Speakers page is read-only — the checkboxes, crossover
 
 ## The Edit Speaker Layout Dialog
 
-![Edit Speaker Layout dialog with speaker checkboxes, crossover frequency fields, and size buttons](images/ui-speakers-layout-dialog-crop.png)
+![Edit Speaker Layout dialog with speaker checkboxes and size buttons](images/ui-speakers-layout-dialog-crop.png)
 
 The dialog lists every possible speaker in three groups — Main Speaker Outputs, Surround Speaker Outputs, and Upper Speaker Outputs — each with up to three controls per row:
 

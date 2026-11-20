@@ -71,7 +71,7 @@ calibration sets optimal delay and trim automatically, so user delay and user tr
 remain at zero afterward.
 
 !!! warning
-    User delay and user trim are locked when a Bass Control (BC) or Active Room Treatment (ART)
+    User delay and user trim for speakers are locked when a Bass Control (BC) or Active Room Treatment (ART)
     filter is loaded. Editing them here would work against what the filter is doing. Use the
     [Channel Levels](channel-levels.md) page instead to make a small, permanent level change under
     a BC or ART calibration.
@@ -82,7 +82,7 @@ remain at zero afterward.
     are therefore reset to zero as well. If you have hand-tuned values you want to keep, note them
     down before transferring a filter.
 
-User delay and trim settings are stored independently with each slot, so you can keep different
+Each speaker's user delay and trim settings are stored independently with each slot, so you can keep different
 adjustments for each calibration.
 
 A warning appears when the selected calibration does not match the current speaker layout. The
@@ -90,8 +90,10 @@ interface does not identify uncalibrated speakers from zero delay or trim values
 red when it contains a nonzero user adjustment that is currently disallowed, or when the speaker is
 muted.
 
-If you have a seat shaker channel, it is greyed out in this table. Its delay and trim are always
-zero and cannot be edited here.
+When Seat Shaker is assigned to a subwoofer output, its row provides delay (0–50 ms), trim
+(−24 to +6 dB) and, with **Show Advanced Settings** on, mute. These are the same settings as on
+[Seat Shaker](seat-shaker.md), shared across calibration slots. They remain editable with BC or ART.
+Dirac Live and Total values are not shown for this channel.
 
 ## Show Advanced Settings
 
@@ -112,6 +114,7 @@ fields.
 Three buttons let you manage mutes across every speaker at once: **Mute All Speakers**, **Unmute All
 Speakers**, and **Invert Mute on All Speakers** (mutes everything that was unmuted and unmutes
 everything that was muted). Muting a speaker preserves its trim, so unmuting restores the same value.
+These buttons also include Seat Shaker when it is assigned to a subwoofer output.
 
 ### Advanced PEQ Options
 
