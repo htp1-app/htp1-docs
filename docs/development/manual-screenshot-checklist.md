@@ -254,10 +254,10 @@ changed by this documentation update.
 ### Remaining final-candidate screenshot checks
 
 Earlier rc1 approvals above remain the capture history. The following checks are
-updated by the consolidated review below. Only the final public release captures
-remain pending.
+updated by the consolidated reviews below. The final public release captures
+are completed in the 22 November batch below.
 
-- [ ] Final public System Status and Version history captures:
+- [x] Final public System Status and Version history captures:
   `ui-version-history.png`, `ui-system-status.png`.
 - [x] Dirac Live desktop-app privacy and full-resolution readability recheck:
   `p50-1.jpg`, `p51-2.jpg`, `p52-1.jpg`, `p53-1.jpg`, `p54-1.jpg`.
@@ -385,9 +385,30 @@ source; five focused UI-state checks passed. No new physical 32 kHz playback
 test was performed. Other wording, captions, image paths and page organization
 are preserved.
 
-System Status and Version history remain pending final public release captures.
-They retain the existing rc1 images; development-build information is not added
-to the public manual. Both agreed deferrals below remain unchanged.
+System Status and Version history were pending final public release captures at
+this review. They are refreshed in the 22 November batch below. Both agreed
+deferrals below remain unchanged.
+
+### Final public release captures — 22 November 2026
+
+- [x] `ui-system-status.png`: public V2.2.1 Final, built 22 November 2026,
+  up-to-date status, current connection details, and hardware and firmware versions.
+- [x] `ui-version-history.png`: V2.2.1 Final installed, earlier public releases,
+  release-stage badges, and installation controls. Release notes remain collapsed.
+- [x] Updated both images' alt text to identify V2.2.1 Final.
+
+The unit reports the clean installed public release
+`3edb6c4174acfc1682a347dca8e18338abbdff29`, matching the release-server tip.
+Its manifest identifies assembled build
+`6bc54bbb0238353fe7cd84ce611da32b7d7cabc7` and WebUI
+`c235d0313d95ff1764d87bc26e159834e85f4736`. The captures use those unmodified
+shipped assets at a 1200 × 900 viewport, with full-page height and no rescaling.
+The isolated preview uses source-derived default settings and read-only software,
+hardware and connection metadata from the unit. Development-remote metadata is
+omitted to show the customer view. The temporary update-completion notice was
+dismissed in the preview. No installation, reset or physical setting change was
+performed. Earlier capture notes above remain the review history; these two
+images replace the rc1 captures. Both agreed deferrals below remain unchanged.
 
 ### Agreed deferred items
 
