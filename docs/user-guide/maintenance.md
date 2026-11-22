@@ -14,7 +14,7 @@ Open **Version history** from **System Status**. In standby, select
 **View version history and install updates**. The page's return link takes you back to
 **System Status** or standby, depending on the unit's current power state.
 
-![Version history showing V2.2.0 Release Candidate 1 installed, earlier releases, and installation controls](images/ui-version-history.png)
+![Version history showing V2.2.1 Final installed, earlier releases, and installation controls](images/ui-version-history.png)
 
 ### Reading the Release List
 

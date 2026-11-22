@@ -4,7 +4,7 @@ The System Status page tells you what software the HTP-1 is running, whether an 
 available, and the current state of its network and HDMI connections. It also lists the exact
 hardware and software versions that support will ask for if you report a problem.
 
-![System Status showing V2.2.0 Release Candidate 1, update controls, connection details, and hardware and firmware versions](images/ui-system-status.png)
+![System Status showing V2.2.1 Final, update controls, connection details, and hardware and firmware versions](images/ui-system-status.png)
 
 ## Software Version and Updates
 
